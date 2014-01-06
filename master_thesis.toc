@@ -1,0 +1,7 @@
+\contentsline {chapter}{Kapitel\IeC {\"u}bersicht}{1}{section*.2}
+\contentsline {chapter}{\numberline {1}Einleitung}{2}{chapter.1}
+\contentsline {chapter}{\numberline {2}Grundlagen der medizinischen Bildverarbeitung}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Bildgewinnung und bildgebende Verfahren}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Digital Imaging And Communication In Medicine}{5}{section.2.2}
+\contentsline {chapter}{Literaturverzeichnis}{I}{chapter*.5}
+\contentsline {chapter}{Abbildungsverzeichnis}{II}{chapter*.6}

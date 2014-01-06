@@ -1,0 +1,72 @@
+\documentclass[11pt, a4paper]{report}
+
+\input{header}
+\begin{document}
+
+
+%pagenumbering wird benoetigt um Warnung zu beheben.
+%wird wieder ueberschrieben
+\pagenumbering{Roman}
+\include{master_title}
+
+\pagestyle{empty}
+% Das folgende braucht man, damit auch wirklich 1 Leerseite gelassen wird
+\mbox{}
+\clearpage
+
+%Veraendert die Seitennummerierung zu roemischen Zeichen...
+\setcounter{page}{1}
+
+\renewcommand{\thepage}{\roman{page}}
+%\pagestyle{headings}
+
+\tableofcontents
+
+
+\pagebreak
+
+\renewcommand{\thepage}{\arabic{page}}
+\setcounter{page}{1}
+
+%Thumbverzeichnis
+\addthumbsoverviewtocontents{chapter}{Kapitelübersicht}%Schreibt die Kapitelübersicht als Kapitel ins TOC
+\thumbsoverview{Kapitelübersicht} 
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+\fancyhead[L]{\leftmark} %Kopfzeile links
+%\fancyhead[C]{} %zentrierte Kopfzeile
+%\fancyhead[R]{} %Kopfzeile rechts
+
+%\fancyhead[R]{\textit{ \nouppercase{\leftmark}} }
+%\fancyhead[L]{\textit{ \nouppercase{\rightmark}} }
+
+\renewcommand{\headrulewidth}{0.3pt} %obere Trennlinie
+\fancyfoot[C]{\thepage} %Seitennummer
+\renewcommand{\footrulewidth}{0.3pt} %untere Trennlinie
+
+
+\include{einleitung}
+
+\include{grundlagenMbv}
+
+\include{implmentation}
+
+\pagebreak
+
+\setcounter{page}{1}
+\renewcommand{\thepage}{\Roman{page}}
+
+%Literatur
+%\addcontentsline{toc}{section}{Literaturverzeichnis}
+%\setcounter{lofdepth}{2}
+\stopthumb
+%\bibliographystyle{alpha}
+\bibliographystyle{alphadin}  
+\bibliography{literature}
+
+%\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\listoffigures
+
+\end{document}

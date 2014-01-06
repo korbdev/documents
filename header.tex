@@ -1,0 +1,56 @@
+\usepackage{ngerman}
+\usepackage[utf8]{inputenc}
+
+\usepackage{blindtext}
+\usepackage{fancyhdr} %Fuer Kopf und Fusszeilen
+\usepackage{anysize} %Damit man Raender leicht einstellen kann
+\usepackage{titlesec}
+
+%\usepackage[sc,center]{titlesec} %Um Kapitelnamen-Schrift zu veraendern
+%\usepackage[T1]{fontenc} %ueblich
+
+%Paket zum importieren von Bildern
+\usepackage{graphicx}
+\newcommand{\HRule}{\rule{\linewidth}{0.2mm}}
+
+\usepackage{pageslts}
+\usepackage{thumbs}
+\usepackage{hyperref}
+
+\usepackage{tabularx}
+
+\usepackage{wrapfig} % Paket zur Positionierung einbinden
+
+\usepackage{bibgerm}
+
+\usepackage{amssymb} % Mathe Symbole
+\usepackage{amsmath} % Mathe
+
+\usepackage{booktabs}
+\usepackage{subfigure}
+
+\usepackage[nottoc]{tocbibind}
+
+%Zeilenabstand ist jetzt 1.5 fach
+\usepackage{setspace}
+\onehalfspacing 
+%Bilder werden auch im Unterverzeichnis img gesucht
+\graphicspath{{img/}} 
+
+%Raender
+%\marginsize{3.5cm}{1.5cm}{2.5cm}{2.5cm}
+%\marginsize{3.5cm}{1.75cm}{2.5cm}{2.25cm}
+
+\definecolor{haw_rot}{RGB}{160,0,0}
+
+\newcommand{\mytoprule}{\specialrule{0.12em}{0em}{0em}}
+\newcommand{\mybottomrule}{\specialrule{0.12em}{0em}{0em}} 
+\renewcommand{\arraystretch}{1.2}
+
+\renewcommand{\thesubfigure}{\thefigure.\arabic{subfigure}}
+\makeatletter
+\renewcommand{\p@subfigure}{}
+\renewcommand{\@thesubfigure}{\thesubfigure:\hskip\subfiglabelskip}
+\makeatother
+
+\makeindex
