@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.7.4)  7 JAN 2014 00:19
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.7.4)  11 JAN 2014 02:08
 entering extended mode
 **master_thesis.tex
 (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.tex
@@ -901,18 +901,34 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3 <C:/Users/rkorb/master_thesis/documents/thesis/img/zyklen.pdf>]) [4]
-(C:\Users\rkorb\master_thesis\documents\thesis\grundlagenMbv.tex
+[3 <C:/Users/rkorb/master_thesis/documents/thesis/img/zyklen.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+[][]\OT1/cmr/m/n/9 https://www.haw-landshut.de/aktuelles/news/news-archiv/news-
+detailansicht/article/neuer-studiengang-
+ []
+
+[4]) [5] (C:\Users\rkorb\master_thesis\documents\thesis\grundlagenMbv.tex
 Kapitel 2.
-) [5
+) [6
 
 
 
 ]
 No file implmentation.tex.
-(C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.bbl)pdfTeX warning
- (ext4): destination with the same identifier (name{page.I}) has been already u
-sed, duplicate ignored
+(C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
+$\OT1/cmtt/m/n/10.95 de / fileadmin / hs _ landshut _ english / electrical _ en
+gineering / download / pdf /$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--22
+$\OT1/cmtt/m/n/10.95 Modulhandb % C3 % BCcher / Modulhandbuch _ BA _ BMT _ WS _
+ 13 _ 14 _ SS _ 13 _ beschlossen _$
+ []
+
+)pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has
+ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.70 \listoffigures
@@ -939,7 +955,7 @@ AED: pageslts setting VeryLastPage via AfterLastShipout
 AED: pageslts setting LastPages via AfterLastShipout 
 
 
-Package pageslts Info: Total number of pages is even.
+Package pageslts Info: Total number of pages is odd.
 
 
 \tf@tmb=\write7
@@ -950,22 +966,38 @@ Package pageslts Info: Total number of pages is even.
 (C:\Users\rkorb\master_thesis\documents\thesis\implmentation.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
-Package rerunfilecheck Info: File `master_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: CE093C9A22D5DE5B805322685C208C8A;476.
+
+
+Package rerunfilecheck Warning: File `master_thesis.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `master_thesis.out':
+(rerunfilecheck)             Before: CE093C9A22D5DE5B805322685C208C8A;476
+(rerunfilecheck)             After:  C85400BE2AFD0F567B198B7DE5C2AD0C;596.
 Package rerunfilecheck Info: File `master_thesis.tmb' has not changed.
-(rerunfilecheck)             Checksum: 18FBAA983DB2F5BE85F945F704ECFC00;269.
+(rerunfilecheck)             Checksum: 8231270E372A47D552895C4C48105EB1;269.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
  ) 
 Here is how much of TeX's memory you used:
- 8426 strings out of 493921
- 122506 string characters out of 3144877
- 243859 words of memory out of 3000000
- 11464 multiletter control sequences out of 15000+200000
- 14167 words of font info for 53 fonts, out of 3000000 for 9000
+ 8436 strings out of 493921
+ 122628 string characters out of 3144877
+ 245859 words of memory out of 3000000
+ 11467 multiletter control sequences out of 15000+200000
+ 14335 words of font info for 54 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 38i,11n,43p,613b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
+ 38i,11n,43p,772b,367s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
+, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
 , replaced by a fixed one
@@ -988,10 +1020,11 @@ ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
 es (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (
 x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on master_thesis.pdf (10 pages, 589091 bytes).
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on master_thesis.pdf (11 pages, 615704 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
+ 203 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
  67 words of extra memory for PDF output out of 10000 (max. 10000000)
 
