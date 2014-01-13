@@ -6,6 +6,7 @@
 \BOOKMARK [1][-]{section.1.4}{Anforderungen an eine modulare und erweiterbare Bildverarbeitungssoftware}{chapter.1}% 6
 \BOOKMARK [0][-]{chapter.2}{Grundlagen der medizinischen Bildverarbeitung}{}% 7
 \BOOKMARK [1][-]{section.2.1}{Bildgewinnung und bildgebende Verfahren}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.2}{Digital Imaging And Communication In Medicine}{chapter.2}% 9
-\BOOKMARK [0][-]{chapter*.5}{Literaturverzeichnis}{}% 10
-\BOOKMARK [0][-]{chapter*.6}{Abbildungsverzeichnis}{}% 11
+\BOOKMARK [1][-]{section.2.2}{DICOM}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.1}{Die Dicom Information Object Definitionen}{section.2.2}% 10
+\BOOKMARK [0][-]{chapter*.5}{Literaturverzeichnis}{}% 11
+\BOOKMARK [0][-]{chapter*.6}{Abbildungsverzeichnis}{}% 12

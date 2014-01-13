@@ -1,19 +1,23 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.7.4)  11 JAN 2014 23:36
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=latex 2013.7.4)  13 JAN 2014 00:43
 entering extended mode
-**literature.tex
+**{Use `` for a simple double quote character.}\errmessage {ngerman: The comman
+d \app@jobname is undefined}``master_thesis-autopp\penalty \@M \discretionary {
+-}{}{}\penalty \@M \hskip \z@skip interaction=batchmode  \errhelp {Use `` for a
+ simple double quote character.}\errmessage {ngerman: The command \unexpanded i
+s undefined}``\let \APPmakepictures \empty \input master_thesis.tex\par
 
 ! Emergency stop.
-<*> literature.tex
-                  
-*** (job aborted, file error in nonstop mode)
+<*> {Use 
+         `` for a simple double quote character.}\errmessage {ngerman: The c...
+End of file on the terminal!
 
  
 Here is how much of TeX's memory you used:
- 2 strings out of 493921
- 20 string characters out of 3144877
+ 2 strings out of 493922
+ 14 string characters out of 3144900
  49031 words of memory out of 3000000
  3400 multiletter control sequences out of 15000+200000
  3640 words of font info for 14 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  0i,0n,0p,1b,6s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+No pages of output.

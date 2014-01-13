@@ -1,4 +1,4 @@
-\chapter{Einleitung}
+\chapter{\textcolor{haw_rot}{Einleitung}}
 \addthumb{Einleitung}{\huge{\textbf{\thechapter.}}}{white}{haw_rot} 
 
 Im Jahr 1926 veröffentlitche der Wirtschaftswissenschaftler Nikolai D. Kondratieff (* 1892, \dag 1938) die Theorie \glqq Die Langen Wellen der Konjunktur\grqq \cite{hensen:gesundeGesellschaft}.
@@ -52,7 +52,7 @@ Für die Ausbildung stehen Labore mit den benötigten Geräten zur Verfügung, u
 \section{Das Labor für medizinische Bildverarbeitung, Algorithmen und Krankenhaus IT}
 Das Labor erfüllt zwei Interessen. Die Ausstattung steht für die Forschung Unternehmen und Krankenhäusern zu Verfügung.
 Für die Lehre soll Studierenden die Möglichkeit geboten werden, den Prozess der medizinischen Bildverarbeitung anschaulich und praxisnah zu erleben. Mittels Doppler-Ultraschallgerät können Bilddaten erzeugt und anschließend an das Picture Archiving and Communication System\footnote{Ein PACS dient als zentraler Bildspeicher, der über das Netzwerk angesprochen werden kann. Medizinische Geräte legen dort die Bilddaten ab, während die Software zu Betrachtung die Daten vom PACS holt} (PACS) gesendet werden. Anschließend können Algorithmen zur Bildvorverarbeitung, Merkmalsextraktion oder auch Segmentierung implementiert und getestet werden.\\
-Medizinische Bilddaten unterscheiden sich maßgeblich von allgemeinen Bildformaten wie JPEG oder Bitmaps, daher sind zur Betrachtung sogenannte DICOM-Viewer\footnote{DICOM (Digital Imaging and Communications in Medicine) ist der heutige Standard der medizinischen Bilddaten und wird in den folgenden Kapiteln näher erläutert. Die Viewer ermöglichen die Betrachtung der Bilddaten} notwendig. Mit Hilfe dieser Programme lassen sich die erzeugten Bilder betrachten und grundlegende Operationen auf diesen anwenden (dazu zählt beispielsweise die Skalierung oder Verschiebung des Bildes). Komplexe Bildverarbeitungsalgorithmen können allerdings nicht ausgeführt oder selbst implementiert werden.\\
+Medizinische Bilddaten unterscheiden sich maßgeblich von allgemeinen Bildformaten wie JPEG oder Bitmaps, daher sind zur Betrachtung sogenannte DICOM-Viewer\footnote{DICOM (Digital Imaging and Communications in Medicine) ist der heutige Standard der medizinischen Informationsverarbeitung und wird in den folgenden Kapiteln näher erläutert. Die Viewer ermöglichen die Betrachtung der Bilddaten} notwendig. Mit Hilfe dieser Programme lassen sich die erzeugten Bilder betrachten und grundlegende Operationen auf diesen anwenden (dazu zählt beispielsweise die Skalierung oder Verschiebung des Bildes). Komplexe Bildverarbeitungsalgorithmen können allerdings nicht ausgeführt oder selbst implementiert werden.\\
 Für Forschung und Lehre wird eine Software benötigt, die sowohl die Grundfunktionen der Betrachtung liefert, als auch eine Schnittstelle zur eigenen Erweiterung zu Verfügung stellt.
 
 \section{Anforderungen an eine modulare und erweiterbare Bildverarbeitungssoftware}
@@ -99,7 +99,7 @@ Slicer 3D\footnote{http://www.slicer.org} (Abbildung \ref{slicer3d}) ist ein umf
   \vspace{0.5cm}
 \end{figure}
 
-\glqq State Of The Art\grqq im Bereich der Bildverarbeitung in Java ist ImageJ\footnote{http://rsbweb.nih.gov/ij/}). Im Grundzustand liefert ImageJ die Standardfunktionen der Bildverarbeitung wie Abbildung \ref{imagej} zeigt. Unter Anderem kann das Bildmaterial analysiert oder mit Filtern bearbeitet werden. ImageJ verarbeitet Grauwertbilder als auch Farbbilder in den gängigen Formaten wie PNG, JPEG und viele andere. Erweiterungen können schnell und zielstrebig entwickelt werden. Im Modul \glqq Bildverarbeitung\grqq der Fakultät Informatik wird ImageJ als Standard zum Bearbeiten der Übungsaufgaben verwendet. Für den Studiengang Biomedizinische Technik fehlt allerdings die grundlegende Unterstützung von medizinischen Bilddaten wie das DICOM-Format. Die Funktionalität lässt sich über Plug-ins nachträglich hinzufügen, allerdings fehlt eine Bibliothek die bereits implementierte Algorithmen zur Verfügung stellt.
+\glqq State Of The Art\grqq im Bereich der Bildverarbeitung in Java ist ImageJ\footnote{http://rsbweb.nih.gov/ij/}). Im Grundzustand liefert ImageJ die Standardfunktionen der Bildverarbeitung wie Abbildung \ref{imagej} zeigt. Unter Anderem kann das Bildmaterial analysiert oder mit Filtern bearbeitet werden. ImageJ verarbeitet Grauwertbilder als auch Farbbilder in den gängigen Formaten wie PNG, JPEG und viele andere. Erweiterungen können schnell und zielstrebig entwickelt werden. Im Modul \glqq Bildverarbeitung\grqq der Fakultät Informatik wird ImageJ als Standard zum Bearbeiten der Übungsaufgaben verwendet. Für den Studiengang Biomedizinische Technik fehlt allerdings die grundlegende Unterstützung von medizinischen Bilddaten im DICOM-Format. Die Funktionalität lässt sich über Plug-ins nachträglich hinzufügen, allerdings fehlt eine Bibliothek die bereits implementierte Algorithmen zur Verfügung stellt.
 
 Für eine Software die an der Hochschule Landshut für Lehre sowie Forschung im Bereich der medizinischen Bildverarbeitung eingesetzt werden kann ergeben sich folgende Anforderungen:
 
@@ -108,8 +108,8 @@ Für eine Software die an der Hochschule Landshut für Lehre sowie Forschung im 
 	  Anwender sollen die Möglichkeit haben, das Programm mit selbst programmierten Algorithmen zu erweitern. Die eigene Implementierung von Bildverarbeitungsprozessen ist essentiell im Bereich der Lehre.
 \item \textbf{Modularer Aufbau} \\
 	  Die Software soll auch in den Grundfunktionen erweiterbar sein, die bei Auslieferung des Programms sofort zur Verfügung stehen (Skalierung, Rotation, etc.). Anders als die von Benutzern erstellten Plug-ins, die abhängig vom Anwender sind muss eine Möglichkeit zur globalen Erweiterung gegeben werden.
-\item \textbf{Unterstützung von DICOM-Bildern}\\
-	  Medizinische Bilddaten besitzen neben den rohen Pixeldaten noch zusätzliche Informationen wie Patientendaten oder Seriennummern der Aufnahmen und benötigen eine spezielle Verarbeitung. Anders als übliche Grauwertbilder besitzen DICOM-Bilder unter Anderem nicht 255 sondern bis zu 4096 verschiedene Grauwerte.
+\item \textbf{Unterstützung des Dicom-Standards}\\
+	  Medizinische Bilddaten besitzen neben den rohen Pixeldaten noch eine Vielzahl zusätzlicher Information wie Patientendaten oder Seriennummern der Aufnahmen und benötigen eine spezielle Verarbeitung. Anders als übliche Grauwertbilder besitzen DICOM-Daten unter Anderem nicht 255 sondern bis zu $2^{16}$ verschiedene Grauwerte.
 \item \textbf{Implementierung in der Programmiersprache Java}\\
 	  Das Modul zur Bildverarbeitung der Biomedizinischen Technik findet in Java statt. Dadurch wird die Programmiersprache eine Anforderung, da ein Einsatz für die Lehre sonst nur erschwert möglich ist.
 \item \textbf{Grundausstattung an medizinischen Bibliotheken}\\
