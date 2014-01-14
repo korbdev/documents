@@ -1,5 +1,5 @@
 \contentsline {chapter}{Kapitel\IeC {\"u}bersicht}{1}{section*.2}
-\contentsline {chapter}{\numberline {1}\leavevmode {\color {haw_rot}Einleitung}}{2}{chapter.1}
+\contentsline {chapter}{\numberline {1}Einleitung}{2}{chapter.1}
 \contentsline {section}{\numberline {1.1}Gesundheit als sechster Kondratieff-Zyklus}{4}{section.1.1}
 \contentsline {section}{\numberline {1.2}Der Studiengang Biomedizinische Technik}{4}{section.1.2}
 \contentsline {section}{\numberline {1.3}Das Labor f\IeC {\"u}r medizinische Bildverarbeitung, Algorithmen und Krankenhaus IT}{5}{section.1.3}
@@ -8,5 +8,11 @@
 \contentsline {section}{\numberline {2.1}Bildgewinnung und bildgebende Verfahren}{10}{section.2.1}
 \contentsline {section}{\numberline {2.2}DICOM}{10}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Die Dicom Information Object Definitionen}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Der Transfer vom Patienten zu digitalen Dicomobjekten}{14}{subsection.2.2.2}
 \contentsline {chapter}{Literaturverzeichnis}{I}{chapter*.5}
 \contentsline {chapter}{Abbildungsverzeichnis}{II}{chapter*.6}
+\contentsline {chapter}{Tabellenverzeichnis}{III}{chapter*.7}
+\contentsline {chapter}{\numberline {A}Darstellung der DICOM-Elemente im Speicher}{IV}{appendix.A}
+\contentsline {section}{\numberline {A.1}Explizite VR mit [OB | OW | OF | SQ | UT | UN ]}{IV}{section.A.1}
+\contentsline {section}{\numberline {A.2}Explizite VR}{IV}{section.A.2}
+\contentsline {section}{\numberline {A.3}Implizite VR}{IV}{section.A.3}

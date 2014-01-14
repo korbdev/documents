@@ -1,4 +1,4 @@
-\chapter{Grundlagen der medizinischen Bildverarbeitung}
+\chapter{Grundlagen der medizinischen Bildverarbeitung} \label{grundlagen}
 \addthumb{Grundlagen der medizinischen Bildverarbeitung}{\huge{\textbf{\thechapter.}}}{white}{haw_rot}
 
 \section{Bildgewinnung und bildgebende Verfahren}
@@ -10,8 +10,9 @@ Abbildung \ref{communication} illustriert das Zusammenspiel des DICOM-Standards 
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=12cm]{./img/communication.pdf}}
+  \fbox{\includegraphics[angle=0,width=12cm]{./img/communication_neu.pdf}}
   \caption{Kommunikationsprozess von Aufnahme zur Verarbeitung}
+  \floatfoot{Vorlage für diese Darstellung ist die Grafik in \cite[Fig. 1]{pianykh:dicom}}
   \label{communication}
   \vspace{0.5cm}
 \end{figure}
@@ -24,7 +25,7 @@ DICOM\footnote{Unter ftp://medical.nema.org/medical/dicom/ lässt sich der aktue
 \end{itemize}
 Im Rahmen dieser Abschlussarbeit liegt der Fokus auf den Bilddaten, daher wird auf die Kommunikation- und Speicheraspekte nicht im Detail eingegangen.
 
-\subsection{Die Dicom Information Object Definitionen}
+\subsection{Die Dicom Information Object Definitionen} \label{grundlagen:iod}
 Bevor die Pixeldaten genauer betrachtet werden können, muss der prinzipielle Aufbau der Dicomobjekte beschrieben werden. Teil 3 des Standards\cite[A.1.2]{dicom:iod} zeigt den relationalen Aufbau der Dicomobjekte. Vereinfacht können die elementaren Informationsobjekte in drei Teile aufgeteilt werden.
 
 \begin{itemize}
@@ -91,4 +92,47 @@ Abbildung \ref{filesystemrep} zeigt eine schmatische Darstellung der Dateien. Di
 \end{figure}
 
 Bei näherem Hinsehen fällt auf, dass die Dateinamen beider Serien des Patienten identisch sind. Eine korrekte Zuordnung von DICOM-Dateien zur Serie ist daher nicht immer garantiert. Unabhängig von einer Repräsentation im Dateisystem oder Pfadangaben in der Datenbank eines PACS ist das Vertrauen auf Dateipfade unsicher, da über eine einfache Dateimanipulation die Zuordnung nicht mehr hergestellt werden kann.\\
-Um eine zuverlässige Verknüpfung zu gewährleisten besitzt jeder Patient\footnote{Identifikationsnummern sind meist nur innerhalb einer Institution oder Krankenhauses einzigartig}, jede Studie und Serie eine Eindeutige Identifikationsnummer. Diese Art der Informationen wird in den atomaren Dateien mit Hilfe von Einträgen aus dem DICOM Data Dictionary\cite{dicom:dd} hinterlegt.
+Um eine zuverlässige Verknüpfung zu gewährleisten besitzt jeder Patient\footnote{Die Identifikationsnummern von Patienten sind meist nur innerhalb einer Institution oder Krankenhauses einzigartig, da diese manuell vergeben werden können\cite[5.6.2]{pianykh:dicom}.}, jede Studie und Serie eine Eindeutige Identifikationsnummer. Diese Art der Informationen wird in den einzelnen Dateien mit Hilfe von Einträgen aus dem DICOM Data Dictionary\cite{dicom:dd} hinterlegt. Die DICOM-Dateien beschreibt Pianykh \cite[S. 47]{pianykh:dicom}
+als eine Kopie im Speicher vom tatsächlichen DICOM-Objekt.
+
+\subsection{Der Transfer vom Patienten zu digitalen Dicomobjekten} \label{grundlagen:dicomObjects}
+Wie der Name bereits andeutet ist das DICOM Data Dictionary vergleichbar mit einem Wörterbuch. Es enthält alle gültigen Elemente, die zur Beschreibung eines DICOM-Objekts verwendet werden können. Zusätzlich zu dem aus dem Standard bekannten Vokabular können Hersteller medizinischer Geräte ein eigenes Dictionary hinzufügen. Die proprietären Elemente können allerdings nicht standardisiert verarbeitet werden(vgl. \cite[S.45]{pianykh:dicom}, da Software die diese Objekte verarbeitet nichts von der Existenz dieser Elemente weiß).\\
+Mit Hilfe des Wörterbuchs und den ca. 2000 enthaltenen Daten können nun Aussagen des wirklichen Lebens (vorausgesetzt die Aussage ist mit einem Element aus dem Wörterbuch darstellbar) ins Digital übersetzt werden.\\
+Tabelle \ref{table:patientname} zeigt das DICOM-Element für den Namen des Patienten aus dem Data Dictionary\cite[S. 14]{dicom:dd}.
+
+\begin{table}
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
+    \toprule
+    \hline
+    \textbf{Tag}         & \textbf{Tagname}     & \textbf{VR} & \textbf{Wert}     	& \textbf{VM} \\ \hline
+    (0010,0010) 		 & PatientName 			& PN 		  & John\^{}Doe 		& 1  \\  \hline
+    \bottomrule
+    \end{tabularx}
+    \caption {Repräsentation des Patientennamen als DICOM-Element}
+    \label{table:patientname}
+\end{table}
+
+Betrachtet man den folgenden Satz(vgl. \cite[S.46]{pianykh:dicom}), kann dieser in ein DICOM-Object, wie es Tabelle \ref*{table:translation} darstellt, übersetzt werden:
+\begin{center}
+\textit{\glqq John Doe, männlich, geboren am 01. Januar 1970\grqq}
+\end{center}
+
+Aus den Beispielen von Tabelle \ref{table:patientname} und \ref{table:translation} lässt sich erkennen, dass ein DICOM-Element nochmals in atomare Teile aufgespalten werden kann. Folglich besteht ein Datenelement aus einem beschreibenden \textit{Tag}, einer \textit{VR(Value Representation)}, einem Wert und der \textit{VR (Value Multiplicity)}. Das Element selbst nimmt eine von drei Darstellungsmöglichkeiten ein. Abhängig von der Transfersytax\footnote{Unter der Transfersystax verstehn man eine Menge an Kodierungsvorschriften von DICOM-Objekten\cite[S.63 Section 10]{dicom:structure}. Zu diesen Vorschriften gehört zum Beispiel die Reihenfolge der Bytes im DICOM-Element oder die Komprimierung der Bilddaten} des DICOM-Objekts ist der VR-Teil optional. Die weiteren beiden Darstellungen unterscheiden sich in der Kodierung der benötigten Länge des Werts \cite[7.1]{dicom:structure}.  Anhang \ref{appendix:speicher} auf Seite \pageref{appendix:speicher} zeigt wie Datenelemente im Speicher abgelegt werden und wie viel Speicherplatz pro Element reserviert werden muss.
+
+\begin{table}
+    \begin{tabularx}{\textwidth}{|p{4cm}|p{4cm}|X|X|X|}
+    \toprule
+    \hline
+    \textbf{Tag\newline \small{(Gruppe, Element)}}         & \textbf{Tagname}     & \textbf{VR} & \textbf{Wert}     	& \textbf{VM} \\ \hline
+    (0010,0010) 		 & PatientName 			& PN 		  & John\^{}Doe 		& 1  \\ \hline
+    (0010,0030) 		 & PatientBirthDate		& DA 		  & 19700101	 		& 1  \\ \hline
+    (0010,0040)			 & PatientSex 			& CS 		  & M			 		& 1  \\ \hline
+    (0010,1010) 		 & PatientAge 			& AS 		  & 44			 		& 1  \\ \hline
+    \bottomrule
+    \end{tabularx}
+    \caption {Das erzeugte DICOM-Objekt mit den Elementen zu Patientenname, Geburtsdatum, Geschlecht und Alter}
+    \label{table:translation}
+\end{table}
+
+
+%ftp://medical.nema.org/medical/dicom/2011/11\_05pu.pdf Seite 39

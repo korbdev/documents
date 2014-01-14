@@ -40,7 +40,14 @@
 \newblock \url{{ftp://medical.nema.org/medical/dicom/2011/11_03pu.pdf}}.
 \newblock \,Version:\,2011
 
-\bibitem[{Nat}11b]{dicom:dd}
+\bibitem[{Nat}11b]{dicom:structure}
+\textsc{{National Electrical Manufacturers Association}}:
+\newblock \emph{Digital Imaging and Communications in Medicine (DICOM) - Part
+  5: Data Structures and Encoding}.
+\newblock \url{{ftp://medical.nema.org/medical/dicom/2011/11_03pu.pdf}}.
+\newblock \,Version:\,2011
+
+\bibitem[{Nat}11c]{dicom:dd}
 \textsc{{National Electrical Manufacturers Association}}:
 \newblock \emph{Digital Imaging and Communications in Medicine (DICOM) - Part
   6: Data Dictionary}.

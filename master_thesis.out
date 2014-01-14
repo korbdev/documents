@@ -8,5 +8,11 @@
 \BOOKMARK [1][-]{section.2.1}{Bildgewinnung und bildgebende Verfahren}{chapter.2}% 8
 \BOOKMARK [1][-]{section.2.2}{DICOM}{chapter.2}% 9
 \BOOKMARK [2][-]{subsection.2.2.1}{Die Dicom Information Object Definitionen}{section.2.2}% 10
-\BOOKMARK [0][-]{chapter*.5}{Literaturverzeichnis}{}% 11
-\BOOKMARK [0][-]{chapter*.6}{Abbildungsverzeichnis}{}% 12
+\BOOKMARK [2][-]{subsection.2.2.2}{Der Transfer vom Patienten zu digitalen Dicomobjekten}{section.2.2}% 11
+\BOOKMARK [0][-]{chapter*.5}{Literaturverzeichnis}{}% 12
+\BOOKMARK [0][-]{chapter*.6}{Abbildungsverzeichnis}{}% 13
+\BOOKMARK [0][-]{chapter*.7}{Tabellenverzeichnis}{}% 14
+\BOOKMARK [0][-]{appendix.A}{Darstellung der DICOM-Elemente im Speicher}{}% 15
+\BOOKMARK [1][-]{section.A.1}{Explizite VR mit [OB | OW | OF | SQ | UT | UN ]}{appendix.A}% 16
+\BOOKMARK [1][-]{section.A.2}{Explizite VR}{appendix.A}% 17
+\BOOKMARK [1][-]{section.A.3}{Implizite VR}{appendix.A}% 18
