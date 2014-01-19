@@ -1,7 +1,9 @@
 \usepackage{ngerman}
 \usepackage[utf8]{inputenc}
 
-\usepackage[T1]{fontenc}
+\usepackage{tipa}
+
+%\usepackage[T1]{fontenc}
 
 \usepackage{blindtext}
 \usepackage{fancyhdr} %Fuer Kopf und Fusszeilen
@@ -15,6 +17,15 @@
 \usepackage{floatrow}
 %\usepackage[sc,center]{titlesec} %Um Kapitelnamen-Schrift zu veraendern
 %\usepackage[T1]{fontenc} %ueblich
+\usepackage{subfigure}
+
+\renewcommand{\thesubfigure}{\thefigure.\arabic{subfigure}}
+\makeatletter
+\renewcommand{\p@subfigure}{}
+\renewcommand{\@thesubfigure}{\thesubfigure:\hskip\subfiglabelskip}
+\makeatother
+
+\makeindex
 
 %Paket zum importieren von Bildern
 \usepackage{graphicx}
@@ -45,6 +56,9 @@
 \onehalfspacing 
 %Bilder werden auch im Unterverzeichnis img gesucht
 \graphicspath{{img/}} 
+
+\usepackage[Algorithmus]{algorithm}
+\usepackage{algorithmic}
 
 %Raender
 %\marginsize{3.5cm}{1.5cm}{2.5cm}{2.5cm}

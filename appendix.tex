@@ -1,5 +1,5 @@
 \chapter{Darstellung der DICOM-Elemente im Speicher} \label{appendix:speicher}
-\section{Explizite VR mit [OB | OW | OF | SQ | UT | UN ]}
+\section{Explizite VR mit [ OB \textpipe\ OW \textpipe\ OF \textpipe\ SQ \textpipe\ UT \textpipe\ UN ]}
 
 Bei expliziter VR-Struktur besteht das Element aus vier konsekutiven Feldern. Ist die VR vom Typ OB, OW, OF, SQ, UT oder UN wird das Datenelement wie in Tabelle \ref{table:appendix_explizit} im Speicher abgelegt. Die reservierten 2 Byte im VR-Teil sind für zukünftige Weiterentwicklungen des DICOM-Standards.\cite[7.1.2]{dicom:structure}
 
@@ -8,9 +8,9 @@ Bei expliziter VR-Struktur besteht das Element aus vier konsekutiven Feldern. Is
     \toprule \hline
    \multicolumn{2}{|l|}{\textbf{Tag}} 	&	\multicolumn{2}{l|}{\textbf{VR}} 		&		\textbf{Value Length}   	& 	\textbf{Value} \\ \hline
     Group \# 16-bit unsigned integer & Element \# 16-bit unsigned integer  &  VR 2-byte character String [OB | OW | OF | SQ | UT | UN ] & Reservierter
-    Bereich & 32-bit unsigned integer  &  Gerade Anzahl an Byte. Enthält den Wert des Datenelements. Kodierung abhängig von VT-Typ und Transfersyntax. Wenn die Länge nicht definiert ist wird diese auf \glqq Sequence Delimitation\grqq limitiert. \\ \hline
+    Bereich & 32-bit unsigned integer  &  Gerade Anzahl an Byte. Enthält den Wert des Datenelements. Kodierung abhängig von VT-Typ und Transfersyntax. Wenn die Länge nicht definiert ist wird diese auf \glqq Sequence Delimitation\grqq\ limitiert. \\ \hline
 	
-	2 Byte & 2 Byte & 2 Byte & 2 Byte & 4 Byte & Anzahl an Byte entsprechend der \glqq Value Length\grqq, wenn von explizieter Länge \\ \hline
+	2 Byte & 2 Byte & 2 Byte & 2 Byte & 4 Byte & Anzahl an Byte entsprechend der \glqq Value Length\grqq\, wenn von explizieter Länge \\ \hline
 	
 	\bottomrule
     \end{tabularx}
@@ -20,14 +20,14 @@ Bei expliziter VR-Struktur besteht das Element aus vier konsekutiven Feldern. Is
 
 \section{Explizite VR}
 
-Diese Darstellung wird gewählt wenn VR \textit{nicht} vom Typ OB, OW, OF, SQ, UT oder UN ist. Der Unterschied besteht im Feld \glqq Value Length\grqq. Bei der Form von Tabelle \ref{table:appendix_explizit} ist dieses Feld 32 Bit lange. Hier beträgt es lediglich 16 Bit \cite[7.1.2]{dicom:structure}. Der Grund liegt am erhöhten Speicherbedarf von \ref{table:appendix_explizit}, da die Länge des Wertes eine undefinierte Länge haben kann.
+Diese Darstellung wird gewählt wenn VR \textit{nicht} vom Typ OB, OW, OF, SQ, UT oder UN ist. Der Unterschied besteht im Feld \glqq Value Length\grqq\. Bei der Form von Tabelle \ref{table:appendix_explizit} ist dieses Feld 32 Bit lange. Hier beträgt es lediglich 16 Bit \cite[7.1.2]{dicom:structure}. Der Grund liegt am erhöhten Speicherbedarf von \ref{table:appendix_explizit}, da die Länge des Wertes eine undefinierte Länge haben kann.
 
 \begin{sidewaystable}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|p{12cm}|}
 	\toprule \hline
 	\multicolumn{2}{|l|}{\textbf{Tag}} & \textbf{VR} 2 & \textbf{Value Length} & \textbf{Value} 4 \\ \hline
 	Group \# 16-bit unsigned integer & Element \# 16-bit unsigned integer & VR 2-byte character String 2 & 16-bit unsigned integer & Gerade Anzahl an Byte. Enthält den Wert des Datenelements. Kodierung abhängig von VT-Typ und Transfersyntax. \\ \hline
-	2 Byte & 2 Byte & 2 Byte & 2 Byte & \glqq Value Length\grqq Byte \\ \hline
+	2 Byte & 2 Byte & 2 Byte & 2 Byte & \glqq Value Length\grqq\ Byte \\ \hline
 	\bottomrule
 	\end{tabularx}
     \caption {Darstellung des Datenelements für alle anderen VR-Typen}
@@ -42,8 +42,8 @@ Bei einer impliziten VR Darstellung besteht das Datenelement aus den drei konsek
 	\begin{tabularx}{\textwidth}{|X|X|X|p{12cm}|}
 	\toprule \hline
 	\multicolumn{2}{|l|}{\textbf{Tag}} & \textbf{Value Length} 2 & \textbf{Value} \\ \hline
-	Group \# 16-bit unsigned integer & Element \# 16-bit unsigned integer & 32-bit unsigned integer & Gerade Anzahl an Byte. Enthält den Wert des Datenelements. Kodierung abhängig von VT-Typ spezifiziert in \cite{dicom:dd} und Transfersyntax. Wenn die Länge nicht definiert ist wird diese auf \glqq Sequence Delimitation\grqq limitiert. \\ \hline
-	2 Byte & 2 Byte & 2 Byte & \glqq Value Length\grqq Byte oder undefinierte Länge \\ \hline
+	Group \# 16-bit unsigned integer & Element \# 16-bit unsigned integer & 32-bit unsigned integer & Gerade Anzahl an Byte. Enthält den Wert des Datenelements. Kodierung abhängig von VT-Typ spezifiziert in \cite{dicom:dd} und Transfersyntax. Wenn die Länge nicht definiert ist wird diese auf \glqq Sequence Delimitation\grqq\ limitiert. \\ \hline
+	2 Byte & 2 Byte & 2 Byte & \glqq Value Length\grqq\ Byte oder undefinierte Länge \\ \hline
 	
 	\bottomrule
 	

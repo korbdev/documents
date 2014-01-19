@@ -7,6 +7,12 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[BLT98]{radio:hounsfield}
+\textsc{Bücheler}, Egon ; \textsc{Lackner}, Klaus-Jürgen  ; \textsc{Thelen},
+  Manfred:
+\newblock \emph{Einführung in die Radiologie: Diagnostik und Interventionen}.
+\newblock Georg Thieme Verlag, 1998
+
 \bibitem[Cor07]{cord:innovation}
 \textsc{Cord}, Siemon:
 \newblock Innovationspolitik im 6. Kondratieff: Hinterherlaufen oder
@@ -18,6 +24,11 @@
 \newblock \,{In:\,}\textsc{Granig}, P. ; \textsc{Nefiodow}, L.~A.:
 \newblock \emph{Gesundheitswirtschaft – Wachstumsmotor im 21. Jahrhundert}.
 \newblock Gabler Verlag, 2011
+
+\bibitem[Han00]{handels:mbv}
+\textsc{Handels}, Heinz:
+\newblock \emph{Medizinische Bildverarbeitung}.
+\newblock B.G. Teubner Stuttgart Leipzig, 2000
 
 \bibitem[HK11]{hensen:gesundeGesellschaft}
 \emph{Kapitel\/}  Die gesunde Gesellschaft und ihre Ökonomie – vom
