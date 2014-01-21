@@ -21,4 +21,11 @@
 \contentsline {subfigure}{\numberline {3.7.2}{\ignorespaces {Window Center 50; Window Width 350}}}{22}{figure.3.7}
 \contentsline {subfigure}{\numberline {3.7.3}{\ignorespaces {Window Center -124; Window Width 3134}}}{22}{figure.3.7}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces Fensterungstechnik zur Darstellung medizinischer Bilddaten am handels\IeC {\"u}blichen Monitor}}{23}{figure.3.7}
+\contentsline {subfigure}{\numberline {3.8.1}{\ignorespaces {PlanarConfiguration = 0}}}{23}{figure.3.8}
+\contentsline {subfigure}{\numberline {3.8.2}{\ignorespaces {PlanarConfiguration = 1}}}{23}{figure.3.8}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Kodierung der RGB-Werte im Datenelement PixelData mit Hilfe der PlanarConfiguration}}{24}{figure.3.8}
+\contentsline {subfigure}{\numberline {3.9.1}{\ignorespaces {2D Darstellung}}}{24}{figure.3.9}
+\contentsline {subfigure}{\numberline {3.9.2}{\ignorespaces {3D Bildfolge}}}{24}{figure.3.9}
+\contentsline {subfigure}{\numberline {3.9.3}{\ignorespaces {zeitlich Abh\IeC {\"a}ngige 3D Bildfolge}}}{24}{figure.3.9}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Darstellung von 2- und 3-dimensionalen Bilddaten}}{24}{figure.3.9}
 \addvspace {10\p@ }

@@ -21,10 +21,12 @@
 \BOOKMARK [2][-]{subsection.3.3.1}{Kodierung der Pixel im Speicherabbild eine DICOM-Objekts}{section.3.3}% 21
 \BOOKMARK [2][-]{subsection.3.3.2}{Grauwertbilder}{section.3.3}% 22
 \BOOKMARK [2][-]{subsection.3.3.3}{Farbbilder}{section.3.3}% 23
-\BOOKMARK [0][-]{chapter*.7}{Literaturverzeichnis}{}% 24
-\BOOKMARK [0][-]{chapter*.8}{Abbildungsverzeichnis}{}% 25
-\BOOKMARK [0][-]{chapter*.9}{Tabellenverzeichnis}{}% 26
-\BOOKMARK [0][-]{appendix.A}{Darstellung der DICOM-Elemente im Speicher}{}% 27
-\BOOKMARK [1][-]{section.A.1}{Explizite VR mit [ OB \040OW \040OF \040SQ \040UT \040UN ]}{appendix.A}% 28
-\BOOKMARK [1][-]{section.A.2}{Explizite VR}{appendix.A}% 29
-\BOOKMARK [1][-]{section.A.3}{Implizite VR}{appendix.A}% 30
+\BOOKMARK [1][-]{section.3.4}{3D Bilddaten}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.5}{Bilder mit zeitlicher Abh\344ngigkeit}{chapter.3}% 25
+\BOOKMARK [0][-]{chapter*.7}{Literaturverzeichnis}{}% 26
+\BOOKMARK [0][-]{chapter*.8}{Abbildungsverzeichnis}{}% 27
+\BOOKMARK [0][-]{chapter*.9}{Tabellenverzeichnis}{}% 28
+\BOOKMARK [0][-]{appendix.A}{Darstellung der DICOM-Elemente im Speicher}{}% 29
+\BOOKMARK [1][-]{section.A.1}{Explizite VR mit [ OB \040OW \040OF \040SQ \040UT \040UN ]}{appendix.A}% 30
+\BOOKMARK [1][-]{section.A.2}{Explizite VR}{appendix.A}% 31
+\BOOKMARK [1][-]{section.A.3}{Implizite VR}{appendix.A}% 32
