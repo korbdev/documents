@@ -19,6 +19,11 @@
   Vorauseilen?
 \newblock {In: }\emph{Wirtschaftsdienst} 87 (2007), Juli, Nr. 7, S. 450--457
 
+\bibitem[GD13]{goll:swa}
+\textsc{Goll}, Joachim ; \textsc{Dausmann}, Manfred:
+\newblock \emph{Architektur- und Entwurfsmuster der Softwaretechnik}.
+\newblock Springer Vieweg, 2013
+
 \bibitem[GN11]{nefiodow:gesundheit}
 \emph{Kapitel\/}  Der sechste Kontratieff.
 \newblock \,{In:\,}\textsc{Granig}, P. ; \textsc{Nefiodow}, L.~A.:
@@ -70,6 +75,36 @@
 \newblock \emph{{D}igital {I}maging and {C}ommunications in {M}edicine
   {(DICOM)}}.
 \newblock Springer-Verlag Berlin Heidelberg, 2008
+
+\bibitem[{The}13]{eclipse:help}
+\textsc{{The Eclipse Foundation}}:
+\newblock \emph{Eclipse documentation - Current Release}.
+\newblock \url{{http://help.eclipse.org/kepler/index.jsp}}.
+\newblock \,Version:\,2013
+
+\bibitem[{The}14]{eclipse:swt}
+\textsc{{The Eclipse Foundation}}:
+\newblock \emph{SWT: The Standard Widget Toolkit}.
+\newblock \url{{http://www.eclipse.org/swt/}}.
+\newblock \,Version:\,2014. --
+\newblock Stand 23.01.2014
+
+\bibitem[Vog13a]{vogel:e4overview}
+\textsc{Vogel}, Lars:
+\newblock \emph{Eclipse 4 RCP - Building Eclipse RCP applications based on
+  Eclipse 4}.
+\newblock
+  \url{{http://www.vogella.com/tutorials/EclipseRCP/article.html#e4overview_eclipse4}}.
+\newblock \,Version:\,2013. --
+\newblock Stand 23.01.2014
+
+\bibitem[Vog13b]{vogel:eclipseoverview}
+\textsc{Vogel}, Lars:
+\newblock \emph{Eclipse IDE Tutorial}.
+\newblock
+  \url{{http://www.vogella.com/tutorials/Eclipse/article.html#eclipseoverview}}.
+\newblock \,Version:\,2013. --
+\newblock Stand 23.01.2014
 
 \bibitem[Wie12]{wieden:liquidwork}
 \emph{Kapitel\/}  Kondratieff – Von der Dampfmaschine zum Menschen.

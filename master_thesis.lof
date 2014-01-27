@@ -1,31 +1,56 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Kondratieff-Zyklen}}{3}{figure.1.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces RadiAnt - DicomViewer}}{7}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Screenshot Slicer 3D}}{8}{figure.2.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Die Benutzeroberfl\IeC {\"a}che von ImageJ}}{9}{figure.2.3}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces RadiAnt - DicomViewer}}{8}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Screenshot Slicer 3D}}{9}{figure.2.2}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Die Benutzeroberfl\IeC {\"a}che von ImageJ}}{10}{figure.2.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Kommunikationsprozess von Aufnahme zur Verarbeitung}}{13}{figure.3.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Kommunikationsprozess von Aufnahme zur Verarbeitung}}{14}{figure.3.1}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Vereinfachte Darstellung der Informationsobjekthierarchie von Dicomelementen}}{15}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Repr\IeC {\"a}sentation der Information Objekte im Dateisystem}}{16}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Kodierungsreihenfolge von 4 Byte bei Little Endian- und Big Endian-Darstellung}}{19}{figure.3.4}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Kodierungsreihenfolge von 4 Byte bei Little Endian- und Big Endian-Darstellung}}{20}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Beispiele unterschiedlicher Speicherbelegung}}{20}{figure.3.5}
 \contentsline {subfigure}{\numberline {3.5.1}{\ignorespaces {Pixel im Speicher}}}{20}{figure.3.5}
 \contentsline {subfigure}{\numberline {3.5.2}{\ignorespaces {BitsAllocated 16, BitsStored 12, HighBit 11}}}{20}{figure.3.5}
 \contentsline {subfigure}{\numberline {3.5.3}{\ignorespaces {BitsAllocated 8, BitsStored 8, HighBit 7}}}{20}{figure.3.5}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Beispiele unterschiedlicher Speicherbelegung}}{20}{figure.3.5}
-\contentsline {subfigure}{\numberline {3.6.1}{\ignorespaces {CT}}}{21}{figure.3.6}
-\contentsline {subfigure}{\numberline {3.6.2}{\ignorespaces {MR}}}{21}{figure.3.6}
-\contentsline {subfigure}{\numberline {3.6.3}{\ignorespaces {Ultraschall}}}{21}{figure.3.6}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Verschieden Graustufenbilder}}{22}{figure.3.6}
-\contentsline {subfigure}{\numberline {3.7.1}{\ignorespaces {Fensterungstechnik}}}{22}{figure.3.7}
-\contentsline {subfigure}{\numberline {3.7.2}{\ignorespaces {Window Center 50; Window Width 350}}}{22}{figure.3.7}
-\contentsline {subfigure}{\numberline {3.7.3}{\ignorespaces {Window Center -124; Window Width 3134}}}{22}{figure.3.7}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Fensterungstechnik zur Darstellung medizinischer Bilddaten am handels\IeC {\"u}blichen Monitor}}{23}{figure.3.7}
-\contentsline {subfigure}{\numberline {3.8.1}{\ignorespaces {PlanarConfiguration = 0}}}{23}{figure.3.8}
-\contentsline {subfigure}{\numberline {3.8.2}{\ignorespaces {PlanarConfiguration = 1}}}{23}{figure.3.8}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Kodierung der RGB-Werte im Datenelement PixelData mit Hilfe der PlanarConfiguration}}{24}{figure.3.8}
-\contentsline {subfigure}{\numberline {3.9.1}{\ignorespaces {2D Darstellung}}}{24}{figure.3.9}
-\contentsline {subfigure}{\numberline {3.9.2}{\ignorespaces {3D Bildfolge}}}{24}{figure.3.9}
-\contentsline {subfigure}{\numberline {3.9.3}{\ignorespaces {zeitlich Abh\IeC {\"a}ngige 3D Bildfolge}}}{24}{figure.3.9}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Darstellung von 2- und 3-dimensionalen Bilddaten}}{24}{figure.3.9}
+\contentsline {subfigure}{\numberline {3.6.1}{\ignorespaces {CT}}}{22}{figure.3.6}
+\contentsline {subfigure}{\numberline {3.6.2}{\ignorespaces {MR}}}{22}{figure.3.6}
+\contentsline {subfigure}{\numberline {3.6.3}{\ignorespaces {Ultraschall}}}{22}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Fensterungstechnik zur Darstellung medizinischer Bilddaten am handels\IeC {\"u}blichen Monitor}}{24}{figure.3.7}
+\contentsline {subfigure}{\numberline {3.7.1}{\ignorespaces {Fensterungstechnik}}}{24}{figure.3.7}
+\contentsline {subfigure}{\numberline {3.7.2}{\ignorespaces {Window Center 50; Window Width 350}}}{24}{figure.3.7}
+\contentsline {subfigure}{\numberline {3.7.3}{\ignorespaces {Window Center -124; Window Width 3134}}}{24}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Kodierung der RGB-Werte im Datenelement PixelData mit Hilfe der PlanarConfiguration}}{25}{figure.3.8}
+\contentsline {subfigure}{\numberline {3.8.1}{\ignorespaces {PlanarConfiguration = 0}}}{25}{figure.3.8}
+\contentsline {subfigure}{\numberline {3.8.2}{\ignorespaces {PlanarConfiguration = 1}}}{25}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Darstellung von 2- und 3-dimensionalen Bilddaten}}{25}{figure.3.9}
+\contentsline {subfigure}{\numberline {3.9.1}{\ignorespaces {2D Darstellung}}}{25}{figure.3.9}
+\contentsline {subfigure}{\numberline {3.9.2}{\ignorespaces {3D Bildfolge}}}{25}{figure.3.9}
+\contentsline {subfigure}{\numberline {3.9.3}{\ignorespaces {zeitlich Abh\IeC {\"a}ngige 3D Bildfolge}}}{25}{figure.3.9}
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Architektur der Eclipse e4 Plattform zur Entwicklung von Rich Client Applikationen}}{30}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Verschiedene Elemente des Application Models}}{33}{figure.5.2}
+\contentsline {subfigure}{\numberline {5.2.1}{\ignorespaces {Window}}}{33}{figure.5.2}
+\contentsline {subfigure}{\numberline {5.2.2}{\ignorespaces {Part}}}{33}{figure.5.2}
+\contentsline {subfigure}{\numberline {5.2.3}{\ignorespaces {PartStack}}}{33}{figure.5.2}
+\contentsline {subfigure}{\numberline {5.2.4}{\ignorespaces {PartSashContainer}}}{33}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Die Benutzeroberfl\IeC {\"a}che von jMediKit}}{35}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces jMediKit und die hierarchische Anordnung der Elemente des Application Models}}{36}{figure.5.4}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Standardinstallation eines 32-Bit Eclipse unter Windows 8}}{XI}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces e4 Projekt Builds}}{XII}{figure.B.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces e4 Repository Link}}{XIII}{figure.B.3}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Installation neuer Software unter Eclipse}}{XIII}{figure.B.4}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Angabe des Repository}}{XIV}{figure.B.5}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Auswahl der e4 Tools zur Installation}}{XIV}{figure.B.6}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces Vorgang zum Importieren bereits bestehender Projekte}}{XV}{figure.B.7}
+\contentsline {subfigure}{\numberline {B.7.1}{\ignorespaces {Dialog zum Import von Eclipse-Projekten}}}{XV}{figure.B.7}
+\contentsline {subfigure}{\numberline {B.7.2}{\ignorespaces {Auswahl der Projekte}}}{XV}{figure.B.7}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces Der Package Explorer nach dem Importvorgang}}{XVI}{figure.B.8}
+\contentsline {figure}{\numberline {B.9}{\ignorespaces Der Package Explorer nach dem Importvorgang}}{XVI}{figure.B.9}
+\contentsline {figure}{\numberline {B.10}{\ignorespaces Konfigurationsfenster zu Anwendungseinstellungen und Anwendungsstart}}{XVII}{figure.B.10}

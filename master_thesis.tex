@@ -46,16 +46,25 @@
 \fancyfoot[C]{\thepage} %Seitennummer
 \renewcommand{\footrulewidth}{0.3pt} %untere Trennlinie
 
-
 \include{einleitung}
+
+\include{first}
 
 \include{anforderungen}
 
 \include{grundlagenMbv}
 
+\include{second}
+
+\include{architecture}
+
 \include{implmentation}
 
+\include{extending}
+
 \pagebreak
+
+\bookmarksetup{startatroot}
 
 \setcounter{page}{1}
 \renewcommand{\thepage}{\Roman{page}}
@@ -71,6 +80,8 @@
 %\addcontentsline{toc}{section}{Abbildungsverzeichnis}
 \listoffigures
 \listoftables
+
+\include{last}
 
 \appendix
 \include{appendix}

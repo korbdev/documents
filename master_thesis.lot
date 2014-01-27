@@ -2,9 +2,14 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {3.1}{\ignorespaces Repr\IeC {\"a}sentation des Patientennamen als DICOM-Element}}{17}{table.3.1}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Das erzeugte DICOM-Objekt mit den Elementen zu Patientenname, Geburtsdatum, Geschlecht und Alter}}{17}{table.3.2}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Das erzeugte DICOM-Objekt mit den Elementen zu Patientenname, Geburtsdatum, Geschlecht und Alter}}{18}{table.3.2}
 \contentsline {table}{\numberline {3.3}{\ignorespaces Grundlegende Datenelemende f\IeC {\"u}r die digitale Repr\IeC {\"a}sentation}}{21}{table.3.3}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Darstellung des Datenelements im Speicher wenn VR vom Typ OB, OW, OF, SQ, UT oder UN}}{VI}{table.A.1}
-\contentsline {table}{\numberline {A.2}{\ignorespaces Darstellung des Datenelements f\IeC {\"u}r alle anderen VR-Typen}}{VII}{table.A.2}
-\contentsline {table}{\numberline {A.3}{\ignorespaces Darstellung des Datenelements f\IeC {\"u}r implizite VR.}}{VIII}{table.A.3}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces Darstellung des Datenelements im Speicher wenn VR vom Typ OB, OW, OF, SQ, UT oder UN}}{VIII}{table.A.1}
+\contentsline {table}{\numberline {A.2}{\ignorespaces Darstellung des Datenelements f\IeC {\"u}r alle anderen VR-Typen}}{IX}{table.A.2}
+\contentsline {table}{\numberline {A.3}{\ignorespaces Darstellung des Datenelements f\IeC {\"u}r implizite VR.}}{X}{table.A.3}
+\addvspace {10\p@ }

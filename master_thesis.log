@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.7.4)  19 JAN 2014 20:35
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.7.4)  27 JAN 2014 16:13
 entering extended mode
 **master_thesis.tex
 (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.tex
@@ -347,6 +347,7 @@ Now handling font encoding T3 ...
 File: ot1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding OT1 on input line 43.
 )))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\here.sty")
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\blindtext\blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
 
@@ -403,23 +404,169 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \titlewidthlast=\dimen111
 \titlewidthfirst=\dimen112
 )
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\bookmark.sty"
+Package: bookmark 2011/12/02 v1.24 PDF bookmarks (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdfescape.sty"
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package hobsub Info: Skipping package `pdfescape' (already loaded).
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen113
+\Hy@linkcounter=\count107
+\Hy@pagecounter=\count108
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count109
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count110
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen114
+\Fld@menulength=\count111
+\Field@Width=\dimen115
+\Fld@charsize=\dimen116
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count112
+\c@Item=\count113
+\c@Hfootnote=\count114
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count115
+\c@bookmark@seq@number=\count116
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip58
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\bkm-pdftex.def"
+File: bkm-pdftex.def 2011/12/02 v1.24 bookmark driver for pdfTeX (HO)
+\BKM@id=\count117
+))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
 Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen113
-\extrarowheight=\dimen114
+\col@sep=\dimen117
+\extrarowheight=\dimen118
 \NC@list=\toks18
-\extratabsurround=\skip58
-\backup@length=\skip59
+\extratabsurround=\skip59
+\backup@length=\skip60
 )
-\TX@col@width=\dimen115
-\TX@old@table=\dimen116
-\TX@old@col=\dimen117
-\TX@target=\dimen118
-\TX@delta=\dimen119
-\TX@cols=\count107
+\TX@col@width=\dimen119
+\TX@old@table=\dimen120
+\TX@old@col=\dimen121
+\TX@target=\dimen122
+\TX@delta=\dimen123
+\TX@cols=\count118
 \TX@ftn=\toks19
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\rotating\rotating.sty
@@ -441,24 +588,17 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count108
+\Gread@gobject=\count119
 ))
-\Gin@req@height=\dimen120
-\Gin@req@width=\dimen121
+\Gin@req@height=\dimen124
+\Gin@req@width=\dimen125
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count109
-\rotFPtop=\skip60
-\rotFPbot=\skip61
+\c@r@tfl@t=\count120
+\rotFPtop=\skip61
+\rotFPbot=\skip62
 \rot@float@box=\box28
 \rot@mess@toks=\toks20
 )
@@ -471,15 +611,15 @@ Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
-\captionmargin=\dimen122
-\captionmargin@=\dimen123
-\captionwidth=\dimen124
-\caption@tempdima=\dimen125
-\caption@indent=\dimen126
-\caption@parindent=\dimen127
-\caption@hangindent=\dimen128
+\captionmargin=\dimen126
+\captionmargin@=\dimen127
+\captionwidth=\dimen128
+\caption@tempdima=\dimen129
+\caption@indent=\dimen130
+\caption@parindent=\dimen131
+\caption@hangindent=\dimen132
 )
-\c@float@type=\count110
+\c@float@type=\count121
 \float@exts=\toks21
 \float@box=\box29
 \@floatcapt=\box30
@@ -488,52 +628,52 @@ Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 
 \FR@everyfloat=\toks22
 \flrow@foot=\insert233
-\FB@wd=\dimen129
-\FBo@wd=\dimen130
-\FBc@wd=\dimen131
-\FBo@ht=\skip62
-\FBc@ht=\skip63
-\FBf@ht=\skip64
-\FBo@max=\skip65
-\FBc@max=\skip66
-\FBf@max=\skip67
-\c@FBl@b=\count111
-\floatbox@depth=\count112
-\c@FRobj=\count113
-\c@FRsobj=\count114
-\Xhsize=\skip68
-\sXhsize=\skip69
-\Zhsize=\skip70
-\sZhsize=\skip71
+\FB@wd=\dimen133
+\FBo@wd=\dimen134
+\FBc@wd=\dimen135
+\FBo@ht=\skip63
+\FBc@ht=\skip64
+\FBf@ht=\skip65
+\FBo@max=\skip66
+\FBc@max=\skip67
+\FBf@max=\skip68
+\c@FBl@b=\count122
+\floatbox@depth=\count123
+\c@FRobj=\count124
+\c@FRsobj=\count125
+\Xhsize=\skip69
+\sXhsize=\skip70
+\Zhsize=\skip71
+\sZhsize=\skip72
 \flrow@rowbox=\box31
-\FR@Zunitlength=\dimen132
-\c@FBcnt=\count115
-\FPOScnt=\count116
-\LTleft=\skip72
-\LTright=\skip73
-\LTleft=\skip74
-\LTright=\skip75
+\FR@Zunitlength=\dimen136
+\c@FBcnt=\count126
+\FPOScnt=\count127
+\LTleft=\skip73
+\LTright=\skip74
+\LTleft=\skip75
+\LTright=\skip76
 \flrow@types=\toks23
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\subfigure\subfigure.sty
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
-\subfigtopskip=\skip76
-\subfigcapskip=\skip77
-\subfigcaptopadj=\dimen133
-\subfigbottomskip=\skip78
-\subfigcapmargin=\dimen134
-\subfiglabelskip=\skip79
-\c@subfigure=\count117
-\c@lofdepth=\count118
-\c@subtable=\count119
-\c@lotdepth=\count120
+\subfigtopskip=\skip77
+\subfigcapskip=\skip78
+\subfigcaptopadj=\dimen137
+\subfigbottomskip=\skip79
+\subfigcapmargin=\dimen138
+\subfiglabelskip=\skip80
+\c@subfigure=\count128
+\c@lofdepth=\count129
+\c@subtable=\count130
+\c@lotdepth=\count131
 
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\subfigure\subfigure.cfg)
-\subfig@top=\skip80
-\subfig@bottom=\skip81
+\subfig@top=\skip81
+\subfig@bottom=\skip82
 )
 \@indexfile=\write3
 
@@ -575,20 +715,20 @@ de.tex
 tered.code.tex
 \pgfkeys@tmptoks=\toks27
 ))
-\pgf@x=\dimen135
-\pgf@y=\dimen136
-\pgf@xa=\dimen137
-\pgf@ya=\dimen138
-\pgf@xb=\dimen139
-\pgf@yb=\dimen140
-\pgf@xc=\dimen141
-\pgf@yc=\dimen142
+\pgf@x=\dimen139
+\pgf@y=\dimen140
+\pgf@xa=\dimen141
+\pgf@ya=\dimen142
+\pgf@xb=\dimen143
+\pgf@yb=\dimen144
+\pgf@xc=\dimen145
+\pgf@yc=\dimen146
 \w@pgf@writea=\write4
 \r@pgf@reada=\read1
-\c@pgf@counta=\count121
-\c@pgf@countb=\count122
-\c@pgf@countc=\count123
-\c@pgf@countd=\count124
+\c@pgf@counta=\count132
+\c@pgf@countb=\count133
+\c@pgf@countc=\count134
+\c@pgf@countd=\count135
 
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -606,8 +746,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsysso
 ftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count125
-\pgfsyssoftpath@bigbuffer@items=\count126
+\pgfsyssoftpath@smallbuffer@items=\count136
+\pgfsyssoftpath@bigbuffer@items=\count137
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\systemlayer\pgfsyspr
 otocol.code.tex
@@ -642,8 +782,8 @@ e.tex
 e.tex)
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathparser.c
 ode.tex
-\pgfmath@dimen=\dimen143
-\pgfmath@count=\count127
+\pgfmath@dimen=\dimen147
+\pgfmath@count=\count138
 \pgfmath@box=\box33
 \pgfmath@toks=\toks28
 \pgfmath@stack@operand=\toks29
@@ -667,37 +807,37 @@ s.round.code.tex)
 s.misc.code.tex)))
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\math\pgfmathfloat.co
 de.tex
-\c@pgfmathroundto@lastzeros=\count128
+\c@pgfmathroundto@lastzeros=\count139
 ))
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepo
 ints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen144
-\pgf@picmaxx=\dimen145
-\pgf@picminy=\dimen146
-\pgf@picmaxy=\dimen147
-\pgf@pathminx=\dimen148
-\pgf@pathmaxx=\dimen149
-\pgf@pathminy=\dimen150
-\pgf@pathmaxy=\dimen151
-\pgf@xx=\dimen152
-\pgf@xy=\dimen153
-\pgf@yx=\dimen154
-\pgf@yy=\dimen155
-\pgf@zx=\dimen156
-\pgf@zy=\dimen157
+\pgf@picminx=\dimen148
+\pgf@picmaxx=\dimen149
+\pgf@picminy=\dimen150
+\pgf@picmaxy=\dimen151
+\pgf@pathminx=\dimen152
+\pgf@pathmaxx=\dimen153
+\pgf@pathminy=\dimen154
+\pgf@pathmaxy=\dimen155
+\pgf@xx=\dimen156
+\pgf@xy=\dimen157
+\pgf@yx=\dimen158
+\pgf@yy=\dimen159
+\pgf@zx=\dimen160
+\pgf@zy=\dimen161
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepa
 thconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen158
-\pgf@path@lasty=\dimen159
+\pgf@path@lastx=\dimen162
+\pgf@path@lasty=\dimen163
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorepa
 thusage.code.tex
 File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen160
-\pgf@shorten@start@additional=\dimen161
+\pgf@shorten@end@additional=\dimen164
+\pgf@shorten@start@additional=\dimen165
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoresc
 opes.code.tex
@@ -705,19 +845,19 @@ File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box34
 \pgf@hbox=\box35
 \pgf@layerbox@main=\box36
-\pgf@picture@serial@count=\count129
+\pgf@picture@serial@count=\count140
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoregr
 aphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen162
+\pgflinewidth=\dimen166
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoretr
 ansformations.code.tex
 File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen163
-\pgf@pt@y=\dimen164
-\pgf@pt@temp=\dimen165
+\pgf@pt@x=\dimen167
+\pgf@pt@y=\dimen168
+\pgf@pt@temp=\dimen169
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcorequ
 ick.code.tex
@@ -738,8 +878,8 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoresh
 ade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen166
-\pgf@sys@shading@range@num=\count130
+\pgf@max=\dimen170
+\pgf@sys@shading@range@num=\count141
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\basiclayer\pgfcoreim
 age.code.tex
@@ -774,8 +914,8 @@ File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-
 version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen167
-\pgf@nodesepend=\dimen168
+\pgf@nodesepstart=\dimen171
+\pgf@nodesepend=\dimen172
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\pgf\compatibility\pgfcomp-
 version-1-18.sty
@@ -788,8 +928,8 @@ de.tex))
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\utilities\pgffor.cod
 e.tex
 Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
-\pgffor@iter=\dimen169
-\pgffor@skip=\dimen170
+\pgffor@iter=\dimen173
+\pgffor@skip=\dimen174
 \pgffor@stack=\toks31
 \pgffor@toks=\toks32
 ))
@@ -800,30 +940,30 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\libraries\pgflibrary
 plothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count131
-\pgfplotmarksize=\dimen171
+\pgf@plot@mark@count=\count142
+\pgfplotmarksize=\dimen175
 )
-\tikz@lastx=\dimen172
-\tikz@lasty=\dimen173
-\tikz@lastxsaved=\dimen174
-\tikz@lastysaved=\dimen175
-\tikzleveldistance=\dimen176
-\tikzsiblingdistance=\dimen177
+\tikz@lastx=\dimen176
+\tikz@lasty=\dimen177
+\tikz@lastxsaved=\dimen178
+\tikz@lastysaved=\dimen179
+\tikzleveldistance=\dimen180
+\tikzsiblingdistance=\dimen181
 \tikz@figbox=\box39
 \tikz@tempbox=\box40
-\tikztreelevel=\count132
-\tikznumberofchildren=\count133
-\tikznumberofcurrentchild=\count134
-\tikz@fig@count=\count135
+\tikztreelevel=\count143
+\tikznumberofchildren=\count144
+\tikznumberofcurrentchild=\count145
+\tikz@fig@count=\count146
 
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\modules\pgfmodulemat
 rix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count136
-\pgfmatrixcurrentcolumn=\count137
-\pgf@matrix@numberofcolumns=\count138
+\pgfmatrixcurrentrow=\count147
+\pgfmatrixcurrentcolumn=\count148
+\pgf@matrix@numberofcolumns=\count149
 )
-\tikz@expandcount=\count139
+\tikz@expandcount=\count150
 
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\generic\pgf\frontendlayer\tikz\l
 ibraries\tikzlibrarytopaths.code.tex
@@ -837,59 +977,8 @@ File: tikzlibrarytrees.code.tex 2008/02/24 v2.10 (rcs-revision 1.2)
 Package: pageslts 2013/01/28 v1.2b Refers to special pages' numbers/names (HMM)
 
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\atveryend.sty"
-Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\letltxmacro.sty"
-Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys.sty"
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.sty"
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.sty"
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\undolabl\undolabl.sty
 Package: undolabl 2012/01/01 v1.0k Overriding labels (HMM)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
-Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\uniquecounter.sty"
-Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\bigintcalc.sty"
-Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
-)
-))
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-82.
 )
 Package pageslts Info: Option pagecontinue enabled
 (pageslts)             (maybe by default):
@@ -901,10 +990,7 @@ Package pageslts Info: Option pagecontinue enabled
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\alphalph.sty"
 Package: alphalph 2011/05/13 v2.4 Convert numbers to letters (HO)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\intcalc.sty"
-Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
-))
+)
 Package pageslts Info: Option romanMult enabled
 (pageslts)             (maybe by default):
 (pageslts)             The pageslts package will extend the page numbering
@@ -929,10 +1015,10 @@ Package pageslts Info: Option fnsymbolmult enabled
 (pageslts)             If you do not want this, call pageslts with option
 (pageslts)             fnsymbolmult=false.
 (pageslts)              on input line 349.
-\c@CurrentPage=\count140
-\c@pagesLTS.pagenr=\count141
-\c@pagesLTS.current.local.0=\count142
-\c@pagesLTS.pnc.0=\count143
+\c@CurrentPage=\count151
+\c@pagesLTS.pagenr=\count152
+\c@pagesLTS.current.local.0=\count153
+\c@pagesLTS.pnc.0=\count154
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\thumbs\thumbs.sty
 Package: thumbs 2012/02/25 v1.0n Thumb marks and overview page(s) (HMM)
@@ -951,9 +1037,6 @@ these additional packages are needed:
 especially before hyperref and thumbs,
 but best right after the \documentclass!
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
-Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
-)
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\picture.sty"
 Package: picture 2009/10/11 v1.3 Dimens for picture macros (HO)
 Package picture Info: Calculation method: etex.
@@ -970,118 +1053,23 @@ Package thumbs Info: Option ignorevoffset NOT =false:
 (thumbs)             voffset will be ignored.
 (thumbs)             To make thumbs regard voffset use option
 (thumbs)             ignorevoffset=false on input line 173.
-\th@mbwidthx=\dimen178
-\th@mbheighty=\dimen179
-\th@mbposx=\dimen180
-\th@mbposy=\dimen181
-\th@mbposyA=\dimen182
-\th@mbposytop=\dimen183
-\th@mbposybottom=\dimen184
-\th@mbwidthxtoc=\dimen185
-\th@mbsposytocy=\dimen186
-\th@mbsposytocyy=\dimen187
-\th@mbsdistance=\dimen188
+\th@mbwidthx=\dimen182
+\th@mbheighty=\dimen183
+\th@mbposx=\dimen184
+\th@mbposy=\dimen185
+\th@mbposyA=\dimen186
+\th@mbposytop=\dimen187
+\th@mbposybottom=\dimen188
+\th@mbwidthxtoc=\dimen189
+\th@mbsposytocy=\dimen190
+\th@mbsposytocyy=\dimen191
+\th@mbsdistance=\dimen192
 \ThumbsBox=\box42
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
-Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
-Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
-
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
-Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
-Package hobsub Info: Skipping package `infwarerr' (already loaded).
-Package hobsub Info: Skipping package `ltxcmds' (already loaded).
-Package hobsub Info: Skipping package `ifluatex' (already loaded).
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
-Package ifvtex Info: VTeX not detected.
-Package hobsub Info: Skipping package `intcalc' (already loaded).
-Package hobsub Info: Skipping package `ifpdf' (already loaded).
-Package hobsub Info: Skipping package `etexcmds' (already loaded).
-Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
-Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
-Package hobsub Info: Skipping package `bigintcalc' (already loaded).
-Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
-Package hobsub Info: Skipping package `uniquecounter' (already loaded).
-)
-Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package hobsub Info: Skipping package `letltxmacro' (already loaded).
-Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
-Package: xcolor-patch 2011/01/30 xcolor patch
-Package hobsub Info: Skipping package `atveryend' (already loaded).
-Package hobsub Info: Skipping package `atbegshi' (already loaded).
-Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
-Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
-Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
-Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
-)
-\@linkdim=\dimen189
-\Hy@linkcounter=\count144
-\Hy@pagecounter=\count145
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
-File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
-Now handling font encoding PD1 ...
-... no UTF-8 mapping file for font encoding PD1
-)
-\Hy@SavedSpaceFactor=\count146
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
-File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
-)
-Package hyperref Info: Hyper figures OFF on input line 4443.
-Package hyperref Info: Link nesting OFF on input line 4448.
-Package hyperref Info: Hyper index ON on input line 4451.
-Package hyperref Info: Plain pages OFF on input line 4458.
-Package hyperref Info: Backreferencing OFF on input line 4463.
-Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count147
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ltxmisc\url.sty"
-\Urlmuskip=\muskip10
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
-)
-LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen190
-\Fld@menulength=\count148
-\Field@Width=\dimen191
-\Fld@charsize=\dimen192
-Package hyperref Info: Hyper figures OFF on input line 6295.
-Package hyperref Info: Link nesting OFF on input line 6300.
-Package hyperref Info: Hyper index ON on input line 6303.
-Package hyperref Info: backreferencing OFF on input line 6310.
-Package hyperref Info: Link coloring OFF on input line 6315.
-Package hyperref Info: Link coloring with OCG OFF on input line 6320.
-Package hyperref Info: PDF/A mode OFF on input line 6325.
-LaTeX Info: Redefining \ref on input line 6365.
-LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count149
-\c@Item=\count150
-\c@Hfootnote=\count151
-)
-
-Package hyperref Message: Driver (autodetected): hpdftex.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
-File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count152
-\c@bookmark@seq@number=\count153
-\Hy@SectionHShift=\skip82
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\wrapfig\wrapfig.sty
 \wrapoverhang=\dimen193
 \WF@size=\dimen194
-\c@WF@wrappedlines=\count154
+\c@WF@wrappedlines=\count155
 \WF@box=\box43
 \WF@everypar=\toks33
 Package: wrapfig 2003/01/31  v 3.6
@@ -1124,13 +1112,13 @@ Package: amsbsy 1999/11/29 v1.2d
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count155
+\inf@bad=\count156
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count156
-\leftroot@=\count157
+\uproot@=\count157
+\leftroot@=\count158
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count158
-\DOTSCASE@=\count159
+\classnum@=\count159
+\DOTSCASE@=\count160
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -1139,15 +1127,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen197
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count160
-\c@MaxMatrixCols=\count161
+\macc@depth=\count161
+\c@MaxMatrixCols=\count162
 \dotsspace@=\muskip11
-\c@parentequation=\count162
-\dspbrk@lvl=\count163
+\c@parentequation=\count163
+\dspbrk@lvl=\count164
 \tag@help=\toks36
-\row@=\count164
-\column@=\count165
-\maxfields@=\count166
+\row@=\count165
+\column@=\count166
+\maxfields@=\count167
 \andhelp@=\toks37
 \eqnshift@=\dimen198
 \alignsep@=\dimen199
@@ -1174,12 +1162,12 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen211
 \cmidrulekern=\dimen212
 \defaultaddspace=\dimen213
-\@cmidla=\count167
-\@cmidlb=\count168
+\@cmidla=\count168
+\@cmidlb=\count169
 \@aboverulesep=\dimen214
 \@belowrulesep=\dimen215
-\@thisruleclass=\count169
-\@lastruleclass=\count170
+\@thisruleclass=\count170
+\@lastruleclass=\count171
 \@thisrulewidth=\dimen216
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tocbibind\tocbibind.sty"
@@ -1195,25 +1183,17 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithms\algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
-\c@algorithm=\count171
+\c@algorithm=\count172
 )
 (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\algorithms\algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count172
-\c@ALC@line=\count173
-\c@ALC@rem=\count174
-\c@ALC@depth=\count175
+\c@ALC@unique=\count173
+\c@ALC@line=\count174
+\c@ALC@rem=\count175
+\c@ALC@depth=\count176
 \ALC@tlm=\skip86
 \algorithmicindent=\skip87
-)) (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.aux
-(C:\Users\rkorb\master_thesis\documents\thesis\master_title.aux)
-(C:\Users\rkorb\master_thesis\documents\thesis\einleitung.aux)
-(C:\Users\rkorb\master_thesis\documents\thesis\anforderungen.aux)
-(C:\Users\rkorb\master_thesis\documents\thesis\grundlagenMbv.aux)
-(C:\Users\rkorb\master_thesis\documents\thesis\implmentation.aux)
-(C:\Users\rkorb\master_thesis\documents\thesis\appendix.aux)
-\c@pagesLTS.Roman.1.local.cnt=\count176
-)
+)) (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
@@ -1235,651 +1215,37 @@ File: t3cmr.fd 2001/12/31 TIPA font definitions
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
-
-(C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count177
-\scratchdimen=\dimen217
-\scratchbox=\box46
-\nofMPsegments=\count178
-\nofMParguments=\count179
-\everyMPshowfont=\toks40
-\MPscratchCnt=\count180
-\MPscratchDim=\dimen218
-\MPnumerator=\count181
-\makeMPintoPDFobject=\count182
-\everyMPtoPDFconversion=\toks41
-)
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: End \AtBeginDocument code.
- ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box47
-\@instreamthumb=\read2
- 
-Package thumbs Info: ************** THUMB dimensions **************.
-Package thumbs Info: The height of the thumb marks is 47.0pt.
-Package thumbs Info: The width of the thumb marks is 35.56593pt.
-Package thumbs Info: The top thumb margin is 56.9055pt.
-Package thumbs Info: The bottom thumb margin is 62.59602pt.
-Package thumbs Info: **********************************************.
-
+\AtBeginShipoutBox=\box46
 Package hyperref Info: Link coloring OFF on input line 4.
+
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count183
+\c@section@level=\count177
 )
 LaTeX Info: Redefining \ref on input line 4.
 LaTeX Info: Redefining \pageref on input line 4.
 LaTeX Info: Redefining \nameref on input line 4.
 
-(C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.out)
-(C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.out)
-\@outlinefile=\write5
-
-
-bibgerm.sty: (n)german.sty 2.5b detected
-
-\c@pagesLTS.pnc.Roman=\count184
-\c@pagesLTS.double.Roman=\count185
-\c@pagesLTS.current.local.Roman=\count186
-(C:\Users\rkorb\master_thesis\documents\thesis\master_title.tex
-<./img/HL_WBM_de_B_300dpi.jpg, id=134, 2446.13875pt x 593.21625pt>
-File: ./img/HL_WBM_de_B_300dpi.jpg Graphic file (type jpg)
-
-<use ./img/HL_WBM_de_B_300dpi.jpg>
-Package pdftex.def Info: ./img/HL_WBM_de_B_300dpi.jpg used on input line 13.
-(pdftex.def)             Requested size: 2446.13281pt x 593.2148pt.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd")
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd") [1
-
-
-
-
-{C:/Users/rkorb/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/rk
-orb/master_thesis/documents/thesis/img/HL_WBM_de_B_300dpi.jpg>]) [2
-
-]
-(C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.toc [1
-
-
-])
-\tf@toc=\write6
- [2]
-\c@th@mblinea=\count187
-\c@th@mblineb=\count188
-\c@FileLine=\count189
-\c@thumbsstop=\count190
-
-
-Package thumbs Info: Processing line 1 to 3 of master_thesis.tmb.
-THUMBS: Processing master_thesis.tmb line 1.
-Executing master_thesis.tmb line 1.
-THUMBS: Processing master_thesis.tmb line 2.
-Executing master_thesis.tmb line 2.
-THUMBS: Processing master_thesis.tmb line 3.
-Executing master_thesis.tmb line 3.
-[1
-
-
-] THUMBS: Fileline: 4, a: 4, b: 3, per page: 3, max: 3.
-(C:\Users\rkorb\master_thesis\documents\thesis\einleitung.tex
-Kapitel 1.
-
-Class scrreprt Warning: \float@addtolists detected!
-(scrreprt)              You should use the features of package `tocbasic'
-(scrreprt)              instead of \float@addtolists.
-(scrreprt)              Support for \float@addtolists may be removed from
-(scrreprt)              `scrreprt' soon .
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 8.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
-
-<./img/zyklen.pdf, id=207, 426.79147pt x 284.52798pt>
-File: ./img/zyklen.pdf Graphic file (type pdf)
- <use ./img/zyklen.pdf>
-Package pdftex.def Info: ./img/zyklen.pdf used on input line 23.
-(pdftex.def)             Requested size: 426.79044pt x 284.52728pt.
-
-[2
-
-
-] [3 <C:/Users/rkorb/master_thesis/documents/thesis/img/zyklen.pdf>]
-Overfull \hbox (4.5631pt too wide) in paragraph at lines 41--43
-[]\OT1/cmr/m/n/12 Krank-heits-we-sen\ zum Ge-sund-heits-we-sen, an-ge-fan-gen v
-on der Burnout-Prophylaxe,
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 52--52
-[][]\OT1/cmr/m/n/10 https://www.haw-landshut.de/aktuelles/news/news-archiv/news
--detailansicht/article/neuer-
- []
-
-[5]) [6] (C:\Users\rkorb\master_thesis\documents\thesis\anforderungen.tex
-Kapitel 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 6--7
-
- []
-
-<./img/RadiAnt.png, id=282, 1203.49625pt x 699.61375pt>
-File: ./img/RadiAnt.png Graphic file (type png)
-
-<use ./img/RadiAnt.png>
-Package pdftex.def Info: ./img/RadiAnt.png used on input line 11.
-(pdftex.def)             Requested size: 1203.49332pt x 699.61205pt.
- [7
-
-
-
- <C:/Users/rkorb/master_thesis/documents/thesis/img/RadiAnt.png>] <./img/Screen
-shot-3DSlicer.png, id=292, 1320.935pt x 980.66376pt>
-File: ./img/Screenshot-3DSlicer.png Graphic file (type png)
-
-<use ./img/Screenshot-3DSlicer.png>
-Package pdftex.def Info: ./img/Screenshot-3DSlicer.png used on input line 31.
-(pdftex.def)             Requested size: 1320.93178pt x 980.66136pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 40--41
-
- []
-
-[8 <C:/Users/rkorb/master_thesis/documents/thesis/img/Screenshot-3DSlicer.png>]
-<./img/imagej-window.png, id=304, 522.95375pt x 121.45375pt>
-File: ./img/imagej-window.png Graphic file (type png)
-
-<use ./img/imagej-window.png>
-Package pdftex.def Info: ./img/imagej-window.png used on input line 45.
-(pdftex.def)             Requested size: 522.95247pt x 121.45343pt.
- [9 <C:/Users/rkorb/master_thesis/documents/thesis/img/imagej-window.png>] [10]
-) [11]
-(C:\Users\rkorb\master_thesis\documents\thesis\grundlagenMbv.tex
-Kapitel 3.
-<./img/communication_neu.pdf, id=325, 845.0471pt x 597.50829pt>
-File: ./img/communication_neu.pdf Graphic file (type pdf)
-
-<use ./img/communication_neu.pdf>
-Package pdftex.def Info: ./img/communication_neu.pdf used on input line 13.
-(pdftex.def)             Requested size: 845.04504pt x 597.50682pt.
- [12
-
-
-
-] [13 <C:/Users/rkorb/master_thesis/documents/thesis/img/communication_neu.pdf>
-]
-<./img/ermodel.pdf, id=369, 540.60269pt x 469.47095pt>
-File: ./img/ermodel.pdf Graphic file (type pdf)
- <use ./img/ermodel.pdf>
-Package pdftex.def Info: ./img/ermodel.pdf used on input line 47.
-(pdftex.def)             Requested size: 540.60136pt x 469.46979pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 49--49
-[][]\OT1/cmr/m/n/12 Vereinfachte Dar-stel-lung der In-for-ma-ti-ons-ob-jekt-hie
-r-ar-chie von
- []
-
-[14] [15 <C:/Users/rkorb/master_thesis/documents/thesis/img/ermodel.pdf>]
-Underfull \hbox (badness 1603) in paragraph at lines 120--120
-[][]\OT1/cmr/m/n/10 Unter der Trans-fer-sy-stax ver-stehn man ei-ne Men-ge an K
-o-die-rungs-vor-schrif-ten von DICOM-
- []
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
-
- []
-
-[17]
-Overfull \hbox (3.10672pt too wide) in paragraph at lines 142--144
-\OT1/cmr/m/n/12 Dieser Teil ei-nes DICOM-Elements be-schreibt den Typ und das F
-or-mat des Wertes[[],
- []
-
-[18] <./img/byteorder.pdf, id=457, 512.14938pt x 284.52798pt>
-File: ./img/byteorder.pdf Graphic file (type pdf)
-
-<use ./img/byteorder.pdf>
-Package pdftex.def Info: ./img/byteorder.pdf used on input line 162.
-(pdftex.def)             Requested size: 512.14813pt x 284.52728pt.
- <./img/bits.pdf, id=464, 512.14938pt x 284.52798pt>
-File: ./img/bits.pdf Graphic file (type pdf)
-
-<use ./img/bits.pdf>
-Package pdftex.def Info: ./img/bits.pdf used on input line 179.
-(pdftex.def)             Requested size: 142.26378pt x 79.03342pt.
- <./img/bits16.pdf, id=465, 512.14938pt x 284.52798pt>
-File: ./img/bits16.pdf Graphic file (type pdf)
-
-<use ./img/bits16.pdf>
-Package pdftex.def Info: ./img/bits16.pdf used on input line 179.
-(pdftex.def)             Requested size: 142.26378pt x 79.03342pt.
- <./img/bits8.pdf, id=466, 512.14938pt x 284.52798pt>
-File: ./img/bits8.pdf Graphic file (type pdf)
-
-<use ./img/bits8.pdf>
-Package pdftex.def Info: ./img/bits8.pdf used on input line 179.
-(pdftex.def)             Requested size: 142.26378pt x 79.03342pt.
-
-Overfull \hbox (5.7636pt too wide) in paragraph at lines 179--180
- [][] 
- []
-
-[19 <C:/Users/rkorb/master_thesis/documents/thesis/img/byteorder.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 184--186
-
- []
-
-[20 <C:/Users/rkorb/master_thesis/documents/thesis/img/bits.pdf> <C:/Users/rkor
-b/master_thesis/documents/thesis/img/bits16.pdf> <C:/Users/rkorb/master_thesis/
-documents/thesis/img/bits8.pdf>] <./img/ct.png, id=576, 120.45pt x 120.45pt>
-File: ./img/ct.png Graphic file (type png)
-
-<use ./img/ct.png>
-Package pdftex.def Info: ./img/ct.png used on input line 223.
-(pdftex.def)             Requested size: 142.26378pt x 142.27678pt.
- <./img/mr.png, id=577, 120.45pt x 120.45pt>
-File: ./img/mr.png Graphic file (type png)
-
-<use ./img/mr.png>
-Package pdftex.def Info: ./img/mr.png used on input line 223.
-(pdftex.def)             Requested size: 142.26378pt x 142.27678pt.
- <./img/sono.png, id=578, 120.45pt x 120.45pt>
-File: ./img/sono.png Graphic file (type png)
-
-<use ./img/sono.png>
-Package pdftex.def Info: ./img/sono.png used on input line 223.
-(pdftex.def)             Requested size: 142.26378pt x 142.27678pt.
-
-Overfull \hbox (5.7636pt too wide) in paragraph at lines 223--225
- [][] 
- []
-
-
-Overfull \hbox (16.48982pt too wide) in paragraph at lines 231--233
-\OT1/cmr/m/n/12 Im DICOM-Standard ist ein Al-go-rith-mus ge-ge-ben, um die Pi-x
-el-da-ten zu konvertieren[[],
- []
-
-[21]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 235.
- <./img/fensterung.pdf, id=591, 569.055pt x 569.055pt>
-File: ./img/fensterung.pdf Graphic file (type pdf)
-
-<use ./img/fensterung.pdf>
-Package pdftex.def Info: ./img/fensterung.pdf used on input line 259.
-(pdftex.def)             Requested size: 142.26378pt x 142.2634pt.
- <./img/window_a.png, id=592, 120.45pt x 120.45pt>
-File: ./img/window_a.png Graphic file (type png)
-
-<use ./img/window_a.png>
-Package pdftex.def Info: ./img/window_a.png used on input line 259.
-(pdftex.def)             Requested size: 142.26378pt x 142.27678pt.
- <./img/window_b.png, id=593, 120.45pt x 120.45pt>
-File: ./img/window_b.png Graphic file (type png)
-
-<use ./img/window_b.png>
-Package pdftex.def Info: ./img/window_b.png used on input line 259.
-(pdftex.def)             Requested size: 142.26378pt x 142.27678pt.
-
-Overfull \hbox (5.7636pt too wide) in paragraph at lines 259--261
- [][] 
- []
-
-[22 <C:/Users/rkorb/master_thesis/documents/thesis/img/ct.png> <C:/Users/rkorb/
-master_thesis/documents/thesis/img/mr.png> <C:/Users/rkorb/master_thesis/docume
-nts/thesis/img/sono.png>]
-<./img/planar_b.pdf, id=625, 512.14938pt x 398.3382pt>
-File: ./img/planar_b.pdf Graphic file (type pdf)
-
-<use ./img/planar_b.pdf>
-Package pdftex.def Info: ./img/planar_b.pdf used on input line 275.
-(pdftex.def)             Requested size: 227.62204pt x 177.03809pt.
-
-<./img/planar_a.pdf, id=626, 512.14938pt x 398.3382pt>
-File: ./img/planar_a.pdf Graphic file (type pdf)
-
-<use ./img/planar_a.pdf>
-Package pdftex.def Info: ./img/planar_a.pdf used on input line 275.
-(pdftex.def)             Requested size: 227.62204pt x 177.03809pt.
-
-Overfull \hbox (26.38309pt too wide) in paragraph at lines 275--277
- [][] 
- []
-
-[23 <C:/Users/rkorb/master_thesis/documents/thesis/img/fensterung.pdf> <C:/User
-s/rkorb/master_thesis/documents/thesis/img/window_a.png> <C:/Users/rkorb/master
-_thesis/documents/thesis/img/window_b.png>]
-<./img/2d.pdf, id=662, 455.24379pt x 284.52798pt>
-File: ./img/2d.pdf Graphic file (type pdf)
- <use ./img/2d.pdf>
-Package pdftex.def Info: ./img/2d.pdf used on input line 291.
-(pdftex.def)             Requested size: 142.26378pt x 88.91476pt.
-
-<./img/3d.pdf, id=663, 455.24379pt x 284.52798pt>
-File: ./img/3d.pdf Graphic file (type pdf)
- <use ./img/3d.pdf>
-Package pdftex.def Info: ./img/3d.pdf used on input line 291.
-(pdftex.def)             Requested size: 142.26378pt x 88.91476pt.
-
-<./img/time.pdf, id=664, 455.24379pt x 284.52798pt>
-File: ./img/time.pdf Graphic file (type pdf)
- <use ./img/time.pdf>
-Package pdftex.def Info: ./img/time.pdf used on input line 291.
-(pdftex.def)             Requested size: 142.26378pt x 88.91476pt.
-
-Overfull \hbox (5.7636pt too wide) in paragraph at lines 291--293
- [][] 
- []
-
-) [24 <C:/Users/rkorb/master_thesis/documents/thesis/img/planar_b.pdf> <C:/User
-s/rkorb/master_thesis/documents/thesis/img/planar_a.pdf> <C:/Users/rkorb/master
-_thesis/documents/thesis/img/2d.pdf> <C:/Users/rkorb/master_thesis/documents/th
-esis/img/3d.pdf> <C:/Users/rkorb/master_thesis/documents/thesis/img/time.pdf>]
-[25]
-No file implmentation.tex.
-(C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 41--46
-[]\OT1/cmr/m/sc/12 Hochschule Lands-hut\OT1/cmr/m/n/12 :  \OT1/cmr/m/it/12 Mo-d
-ul-hand-buch BA BMT\OT1/cmr/m/n/12 .  []$\OT1/cmtt/m/n/12 https :$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--46
-$\OT1/cmtt/m/n/12 / / www . haw-[]landshut . de / fileadmin / hs _ landshut _ e
-nglish / electrical _$
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--46
-$\OT1/cmtt/m/n/12 engineering / download / pdf / Modulhandb % FCcher / Modulhan
-dbuch _ BA _ BMT _$
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has 
-been already used, duplicate ignored
+! I can't write on file `master_thesis.pdf'.
+Please type another file name for output
+! Emergency stop.
 <to be read again> 
-                   \relax 
-l.73 
-      [1
-
-
-
-
-])pdfTeX warning (ext4): destination with the same identifier (name{page.II}) h
-as been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.72 \listoffigures
-                    [2]
-(C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.lof
-Overfull \hbox (5.63869pt too wide) in paragraph at lines 23--23
- [][] [][]\OT1/cmr/m/n/12 Fensterungstechnik zur Dar-stel-lung me-di-zi-ni-sche
-r Bild-da-ten am han-dels[]ubli- 
- []
-
-)
-\tf@lof=\write7
- [3
-
-] (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.lot
-Overfull \hbox (3.96521pt too wide) detected at line 10
- []\OT1/cmr/m/n/12 VIII
- []
-
-)
-\tf@lot=\write8
- [4
-
-] (C:\Users\rkorb\master_thesis\documents\thesis\appendix.tex
-Anhang A.
-LaTeX Font Info:    Try loading font information for T3+cmss on input line 2.
-(C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\tipa\t3cmss.fd
-File: t3cmss.fd 2001/12/31 TIPA font definitions
-)
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\textpipe' on input line 2.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\textpipe' on input line 2.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\textpipe' on input line 2.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\textpipe' on input line 2.
-
-
-Package hyperref Warning: Glyph not defined in PD1 encoding,
-(hyperref)                removing `\textpipe' on input line 2.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-[]|\OT1/cmr/bx/n/12 Value
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-[]|\OT1/cmr/m/n/12 Group
- []
-
-
-Underfull \hbox (badness 1917) in paragraph at lines 16--16
-\OT1/cmr/m/n/12 # 16-bit
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-\OT1/cmr/m/n/12 un-si-gned
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-[]|\OT1/cmr/m/n/12 Element
- []
-
-
-Underfull \hbox (badness 1917) in paragraph at lines 16--16
-\OT1/cmr/m/n/12 # 16-bit
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-\OT1/cmr/m/n/12 un-si-gned
- []
-
-
-Overfull \hbox (12.93198pt too wide) in paragraph at lines 16--16
-[]|\OT1/cmr/m/n/12 Reservierter
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-[]|\OT1/cmr/m/n/12 32-bit
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 16--16
-\OT1/cmr/m/n/12 un-si-gned
- []
-
-
-Underfull \hbox (badness 3826) in paragraph at lines 16--16
-\OT1/cmr/m/n/12 VT-Typ und Trans-fer-syn-tax. Wenn die
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-[]|\OT1/cmr/bx/n/12 Value
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-[]|\OT1/cmr/m/n/12 Group
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-\OT1/cmr/m/n/12 # 16-bit
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-\OT1/cmr/m/n/12 un-si-gned
- []
-
-
-Underfull \hbox (badness 6675) in paragraph at lines 32--32
-\OT1/cmr/m/n/12 gned in-te-
- []
-
-
-Underfull \hbox (badness 2653) in paragraph at lines 32--32
-[]|\OT1/cmr/m/n/12 VR 2-byte
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
-\OT1/cmr/m/n/12 cha-rac-ter
- []
-
-
-Underfull \hbox (badness 6675) in paragraph at lines 32--32
-\OT1/cmr/m/n/12 gned in-te-
- []
-
-) [5
-
-
-] [6] [7] [8] 
-AED: pageslts setting LastPage 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 77.
-\c@pagesLTS.Roman.1.local.count=\count191
-
-AED: pageslts setting VeryLastPage via AfterLastShipout 
-
-AED: pageslts setting LastPages via AfterLastShipout 
-
-
-Package pageslts Info: Total number of pages is odd.
-
-
-\tf@tmb=\write9
-(C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.aux
-(C:\Users\rkorb\master_thesis\documents\thesis\master_title.aux)
-(C:\Users\rkorb\master_thesis\documents\thesis\einleitung.aux)
-(C:\Users\rkorb\master_thesis\documents\thesis\anforderungen.aux)
-(C:\Users\rkorb\master_thesis\documents\thesis\grundlagenMbv.aux)
-(C:\Users\rkorb\master_thesis\documents\thesis\implmentation.aux)
-(C:\Users\rkorb\master_thesis\documents\thesis\appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
-Package rerunfilecheck Info: File `master_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4C854B22808FB59286A36EFB1F5AB449;2437.
-Package rerunfilecheck Info: File `master_thesis.tmb' has not changed.
-(rerunfilecheck)             Checksum: 03C139564ABAA39729A43F7E714F36A6;422.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 77.
- ) 
+                   \edef 
+l.4 \begin{document}
+                    
+*** (job aborted, file error in nonstop mode)
+
+ 
 Here is how much of TeX's memory you used:
- 20677 strings out of 493921
- 356450 string characters out of 3144877
- 473901 words of memory out of 3000000
- 23311 multiletter control sequences out of 15000+200000
- 15680 words of font info for 58 fonts, out of 3000000 for 9000
+ 19689 strings out of 493921
+ 338455 string characters out of 3144877
+ 459724 words of memory out of 3000000
+ 22605 multiletter control sequences out of 15000+200000
+ 5251 words of font info for 19 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 68i,16n,71p,1296b,1580s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.20} has been referenced but does not ex
-ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.19} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.18} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.17} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.14} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
-, replaced by a fixed one
-
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/rkorb/AppData/Roamin
-g/MiKTeX/2.9/fonts/type1/public/tipa/tipa12.pfb><C:/Users/rkorb/AppData/Roaming
-/MiKTeX/2.9/fonts/type1/public/tipa/tipasb10.pfb>
-Output written on master_thesis.pdf (37 pages, 4300611 bytes).
-PDF statistics:
- 959 PDF objects out of 1000 (max. 8388607)
- 150 named destinations out of 1000 (max. 500000)
- 379 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 68i,1n,71p,441b,63s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

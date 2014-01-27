@@ -4,30 +4,67 @@
 \contentsline {section}{\numberline {1.2}Wachstumsmarkt Gesundheit}{4}{section.1.2}
 \contentsline {section}{\numberline {1.3}Der Studiengang Biomedizinische Technik}{5}{section.1.3}
 \contentsline {section}{\numberline {1.4}Das Labor f\IeC {\"u}r medizinische Bildverarbeitung, Algorithmen und Krankenhaus IT}{5}{section.1.4}
-\contentsline {chapter}{\numberline {2}Anforderungen an eine modulare und erweiterbare Bildverarbeitungssoftware}{7}{chapter.2}
-\contentsline {section}{\numberline {2.1}Evaluierung bestehender Software}{7}{section.2.1}
-\contentsline {section}{\numberline {2.2}Slicer 3D}{8}{section.2.2}
-\contentsline {section}{\numberline {2.3}ImageJ}{9}{section.2.3}
-\contentsline {section}{\numberline {2.4}Anforderungen}{10}{section.2.4}
-\contentsline {chapter}{\numberline {3}Grundlagen medizinischer Daten- und Bildformate}{12}{chapter.3}
-\contentsline {section}{\numberline {3.1}Bildgewinnung und bildgebende Verfahren}{12}{section.3.1}
-\contentsline {section}{\numberline {3.2}DICOM}{12}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Die Dicom Information Object Definitionen}{14}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Der Transfer vom Patienten zu digitalen Dicomobjekten}{16}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Tags in Datenelementen}{17}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}VR - Value Representation}{18}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}VM - Value Multiplicity}{18}{subsection.3.2.5}
-\contentsline {section}{\numberline {3.3}DICOM Pixeldaten und Bildformate}{18}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Kodierung der Pixel im Speicherabbild eine DICOM-Objekts}{19}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Grauwertbilder}{21}{subsection.3.3.2}
-\contentsline {subsubsection}{Fensterung von Grauwerten}{21}{subsubsection*.6}
-\contentsline {subsection}{\numberline {3.3.3}Farbbilder}{22}{subsection.3.3.3}
-\contentsline {section}{\numberline {3.4}3D Bilddaten}{23}{section.3.4}
-\contentsline {section}{\numberline {3.5}Bilder mit zeitlicher Abh\IeC {\"a}ngigkeit}{24}{section.3.5}
-\contentsline {chapter}{Literaturverzeichnis}{I}{chapter*.7}
-\contentsline {chapter}{Abbildungsverzeichnis}{III}{chapter*.8}
-\contentsline {chapter}{Tabellenverzeichnis}{IV}{chapter*.9}
-\contentsline {chapter}{\numberline {A}Darstellung der DICOM-Elemente im Speicher}{V}{appendix.A}
-\contentsline {section}{\numberline {A.1}Explizite VR mit [ OB \textpipe \ OW \textpipe \ OF \textpipe \ SQ \textpipe \ UT \textpipe \ UN ]}{V}{section.A.1}
-\contentsline {section}{\numberline {A.2}Explizite VR}{V}{section.A.2}
-\contentsline {section}{\numberline {A.3}Implizite VR}{V}{section.A.3}
+\contentsline {part}{\numberline {I}Anforderungen und \\ Theoretische Grundlagen}{7}{part.1}
+\contentsline {chapter}{\numberline {2}Anforderungen an eine modulare und erweiterbare Bildverarbeitungssoftware}{8}{chapter.2}
+\contentsline {section}{\numberline {2.1}Evaluierung bestehender Software}{8}{section.2.1}
+\contentsline {section}{\numberline {2.2}Slicer 3D}{9}{section.2.2}
+\contentsline {section}{\numberline {2.3}ImageJ}{10}{section.2.3}
+\contentsline {section}{\numberline {2.4}Anforderungen}{11}{section.2.4}
+\contentsline {chapter}{\numberline {3}Grundlagen medizinischer Daten- und Bildformate}{13}{chapter.3}
+\contentsline {section}{\numberline {3.1}DICOM}{13}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Die Dicom Information Object Definitionen}{14}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Der Transfer vom Patienten zu digitalen Dicomobjekten}{17}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Tags in Datenelementen}{18}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}VR - Value Representation}{18}{subsection.3.1.4}
+\contentsline {subsection}{\numberline {3.1.5}VM - Value Multiplicity}{19}{subsection.3.1.5}
+\contentsline {section}{\numberline {3.2}DICOM Pixeldaten und Bildformate}{19}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Kodierung der Pixel im Speicherabbild eine DICOM-Objekts}{19}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Grauwertbilder}{21}{subsection.3.2.2}
+\contentsline {subsubsection}{Fensterung von Grauwerten}{22}{subsubsection*.6}
+\contentsline {subsection}{\numberline {3.2.3}Farbbilder}{23}{subsection.3.2.3}
+\contentsline {section}{\numberline {3.3}3D Bilddaten}{23}{section.3.3}
+\contentsline {section}{\numberline {3.4}Bilder mit zeitlicher Abh\IeC {\"a}ngigkeit}{24}{section.3.4}
+\contentsline {chapter}{\numberline {4}Grundlagen der Entwurfsmuster zur Softwareentwicklung}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}Strukturmuster}{26}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Adapter}{27}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Verhaltensmuster}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Observer}{27}{subsection.4.2.1}
+\contentsline {section}{\numberline {4.3}Erzeugungsmuster}{27}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Das Idiom der simplen Fabrik}{27}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Abstrakte Fabrik}{27}{section.4.4}
+\contentsline {part}{\numberline {II}Entwicklung des Java Medical Imaging Toolkit}{28}{part.2}
+\contentsline {chapter}{\numberline {5}Softwarearchitektur des Java Medical Imaging Toolkit}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}Die Eclipse Rich Client Platform}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}Das Eclipse Application Model}{31}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Visuelle Komponenten}{31}{subsection.5.2.1}
+\contentsline {subsubsection}{Window}{31}{subsubsection*.7}
+\contentsline {subsubsection}{Men\IeC {\"u}s}{31}{subsubsection*.8}
+\contentsline {subsubsection}{Perspective}{31}{subsubsection*.9}
+\contentsline {subsubsection}{PartSashContainer}{32}{subsubsection*.10}
+\contentsline {subsubsection}{PartStack}{32}{subsubsection*.11}
+\contentsline {subsubsection}{Part}{32}{subsubsection*.12}
+\contentsline {subsection}{\numberline {5.2.2}Steuernde Komponenten}{32}{subsection.5.2.2}
+\contentsline {subsubsection}{Commands}{32}{subsubsection*.13}
+\contentsline {subsubsection}{Handler}{32}{subsubsection*.14}
+\contentsline {section}{\numberline {5.3}Die Benutzeroberfl\IeC {\"a}che von jMediKit}{34}{section.5.3}
+\contentsline {section}{\numberline {5.4}Erweiterbarkeit der Grundstruktur}{34}{section.5.4}
+\contentsline {section}{\numberline {5.5}Modulare Werkzeuge}{35}{section.5.5}
+\contentsline {section}{\numberline {5.6}Externe Bibliotheken}{35}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}dcm4che}{35}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Java Advanced Imaging}{35}{subsection.5.6.2}
+\contentsline {section}{\numberline {5.7}Bibliotheken zur Plug-in Entwicklung}{35}{section.5.7}
+\contentsline {chapter}{\numberline {6}Implementierung}{37}{chapter.6}
+\contentsline {section}{\numberline {6.1}Module}{37}{section.6.1}
+\contentsline {chapter}{\numberline {7}Entwicklung von Erweiterungen}{38}{chapter.7}
+\contentsline {chapter}{Literaturverzeichnis}{I}{chapter*.15}
+\contentsline {chapter}{Abbildungsverzeichnis}{III}{chapter*.16}
+\contentsline {chapter}{Tabellenverzeichnis}{V}{chapter*.17}
+\contentsline {part}{\numberline {III}Anhang}{VI}{part.3}
+\contentsline {chapter}{\numberline {A}Darstellung der DICOM-Elemente im Speicher}{VII}{appendix.A}
+\contentsline {section}{\numberline {A.1}Explizite VR mit [ OB \textpipe \ OW \textpipe \ OF \textpipe \ SQ \textpipe \ UT \textpipe \ UN ]}{VII}{section.A.1}
+\contentsline {section}{\numberline {A.2}Explizite VR}{VII}{section.A.2}
+\contentsline {section}{\numberline {A.3}Implizite VR}{VII}{section.A.3}
+\contentsline {chapter}{\numberline {B}Installation der Eclipse e4 Umgebung}{XI}{appendix.B}
+\contentsline {section}{\numberline {B.1}Eclipse}{XI}{section.B.1}
+\contentsline {section}{\numberline {B.2}Eclipse e4 Tools}{XII}{section.B.2}
+\contentsline {section}{\numberline {B.3}Import der jMediKit Projektdateien}{XIV}{section.B.3}
