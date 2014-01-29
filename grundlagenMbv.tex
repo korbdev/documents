@@ -298,7 +298,7 @@ Sowohl die Grauwertdarstellungen, als auch Farbbilder wurden bisher nur als eine
 
 Auch Bildaufnahmen zu verschiedenen Zeitpunkten sind dreidimensionale Bildfolgen, wobei die Zeit die dritte Dimension darstellt\cite[2.2.5]{handels:mbv}. Häufige Einsatzgebiete für Bewegtbildfolgen ist die Endoskopie oder Sonographie. Die Abbildung \ref{time3d} macht den Unterschied zwischen zeitlicher und räumlicher Dimension deutlich. Räumliche Darstellungen sind grundsätzlich in mehrere DICOM-Objekte und Dateien aufgeteilt. Zeitlich abhängige Daten sind in einem einzigen Objekt zusammengefasst. NumberOfFrames (0028,0008) gibt die Anzahl an unterschiedlichen Aufnahmen und Zeitpunkten an, die in PixelData enthalten sind.
 
-\chapter{Grundlagen der Entwurfsmuster zur Softwareentwicklung}
+\chapter{Grundlagen zu Entwurfsmustern der Softwareentwicklung}
 
 Während der Entwicklung von Software stehen Programmierer oft vor ähnlichen Problemstellungen. Entwurfsmuster bieten hierfür verlässliche Lösungsvorschläge\cite{goll:swa}. Muster werden unabhängig vom aktuellen Abschnitt des Entwicklungsprozesses eingesetzt. So gibt es Schablonen, die das Softwaresystem beschreiben, oder Muster, die auf Objektebene eingesetzt werden. Hierbei wird zwischen Architekturmustern und Entwurfsmustern unterschieden. Nach Goll und Dausmann \cite[3.1, 3.2]{goll:swa} ist das Ziel der Entwurfsmuster, Lösungen wiederverwendbar zu gestalten und die Flexibilität der Software zu erhöhen. Muster verbessern unter anderem die beiden Eigenschaften der Verständlichkeit und Erweiterbarkeit. Im Rahmen der Arbeit werden vor Allem objektorientierte Muster folgender Klassen verwendet:
 
@@ -308,26 +308,103 @@ Während der Entwicklung von Software stehen Programmierer oft vor ähnlichen Pr
 \item Erzeugungsmuster
 \end{itemize}
 
-Nach dieser ersten Klassifikation kann nochmals zwischen klassenbasierten und objektbasierten Mustern unterschieden werden. Der Unterschied besteht hauptsächlich darin, dass klassenbasierte Muster die Objekttypen während der Übersetzung festlegt. Bei objektbasierten Mustern können Objekte den  Typ dynamisch zur Laufzeit ändern\cite[4.1]{goll:swa}.
+Nach dieser ersten Klassifikation kann nochmals zwischen klassenbasierten und objektbasierten Mustern unterschieden werden. Der Unterschied besteht hauptsächlich darin, dass klassenbasierte Muster die Objekttypen während der Übersetzung festlegt. Bei objektbasierten Mustern können Objekte den  Typ dynamisch zur Laufzeit ändern\cite[4.1]{goll:swa}.\\
+Die im folgenden dargestellten Entwurfsmuster bilden nur einen kleinen Teil der verfügbaren Muster ab. Diese Auswahl wird durch die Nutzung in der zu entwickelnden Software besonders hervorgehoben und genauer erläutert. Die konkrete Umsetzung wird im Kapitel \glqq \ref{architecture}. \nameref{architecture} \grqq\ detailliert dargestellt.
 
 \section{Strukturmuster}
-Strukturmuster bestimmen die Zusammensetzung der Klassen oder Objekte. Während dieser Abschlussarbeit wird im Speziellen auf das Muster \textit{Adapter} eingegangen. Der Adapter dient dazu, zwei inkompatible Schnittstellen einander anzupassen. Zum Import der DICOM-Objekte wird eine externe Bibliothek benötigt. Der Adapter hilft dabei, eine allgemeine Schnittstelle zwischen Bibliothek und Software zur Verfügung zu stellen, damit keine festen Abhängigkeiten entstehen.
+Strukturmuster bestimmen die Zusammensetzung der Klassen oder Objekte. Während dieser Abschlussarbeit wird im Speziellen auf das Muster \textit{Adapter} eingegangen, um externe Bibliotheken mit internen Klassen zu verknüpfen.
 
 \subsection{Adapter}
+Der Adapter passt Schnittstellen an, um Zusammenarbeit inkompatibler Objekte und Klassen zu ermöglichen. Er wird vorwiegend eingesetzt wenn die Schnittstelle einer Komponente nicht zu der einer benötigten Klasse passt und somit nicht gemeinsam verwendet werden können\cite[5.1]{starke:swa}. Ein Adapter aus der realen Welt ist gut mit dem Muster zu vergleichen. Ein Monitor mit VGA-Eingang(Client) benötigt eine Grafikkarte mit einem VGA-Ausgang zur Kommunikation. Hat die Karte jedoch nur eine DVI-Buchse(zu adaptierende Klasse) wird ein Adapter(Interface Adapter) benötigt, um das Signal umzuwandelnd. Abbildung \ref{adapterpattern} zeigt das Schema des Entwurfsmusters.
+
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=12cm]{./img/adapter.pdf}}
+   \caption{UML Klassendiagramm zum Adapter}
+  \label{adapterpattern}
+  \vspace{0.5cm}
+\end{figure}
 
 \section{Verhaltensmuster}
-Die Interaktion zwischen Objekten kann mit Verhaltensmustern festgelegt werden. Die Anforderung zur Darstellungen verschiedener Ebenen erfordert eine Möglichkeit zur Kommunikation unter den Anzeigeflächen der DICOM-Objekte. Hier kommt das Beobachtermuster zum Einsatz, um Veränderungen eines Objekts an andere Objekte zu melden.
+Die Interaktion zwischen Objekten kann mit Verhaltensmustern festgelegt werden. Die Anforderung aus Kapitel \ref{anforderungen} zur Darstellungen verschiedener Ebenen erfordert eine Möglichkeit zur Kommunikation unter den Anzeigeflächen der DICOM-Objekte. Hier kommt das Beobachtermuster zum Einsatz, um Veränderungen eines Objekts an andere Objekte zu melden. 
 
 \subsection{Observer}
+Wenn der Zustand mehrerer Objekte von einem anderen Objektzustand abhängt, kann man das Observer-Muster verwenden. So kann der Zustand abhängig vom beobachteten Objekt angepasst werden \cite[4.7]{starke:swa}. Ein Abonnement einer Zeitung(ConcreteSubject) oder eines Newsletters(ConcreteSubject) ist ein reales Beispiel dieses Muster. Alle Abonnenten\footnote{Frau Müller und Herr Schmidt würden ConcreteObserver repräsentieren}(Observer) erhalten(update()) vom Herausgeber(Subject) automatisch(notifyObservers()) die neue Ausgabe eines Magazins oder Newsletter sobald dieses erscheint. Ein Abonnent muss sich bewusst für eine Anmeldung entscheiden(register()), um neue Ausgaben zu erhalten. Das Konzept verdeutlicht Abbildung \ref{observer}.
 
-\subsection{Schablone}
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=12cm]{./img/observer.pdf}}
+   \caption{UML Klassendiagramm zum Observer}
+  \label{observer}
+  \vspace{0.5cm}
+\end{figure}
+
+%\subsection{Schablone}
 
 \section{Erzeugungsmuster}
-Erzeugungsmuster übernehmen die Erstellung der Objekte zur Laufzeit. Wie beschrieben haben DICOM-Bilddaten eine Grauwerttiefe zwischen 8- und 16-Bit. Daher kann erst zur Laufzeit entschieden werden, welchen Bildobjekt angelegt werden kann. Ein einfaches Fabrikmuster übernimmt diese Aufgabe.
+Erzeugungsmuster übernehmen die Erstellung der Objekte zur Laufzeit. Wie beschrieben haben DICOM-Bilddaten eine Grauwerttiefe zwischen 8- und 16-Bit. Daher kann erst zur Laufzeit entschieden werden, welchen Bildobjekt angelegt werden kann. Ein Fabrikmuster übernimmt diese Aufgabe.
 
-\subsection{Die einfache Fabrik}
-Dieses Entwurfsmuster kommt
+%\subsection{Die einfache Fabrik}
 
-\subsection{Abstrakte Fabrik}
+\subsection{Fabrik Methode}
 
-\subsection{Das Architekturmuster Plug-in}
+Dieses Entwurfsmuster bietet eine Schnittstelle(Fabrik) zur Erzeugung von Objekten(Produkte). Stehen die konkreten Objekttypen zur Laufzeit noch nicht fest, kann dieses Erzeugungsmuster eingesetzt werden, um Konstruktion und Repräsentation zu trennen\cite[3.3]{starke:swa}.\\
+Abbildung \ref{factorymethod} zeigt den Aufbau in einem UML-Diagramm. Als Beispiel kann man einen Handwerker(Client) mit seinem Lehrling(\textit{Factory}) betrachten, der Schrauben(\textit{Product}$\rightarrow$ \textit{Schraube8mm}, \textit{Schraube10mm}) zureichen muss. Der Handwerker muss nicht selbst von der Leiter steigen und im Werkzeugkasten nach der passende Schraube suchen. Er bittet den Lehrling zum Beispiel eine Schraube8mm zu bringen.
+Das Wissen über konkrete Schrauben stellt eine konkrete Fabrik dar. So ist der Lehrlich auch in der Lage andere Werkzeugkategorien zu verwalten. Jedes Werkzeug spezialisiert von AbtractProduct und das Wissen über die Kategorie von AbstractFactory.
+
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=12cm]{./img/factorymethod.pdf}}
+   \caption{UML Klassendiagramm zur Fabrik Methode}
+  \label{factorymethod}
+  \vspace{0.5cm}
+\end{figure}
+
+\subsection{Singleton}
+
+Ein Singleton-Entwurfsmuster wird eingesetzt, wenn es nur eine Instanz einer Klasse geben darf\cite[3.4]{starke:swa}. Das ist unter Anderem bei Konfigurationsklassen von Software sinnvoll, da eine Manipulation von unterschiedlichen Quellen ausgeschlossen werden kann.\\
+das Codelisting \ref{singleton} zeigt eine primitive Umsetzung in Java, die Intention eines Singletons wird allerdings deutlich. Durch die Sichtbarkeit \textit{private} des Konstruktors wird eine externe Instanziierung unterbunden. Die einzige Instanz der Klasse ist das private statische Datenelement \textit{Singleton s}. Zugriff darauf erlaubt nur die statische Methode \textit{getInstance()}.
+
+\lstset{
+language=Java,
+caption={Implementierung des Singelton-Musters in Java},
+label=singleton,
+xleftmargin=1em,
+xrightmargin=1em,
+numbers=left,
+backgroundcolor=\color{lgrey},
+}  
+\begin{figure}[htbp]
+\begin{lstlisting}[frame=leftline]
+public class Singleton{
+		
+  private static Singleton s = new Singleton();
+		  
+  private Singleton(){
+    //doThings();
+  }
+		  
+  public static Singleton getInstance(){
+    return s;
+  }
+}
+\end{lstlisting}
+
+\end{figure}
+
+\section{Das Architekturmuster Plug-in}
+
+Wird eine Software entwickelt, sollte das Open-Closed-Prinzip angewendet werden. Dieses besagt, dass Software sowohl offen, als auch geschlossen sein soll\cite[1.8]{goll:swa}. Bei Objektorientierten Programmiersprachen ist die Vererbung ein Beispiel, die den Widerspruch erläutert. Abgeleitete Klassen \textit{erweitern} die Fähigkeiten der Superklasse, die wiederum \textit{nicht verändert} werden. Die Superklasse ist offen für Erweiterung und geschlossen für Veränderung.\\
+Das Beispiel bezieht sich auf eine Klasse. Durch eine Erweiterung auf die Ebene der Softwarearchitektur entsteht das Plug-in-Muster. Das bedeutet, ein Plug-in stellt einem fertigen System zusätzliche Erweiterungen bereit, die zur Laufzeit eingebunden werden können und vorher dem System unbekannt sind. Die Kommunikation wird durch eine Schnittstelle möglich, die das System zur Verfügung stellt. Wird diese Schnittstelle implementiert kann die Klasse eingebunden werden. Abbildung \ref{pluginpattern} zeigt die Interaktion von Schnittstelle, System und konkreten Plug-ins.
+
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=12cm]{./img/pluginpattern.pdf}}
+   \caption{UML Klassendiagramm des Architekturmusters Plug-in}
+  \label{pluginpattern}
+  \vspace{0.5cm}
+\end{figure}

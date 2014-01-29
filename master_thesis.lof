@@ -29,15 +29,19 @@
 \contentsline {subfigure}{\numberline {3.9.2}{\ignorespaces {3D Bildfolge}}}{25}{figure.3.9}
 \contentsline {subfigure}{\numberline {3.9.3}{\ignorespaces {zeitlich Abh\IeC {\"a}ngige 3D Bildfolge}}}{25}{figure.3.9}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces UML Klassendiagramm zum Adapter}}{27}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces UML Klassendiagramm zum Observer}}{28}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces UML Klassendiagramm zur Fabrik Methode}}{29}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces UML Klassendiagramm des Architekturmusters Plug-in}}{31}{figure.4.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Architektur der Eclipse e4 Plattform zur Entwicklung von Rich Client Applikationen}}{30}{figure.5.1}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Verschiedene Elemente des Application Models}}{33}{figure.5.2}
-\contentsline {subfigure}{\numberline {5.2.1}{\ignorespaces {Window}}}{33}{figure.5.2}
-\contentsline {subfigure}{\numberline {5.2.2}{\ignorespaces {Part}}}{33}{figure.5.2}
-\contentsline {subfigure}{\numberline {5.2.3}{\ignorespaces {PartStack}}}{33}{figure.5.2}
-\contentsline {subfigure}{\numberline {5.2.4}{\ignorespaces {PartSashContainer}}}{33}{figure.5.2}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Die Benutzeroberfl\IeC {\"a}che von jMediKit}}{35}{figure.5.3}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces jMediKit und die hierarchische Anordnung der Elemente des Application Models}}{36}{figure.5.4}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Architektur der Eclipse e4 Plattform zur Entwicklung von Rich Client Applikationen}}{34}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Verschiedene Elemente des Application Models}}{37}{figure.5.2}
+\contentsline {subfigure}{\numberline {5.2.1}{\ignorespaces {Window}}}{37}{figure.5.2}
+\contentsline {subfigure}{\numberline {5.2.2}{\ignorespaces {Part}}}{37}{figure.5.2}
+\contentsline {subfigure}{\numberline {5.2.3}{\ignorespaces {PartStack}}}{37}{figure.5.2}
+\contentsline {subfigure}{\numberline {5.2.4}{\ignorespaces {PartSashContainer}}}{37}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Die Benutzeroberfl\IeC {\"a}che von jMediKit}}{39}{figure.5.3}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces jMediKit und die hierarchische Anordnung der Elemente des Application Models}}{40}{figure.5.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

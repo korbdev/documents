@@ -19,6 +19,12 @@
   Vorauseilen?
 \newblock {In: }\emph{Wirtschaftsdienst} 87 (2007), Juli, Nr. 7, S. 450--457
 
+\bibitem[ES13]{starke:swa}
+\textsc{Eilebrecht}, Karl ; \textsc{Starke}, Gernot:
+\newblock \emph{Patterns kompakt - Entwurfsmuster für effektive
+  Software-Entwicklung}.
+\newblock Springer Vieweg, 2013
+
 \bibitem[GD13]{goll:swa}
 \textsc{Goll}, Joachim ; \textsc{Dausmann}, Manfred:
 \newblock \emph{Architektur- und Entwurfsmuster der Softwaretechnik}.
