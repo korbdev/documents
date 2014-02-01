@@ -104,9 +104,10 @@ Die Oberfläche des Java Medical Imaging Toolkit besteht aus sechs zentralen Ele
 Die hierarchische Struktur der Anwendung wird in Abbildung \ref{hierarchy} dargestellt. Die sechs Blattknoten repräsentieren die nach außen für den Benutzer sichtbaren Teil der Anwendung. 
 
 
-\section{Erweiterbarkeit der Grundstruktur}
-Die flexible Struktur des Eclipse Application Models und der Rich Client Platform erlauben komfortable Erweiterungen. So können einzelne Parts den schon bestehenden Elementen zugeordnet, oder neue Perspectives eingefügt werden. Beispielsweise könnte ein neuer Part den FileStack(Abbildung \ref{hierarchy}) damit erweitern, dass DICOM-Objekte von einem PACS geladen werden. Das Kapitel \glqq \ref{extending}. \nameref{extending}\grqq\ zeigt eine Möglichkeit, jMediKit einen neuen Part hinzuzufügen.\\
-Damit ist der Teil erfüllt, dass die zu entwickelnde Anwendung für Erweiterungen offen steht. Modulare Werkzeuge komplettieren die Anforderung der Erweiterbarkeit für Entwickler.
+\section{Erweiterbarkeit der Grundstruktur} \label{hierarchyextending}
+Die flexible Struktur des Eclipse Application Models und der Rich Client Platform erlauben komfortable Erweiterungen. So können einzelne Parts den schon bestehenden Elementen zugeordnet, oder neue Perspectives eingefügt werden, die eine neue Benutzeroberfläche abbilden könnten. Beispielsweise kann ein neuer Part den FileStack(Abbildung \ref{hierarchy}) damit erweitern, dass DICOM-Objekte von einem PACS geladen werden. Das Kapitel \glqq \ref{extending}. \nameref{extending}\grqq\ zeigt eine Möglichkeit, jMediKit einen neuen Part hinzuzufügen.\\
+Durch das Hinzufügen von Elementen des Application Models ist es möglich in die Struktur und vor allem die Benutzeroberfläche einzugreifen. Das bedeutet auch, dass Parts oder andere Strukturen nur in der Lage sind neue Funktionen einzubauen. Es fehlt die Möglichkeit bereits existierende Elemente wie das Hauptmenü (MainMenu) oder die Werkzeugleiste (Toolbar) zu erweitern.
+%Damit ist der Teil erfüllt, dass die zu entwickelnde Anwendung für Erweiterungen offen steht. Modulare Werkzeuge %komplettieren die Anforderung der Erweiterbarkeit für Entwickler.
 
 \tikzstyle{every node}=[draw=black,thick,anchor=south, align=center]
 %\tikzstyle{selected}=[draw=red,fill=red!30]
@@ -147,11 +148,135 @@ Damit ist der Teil erfüllt, dass die zu entwickelnde Anwendung für Erweiterung
 \end{figure}
 
 \section{Modulare Werkzeuge}
+Ein neuer Eintrag in das Hauptmenü und die Werkzeugleiste ist mit Hilfe der Eclipse RCP-Bordmittel schnell erstellt. Dieser ist allerdings auch unabhängig der bisherigen Menüpunkte. So ist zum Beispiel der Eintrag \textit{Datei öffnen} nicht abhängig vom Menüpunkt \textit{Einstellungen}. Wird ein Eintrag ausgewählt, wird dieser ausgeführt und das Programm wartet auf die nächste Eingabe des Benutzers. Schwierigkeiten gibt es bei den Werkzeugen zur Bildmanipulation. Es kann immer nur ein Werkzeug aktiv ausgewählt sein. Zur Übersetzungszeit ist unklar, welche Werkzeuge wann erzeugt werden müssen. Daraus folgt, dass die verschiedenen Objekttypen der Werkzeuge erst zur Laufzeit erzeugt werden können, abhängig welches Werkzeug vom Benutzer ausgewählt wird. Wie in Abschnitt \ref{fabrikmethod} beschrieben, kann die Fabrik Methode für Anwendungsfälle dieser Art der Objekterzeugung eingesetzt werden. Bei den Klassen wird das Open-Closed-Prinzip beachtet. Die abstrakte Klasse \textit{ATool} gibt ein Grundwerkzeug vor und bietet eine Schnittstelle zur Erweiterung. \textit{AToolFactory} gibt die Vorgehensweise zur Werkzeugerzeugung vor. Abgeleitete Fabriken klassifizieren die Werkzeugkategorien.
+
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=12cm]{./img/toolfactory.pdf}}
+  \caption{Die Fabrik Methode zur Werkzeugerzeugung}
+  %\floatfoot{https://wiki.eclipse.org/Eclipse4}
+  \label{toolfactory}
+  \vspace{0.5cm}
+\end{figure}
+
+Abbildung \ref{toolfactory} zeigt die Umsetzung dieses Erzeugungsmusters. Die Grundversion von jMediKit enthält die zwei konkreten Fabriken \textit{TransformationToolFactory} und \textit{SelectionToolFactory}. Erstere beinhaltet Werkzeuge zur Bildtransformation wie die Skalierung (\textit{ResizeTool}) und letztere enthält ein Werkzeug zur Auswahl von Punkten im Bild(\textit{PointTool}). Sollen weitere Werkzeuge entwickelt werden, können diese von der Superklasse \textit{ATool} abgeleitet werden. Passt das Tool in keine verfügbare Fabrik, kann auch hier eine neue Rubrik erzeugt werden.
+
+\section{Die Plug-in Architektur}
+
+Die Entwicklung von Erweiterungen durch den Anwender spielt eine zentrale Rolle in dieser Abschlussarbeit. Die Entwicklung von zusätzlichen Funktionen und Bedienelemente mittels des Application Models sind erst nach einem erneuten Build-Prozess verfügbar. Es soll den Anwendern eine Möglichkeit geboten werden, eigenständig Erweiterungen zu entwickeln. Der Wirkungsbereich dieser Plug-ins beschränkt sich auf die Manipulation der Bilddaten. Dadurch ist kein explizites Wissen zur Eclipse-Plattform nötig.\\
+Die Grundlage der Plug-in Architektur bildet das in Kapitel \ref{swa} vorgestellte Plug-in-Muster. In den Anforderungen ist festgelegt, dass diese Programmerweiterungen sowohl in zwei- als auch dreidimensionaler Richtung arbeiten sollen. Dadurch ist eine Anpassung des Architekturmusters notwendig. Als Ergebnis wird eine Kombination aus Plug-in, Schablonenmethode und Singleton eingesetzt. Das UML-Diagramm in Abbildung \ref{aplugin} zeigt die Architektur und Zusammenarbeit der drei Muster.
+
+%Es ergeben sich verschiedene Probleme bei der Umsetzung Schablone, Singleton, 
+
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=12cm]{./img/APlugin.pdf}}
+  \caption{Architektur der Plug-in-Struktur}
+  %\floatfoot{https://wiki.eclipse.org/Eclipse4}
+  \label{aplugin}
+  \vspace{0.5cm}
+\end{figure}
+
+\subsection{Plug-in als Grundstruktur}
+Die Manager-Klasse des Architekturmusters ist \textit{PlugInClassLoader}. Diese Klasse dient sowohl zum Laden der Plug-ins, als auch zum Instantiieren der Plug-in-Objekte. Aufgrund des eingeschränkten Wirkungsbereich der Plug-ins ist die Zeichenfläche der Anwendung(\textit{Canvas}) das einzige Modul, das über den Manager Plug-in-Objekte erzeugen kann.\\
+Ein Unterschied zur UML-Darstellung in Abbildung \ref{pluginpattern} besteht darin, dass keine Schnittstelle zur Implementierung, sondern eine abstrakte Klasse \textit{APlugIn} zur Ableitung zur Verfügung gestellt wird. Das bringt den Vorteil, gemeinsame Methoden zu definieren die in allen Plug-ins enthalten sind.
+ %jMediKit
+%Aufgrund des eingeschränkten Wirkungsbereich der Plug-ins ist die Zeichenfläche der Anwendung das einzige Modul von %jMediKit, das diese Art der Erweiterungen aufrufen ausführen kann. Dadurch besitzt die Manager-Klasse %\textit{PlugInClassLoader} nur eine singuläre Beziehung zur Klasse der Zeichenfläche.
+
+\subsection{Erweiterung mit der Schablonenmethode}
+Nach den Anforderungen in Kapitel \ref{anforderungen} ist es nötig, Plug-in-Schnittstellen sowohl für die Entwicklung von zwei- als auch dreidimensionalen Bilddaten anzubieten. Um dies zu erfüllen, stehen dem Benutzer die beiden abstrakten Klassen \textit{APlugIn2D} und \textit{APlugIn3D} zur Verfügung. Beide Varianten repräsentieren die Schablonenmethode. Das Template wird von der Methode \textit{run()} repräsentiert. Der generische Teil des Algorithmus ist \textit{process()}. Die Schablone ist notwendig, da abhängig von 2D und 3D andere Bilddaten an den Benutzer zum Bearbeiten übergeben werden müssen. Nach dem Aufruf von \textit{process()} wird zusätzlich die Rückgabe des Benutzers von der Templatemethode \textit{run()} validiert. Die Schablone ermöglicht dadurch eine Vorverarbeitung und Nachbearbeitung der Bilddaten.
+ 
+\subsection{Singleton als Plug-in Manager}
+Der Manager \textit{PlugInClassLoader} ist als Singleton realisiert. Dadurch wird das Problem umgangen, dass mehrere Manager die gleichen Plug-ins laden. Passiert dies, sind gleiche Klassen zueinander inkompatibel und es kann nicht sichergestellt werden, welche Klasse von welchem Manager zur Verfügung gestellt wird.\\
+Damit neue Klassen zum Programmstart eingebunden werden können, wird der Java System Classloader über den Manager um einen URL-Classloader erweitert. So werden zu den bisherigen Klassen der Java Virtual Machine alle die Plug-in-Klassen hinzugefügt.
 
 \section{Externe Bibliotheken}
 
+Fremde Bibliotheken werden aus verschiedenen Gründen benötigt. Zum einen für das Lesen von DICOM-Objekten und zum anderen bieten Bildverarbeitungsbibliotheken eine gute Grundlage an Funktionen. Zur Verarbeitung von DICOM-Dateien verwenden jMediKit die freie Bibliothek \glqq dcm4che\grqq. Für die Bildverarbeitung wird \glqq Simple ITK\grqq\ eingesetzt.
+
 \subsection{dcm4che}
+Im Kapitel \glqq \nameref{grundlagen}\grqq\ wurden nur die Grundlagen gezeigt. Die Standards zu DICOM-Objekten, Kommunikation und Speicherung sind komplex. Daher wird zur Verarbeitung medizinischer Daten(vor Allem Patienten- und Bilddaten) auf externe Bibliotheken zurückgegriffen. Für eine Implementierung in Java standen folgende zur Auswahl: \textit{Pixelmed}\footnote{http://www.pixelmed.com/} und \textit{dcm4che2}\footnote{http://www.dcm4che.org/}. Beide bieten mit DICOM-Objekt-Verarbeitung und Netzwerkkommunikation ähnliche Dienste.\\
+dcm4che.org bietet allerdings eine Software namens \textit{dcm4chee} um ein PACS zu betreiben. Diese wird im Labor für medizische Bildverarbeitung eingesetzt. Das ermöglicht eine leichtere Integration für spätere Erweiterungen von jMediKit in die bestehende Umgebung des Labors.\\
+Dcm4che2 wird unter der GNU General Public License. Dies ermöglicht die freie Verwendung der Software. JMediKit setzt die Version 2.028 ein.
 
-\subsection{Java Advanced Imaging}
+\subsubsection{Java Advanced Imaging Image I/O Tools}
+Um alle Bildformate (abhängig von der Transfersyntax der DICOM-Objekte werden Bilddaten komprimiert als JPEG oder JPEG200 gespeichert) lesen zu können, verwendet dmc4che2 die Bildverarbeitungsbibliothek \textit{Java Advanced Imaging Image I/O Tools}. Diese ist \textit{nicht} in dcm4che2 integriert und muss vom Anwender selbst auf dem System installiert werden. Die benötigten Dateien und Pakete können unter \textit{http://download.java.net/media/jai-imageio/builds/release/1.1/ - Stand 31.01.2014} bezogen werden.
 
-\section{Bibliotheken zur Plug-in Entwicklung}
+\subsection{Simple ITK}
+Das \textit{Insight Segmentation and Registration Toolkit(ITK)}\footnote{http://www.itk.org/} ist eine umfangreiche Sammlung an Algorithmen zur Segmentierung und Registrierung. Das ITK ist plattformübergreifend einsetzbar und wurde in C++ implementiert. Zwar sind Java- oder Python-Wrapper\footnote{Wrapper machen es möglich, Bibliotheken fremder Sprachen in aktuellen Sprachen einzubinden und zu benutzen. So wäre es möglich, das ITK, welches in C++ implementiert ist, über Wrapper in Java nutzen zu können} verfügbar, für die aktuelle Version 4 war es zum Zeitpunkt der Erstellung dieser Arbeit allerdings nicht möglich zuverlässig einen ITK-Build für eine Verwendung in Java zu erstellen.\\
+Das \textit{Simple ITK}\footnote{http://www.simpleitk.org/} bietet eine kompakte Implementierung des ITK. Insgesamt sind 75\% der Klassen aus dem ITK integriert\cite{sitk:filter}. Für einen Einsatz in einer Java Umgebung, kann das Projekt als Java-Bibliothek bezogen werden. Simple ITK steht unter der Apache 2.0 Lizenz und erlaubt eine uneingeschränkte Nutzung.
+
+\subsection{Der Adapter zur Auflösung von Abhängigkeiten}
+
+Eine Nutzung von externen Bibliotheken bedeutet gleichzeitig, dass Abhängigkeiten zwischen dem zu entwickelndem Programm und den fremden Paketen geschaffen werden. Werden bibliotheksspezifische Objekte im Quelltext erzeugt ist man abhängig von einer kontinuierlichen Weiterentwicklung der eingebundenen Projekte. Bei einem Wechsel der Bibliotheken müssen alle referenzierten Objekte angepasst werden und der Code ist nicht mehr ohne erheblichen Mehraufwand wartbar.\\
+Mit Hilfe des Adapters werden bei jMediKit die Abhängigkeiten aufgelöst. In Abbildung \ref{dicomo} wird das Klassendiagramm dargestellt. Wie auch das Plug-in Muster wird auch der Adapter mit Anpassungen eingesetzt. Unter jMediKit wird ein DICOM-Objekt aus zwei unterschiedlichen Teilen repräsentiert. Ein Teil (\textit{IDicomData}) beinhaltet den reinen Datenteil. Das bedeutet alle verfügbaren Tags des DICOM-Objekts sind enthalten. Der zweite Teil (IDicomImageData) besteht aus den reinen Pixeldaten. Diese beiden Schnittstellen bilden den Adapter für die externe Bibliothek \textit{dcm4che2}. Durch die Trennung von Daten und Bilddaten bleibt die Flexibilität bei der Bibliothekswahl erhalten. So kann zum Beispiel Simple ITK nur für das Einlesen der Bilddaten verwendet werden, denn es werden keine Methoden zum Auslesen der Tags geboten. Dadurch wäre eine zweite Bibliothek für den Datenteil notwendig. In der Implementierung des Adapters wird in beiden Teilen \textit{dcm4ch2} eingesetzt, da diese Bibliothek sowohl Daten als auch Bilddaten verarbeiten kann. Die beiden Klassen \textit{DicomImageData} und \textit{DicomData} implementieren die Schnittstellten \textit{IDicomImageData} und \textit{IDicomData}. Keine anderen Klassen greifen auf Objekte und Methoden aus den Bibliotheken zu.\\
+Um beide Aspekte zu vereinen, stellen die Schnittstellen \textit{IDicomData} und \textit{IDicomImageData} die neuen zu adaptierenden Funktionen dar, die von \textit{ADicomObject} adaptiert werden. Der konkrete Adapter ist \textit{DicomObject}. Um die Abhängigkeiten aufzulösen und die Flexibilität in der Bibliothekswahl zu wahren wird dieser geschachtelte Adapter eingesetzt.
+
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=12cm]{./img/Dicomo.pdf}}
+  \caption{Das Adapter-Muster unter jMediKit}
+  %\floatfoot{https://wiki.eclipse.org/Eclipse4}
+  \label{dicomo}
+  \vspace{0.5cm}
+\end{figure}
+
+Zusätzlich wird die Schnittstelle zur Bibliothek vereinfacht, indem nur Funktionen zur Verfügung gestellt werden, die tatsächlich eingesetzt werden. Werden zusätzliche Funktionen benötigt, kann das Interface der Adapter erweitert werden.\\
+Soll zukünftig eine Bibliothek getauscht werden, muss nur das Interface neu implementiert werden und die Anwendung kann wie gewohnt eingesetzt werden.
+
+\section{Die Architektur der Bilddaten}
+
+Die Bilddaten sind ein Teil des \textit{ADicomObjects}. Diese werden mit Hilfe der abstrakten Klasse \textit{AImage} dargestellt und enthalten viele zusätzliche Informationen wie Bilddimension, Fensterungsdaten oder die Position des Patienten im Raum. Wie in Kapitel \ref{grundlagen} erläutert, besitzen medizinische Bilder unterschiedliche Grauwert-Tiefen oder Farbdarstellungen. Um die Unterschiedlichen Bildtypen abzubilden stehen die konkreten Klassen \textit{UnsignedByteImage} $\rightarrow$ 8-Bit, \textit{ShortImage} $\rightarrow$ 16-Bit, \textit{UnsignedShortImage} $\rightarrow$ 16-Bit und \textit{IntegerImage} $\rightarrow$ 32-Bit Farbbild zur Verfügung. Ein \textit{ADicomObject} beinhaltet alle Bilddaten der entsprechenden Serie des DICOM-Objekts.\\
+Um mit \textit{AImage} zu arbeiten gibt es zwei Möglichkeiten: Die Erste ist das Auslesen über das \textit{ADicomObject}. Hierzu muss ein DICOM-Objekt aus einer Datei eingelesen werden. Im Bereich der Plug-in-Entwicklung ist es sinnvoll leere Bilder zu erzeugen und während der Anwendung des Plug-ins mit neuen Werten zu Füllen. Hierbei hilft die Klasse \textit{SimpleImageFactory}.
+
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=12cm]{./img/imagemodel.pdf}}
+  \caption{Diagramm zur Klassenstruktur der Bilddaten}
+  %\floatfoot{https://wiki.eclipse.org/Eclipse4}
+  \label{imagemodel}
+  \vspace{0.5cm}
+\end{figure}
+
+\subsection{Die einfache Fabrik}
+
+Die einfache Fabrik ist ähnlich der Fabrikmethode, allerdings wird dieses Verfahren der Objekterzeugung nicht den Entwurfsmustern zugeordnet.\\
+Beim Entwickeln von Plug-ins können Anwender vor dem Problem stehen, nicht zu wissen, welche Grauwert-Tiefe das aktuell geladene Objekt besitzt. Nur ein mühsames Auslesen über die DICOM-Tags und oder einer Schleife zur Typ-Ermittlung würde Abhilfe schaffen. Der statischen Methode \textit{getImage()} von \textit{SimpleImageFactory} kann der Bildtyp des DICOM-Objekts übergeben werden, worauf ein typgerechtes Bildobjekt erzeugt und zurückgegeben wird.
+
+\subsection{Struktur der Bilder im ImageViewPart}
+
+Da die Struktur der Bilddaten dargestellt wurde, kann nun die Vorgehensweise zur Anzeige dieser vorgestellt werden.\\
+
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=12cm]{./img/imageview.pdf}}
+  \caption{Organisation der Klassen zur Anzeige der DICOM-Bilddaten}
+  %\floatfoot{https://wiki.eclipse.org/Eclipse4}
+  \label{imageview}
+  \vspace{0.5cm}
+\end{figure}
+
+Auf der Benutzeroberfläche findet dieser Vorgang im ImageView Part statt (Abschnitt \ref{hierarchyextending}). Wie in Abbildung \ref{imageview} zu sehen, bildet \textit{ImageViewPart} die Grundlage und dient als Elternelement eines \textit{ImageViewComposites}, von diesen maximal vier zum gleichen Zeitpunkt angezeigt werden können. \textit{ImageViewComposites} erben von der SWT-Klasse \textit{Composite} und enthalten weitere Bedienelemente für den Benutzer. Hierzu zählt die Scrollleiste am rechten Rand wie in Abbildung \ref{iv:1} zu sehen ist. Mit diesem Scrollbalken wird die Schicht aus den dreidimensionalen Bilddaten gewählt, die vom \textit{DicomCanvas} angezeigt werden soll. Die Superklasse von \textit{DicomCanvas} gehört ebenfalls zum Repertoire des SWT und ist das zentrale Element zur Bildanzeige. \textit{DicomCanvas} enthält sämtliche Bilder des DICOM-Objekts.
+
+\begin{figure*}[htb]
+%\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
+\centering
+\fbox{
+\subfigure[Darstellung eines ImageViewComposite]{\includegraphics[width=5cm]{./img/ivcomposite.png} \label{iv:1}}
+\subfigure[Vier ImageViewComposites im ImageViewPart]{\includegraphics[width=5cm]{./img/ivcomposite4.png} \label{iv:4}}
+}
+\caption{Benutzeroberfläche der ImageViewComposites}
+\label{ivcomposite}
+\end{figure*}
+
+Abbildung \ref{iv:4} zeigt vier \textit{ImageViewComposites}, wobei alle außer Composite unten rechts die gleichen DICOM-Objekte anzeigen.
+Angenommen ein Benutzer führt einen Klick mit der rechten Maustaste auf den in rot markierten Punkt aus, müssen alle \textit{ImageViewComposites} den gleichen Punkt im dreidimensionalen Raum referenzieren. Dieser wird durch den Schnittpunkt der Linien angezeigt. Eine genaue Beschreibung dazu befindet sich in Kapitel \ref{implementation}.\\
+Damit dieses Verhalten von Seiten der Architektur unterstützt wird, muss sichergestellt werden, dass die \textit{ImageViewComposites} untereinander kommunizieren können, dass eine Änderung stattgefunden hat.\\
+Aus dem Kapitel \ref{swa} löst das Observer-Muster diese Anforderungen. Der Zyklus in Abbildung \ref{imageview} zeigt die Funktionsweise. Jede ImageViewComposite ist gleichzeitig \textit{ConcreteSubject} als auch \textit{ConcreteObserver}. Das bedeutet, bei jeder Registrierung eines neuen DICOM-Objekts wird geprüft, ob dieses schon im \textit{ImageViewPart} vorhanden ist. Ist dies der Fall, wird es als neuer Observer an bisherigen Subjects angemeldet.\\
+Bei diesem Einsatz besteht die Gefahr einer Endlosschleife, wenn der Zyklus nicht beachtet wird. Die Schleife tritt ein wenn ein Subject die Observer benachrichtigt, die Observer ändern den Status und benachrichtigen darauf wiederum ihre Beobachter und so weiter. Bei der Implementierung von jMediKit wird eine Änderung angenommen und das \textit{DicomCanvas} neu gezeichnet und löst keine Rückmeldung einer Änderung aus. \\
+Auf dieser Architekturgrundlage findet die im folgenden Kapitel erläuterte Implementierung statt.

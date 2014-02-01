@@ -298,7 +298,7 @@ Sowohl die Grauwertdarstellungen, als auch Farbbilder wurden bisher nur als eine
 
 Auch Bildaufnahmen zu verschiedenen Zeitpunkten sind dreidimensionale Bildfolgen, wobei die Zeit die dritte Dimension darstellt\cite[2.2.5]{handels:mbv}. Häufige Einsatzgebiete für Bewegtbildfolgen ist die Endoskopie oder Sonographie. Die Abbildung \ref{time3d} macht den Unterschied zwischen zeitlicher und räumlicher Dimension deutlich. Räumliche Darstellungen sind grundsätzlich in mehrere DICOM-Objekte und Dateien aufgeteilt. Zeitlich abhängige Daten sind in einem einzigen Objekt zusammengefasst. NumberOfFrames (0028,0008) gibt die Anzahl an unterschiedlichen Aufnahmen und Zeitpunkten an, die in PixelData enthalten sind.
 
-\chapter{Grundlagen zu Entwurfsmustern der Softwareentwicklung}
+\chapter{Grundlagen zu Entwurfsmustern der Softwareentwicklung} \label{swa}
 
 Während der Entwicklung von Software stehen Programmierer oft vor ähnlichen Problemstellungen. Entwurfsmuster bieten hierfür verlässliche Lösungsvorschläge\cite{goll:swa}. Muster werden unabhängig vom aktuellen Abschnitt des Entwicklungsprozesses eingesetzt. So gibt es Schablonen, die das Softwaresystem beschreiben, oder Muster, die auf Objektebene eingesetzt werden. Hierbei wird zwischen Architekturmustern und Entwurfsmustern unterschieden. Nach Goll und Dausmann \cite[3.1, 3.2]{goll:swa} ist das Ziel der Entwurfsmuster, Lösungen wiederverwendbar zu gestalten und die Flexibilität der Software zu erhöhen. Muster verbessern unter anderem die beiden Eigenschaften der Verständlichkeit und Erweiterbarkeit. Im Rahmen der Arbeit werden vor Allem objektorientierte Muster folgender Klassen verwendet:
 
@@ -341,16 +341,52 @@ Wenn der Zustand mehrerer Objekte von einem anderen Objektzustand abhängt, kann
   \vspace{0.5cm}
 \end{figure}
 
-%\subsection{Schablone}
+\subsection{Schablonenmethode}
 
-\section{Erzeugungsmuster}
+Die Schablonenmethode wird eingesetzt, wenn Teile eines Algorithmus flexibel austauschbar sein sollen. Ein Rezept für Weihnachtsgebäck könnte zum Beispiellisting folgende Vorgehensweise wie in Listing \ref{beispielgebaeck} haben. Abbildung \ref{templatemethod} zeigt das UML Diagramm dieses Entwurfsmusters. Eine Abstrakte Klasse definiert eine Vorgehensweise \textit{templateMethod()}. Im Beispiel ist das die Klasse \textit{Gebaeck}. Abgeleitete Klassen definieren die genaue Vorgehensweise des Algorithmus durch die implementierten abstrakten Methoden \textit{Operation1() - Operation3()}( im Beispiel sind das die Methoden \textit{vermengeZutaten() - backen()}). Die Backzeiten von Spekulatius und Keksen sind unterschiedlich. Durch die spezifische Umsetzung von \textit{backen()} wird die Backzeit individuell angepasst. Das bedeutet die Vorgehensweise ist identisch, die Umsetzung kann spezifisch variieren.
+\lstset{
+language=Java,
+caption={Beispiel zur Schablonenmethode},
+label=beispielgebaeck,
+xleftmargin=1em,
+xrightmargin=1em,
+numbers=left,
+backgroundcolor=\color{lgrey},
+}  
+\begin{figure}[htbp]
+\begin{lstlisting}[frame=leftline]
+public abstract class Gebaeck{
+		
+  public void gebaeckBacken(){
+    vermengeZutaten();
+    verarbeiteZutatenZuTeig();
+    rolleTeigAus();
+    stecheFormenAus();
+    backen();
+  }
+  
+}
+\end{lstlisting}
+
+\end{figure}
+
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=12cm]{./img/template.pdf}}
+   \caption{UML Klassendiagramm der Schablonenmethode}
+  \label{templatemethod}
+  \vspace{0.5cm}
+\end{figure}
+
+\section{Erzeugungsmuster} \label{creation}
 Erzeugungsmuster übernehmen die Erstellung der Objekte zur Laufzeit. Wie beschrieben haben DICOM-Bilddaten eine Grauwerttiefe zwischen 8- und 16-Bit. Daher kann erst zur Laufzeit entschieden werden, welchen Bildobjekt angelegt werden kann. Ein Fabrikmuster übernimmt diese Aufgabe.
 
 %\subsection{Die einfache Fabrik}
 
-\subsection{Fabrik Methode}
+\subsection{Fabrik Methode} \label{fabrikmethod}
 
-Dieses Entwurfsmuster bietet eine Schnittstelle(Fabrik) zur Erzeugung von Objekten(Produkte). Stehen die konkreten Objekttypen zur Laufzeit noch nicht fest, kann dieses Erzeugungsmuster eingesetzt werden, um Konstruktion und Repräsentation zu trennen\cite[3.3]{starke:swa}.\\
+Dieses Entwurfsmuster bietet eine Schnittstelle(Fabrik) zur Erzeugung von Objekten(Produkte). Stehen die konkreten Objekttypen erst zur Laufzeit des Programms fest, kann dieses Erzeugungsmuster eingesetzt werden, um Konstruktion und Repräsentation zu trennen\cite[3.3]{starke:swa}.\\
 Abbildung \ref{factorymethod} zeigt den Aufbau in einem UML-Diagramm. Als Beispiel kann man einen Handwerker(Client) mit seinem Lehrling(\textit{Factory}) betrachten, der Schrauben(\textit{Product}$\rightarrow$ \textit{Schraube8mm}, \textit{Schraube10mm}) zureichen muss. Der Handwerker muss nicht selbst von der Leiter steigen und im Werkzeugkasten nach der passende Schraube suchen. Er bittet den Lehrling zum Beispiel eine Schraube8mm zu bringen.
 Das Wissen über konkrete Schrauben stellt eine konkrete Fabrik dar. So ist der Lehrlich auch in der Lage andere Werkzeugkategorien zu verwalten. Jedes Werkzeug spezialisiert von AbtractProduct und das Wissen über die Kategorie von AbstractFactory.
 
