@@ -7,6 +7,12 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[Bal11]{balzert:swa}
+\textsc{Balzert}, Helmut:
+\newblock \emph{Lehrbuch der Softwaretechnik - Entwurf, Implementierung,
+  Installation und Betrieb}.
+\newblock Spektrum, 2011
+
 \bibitem[BLT98]{radio:hounsfield}
 \textsc{Bücheler}, Egon ; \textsc{Lackner}, Klaus-Jürgen  ; \textsc{Thelen},
   Manfred:
@@ -74,7 +80,7 @@
 \textsc{{National Electrical Manufacturers Association}}:
 \newblock \emph{Digital Imaging and Communications in Medicine (DICOM) - Part
   5: Data Structures and Encoding}.
-\newblock \url{{ftp://medical.nema.org/medical/dicom/2011/11_03pu.pdf}}.
+\newblock \url{{ftp://medical.nema.org/medical/dicom/2011/11_05pu.pdf}}.
 \newblock \,Version:\,2011
 
 \bibitem[{Nat}11c]{dicom:dd}
