@@ -96,6 +96,14 @@
   {(DICOM)}}.
 \newblock Springer-Verlag Berlin Heidelberg, 2008
 
+\bibitem[Smi03]{itk:mail}
+\textsc{Smith}, Jolinda:
+\newblock \emph{Create 3D image data by a series of 2D dicom files t}.
+\newblock
+  \url{{http://www.itk.org/pipermail/insight-users/2003-September/004762.html}}.
+\newblock \,Version:\,2003. --
+\newblock Stand 05.02.2014
+
 \bibitem[{The}13]{eclipse:help}
 \textsc{{The Eclipse Foundation}}:
 \newblock \emph{Eclipse documentation - Current Release}.
@@ -108,6 +116,11 @@
 \newblock \url{{http://www.eclipse.org/swt/}}.
 \newblock \,Version:\,2014. --
 \newblock Stand 23.01.2014
+
+\bibitem[Ull07]{java:insel}
+\textsc{Ullenboom}, Christian:
+\newblock \emph{Java ist auch eine Insel - Das umfassende Handbuch}.
+\newblock Galilieo Press, 2007
 
 \bibitem[Vog13a]{vogel:e4overview}
 \textsc{Vogel}, Lars:

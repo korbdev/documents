@@ -53,6 +53,11 @@
 \contentsline {subfigure}{\numberline {5.10.2}{\ignorespaces {Vier ImageViewComposites im ImageViewPart}}}{52}{figure.5.10}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Die Baumansicht des DICOM-Browsers mit geladenen Objekten}}{55}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Beispielhafte Darstellung eines Baumes mit $h = 4$ in der Implementierung}}{57}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces R\IeC {\"a}umliche Sortierung der DICOM-Objekte}}{60}{figure.6.3}
+\contentsline {subfigure}{\numberline {6.3.1}{\ignorespaces {Darstellung der beiden Spannvektoren der Bildebene}}}{60}{figure.6.3}
+\contentsline {subfigure}{\numberline {6.3.2}{\ignorespaces {Vektoren weiterer Bildebenen}}}{60}{figure.6.3}
+\contentsline {subfigure}{\numberline {6.3.3}{\ignorespaces {Objektanordnugn an der dominanten Achse}}}{60}{figure.6.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
