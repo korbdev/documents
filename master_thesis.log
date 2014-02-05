@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.7.4)  5 FEB 2014 01:30
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.7.4)  5 FEB 2014 22:47
 entering extended mode
 **master_thesis.tex
 (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.tex
@@ -1991,42 +1991,47 @@ Overfull \hbox (1.38268pt too wide) in paragraph at lines 127--127
 []|\OT1/cmr/bx/n/12 Vorzeichen| 
  []
 
-[58] <./img/normalenvektor.pdf, id=1303, 426.79147pt x 284.52798pt>
+[58] <./img/normalenvektor.pdf, id=1302, 426.79147pt x 284.52798pt>
 File: ./img/normalenvektor.pdf Graphic file (type pdf)
 
 <use ./img/normalenvektor.pdf>
-Package pdftex.def Info: ./img/normalenvektor.pdf used on input line 149.
+Package pdftex.def Info: ./img/normalenvektor.pdf used on input line 148.
 (pdftex.def)             Requested size: 142.26378pt x 94.84097pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
 []\OT1/cmr/m/n/10 6.3.1: Dar-stel-lung der bei-den
  []
 
-<./img/normalenvektorstack.pdf, id=1304, 426.79147pt x 284.52798pt>
+<./img/normalenvektorstack.pdf, id=1303, 426.79147pt x 284.52798pt>
 File: ./img/normalenvektorstack.pdf Graphic file (type pdf)
 
 <use ./img/normalenvektorstack.pdf>
-Package pdftex.def Info: ./img/normalenvektorstack.pdf used on input line 149.
+Package pdftex.def Info: ./img/normalenvektorstack.pdf used on input line 148.
 (pdftex.def)             Requested size: 142.26378pt x 94.84097pt.
 
-<./img/dominantindex.pdf, id=1305, 426.79147pt x 284.52798pt>
+<./img/dominantindex.pdf, id=1304, 426.79147pt x 284.52798pt>
 File: ./img/dominantindex.pdf Graphic file (type pdf)
 
 <use ./img/dominantindex.pdf>
-Package pdftex.def Info: ./img/dominantindex.pdf used on input line 149.
+Package pdftex.def Info: ./img/dominantindex.pdf used on input line 148.
 (pdftex.def)             Requested size: 142.26378pt x 94.84097pt.
 
-Underfull \hbox (badness 1776) in paragraph at lines 149--149
-[]\OT1/cmr/m/n/10 6.3.3: Ob-jek-t-an-ord-nugn an der
+Underfull \hbox (badness 3701) in paragraph at lines 148--148
+[]\OT1/cmr/m/n/10 6.3.3: Sor-tie-rung er-folgt durch
  []
 
 
-Overfull \hbox (5.7636pt too wide) in paragraph at lines 149--150
+Underfull \hbox (badness 10000) in paragraph at lines 148--148
+\OT1/cmr/m/n/10 Be-stim-mung der do-mi-nan-ten
+ []
+
+
+Overfull \hbox (5.7636pt too wide) in paragraph at lines 148--149
  [][] 
  []
 
-) [59] [60 <C:/Users/rkorb/master_thesis/documents/thesis/img/normalenvektor.pd
-f> <C:/Users/rkorb/master_thesis/documents/thesis/img/normalenvektorstack.pdf
+[59 <C:/Users/rkorb/master_thesis/documents/thesis/img/normalenvektor.pdf> <C:/
+Users/rkorb/master_thesis/documents/thesis/img/normalenvektorstack.pdf
 
 pdfTeX warning: pdflatex.exe (file C:/Users/rkorb/master_thesis/documents/thesi
 s/img/normalenvektorstack.pdf): PDF inclusion: multiple pdfs with page group in
@@ -2036,9 +2041,18 @@ cluded in a single page
 pdfTeX warning: pdflatex.exe (file C:/Users/rkorb/master_thesis/documents/thesi
 s/img/dominantindex.pdf): PDF inclusion: multiple pdfs with page group included
  in a single page
->] (C:\Users\rkorb\master_thesis\documents\thesis\extending.tex
+>] [60]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 178.
+
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <12> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 178.
+)
+[61] [62] (C:\Users\rkorb\master_thesis\documents\thesis\extending.tex
 Kapitel 7.
-) [61
+) [63
 
 
 
@@ -2270,7 +2284,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--61
 
  []
 
-<./img/eclipse_std.png, id=1568, 1027.84pt x 768.8725pt>
+<./img/eclipse_std.png, id=1593, 1027.84pt x 768.8725pt>
 File: ./img/eclipse_std.png Graphic file (type png)
 
 <use ./img/eclipse_std.png>
@@ -2279,21 +2293,21 @@ Package pdftex.def Info: ./img/eclipse_std.png used on input line 65.
  [11
 
  <C:/Users/rkorb/master_thesis/documents/thesis/img/eclipse_std.png>]
-<./img/e4download.png, id=1575, 1504.62125pt x 1006.76125pt>
+<./img/e4download.png, id=1600, 1504.62125pt x 1006.76125pt>
 File: ./img/e4download.png Graphic file (type png)
 
 <use ./img/e4download.png>
 Package pdftex.def Info: ./img/e4download.png used on input line 77.
 (pdftex.def)             Requested size: 1504.61758pt x 1006.75879pt.
 
-<./img/repolink.png, id=1577, 939.51pt x 978.65625pt>
+<./img/repolink.png, id=1602, 939.51pt x 978.65625pt>
 File: ./img/repolink.png Graphic file (type png)
  <use ./img/repolink.png>
 Package pdftex.def Info: ./img/repolink.png used on input line 89.
 (pdftex.def)             Requested size: 939.5077pt x 978.65387pt.
 
 [12 <C:/Users/rkorb/master_thesis/documents/thesis/img/e4download.png>]
-<./img/installnew.png, id=1585, 883.3pt x 691.58376pt>
+<./img/installnew.png, id=1609, 883.3pt x 691.58376pt>
 File: ./img/installnew.png Graphic file (type png)
 
 <use ./img/installnew.png>
@@ -2301,14 +2315,14 @@ Package pdftex.def Info: ./img/installnew.png used on input line 100.
 (pdftex.def)             Requested size: 883.29785pt x 691.58206pt.
  [13 <C:/Users/rkorb/master_thesis/documents/thesis/img/repolink.png> <C:/Users
 /rkorb/master_thesis/documents/thesis/img/installnew.png>] <./img/insertrepo.pn
-g, id=1592, 486.81876pt x 188.705pt>
+g, id=1616, 486.81876pt x 188.705pt>
 File: ./img/insertrepo.png Graphic file (type png)
 
 <use ./img/insertrepo.png>
 Package pdftex.def Info: ./img/insertrepo.png used on input line 111.
 (pdftex.def)             Requested size: 486.81757pt x 188.70453pt.
 
-<./img/e4install.png, id=1594, 882.29625pt x 688.5725pt>
+<./img/e4install.png, id=1618, 882.29625pt x 688.5725pt>
 File: ./img/e4install.png Graphic file (type png)
 
 <use ./img/e4install.png>
@@ -2316,21 +2330,21 @@ Package pdftex.def Info: ./img/e4install.png used on input line 122.
 (pdftex.def)             Requested size: 882.2941pt x 688.5708pt.
  [14 <C:/Users/rkorb/master_thesis/documents/thesis/img/insertrepo.png> <C:/Use
 rs/rkorb/master_thesis/documents/thesis/img/e4install.png>] <./img/import.png, 
-id=1603, 522.95375pt x 659.46375pt>
+id=1627, 522.95375pt x 659.46375pt>
 File: ./img/import.png Graphic file (type png)
 
 <use ./img/import.png>
 Package pdftex.def Info: ./img/import.png used on input line 138.
 (pdftex.def)             Requested size: 170.71652pt x 215.27911pt.
 
-<./img/importprojects.png, id=1604, 523.9575pt x 657.45625pt>
+<./img/importprojects.png, id=1628, 523.9575pt x 657.45625pt>
 File: ./img/importprojects.png Graphic file (type png)
 
 <use ./img/importprojects.png>
 Package pdftex.def Info: ./img/importprojects.png used on input line 138.
 (pdftex.def)             Requested size: 170.71652pt x 214.21248pt.
 
-<./img/imported.png, id=1606, 1025.8325pt x 767.86874pt>
+<./img/imported.png, id=1630, 1025.8325pt x 767.86874pt>
 File: ./img/imported.png Graphic file (type png)
 
 <use ./img/imported.png>
@@ -2338,7 +2352,7 @@ Package pdftex.def Info: ./img/imported.png used on input line 156.
 (pdftex.def)             Requested size: 1025.83002pt x 767.86687pt.
  [15 <C:/Users/rkorb/master_thesis/documents/thesis/img/import.png> <C:/Users/r
 korb/master_thesis/documents/thesis/img/importprojects.png>] <./img/launch.png,
- id=1616, 1180.41pt x 763.85374pt>
+ id=1640, 1180.41pt x 763.85374pt>
 File: ./img/launch.png Graphic file (type png)
 
 <use ./img/launch.png>
@@ -2346,7 +2360,7 @@ Package pdftex.def Info: ./img/launch.png used on input line 167.
 (pdftex.def)             Requested size: 1180.40714pt x 763.85187pt.
  [16 <C:/Users/rkorb/master_thesis/documents/thesis/img/imported.png> <C:/Users
 /rkorb/master_thesis/documents/thesis/img/launch.png>]
-<./img/addplugins.png, id=1624, 1034.86626pt x 639.38875pt>
+<./img/addplugins.png, id=1649, 1034.86626pt x 639.38875pt>
 File: ./img/addplugins.png Graphic file (type png)
 
 <use ./img/addplugins.png>
@@ -2392,15 +2406,18 @@ Package rerunfilecheck Info: File `master_thesis.tmb' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 88.
  ) 
 Here is how much of TeX's memory you used:
- 23535 strings out of 493921
- 398610 string characters out of 3144877
- 531807 words of memory out of 3000000
- 25873 multiletter control sequences out of 15000+200000
+ 23564 strings out of 493921
+ 399071 string characters out of 3144877
+ 531940 words of memory out of 3000000
+ 25894 multiletter control sequences out of 15000+200000
  17043 words of font info for 62 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  68i,20n,71p,1434b,1979s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.36} has been referenced but does not ex
+pdfTeX warning (dest): name{Hfootnote.37} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.36} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.35} has been referenced but does not exis
 t, replaced by a fixed one
@@ -2511,25 +2528,27 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/
 Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmti7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/rkorb/AppData/Roaming/MiKTeX/2.9
-/fonts/type1/public/tipa/tipa12.pfb><C:/Users/rkorb/AppData/Roaming/MiKTeX/2.9/
-fonts/type1/public/tipa/tipasb10.pfb>
-Output written on master_thesis.pdf (84 pages, 6949192 bytes).
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmti7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmtt12.pfb><C:/Users/rkorb/AppData/Roaming/MiKTeX/2.9/fon
+ts/type1/public/tipa/tipa12.pfb><C:/Users/rkorb/AppData/Roaming/MiKTeX/2.9/font
+s/type1/public/tipa/tipasb10.pfb>
+Output written on master_thesis.pdf (86 pages, 6974289 bytes).
 PDF statistics:
- 2027 PDF objects out of 2073 (max. 8388607)
- 364 named destinations out of 1000 (max. 500000)
+ 2059 PDF objects out of 2073 (max. 8388607)
+ 369 named destinations out of 1000 (max. 500000)
  978 words of extra memory for PDF output out of 10000 (max. 10000000)
 

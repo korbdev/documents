@@ -54,10 +54,10 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Die Baumansicht des DICOM-Browsers mit geladenen Objekten}}{55}{figure.6.1}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Beispielhafte Darstellung eines Baumes mit $h = 4$ in der Implementierung}}{57}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces R\IeC {\"a}umliche Sortierung der DICOM-Objekte}}{60}{figure.6.3}
-\contentsline {subfigure}{\numberline {6.3.1}{\ignorespaces {Darstellung der beiden Spannvektoren der Bildebene}}}{60}{figure.6.3}
-\contentsline {subfigure}{\numberline {6.3.2}{\ignorespaces {Vektoren weiterer Bildebenen}}}{60}{figure.6.3}
-\contentsline {subfigure}{\numberline {6.3.3}{\ignorespaces {Objektanordnugn an der dominanten Achse}}}{60}{figure.6.3}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces R\IeC {\"a}umliche Sortierung der DICOM-Objekte}}{59}{figure.6.3}
+\contentsline {subfigure}{\numberline {6.3.1}{\ignorespaces {Darstellung der beiden Richtungsvektoren der Bildebene und zugeh\IeC {\"o}rige Normale $\mathaccentV {vec}17E{r} \times \mathaccentV {vec}17E{c}$}}}{59}{figure.6.3}
+\contentsline {subfigure}{\numberline {6.3.2}{\ignorespaces {Schichten entlang der Normalen $\mathaccentV {vec}17E{r} \times \mathaccentV {vec}17E{c}$}}}{59}{figure.6.3}
+\contentsline {subfigure}{\numberline {6.3.3}{\ignorespaces {Sortierung erfolgt durch Bestimmung der dominanten Achse}}}{59}{figure.6.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

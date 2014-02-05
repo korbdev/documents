@@ -136,20 +136,47 @@ Der Datentyp \textit{int} könnte alle Pixelwerte eines DICOM-Objekts aufnehmen.
 
 Beim Erstellen des Baums aus Abschnitt \ref{treestructure} wird rekursiv das Verzeichnis durchlaufen und nach lesbaren DICOM-Objekten gesucht. Ist die Suche erfolgreich, wird das Objekt dem Baum hinzugefügt. Hierbei kann das Problem auftreten, dass Dateien in der falschen Reihenfolge importiert werden. So kann es passieren, dass ein Importvorgang abhängig vom Dateinamen Objekte dem Baum hinzufügt. Die räumliche Reihenfolge der einzelnen Schichten entspricht allerdings keineswegs dem Dateinamen\footnote{Je nach Sortierung innerhalb des Betriebssystems könnte ein Import auch nach dem Änderungsdatum erfolgen} oder anderen dateibezogenen Reihenfolgen. Dadurch wird, wie schon bei der Sortierung nach dem ER-Modell, eine Methode benötigt, mittels DICOM-Tags die korrekte Reihenfolge der Bilddaten herzustellen.\\
 Der Standard verfügt über mehrere Tags, welche die richtige Reihenfolge andeuten. \textit{Instance Number} ist nach dem Standard \cite[C.7.6.1]{dicom:iod} eine Nummer, die ein Bild identifiziert. Während der Entwicklung entsprach dieser Wert der Testbilder der dargestellten Reihenfolge, jedoch ist keine Information enthalten ob diese der tatsächlichen Reihenfolge im Raum entspricht. So könnte der Wert für die Aufnahmenreihenfolge oder andere konsekutive auf- oder absteigende Folgen stehen. Dadurch ist \textit{Instance Number} nur bedingt geeignet.\\
-Ein Tag, der räumliche Informationen enthält ist \textit{Slice Location}.Nach dem Standard \cite[C.7.6.2]{dicom:iod} ist dieser Wert die relative Position der Bildebene in mm. Es ist allerdings keine Information enthalten, ob die Sortierung in steigender oder fallender Reihenfolge erfolgt. Da der Tag zusätzlich nur optional vorhanden ist, kann eine Nutzung zur Bestimmung der Anordnung ausgeschlossen werden.
-In der Mailingliste des Insight Segmentation and Registration Toolkits \cite{itk:mail} wird eine Berechnung über die Attribute \textit{Image Position} und \textit{Image Orientation} vorgeschlagen.
+Ein Tag, der räumliche Informationen enthält ist \textit{Slice Location}. Nach dem Standard \cite[C.7.6.2]{dicom:iod} ist dieser Wert die relative Position der Bildebene in mm. Es ist allerdings keine Information enthalten, ob die Sortierung in steigender oder fallender Reihenfolge erfolgt. Da der Tag zusätzlich nur optional vorhanden ist, kann eine Nutzung zur Bestimmung der Anordnung ausgeschlossen werden.
 
 \begin{figure*}[htb]
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
 \centering
 \fbox{
-\subfigure[Darstellung der beiden Spannvektoren der Bildebene]{\includegraphics[width=5cm]{./img/normalenvektor.pdf} \label{sort:single}}
-\subfigure[Vektoren weiterer Bildebenen]{\includegraphics[width=5cm]{./img/normalenvektorstack.pdf} \label{sort:stack}}
-\subfigure[Objektanordnugn an der dominanten Achse]{\includegraphics[width=5cm]{./img/dominantindex.pdf} \label{sort:dominant}}
+\subfigure[Darstellung der beiden Richtungsvektoren der Bildebene und zugehörige Normale $\vec{r} \times \vec{c}$]{\includegraphics[width=5cm]{./img/normalenvektor.pdf} \label{sort:single}}
+\subfigure[Schichten entlang der Normalen $\vec{r} \times \vec{c}$]{\includegraphics[width=5cm]{./img/normalenvektorstack.pdf} \label{sort:stack}}
+\subfigure[Sortierung erfolgt durch Bestimmung der dominanten Achse]{\includegraphics[width=5cm]{./img/dominantindex.pdf} \label{sort:dominant}}
 }
 \caption{Räumliche Sortierung der DICOM-Objekte}
 \label{sort}
 \end{figure*}
+
+In der Mailingliste des Insight Segmentation and Registration Toolkits \cite{itk:mail} wird eine Berechnung über die Attribute \textit{Image Position} und \textit{Image Orientation} vorgeschlagen.
+\textit{Image Position} enthält die $x$, $y$ und $z$ Koordinate in mm und \textit{Image Orientation} den Richtungskosinus\footnote{Ein Richtungskosinus beschreibt die Winkel des Vektors zu den drei Koordinatenachsen} der ersten Reihe und Spalte des Bildes in Abhängigkeit des Patienten. Diese beiden Richtungsvektoren spannen die Bildebene auf und müssen nach \cite[C.7.6.2.1.1]{dicom:iod} orthogonal zueinander sein.\\
+Die Abbildungen in \ref{sort} zeigen das Koordinatensystem des Patienten als rechtshändiges System\cite[S.419]{dicom:iod}. Dieses ist um 180 Grad um die x-Achse gedreht. In Abbildung \ref{sort:single} ist die Bildebene sowie die beiden Richtungsvektoren $\vec{c}$ der ersten Spalte und $\vec{r}$ der ersten Reihe dargestellt. Mit Hilfe des Kreuzproduktes lässt sich nun die Normale der Ebene bestimmen. Die räumliche Anordnung der Schichten erfolgt entlang des Normalenvektors $\vec{r} \times \vec{c}$ (Abbildung \ref{sort:stack}). Die Richtungsvektoren könnten folgende Darstellung besitzen:
+
+\begin{equation}
+%\vec{r}=\left(\begin{array}{c} 1 \\ 0 \end{array}\right) \qquad
+\vec{r}=\left(\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right) \qquad
+\vec{c}=\left(\begin{array}{c} 0 \\ 1 \\ 0 \end{array}\right) \qquad
+\vec{n}=\vec{r}\times\vec{c}=\left(\begin{array}{c} 0 \\ 0 \\ 1 \end{array}\right) \qquad
+\vspace{0.5cm}
+\label{example_vector}
+\end{equation}
+
+Nachdem die Normale $\vec{n}$ der Ebene bestimmt ist, muss der dominante Anteil des Vektors ermittelt werden. Dazu wird der maximale Betrag aus den Elementen von $ \vec{n}$ mit $|n_x|, |n_y|, |n_z|$ berechnet. Somit erhält man die Achse an der die Schichten angeordnet sind. Im Beispiel \ref{example_vector} und Abbildung \ref{sort:dominant} erfolgt die Anordnung entlang der z-Achse, da $n_z$ den dominanten Anteil von $\vec{n}$ darstellt. Ist $n_z < 0$ erfolgt die Wuchsrichtung der Schichten entlang des negativen Anteils der z-Achse. Wenn $n_z >= 0$ wachsen die Ebenen in die positive Richtung.\\
+Mit Hilfe dieser Kriterien lassen sich die Bilder über den Tag \textit{Image Position} sortieren. Es ist bekannt, welche Achse die Reihenfolge im Raum symbolisiert. Beispiel \ref{example_sort} zeigt drei Vektoren mit möglichen Daten von \textit{ImagePosition}. Ist der dominante Anteil des Vektors kleiner 0, verläuft die Wuchsrichtung negativ und der größte Wert ist das erste Bild der Folge. Ist der dominante Anteil positiv, hat das erste Bild des kleinsten Wert. Da im Beispiel \ref{example_vector} $n_z >= 0$ entspricht die Sortierte Reihenfolge aus Beispiel \ref{example_sort} $\vec{b}\rightarrow\vec{a}\rightarrow\vec{c}$.
+
+\begin{equation}
+%\vec{r}=\left(\begin{array}{c} 1 \\ 0 \end{array}\right) \qquad
+\vec{a}_{position}=\left(\begin{array}{c} 13.6 \\ 122 \\ 75 \end{array}\right) \qquad
+\vec{b}_{position}=\left(\begin{array}{c} 13.7 \\ 121.6 \\ 65 \end{array}\right) \qquad
+\vec{c}_{position}=\left(\begin{array}{c} 12.6 \\ 122.1 \\ 85 \end{array}\right) \qquad
+\vspace{0.5cm}
+\label{example_sort}
+\end{equation}
+
+Durch eine Implementierung des Interface \textit{Comparable\textless AImage\textgreater} in \textit{AImage} unter Berücksichtigung dieser Vorgehensweise ist eine einfache und für diesen Zweck ausreichend schnelle Sortierung der Bildebenen mögliche. Somit erfolgt die Anordnung des Baums und der Bilder unabhängig der Dateistruktur.\\
+Voraussetzung für diese Umsetzung ist, dass die Bildebenen parallel zu den Koordinatenachsen verlaufen. Bei Bildreihen mit Kurven oder einem schrägen Verlauf kann keine dominante Achse bestimmt werden.
 
 \section{Zeichnen der Bilddaten mit dem DicomCanvas}
 

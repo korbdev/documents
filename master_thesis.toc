@@ -72,19 +72,19 @@
 \contentsline {subsection}{\numberline {6.2.1}Die Baumstruktur}{55}{subsection.6.2.1}
 \contentsline {section}{\numberline {6.3}Repr\IeC {\"a}sentation der Pixeldaten}{57}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}R\IeC {\"a}umliche Sortierung der Bilddaten}{59}{subsection.6.3.1}
-\contentsline {section}{\numberline {6.4}Zeichnen der Bilddaten mit dem DicomCanvas}{59}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Implementierung der Werkzeuge}{60}{subsection.6.4.1}
-\contentsline {subsubsection}{Das Bild bewegen mit dem MoveTool}{60}{subsubsection*.16}
-\contentsline {subsubsection}{Skalierung mit dem ResizeTool}{60}{subsubsection*.17}
-\contentsline {subsubsection}{Justierung der Fensterung mit dem WindowTool}{60}{subsubsection*.18}
-\contentsline {subsubsection}{Punktauswahl mit dem PointTool}{60}{subsubsection*.19}
-\contentsline {section}{\numberline {6.5}Das Utility-Fenster}{60}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Debugging mit dem ConsoleView}{60}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}DICOM-Objekte \IeC {\"u}ber DicomTagView ausgeben}{60}{subsection.6.5.2}
-\contentsline {section}{\numberline {6.6}Implementierung des Hauptmen\IeC {\"u}s und der Werkzeugleiste}{60}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Das Hauptmen\IeC {\"u}}{60}{subsection.6.6.1}
-\contentsline {subsection}{\numberline {6.6.2}Die Werkzeugleiste}{60}{subsection.6.6.2}
-\contentsline {chapter}{\numberline {7}Entwicklung von Erweiterungen}{61}{chapter.7}
+\contentsline {section}{\numberline {6.4}Zeichnen der Bilddaten mit dem DicomCanvas}{61}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Implementierung der Werkzeuge}{62}{subsection.6.4.1}
+\contentsline {subsubsection}{Das Bild bewegen mit dem MoveTool}{62}{subsubsection*.16}
+\contentsline {subsubsection}{Skalierung mit dem ResizeTool}{62}{subsubsection*.17}
+\contentsline {subsubsection}{Justierung der Fensterung mit dem WindowTool}{62}{subsubsection*.18}
+\contentsline {subsubsection}{Punktauswahl mit dem PointTool}{62}{subsubsection*.19}
+\contentsline {section}{\numberline {6.5}Das Utility-Fenster}{62}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Debugging mit dem ConsoleView}{62}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}DICOM-Objekte \IeC {\"u}ber DicomTagView ausgeben}{62}{subsection.6.5.2}
+\contentsline {section}{\numberline {6.6}Implementierung des Hauptmen\IeC {\"u}s und der Werkzeugleiste}{62}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Das Hauptmen\IeC {\"u}}{62}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.6.2}Die Werkzeugleiste}{62}{subsection.6.6.2}
+\contentsline {chapter}{\numberline {7}Entwicklung von Erweiterungen}{63}{chapter.7}
 \contentsline {chapter}{Literaturverzeichnis}{I}{chapter*.20}
 \contentsline {chapter}{Abbildungsverzeichnis}{III}{chapter*.21}
 \contentsline {chapter}{Tabellenverzeichnis}{V}{chapter*.22}
