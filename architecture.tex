@@ -248,7 +248,7 @@ Um mit \textit{AImage} zu arbeiten gibt es zwei Möglichkeiten: Die Erste ist da
 Die einfache Fabrik ist ähnlich der Fabrikmethode, allerdings wird dieses Verfahren der Objekterzeugung nicht den Entwurfsmustern zugeordnet.\\
 Beim Entwickeln von Plug-ins können Anwender vor dem Problem stehen, nicht zu wissen, welche Grauwert-Tiefe das aktuell geladene Objekt besitzt. Nur ein mühsames Auslesen über die DICOM-Tags und oder einer Schleife zur Typ-Ermittlung würde Abhilfe schaffen. Der statischen Methode \textit{getImage()} von \textit{SimpleImageFactory} kann der Bildtyp des DICOM-Objekts übergeben werden, worauf ein typgerechtes Bildobjekt erzeugt und zurückgegeben wird.
 
-\subsection{Struktur der Bilder im ImageViewPart}
+\subsection{Struktur der Bilder im ImageViewPart} \label{ivp_architecture}
 
 Da die Struktur der Bilddaten dargestellt wurde, kann nun die Vorgehensweise zur Anzeige dieser vorgestellt werden.\\
 

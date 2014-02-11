@@ -178,9 +178,271 @@ Mit Hilfe dieser Kriterien lassen sich die Bilder über den Tag \textit{Image Po
 Durch eine Implementierung des Interface \textit{Comparable\textless AImage\textgreater} in \textit{AImage} unter Berücksichtigung dieser Vorgehensweise ist eine einfache und für diesen Zweck ausreichend schnelle Sortierung der Bildebenen mögliche. Somit erfolgt die Anordnung des Baums und der Bilder unabhängig der Dateistruktur.\\
 Voraussetzung für diese Umsetzung ist, dass die Bildebenen parallel zu den Koordinatenachsen verlaufen. Bei Bildreihen mit Kurven oder einem schrägen Verlauf kann keine dominante Achse bestimmt werden.
 
-\section{Zeichnen der Bilddaten mit dem DicomCanvas}
+\section{Zeichnen und manipulieren der Bilddaten}
 
-Sowohl die DICOM-Objekte, als auch Bilddaten stehen im Speicher zur Verarbeitung bereit. Dieser Abschnitt befasst sich mit der Visualisierung dieser Daten.
+Sowohl die DICOM-Objekte, als auch Bilddaten stehen im Speicher zur Verarbeitung bereit. Dieser Abschnitt befasst sich mit der Visualisierung dieser Daten. Wie aus Kapitel \ref{architecture} Abschnitt \ref{ivp_architecture} bekannt ist, erfolgt die Darstellung der Bilder im \textit{ImageViewPart} der Anwendung. Innerhalb des Parts können bis zu vier \textit{ImageViewComposites } angezeigt werden. Diese dienen vor allem zur Bedienung des enthaltenen \textit{DicomCanvas}. So kann mit Hilfe der Scrollleiste durch den dreidimensionalen Datensatz navigiert, oder Informationen wie das Koordinatensystem angezeigt und versteckt werden. Die tatsächliche Anzeige der Bilddaten findet im Canvas-Element statt. Eine direkte Manipulation der Bilder erfolgt durch die Auswahl eines Werkzeugs.\\
+Die Breite und Höhe der Zeichenfläche ist unter anderem abhängig von der Zahl der angezeigten \textit{ImageViewComposites}, der Bildschirmgröße und dessen Auflösung. Je mehr Composites angezeigt werden, desto kleiner wird der Bereich für das \textit{DicomCanvas}. So kann der Fall eintreten, dass die Dimension der Zeichenfläche nicht ausreicht, um ein Bild vollständig anzuzeigen, da das Bild größer als die zur Verfügung stehender Fläche ist. Dadurch muss dem Nutzer eine Möglichkeit gegeben werden, nicht sichtbare Details in den sichtbaren Bereich schieben zu können.\\
+Neben dem Verschieben des Bildes gibt es zwei weitere essentielle Werkzeuge zur Manipulation medizinischer Bilddaten. Bei einer Darstellung in 100\% der Bildgröße sind Details nicht immer gut zu erkennen. Dadurch muss eine Skalierung des Bildes möglich sein.
+Das zweite Werkzeug übernimmt die Fensterung der Grauwerte. Je nach Struktur oder Gewebe das betrachtet werden soll, müssen die Fensterungswerte individuell zu wählen sein.
+Zusätzlich zu den Werkzeugen gibt es drei verschiedene Ansichten, aus denen der Benutzer wählen kann. Damit kann bestimmt werden, welche Ebene der 3D-Bilddaten angezeigt werden soll. Abbildung \ref{layers} zeigt die verschiedenen Optionen. Die einzelnen Ansichten sind die $(x,y)$-Ebene (axial), die $(x,z)$-Ebene (coronal) und die $(y,z)$-Ebene (sagittal).\\
+\begin{figure*}[htb]
+%\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
+\centering
+\fbox{
+\subfigure[Axiale Ansicht - $(x,y)$]{\includegraphics[width=5cm]{./img/axial_xy.pdf} \label{layers:axial}}
+\subfigure[Coronale Ansicht - $(x,z)$]{\includegraphics[width=5cm]{./img/coronal_xz.pdf} \label{layers:coronal}}
+\subfigure[Sagittale Ansicht - $(y,z)$]{\includegraphics[width=5cm]{./img/sagittal_yz.pdf} \label{layers:sagittal}}
+}
+\caption{Die verschiedenen Ansichten der Ebenen eines dreidimensionalen Datensatzes}
+\label{layers}
+\end{figure*}
+
+Die Faktoren DICOM-Objekt, Bedienelemente der Composites, Werkzeuge und die verschiedenen Ansichten der Ebenen beeinflussen maßgeblich den Prozess der Anzeige der Bilddaten. Die Vorgehensweise wird in Abbildung \ref{imageprocess} visualisiert. Der Prozess gliedert sich in sechs zentrale Verarbeitungsblöcke und zwei Einhängepunkte(Hooks) für Werkzeuge.
+
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=10cm]{./img/imageprocess.pdf}}
+   \caption{Der Prozess von der Bildauswahl zur Anzeige}
+  \label{imageprocess}
+  \vspace{0.5cm}
+\end{figure}
+
+\begin{enumerate}
+\item \textbf{Bilddaten initialisieren}\\
+	Abhängig vom gewählten Index der Scrollleiste des \textit{ImageViewComposites} wird das entsprechende Bild aus dem 3D-Datensatz geladen.
+\item \textbf{Koordinaten des geladenen Bildes berechnen}\\
+	Wird ein Bild auf der Zeichenfläche verschoben, ändern sich die Koordinaten des Bildes. Dieser Block übernimmt die Berechnung, damit die Daten korrekt angezeigt werden.
+\item \textbf{Bild interpolieren}\\
+	Bei einer Skalierung ändert sich die Bildgröße. Die fehlenden Pixel einer Vergrößerung müssen interpoliert werden.
+\item \textbf{Fensterung}\\
+	Mit Hilfe der Fensterung werden die Grauwerte entsprechend den Werten von Window Width und Window Center auf den Bereich von 0 - 255 abgebildet.
+\item \textbf{Bild zeichnen}\\
+	Nachdem alle notwendigen Werte berechnet und die Grauwerte durch die Fensterung bestimmt wurden, kann das Bild auf der Zeichenfläche abgebildet werden.
+\item \textbf{Informationen zeichnen}\\
+	Der nächste Schritt ist das Zeichnen zusätzlicher Informationen für den Anwender. Hierzu zählen zum Beispiel die Koordinatenachsen oder die Werte zu Window Width und Window Center, Bildgröße sowie die Orientierungslinien.
+\item \textbf{Hooks}\\
+	Beide Hooks stellen Einhängepunkte für Werkzeuge dar. Das sind abstrakte Funktionen, die von konkreten Werkzeugen implementiert werden. Jeweils vor den Berechnungen und nach Abschluss des Zeichenvorgangs werden diese Funktionen aufgerufen und ausgeführt. So könnten zum Beispiel je nach Werkzeug zusätzliche Informationen eingezeichnet werden.
+\end{enumerate}
+
+Die Bereiche der Koordinatenberechnung, Interpolation und das Zeichnen der Informationen werden in den folgenden Abschnitten genauer erläutert. Die Initialisierung und das Zeichnen des Bildes sind einfache Operationen. Die Fensterung entspricht dem Algorithmus \ref{windowing_algo} aus Abschnitt \ref{windowing}.
+
+\subsection{Berechnung der Bildkoordinaten}
+Die Werkzeuge zur Translation und Skalierung beeinflussen die Koordinaten des Bildes. Während das Verschieben unproblematisch für die Performance der Anwendung ist, hat die Skalierung, im Besonderen die Vergrößerung, maßgeblichen Einfluss auf die Rechenzeit. Angenommen die Zeichenfläche hat eine Größe von $500 \times 500$ und $250.000$ Pixel und das Bild mit den Maßen $1000 \times 1000$  und $1.000.000$ Pixel die doppelte Größe. Daraus folgt, dass maximal $\frac{1}{4}$ der Pixel des Bildes auf der Zeichenfläche angezeigt werden können. Die sechs Blöcke des Prozesses verarbeiten auch die nicht sichtbaren Anteile des Bildes und verbrauchen dadurch unnötig Rechenzeit. In dem Beispiel bedeutet das einen Mehraufwand von $75\%$. Um diese zusätzliche Rechenzeit einzusparen, darf die Berechnung der Bildkoordinaten nur den aktuell sichtbaren Bereich in die Rechnungen einbeziehen.\\
+
+\begin{figure*}[htb]
+%\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
+\centering
+\fbox{
+\subfigure[Die Koordinaten eines Bildes]{\includegraphics[width=5cm]{./img/bildcoords.pdf} \label{coords:bild}}
+\subfigure[Berechnung des sichtbaren Bereichs]{\includegraphics[width=5cm]{./img/offsetcoords.pdf} \label{coords:offset}}
+\subfigure[Normalisierte Koordinaten]{\includegraphics[width=5cm]{./img/bildausschnitt.pdf} \label{coords:normal}}
+}
+\caption{Berechnung der Position und Koordinaten. Die graue Fläche symbolisiert das Bild und der rote Rahmen stellt den sichtbaren Bildausschnitt dar.}
+\label{coords}
+\end{figure*}
+
+Wie Abbildung \ref{coords:bild} zeigt, bestimmt \textit{DicomCanvas} das Koordinatensystem mit der linken oberen Ecke als Ursprung. Die Position der Bilder wird durch vier Parameter bestimmt. Die Koordinaten $(x, y)$ legen den Ursprung des Bildes fest und $(widht, height)$ bestimmen mit Breite und Höhe die Dimension. Die tatsächlichen Koordinaten des Bildes sind dadurch $(x, y)$ und $(x+width, y+height)$. Liegen diese vier Parameter außerhalb der Zeichenfläche wie in Abbildung \ref{coords:offset}, muss der Abstand (offset) von x, y, width und height zum Canvas berechnet werden.\\
+Das \textit{DicomCanvas} speichert nur das Originalbild und den aktuell sichtbaren Bildausschnitt. Da bei skalierten Bildern nur die Dimension und nicht die Pixeldaten hinterlegt sind, muss der sichtbare Bereich aus dem Original interpoliert werden. Um die richtigen Pixelwerte zu finden, wird mit normalisierten Koordinaten zwischen den Werten $(0, 0)$ für $(x,y)$ und $(1, 1)$ für $(x+width, y+height)$ gearbeitet. Abbildung \ref{coords:normal} zeigt ein Bild mit der Dimension $512 \times 512$, das um den Faktor vier auf $2048\times2048$ vergrößert wurde. Der sichtbare Bildausschnitt erstreckt sich von $(512, 512)$ bis $(1536, 1536)$. Das entspricht dem Bereich von $(128, 128)$ bis $(384, 384)$ im Originalbild. Mit Hilfe der normalisierten Koordinaten lassen sich die Bildbereiche bei gleichem Seitenverhältnis von Original und skaliertem Bild unabhängig von der Größe bestimmen. Für den Bildausschnitt im Beispiel entspricht der Bereich in normalisierter Darstellung $(0.25, 0.25)$ für $(x,y)$ und $(0.75, 0.75)$ für $(width, height)$. Mit gegebenen Pixelwerten lassen sich die normalisierten Koordinaten wie folgt bestimmen.
+
+\begin{equation}
+ x_{norm} = \frac{x}{width} \qquad
+ y_{norm} = \frac{y}{height}
+\end{equation}
+
+Entsprechend dieser Gleichung erfolgt die Berechnung der Indizes von x und y.
+
+\begin{equation}
+ x = x_{norm} \cdot width \qquad
+ y = y_{norm} \cdot height
+\end{equation}
+
+Mit diesen Hilfsmitteln lässt sich nun der obere linke und untere rechte Abstand des Bildes zur Zeichenfläche bestimmen. Zuerst wird geprüft ob $x$ und/oder $y$ einen Wert \textless 0 haben. Ist dies der Fall folgt daraus, dass das Bild aus der oberen und/oder linken Ecke der Zeichenfläche ragt. Die normalisierten Koordinaten lassen sich mit der Formel
+
+\begin{equation}
+ x_{norm} = \frac{|x|}{width} \qquad
+ y_{norm} = \frac{|y|}{height}
+\end{equation}
+
+ermitteln. $x$ und $y$ sind der Abstand vom Ursprung des Koordinatensystems zum Ursprung des Bildes und somit nicht Teil des sichtbaren Bildausschnittes. Der Betrag ist notwendig, da nur Werte zwischen 0 und 1 als normalisierte Koordinaten akzeptiert werden.\\
+Angenommen es existiert das Bild aus dem Beispiel in Abbildung \ref{coords:normal} mit den Koordinaten $(-512, -512)$, $(1536, 1536)$ und einer Dimension $(width, height)$ von $()2048, 2048)$ sowie eine Zeichenfläche mit der Dimension $(0, 0)$ und $(1024, 1024)$, dann ergeben sich daraus folgende normalisierte Koordinaten:
+
+\begin{equation}
+ x_{norm} = \frac{|-512|}{2048} = 0.25\qquad
+ y_{norm} = \frac{|-512|}{2048} = 0.25
+\end{equation}
+
+Sind $x$ und/oder $y$ \textgreater= 0 folgt daraus, dass die obere linke Ecke des Bildes vollständig zu sehen ist. Das entspricht dem normalisierten Werten $(0, 0)$.\\
+Der nächste Schritt ist die Prüfung der unteren Rechten Ecke. Bevor die Koordinaten bestimmt werden, muss der Abstand berechnet werden, da dieser nicht wie bei $x$ und $y$ abgelesen werden kann. Durch Subtraktion der Bildkoordinaten $(x+width, y+height)$ von der Zeichenfläche erhält man den Abstand zwischen Bild und Canvas.
+
+\begin{equation}
+ offset_{width} = x + width - width_{Canvas}\qquad
+ offset_{height} = y + height - height_{Canvas}
+\end{equation}
+
+Subtrahiert man den Abstand von der Bilddimension erhält man die tatsächlichen Koordinaten, die noch im sichtbaren Bereich der Zeichenfläche liegen. Damit lassen sich die normalisierten Koordinaten berechnen.
+
+\begin{equation}
+ x_{norm} = \frac{width - offset_{width}}{width} \qquad
+ y_{norm} = \frac{height - offset_{height}}{height}
+\end{equation}
+
+Für die Daten aus dem Beispiel ergeben sich folgende Werte:
+\begin{equation}
+ offset_{width} = -512 + 2048 -1024 = 512\qquad
+ offset_{height} = -512 + 2048 -1024 = 512
+\end{equation}
+
+\begin{equation}
+ x_{norm} = \frac{2048 - 512}{2048} = 0.75\qquad
+ y_{norm} = \frac{2048 - 512}{2048} = 0.75
+\end{equation}
+
+Mit den berechneten Werten der normalisierten Koordinaten $(0.25, 0.25)$ und $(0.75, 0.75)$ lässt sich der zu interpolierende Bereich aus dem Originalbild bestimmen.
+
+\begin{equation}
+ x_1 = 0.25 \cdot 512 =  128\qquad
+ y_1 = 0.25 \cdot 512 =  128
+\end{equation}
+
+\begin{equation}
+ x_2 = 0.75 \cdot 512 =  384\qquad
+ y_2 = 0.75 \cdot 512 =  384
+\end{equation}
+
+\subsection{Bilineare Interpolation}
+
+Es können verschiedene Interpolationsmethoden eingesetzt werden, um das Bild oder einen Bildausschnitt zu vergrößern oder zu verkleinern. Die Abbildungen \ref{interpolation} zeigen die Ergebnisse einer Nearest Neighbor, biliniearer und bikubischen Interpolation. Das Nearest Neighbor Verfahren stellt die schnellste Interpolationsmethode dar, liefert allerdings auch gleichzeitig die schlechtesten Ergebnisse. In Abbildung \ref{interpolation:nn} erkennt man deutlich die Stufenbildung im Bild.\\
+Bessere Ergebnisse liefert die bilineare Interpolation bei einer moderaten Laufzeit. Eine nochmals verbesserte Darstellung kann durch die bikubische Interpolation erreicht werden, benötigt allerdings den größten Rechenaufwand. Die bilinieare Methode liefert einen guten Kompromiss aus Qualität des skalierten Bildes und benötigte Rechenzeit.
+
+\begin{figure*}[htb]
+%\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
+\centering
+\fbox{
+\subfigure[Der rote Rahmen stellt den vergrößerten Ausschnitt aus den Abbildungen \ref{interpolation:nn}, \ref{interpolation:bilinear} und \ref{interpolation:bicubic} dar.]{\includegraphics[width=3.6cm]{./img/interpol_src.png} \label{interpolation:src}}
+\subfigure[Nearest Neighbor Interpolation]{\includegraphics[width=3.6cm]{./img/nn_interpol.png} \label{interpolation:nn}}
+\subfigure[Bilineare Interpolation]{\includegraphics[width=3.6cm]{./img/bilin.png} \label{interpolation:bilinear}}
+\subfigure[Bikubische Interpolation]{\includegraphics[width=3.6cm]{./img/bicubic.png} \label{interpolation:bicubic}}
+}
+\caption{Vergleich der Nearest Neighbor, bilinearen und bikubischen Interpolation}
+\label{interpolation}
+\end{figure*}
+
+Bei der bilinearen Interpolation werden die zu der Koordinate $(x_0, y_0)$ nächstliegenden vier Werte der Bildpunkte des Originalbildes zur Interpolation verwendet\cite[S.387]{burger:bv}. In Abbildung \ref{bilinear_interpolation} sind das \textit{A}, \textit{B}, \textit{C} und \textit{D}. Zuerst findet eine Interpolation in x-Richtung statt. Daraus ergeben sich die Werte \textit{E} und \textit{F}. Durch die Interpolation in y-Richtung der Werte \textit{E} und \textit{F} wird der finale Wert \textit{G} ermittelt.
+
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=10cm]{./img/bilinear_interpolation.pdf}}
+   \caption{Bilineare Interpolation \cite[S.388]{burger:bv}}
+  \label{bilinear_interpolation}
+  \vspace{0.5cm}
+\end{figure}
+
+Für jeden Bildpunkt des Zielbildes \textit{Z} wird der Referenzpunkt im Originalbild \textit{S} mittels einer Normalisierung gefunden.
+
+\begin{equation}
+ x_{0} = \frac{x_{Z}}{width_{Z}}\cdot width_{S}\qquad
+ y_{0} = \frac{y_{Z}}{height_{Z}}\cdot height_{S}
+\end{equation}
+
+Zu den Werten von $x_{0}$ und $y_{0}$ müssen nach Burger und Burge\cite[S. 387 ff]{burger:bv} die nächstliegenden Bildwerte ermittelt werden.
+
+\begin{equation}
+A= S(x,y) \qquad B=S(x+1,y) \qquad C=S(x,y+1)\qquad D=S(x+1,y+1)
+\end{equation}
+
+wobei $x$ und $y$ die abgerundeten Werte von $x_{0}$ und $y_{0}$ darstellen. Die Werte \textit{E} und \textit{F} werden durch den Abstand von $x_{0}$ und $x$ ermittelt.
+
+\begin{equation}
+E = A + (x_0 - x) \cdot (B - A)
+\end{equation}
+\begin{equation}
+F = C + (x_0 - x) \cdot (D-C)
+\end{equation}
+
+Nach der horizontalen Interpolation wird der finale Wert \textit{G} aus dem Abstand von $y_0$ und $y$ berechnet.
+
+\begin{equation}
+G = E + (y_0 - y) \cdot (F-E)
+\end{equation}
+
+Der Wert von \textit{G} kann nun beim Zielbild \textit{Z} an die aktuelle Position gesetzt werden. Bei Farbbildern wird jeder Kanal separat interpoliert.
+
+\subsection{Anzeige der Zusatzinformationen}
+
+Dem Benutzer werden direkt auf der Zeichenfläche wichtige Zusatzinformationen angezeigt. So kann der Anwender die aktuelle Größe des Bildes in Pixeln und das prozentuale Verhältnis zum Originalbild ablesen, sowie die gewählten Fensterungswerte einsehen. Neben den Bildeigenschaften werden auch dynamische Inhalte angezeigt wie das Patientenkoordinatensystem und Orientierungslinien. Orientierungslinien markieren in gleichen geöffneten 3D-Datensätzen mit unterschiedlicher Ebenenansicht einen gemeinsamen Punkt. Diese dynamischen Aspekte werden folgend erläutert.
+
+\subsubsection{Das Koordinatensystem}
+
+Der DICOM-Standard definiert ein sogenanntes \textit{Reference Coordinate System} \cite[S. 55]{dicom:iod} und dient zur Orientierung des Patienten im Raum. Es werden sechs Richtungen der drei Achsen definiert, womit die Lage des Patienten beschrieben werden kann \cite[C.7.6.1.1.1]{dicom:iod}. 
+
+\begin{itemize}
+\item \textbf{R} (right) - \textbf{L} (left) - \textbf{x} \\
+	Right bestimmt die rechte, left die linke Hand des Patienten.
+\item \textbf{A} (anterior) - \textbf{P} (posterior) - \textbf{y} \\
+   Die Vorderseite des Patienten wird als Anterior, die Rückseite als Posterior bezeichnet.
+\item \textbf{F} (foot) - \textbf{H} (head) - \textbf{z} \\
+ Foot steht für den Patientenfuß und Head für den Kopf.
+\end{itemize}
+
+\begin{figure*}[htb]
+%\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
+\centering
+\fbox{
+\subfigure[Die x- und z-Achse]{\includegraphics[width=7cm]{./img/coords1.pdf} \label{coords:xz}}
+\subfigure[Die y- und z-Achse]{\includegraphics[width=7cm]{./img/coords2.pdf} \label{coords:yz}}
+}
+\caption{Das patientenbasierte Koordinatensystem}
+\label{coords:both}
+\end{figure*}
+
+Wie in Abbildung \ref{coords:xz} dargestellt, steigt die x-Achse in Richtung der linken Hand das Patienten. Die Werte der y-Achse nehmen von der Vorderseite zur Rückseite des Patienten zu. Die z-Achse erhöht sich in Richtung der Füße zum Kopf des Patienten\cite[C.7.6.2.1.1]{dicom:iod}.\\
+Unter Berücksichtigung des DICOM-Tags \textit{Image Orientation} mit dessen Vektoren kann die Beschriftung der Koordinatenachsen bestimmt werden. Durch den maximalen Betrag der Elemente der Vektoren wird die dominanten Achsen ermittelt. Dadurch erhält man die Koordinatenachsen der Bildebene. Des weiteren kann durch die Achsen die Ebenendarstellung bestimmt werden. Ein dominanter xy-Anteil bedeutet \textit{axiale} Ebenendarstellung, der xz-Anteil ist die \textit{coronale} Ansicht und der yz-Anteil die \textit{sagittale} Darstellung.
+
+\begin{equation}
+\vec{r}=\left(\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right) \qquad
+\vec{c}=\left(\begin{array}{c} 0 \\ 1 \\ 0 \end{array}\right)
+\vspace{0.5cm}
+\label{orientationvecs}
+\end{equation}
+
+Beispiel \ref{orientationvecs} zeigt zwei Vektoren von \textit{ImageOrientation}. Die dominanten Achsen sind das x-Element aus $\vec{r}$ mit dem Wert $1$ und das y-Element aus $\vec{c}$ ebenfalls mit $1$. Durch den dominanten Anteil können die Achsen abgelesen werden, die auf die Bildebene gezeichnet werden. Die x-Achse bekommt auf der negativen Seite \textit{R} und \textit{L} auf der positiven Seite. Die zweite Achse der Bildebene ist y mit der negativen Seite \textit{A} und positiver Seite \textit{P}. Die z-Achse mit \textit{H} und \textit{F} ragt aus der Bildebene heraus beziehungsweise hinein. Sind die Elemente negativ ist die Richtung der Koordinatenachsen vertauscht. Aus den Beispielvektoren ergibt sich folgende Darstellung der Achsen wie in Abbildung \ref{axialbsp} dargestellt.
+
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=6cm]{./img/axialbsp.pdf}}
+   \caption{Beschriftung der Koordinatenachsen bei axialer Ebenendarstellung}
+  \label{axialbsp}
+  \vspace{0.5cm}
+\end{figure}
+
+\subsubsection{Zeichnen der Orientierungslinien}
+
+\begin{figure*}[htb]
+%\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
+\centering
+\fbox{
+\subfigure[Axiale Ebenendarstellung]{\includegraphics[width=5cm]{./img/lines_axial_single.pdf} \label{lines:single:a}}
+\subfigure[Orientierungslinie der axialen Darstellung in der coronalen Ebenendarstellung]{\includegraphics[width=5cm]{./img/lines_coronal_single.pdf} \label{lines:single:c}}
+\subfigure[Orientierungslinie der axialen Darstellung in der sagittalen Ebenendarstellung]{\includegraphics[width=5cm]{./img/lines_sagittal_single.pdf} \label{lines:single:s}}
+}
+\caption{Einfache Darstellung der Orientierungslinien}
+\label{lines:single}
+\end{figure*}
+
+\begin{figure*}[htb]
+%\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
+\centering
+\fbox{
+\subfigure[Punktauswahl in axialer Ebenendarstellung]{\includegraphics[width=5cm]{./img/lines_axial.pdf} \label{lines:a}}
+\subfigure[Anzeige des referenzierten Punktes aus der axialen Darstellung in der coronalen Ebene]{\includegraphics[width=5cm]{./img/lines_coronal.pdf} \label{lines:c}}
+\subfigure[Anzeige des referenzierten Punktes aus der axialen Darstellung in der sagittalen Ebene]{\includegraphics[width=5cm]{./img/lines_sagittal.pdf} \label{lines:s}}
+}
+\caption{Anzeige eines referenzierten Punktes in axialer Ebene mit Hilfe der Orientierungslinien}
+\label{lines}
+\end{figure*}
 
 \subsection{Implementierung der Werkzeuge}
 
