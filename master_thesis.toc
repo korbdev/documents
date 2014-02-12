@@ -78,18 +78,18 @@
 \contentsline {subsection}{\numberline {6.4.3}Anzeige der Zusatzinformationen}{68}{subsection.6.4.3}
 \contentsline {subsubsection}{Das Koordinatensystem}{69}{subsubsection*.16}
 \contentsline {subsubsection}{Zeichnen der Orientierungslinien}{71}{subsubsection*.17}
-\contentsline {subsection}{\numberline {6.4.4}Implementierung der Werkzeuge}{72}{subsection.6.4.4}
-\contentsline {subsubsection}{Das Bild bewegen mit dem MoveTool}{72}{subsubsection*.18}
-\contentsline {subsubsection}{Skalierung mit dem ResizeTool}{72}{subsubsection*.19}
-\contentsline {subsubsection}{Justierung der Fensterung mit dem WindowTool}{72}{subsubsection*.20}
-\contentsline {subsubsection}{Punktauswahl mit dem PointTool}{72}{subsubsection*.21}
-\contentsline {section}{\numberline {6.5}Das Utility-Fenster}{72}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Debugging mit dem ConsoleView}{72}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}DICOM-Objekte \IeC {\"u}ber DicomTagView ausgeben}{72}{subsection.6.5.2}
-\contentsline {section}{\numberline {6.6}Implementierung des Hauptmen\IeC {\"u}s und der Werkzeugleiste}{72}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Das Hauptmen\IeC {\"u}}{72}{subsection.6.6.1}
-\contentsline {subsection}{\numberline {6.6.2}Die Werkzeugleiste}{72}{subsection.6.6.2}
-\contentsline {chapter}{\numberline {7}Entwicklung von Erweiterungen}{73}{chapter.7}
+\contentsline {subsection}{\numberline {6.4.4}Implementierung der Werkzeuge}{73}{subsection.6.4.4}
+\contentsline {subsubsection}{Das Bild bewegen mit dem MoveTool}{74}{subsubsection*.18}
+\contentsline {subsubsection}{Skalierung mit dem ResizeTool}{74}{subsubsection*.19}
+\contentsline {subsubsection}{Justierung der Fensterung mit dem WindowTool}{74}{subsubsection*.20}
+\contentsline {subsubsection}{Punktauswahl mit dem PointTool}{74}{subsubsection*.21}
+\contentsline {section}{\numberline {6.5}Das Utility-Fenster}{74}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Debugging mit dem ConsoleView}{74}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}DICOM-Objekte \IeC {\"u}ber DicomTagView ausgeben}{74}{subsection.6.5.2}
+\contentsline {section}{\numberline {6.6}Implementierung des Hauptmen\IeC {\"u}s und der Werkzeugleiste}{74}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Das Hauptmen\IeC {\"u}}{74}{subsection.6.6.1}
+\contentsline {subsection}{\numberline {6.6.2}Die Werkzeugleiste}{74}{subsection.6.6.2}
+\contentsline {chapter}{\numberline {7}Entwicklung von Erweiterungen}{75}{chapter.7}
 \contentsline {chapter}{Literaturverzeichnis}{I}{chapter*.22}
 \contentsline {chapter}{Abbildungsverzeichnis}{IV}{chapter*.23}
 \contentsline {chapter}{Tabellenverzeichnis}{VI}{chapter*.24}

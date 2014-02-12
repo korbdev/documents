@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.7.4)  11 FEB 2014 01:51
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.7.4)  12 FEB 2014 02:27
 entering extended mode
 **master_thesis.tex
 (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.tex
@@ -2219,78 +2219,77 @@ File: ./img/axialbsp.pdf Graphic file (type pdf)
 <use ./img/axialbsp.pdf>
 Package pdftex.def Info: ./img/axialbsp.pdf used on input line 415.
 (pdftex.def)             Requested size: 426.79044pt x 426.79044pt.
-
-<./img/lines_axial_single.pdf, id=1829, 341.43358pt x 341.43358pt>
+ [70 <C:/Users/rkorb/master_thesis/documents/thesis/img/axialbsp.pdf>]
+<./img/lines_axial_single.pdf, id=1864, 341.43358pt x 341.43358pt>
 File: ./img/lines_axial_single.pdf Graphic file (type pdf)
 
 <use ./img/lines_axial_single.pdf>
-Package pdftex.def Info: ./img/lines_axial_single.pdf used on input line 430.
+Package pdftex.def Info: ./img/lines_axial_single.pdf used on input line 434.
 (pdftex.def)             Requested size: 142.26378pt x 142.26537pt.
 
-<./img/lines_coronal_single.pdf, id=1830, 341.43358pt x 341.43358pt>
+<./img/lines_coronal_single.pdf, id=1865, 341.43358pt x 341.43358pt>
 File: ./img/lines_coronal_single.pdf Graphic file (type pdf)
 
 <use ./img/lines_coronal_single.pdf>
-Package pdftex.def Info: ./img/lines_coronal_single.pdf used on input line 430.
+Package pdftex.def Info: ./img/lines_coronal_single.pdf used on input line 434.
 
 (pdftex.def)             Requested size: 142.26378pt x 142.26537pt.
 
-<./img/lines_sagittal_single.pdf, id=1831, 341.43358pt x 341.43358pt>
+<./img/lines_sagittal_single.pdf, id=1866, 341.43358pt x 341.43358pt>
 File: ./img/lines_sagittal_single.pdf Graphic file (type pdf)
 
 <use ./img/lines_sagittal_single.pdf>
-Package pdftex.def Info: ./img/lines_sagittal_single.pdf used on input line 430
+Package pdftex.def Info: ./img/lines_sagittal_single.pdf used on input line 434
 .
 (pdftex.def)             Requested size: 142.26378pt x 142.26537pt.
 
-Overfull \hbox (5.7636pt too wide) in paragraph at lines 430--431
+Overfull \hbox (5.7636pt too wide) in paragraph at lines 434--435
  [][] 
  []
 
-[70 <C:/Users/rkorb/master_thesis/documents/thesis/img/axialbsp.pdf>]
-<./img/lines_axial.pdf, id=1863, 341.43358pt x 341.43358pt>
+<./img/lines_axial.pdf, id=1867, 341.43358pt x 341.43358pt>
 File: ./img/lines_axial.pdf Graphic file (type pdf)
 
 <use ./img/lines_axial.pdf>
-Package pdftex.def Info: ./img/lines_axial.pdf used on input line 442.
+Package pdftex.def Info: ./img/lines_axial.pdf used on input line 448.
 (pdftex.def)             Requested size: 142.26378pt x 142.26537pt.
 
-<./img/lines_coronal.pdf, id=1864, 341.43358pt x 341.43358pt>
+<./img/lines_coronal.pdf, id=1868, 341.43358pt x 341.43358pt>
 File: ./img/lines_coronal.pdf Graphic file (type pdf)
 
 <use ./img/lines_coronal.pdf>
-Package pdftex.def Info: ./img/lines_coronal.pdf used on input line 442.
+Package pdftex.def Info: ./img/lines_coronal.pdf used on input line 448.
 (pdftex.def)             Requested size: 142.26378pt x 142.26537pt.
 
-Underfull \hbox (badness 4634) in paragraph at lines 442--442
+Underfull \hbox (badness 4634) in paragraph at lines 448--448
 []\OT1/cmr/m/n/10 (b) An-zei-ge des re-fe-ren-zier-ten
  []
 
-<./img/lines_sagittal.pdf, id=1865, 341.43358pt x 341.43358pt>
+<./img/lines_sagittal.pdf, id=1869, 341.43358pt x 341.43358pt>
 File: ./img/lines_sagittal.pdf Graphic file (type pdf)
 
 <use ./img/lines_sagittal.pdf>
-Package pdftex.def Info: ./img/lines_sagittal.pdf used on input line 442.
+Package pdftex.def Info: ./img/lines_sagittal.pdf used on input line 448.
 (pdftex.def)             Requested size: 142.26378pt x 142.26537pt.
 
-Underfull \hbox (badness 5756) in paragraph at lines 442--442
+Underfull \hbox (badness 5756) in paragraph at lines 448--448
 []\OT1/cmr/m/n/10 (c) An-zei-ge des re-fe-ren-zier-ten
  []
 
 
-Overfull \hbox (5.7636pt too wide) in paragraph at lines 442--443
+Overfull \hbox (5.7636pt too wide) in paragraph at lines 448--449
  [][] 
  []
 
-) [71 <C:/Users/rkorb/master_thesis/documents/thesis/img/lines_axial_single.pdf
-> <C:/Users/rkorb/master_thesis/documents/thesis/img/lines_coronal_single.pdf> 
-<C:/Users/rkorb/master_thesis/documents/thesis/img/lines_sagittal_single.pdf> <
-C:/Users/rkorb/master_thesis/documents/thesis/img/lines_axial.pdf> <C:/Users/rk
-orb/master_thesis/documents/thesis/img/lines_coronal.pdf> <C:/Users/rkorb/maste
-r_thesis/documents/thesis/img/lines_sagittal.pdf>] [72]
+[71 <C:/Users/rkorb/master_thesis/documents/thesis/img/lines_axial_single.pdf> 
+<C:/Users/rkorb/master_thesis/documents/thesis/img/lines_coronal_single.pdf> <C
+:/Users/rkorb/master_thesis/documents/thesis/img/lines_sagittal_single.pdf>]
+[72 <C:/Users/rkorb/master_thesis/documents/thesis/img/lines_axial.pdf> <C:/Use
+rs/rkorb/master_thesis/documents/thesis/img/lines_coronal.pdf> <C:/Users/rkorb/
+master_thesis/documents/thesis/img/lines_sagittal.pdf>]) [73] [74]
 (C:\Users\rkorb\master_thesis\documents\thesis\extending.tex
 Kapitel 7.
-) [73
+) [75
 
 
 
@@ -2518,7 +2517,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--61
 
  []
 
-<./img/eclipse_std.png, id=2170, 1027.84pt x 768.8725pt>
+<./img/eclipse_std.png, id=2201, 1027.84pt x 768.8725pt>
 File: ./img/eclipse_std.png Graphic file (type png)
 
 <use ./img/eclipse_std.png>
@@ -2527,21 +2526,21 @@ Package pdftex.def Info: ./img/eclipse_std.png used on input line 65.
  [12
 
  <C:/Users/rkorb/master_thesis/documents/thesis/img/eclipse_std.png>]
-<./img/e4download.png, id=2178, 1504.62125pt x 1006.76125pt>
+<./img/e4download.png, id=2208, 1504.62125pt x 1006.76125pt>
 File: ./img/e4download.png Graphic file (type png)
 
 <use ./img/e4download.png>
 Package pdftex.def Info: ./img/e4download.png used on input line 77.
 (pdftex.def)             Requested size: 1504.61758pt x 1006.75879pt.
 
-<./img/repolink.png, id=2180, 939.51pt x 978.65625pt>
+<./img/repolink.png, id=2210, 939.51pt x 978.65625pt>
 File: ./img/repolink.png Graphic file (type png)
  <use ./img/repolink.png>
 Package pdftex.def Info: ./img/repolink.png used on input line 89.
 (pdftex.def)             Requested size: 939.5077pt x 978.65387pt.
 
 [13 <C:/Users/rkorb/master_thesis/documents/thesis/img/e4download.png>]
-<./img/installnew.png, id=2187, 883.3pt x 691.58376pt>
+<./img/installnew.png, id=2217, 883.3pt x 691.58376pt>
 File: ./img/installnew.png Graphic file (type png)
 
 <use ./img/installnew.png>
@@ -2549,14 +2548,14 @@ Package pdftex.def Info: ./img/installnew.png used on input line 100.
 (pdftex.def)             Requested size: 883.29785pt x 691.58206pt.
  [14 <C:/Users/rkorb/master_thesis/documents/thesis/img/repolink.png> <C:/Users
 /rkorb/master_thesis/documents/thesis/img/installnew.png>] <./img/insertrepo.pn
-g, id=2194, 486.81876pt x 188.705pt>
+g, id=2224, 486.81876pt x 188.705pt>
 File: ./img/insertrepo.png Graphic file (type png)
 
 <use ./img/insertrepo.png>
 Package pdftex.def Info: ./img/insertrepo.png used on input line 111.
 (pdftex.def)             Requested size: 486.81757pt x 188.70453pt.
 
-<./img/e4install.png, id=2196, 882.29625pt x 688.5725pt>
+<./img/e4install.png, id=2226, 882.29625pt x 688.5725pt>
 File: ./img/e4install.png Graphic file (type png)
 
 <use ./img/e4install.png>
@@ -2564,7 +2563,7 @@ Package pdftex.def Info: ./img/e4install.png used on input line 122.
 (pdftex.def)             Requested size: 882.2941pt x 688.5708pt.
  [15 <C:/Users/rkorb/master_thesis/documents/thesis/img/insertrepo.png> <C:/Use
 rs/rkorb/master_thesis/documents/thesis/img/e4install.png>] <./img/import.png, 
-id=2205, 522.95375pt x 659.46375pt>
+id=2235, 522.95375pt x 659.46375pt>
 File: ./img/import.png Graphic file (type png)
 
 <use ./img/import.png>
@@ -2575,14 +2574,14 @@ Underfull \hbox (badness 1360) in paragraph at lines 138--138
 []\OT1/cmr/m/n/10 (a) Dia-log zum Im-port von Eclipse-
  []
 
-<./img/importprojects.png, id=2206, 523.9575pt x 657.45625pt>
+<./img/importprojects.png, id=2236, 523.9575pt x 657.45625pt>
 File: ./img/importprojects.png Graphic file (type png)
 
 <use ./img/importprojects.png>
 Package pdftex.def Info: ./img/importprojects.png used on input line 138.
 (pdftex.def)             Requested size: 170.71652pt x 214.21248pt.
 
-<./img/imported.png, id=2208, 1025.8325pt x 767.86874pt>
+<./img/imported.png, id=2238, 1025.8325pt x 767.86874pt>
 File: ./img/imported.png Graphic file (type png)
 
 <use ./img/imported.png>
@@ -2590,7 +2589,7 @@ Package pdftex.def Info: ./img/imported.png used on input line 156.
 (pdftex.def)             Requested size: 1025.83002pt x 767.86687pt.
  [16 <C:/Users/rkorb/master_thesis/documents/thesis/img/import.png> <C:/Users/r
 korb/master_thesis/documents/thesis/img/importprojects.png>] <./img/launch.png,
- id=2218, 1180.41pt x 763.85374pt>
+ id=2249, 1180.41pt x 763.85374pt>
 File: ./img/launch.png Graphic file (type png)
 
 <use ./img/launch.png>
@@ -2598,7 +2597,7 @@ Package pdftex.def Info: ./img/launch.png used on input line 167.
 (pdftex.def)             Requested size: 1180.40714pt x 763.85187pt.
  [17 <C:/Users/rkorb/master_thesis/documents/thesis/img/imported.png> <C:/Users
 /rkorb/master_thesis/documents/thesis/img/launch.png>]
-<./img/addplugins.png, id=2226, 1034.86626pt x 639.38875pt>
+<./img/addplugins.png, id=2257, 1034.86626pt x 639.38875pt>
 File: ./img/addplugins.png Graphic file (type png)
 
 <use ./img/addplugins.png>
@@ -2644,9 +2643,9 @@ Package rerunfilecheck Info: File `master_thesis.tmb' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 88.
  ) 
 Here is how much of TeX's memory you used:
- 23837 strings out of 493921
- 404091 string characters out of 3144877
- 534981 words of memory out of 3000000
+ 23841 strings out of 493921
+ 404135 string characters out of 3144877
+ 534983 words of memory out of 3000000
  26080 multiletter control sequences out of 15000+200000
  17043 words of font info for 62 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
@@ -2784,9 +2783,9 @@ type1/public/amsfonts/cm/cmti7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
 e1/public/amsfonts/cm/cmtt12.pfb><C:/Users/rkorb/AppData/Roaming/MiKTeX/2.9/fon
 ts/type1/public/tipa/tipa12.pfb><C:/Users/rkorb/AppData/Roaming/MiKTeX/2.9/font
 s/type1/public/tipa/tipasb10.pfb>
-Output written on master_thesis.pdf (97 pages, 11003936 bytes).
+Output written on master_thesis.pdf (99 pages, 11123794 bytes).
 PDF statistics:
- 2660 PDF objects out of 2984 (max. 8388607)
- 436 named destinations out of 1000 (max. 500000)
+ 2691 PDF objects out of 2984 (max. 8388607)
+ 440 named destinations out of 1000 (max. 500000)
  1107 words of extra memory for PDF output out of 10000 (max. 10000000)
 

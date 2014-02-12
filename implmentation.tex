@@ -420,6 +420,10 @@ Beispiel \ref{orientationvecs} zeigt zwei Vektoren von \textit{ImageOrientation}
 
 \subsubsection{Zeichnen der Orientierungslinien}
 
+Wenn mehrerer gleiche Datensätze in unterschiedlichen Ebenendarstellungen geöffnet sind, helfen dem Anwender die Orientierungslinien bei der Navigation durch den dreidimensionalen Datensatz. Abbildung \ref{lines:single:a} zeigt eine axiale Ebenedarstellung als aktuelle Anzeige, die vom Benutzer bedient wird. Zusätzlich sind die coronale (Abbildung \ref{lines:c}) und sagittale Ansicht (Abbildung \ref{lines:s}) geöffnet. Da der Anwender in der axialen Ansicht arbeitet, werden Änderungen der Bildanzeige an die beiden Beobachter weitergegeben.\\
+Navigiert der Nutzer mit der Scrollleiste durch den axialen Datensatz, wird mit Hilfe des Oberserver-Musters bei jeder Änderung die aktuelle z-Koordinate der Bildschicht an die coronale und sagittale Darstellung übertragen. Dieser z-Wert wird an der entsprechenden Stelle der Bildschicht als, im Beispiel blaue, Orientierungslinie eingezeichnet. \\
+Wie in den Abbildungen \ref{lines:single} zu sehen ist, entspricht die z-Koordinate in axialer Ansicht der y-Koordinate der coronalen und sagittalen Darstellung. Daraus folgt, dass die Orientierungslinie an der Stelle von $(0, y_{coronal}) $ bis $(width, y_{coronal})$ sowie von $(0, y_{sagittal}) $ bis $(width, y_{sagittal})$ für $y_{coronal}, y_{sagittal} = z_{axial}$
+
 \begin{figure*}[htb]
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
 \centering
@@ -431,6 +435,8 @@ Beispiel \ref{orientationvecs} zeigt zwei Vektoren von \textit{ImageOrientation}
 \caption{Einfache Darstellung der Orientierungslinien}
 \label{lines:single}
 \end{figure*}
+
+Die Koordinaten zum Einzeichnen der Orientierungslinien sind abhängig von der Quell- und Zieldarstellung. Navigiert der Anwender in der sagittalen Ebenendarstellung und aktualisiert damit eine axiale Anzeige entspricht die Koordinate $z_{sagittal}  = x_{axial}$. Die Orientierungslinie wird damit durch die Punkte $(x_{axial}, 0) $ und $(x_{axial}, height)$ definiert. Diese Vorgehensweise wird bei einer Navigation mit der Scrollleiste umgesetzt. Eine weitere Möglichkeit zur Orientierung im Datensatz ist die direkte Auswahl eines Punktes.
 
 \begin{figure*}[htb]
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
@@ -444,7 +450,27 @@ Beispiel \ref{orientationvecs} zeigt zwei Vektoren von \textit{ImageOrientation}
 \label{lines}
 \end{figure*}
 
+Abbildung \ref{lines:a} zeigt einen vom Anwender gewählten Punkt in der axialen Darstellung. Wieder müssen alle Beobachter, also Bildanzeigen mit dem gleichen Datensatz, nach der Auswahl aktualisiert werden. Die Abbildungen \ref{lines:single} zeigen nur die aktuell vom Nutzer gewählte Bildschicht der aktiven Anzeige. Bei einer direkten Punktauswahl wird in allen Ansichten der gleiche Punkt im Raum $(x, y, z)$ referenziert. Das bedeutet, es werden sowohl die horizontale, als auch die vertikale Orientierungslinie eingezeichnet. Zusätzlich wird die angezeigte Bildschicht der Beobachter den Koordinaten angepasst. Der gewählte Punkt wird jeweils durch den Schnittpunkt der Orientierungslinien symbolisiert. Das Beispiel der Abbildungen in \ref{lines} zeigt eine aktive axiale Ansicht sowie eine coronale und sagittale Ebenendarstellung als Beobachter.\\
+Der vom Anwender gewählte Punkt im Raum ist:
+
+\begin{equation}
+P_{axial}=\left(\begin{array}{c} x_{axial} \\ y_{axial} \\ z_{axial} \end{array}\right) 
+\vspace{0.5cm}
+\end{equation}
+Aus diesem Punkt müssen die Koordinaten für die Orientierungslinien und der Bildschicht bestimmt werden.
+Für die Darstellung von der axialen Ansicht zum referenzierten coronalen Punkt folgt aus Abbildung \ref{lines:c}:
+\begin{equation}
+P_{coronal}=\left(\begin{array}{c} x_{coronal} \\ y_{coronal} \\ z_{coronal} \end{array}\right) =
+\left(\begin{array}{c} x_{axial} \\ z_{axial} \\ y_{axial} \end{array}\right)
+\vspace{0.5cm}
+\end{equation}
+
+Mit diesen Koordinaten ergeben sich für die coronale Ebenendarstellung die vertikale Orientierungslinie von $(x_{axial}, 0)$ bis $(x_{axial}, height)$, die horizontale Linie $(0, z_{axial})$ bis $(width, z_{axial})$ und der Index der Bildschicht $y_{axial}$.\\
+Auch dieses Vorgehen ist abhängig von der Quell- und Zieldarstellung der aktiven Darstellung und Beobachtern.
+
 \subsection{Implementierung der Werkzeuge}
+
+Die Anzeige der Orientierungslinien komplettiert die Funktionalitäten zur Bilddarstellung, Navigation und Orientierung. Der nächste Schritt befasst sich mit der Manipulation der Bilddaten mit den zur Verfügung gestellten Werkzeugen.
 
 \subsubsection{Das Bild bewegen mit dem MoveTool}
 
