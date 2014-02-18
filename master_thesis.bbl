@@ -96,6 +96,12 @@
 \newblock \url{{ftp://medical.nema.org/medical/dicom/2011/11_06pu.pdf}}.
 \newblock \,Version:\,2011
 
+\bibitem[NFPS11]{nisch:bv}
+\textsc{Nischwitz}, Alfred ; \textsc{Fischer}, Max ; \textsc{Peter},
+  Haberäcker  ; \textsc{Socher}, Gudrun:
+\newblock \emph{Computergrafik und Bildverarbeitung - Band I: Computergrafik}.
+\newblock Vieweg+Teubner, 2011
+
 \bibitem[Pia08]{pianykh:dicom}
 \textsc{Pianykh}, Oleg~S.:
 \newblock \emph{{D}igital {I}maging and {C}ommunications in {M}edicine
@@ -144,6 +150,14 @@
   \url{{http://www.vogella.com/tutorials/Eclipse/article.html#eclipseoverview}}.
 \newblock \,Version:\,2013. --
 \newblock Stand 23.01.2014
+
+\bibitem[Vog13c]{vogel:di}
+\textsc{Vogel}, Lars:
+\newblock \emph{Using dependency injection in Java - Introduction}.
+\newblock
+  \url{{http://www.vogella.com/tutorials/DependencyInjection/article.html}}.
+\newblock \,Version:\,2013. --
+\newblock Stand 17.02.2014
 
 \bibitem[Wie12]{wieden:liquidwork}
 \emph{Kapitel\/}  Kondratieff – Von der Dampfmaschine zum Menschen.

@@ -45,58 +45,84 @@
 \contentsline {figure}{\numberline {5.4}{\ignorespaces jMediKit und die hierarchische Anordnung der Elemente des Application Models}}{44}{figure.5.4}
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Die Fabrik Methode zur Werkzeugerzeugung}}{45}{figure.5.5}
 \contentsline {figure}{\numberline {5.6}{\ignorespaces Architektur der Plug-in-Struktur}}{46}{figure.5.6}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Das Adapter-Muster unter jMediKit}}{49}{figure.5.7}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagramm zur Klassenstruktur der Bilddaten}}{50}{figure.5.8}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Organisation der Klassen zur Anzeige der DICOM-Bilddaten}}{51}{figure.5.9}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Benutzeroberfl\IeC {\"a}che der ImageViewComposites}}{52}{figure.5.10}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Darstellung eines ImageViewComposite}}}{52}{figure.5.10}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Vier ImageViewComposites im ImageViewPart}}}{52}{figure.5.10}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Architektur des generischen Dialogs zur dynamischen Parameterbestimmung}}{47}{figure.5.7}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Das Adapter-Muster unter jMediKit}}{50}{figure.5.8}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Diagramm zur Klassenstruktur der Bilddaten}}{51}{figure.5.9}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Organisation der Klassen zur Anzeige der DICOM-Bilddaten}}{52}{figure.5.10}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Benutzeroberfl\IeC {\"a}che der ImageViewComposites}}{53}{figure.5.11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Darstellung eines ImageViewComposite}}}{53}{figure.5.11}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Vier ImageViewComposites im ImageViewPart}}}{53}{figure.5.11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Die Baumansicht des DICOM-Browsers mit geladenen Objekten}}{55}{figure.6.1}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Die Baumansicht des DICOM-Browsers mit geladenen Objekten}}{56}{figure.6.1}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Beispielhafte Darstellung eines Baumes mit $h = 4$ in der Implementierung}}{57}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces R\IeC {\"a}umliche Sortierung der DICOM-Objekte}}{59}{figure.6.3}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Darstellung der beiden Richtungsvektoren der Bildebene und zugeh\IeC {\"o}rige Normale $\mathaccentV {vec}17E{r} \times \mathaccentV {vec}17E{c}$}}}{59}{figure.6.3}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Schichten entlang der Normalen $\mathaccentV {vec}17E{r} \times \mathaccentV {vec}17E{c}$}}}{59}{figure.6.3}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sortierung erfolgt durch Bestimmung der dominanten Achse}}}{59}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Die verschiedenen Ansichten der Ebenen eines dreidimensionalen Datensatzes}}{62}{figure.6.4}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Axiale Ansicht - $(x,y)$}}}{62}{figure.6.4}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Coronale Ansicht - $(x,z)$}}}{62}{figure.6.4}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sagittale Ansicht - $(y,z)$}}}{62}{figure.6.4}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces R\IeC {\"a}umliche Sortierung der DICOM-Objekte}}{60}{figure.6.3}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Darstellung der beiden Richtungsvektoren der Bildebene und zugeh\IeC {\"o}rige Normale $\mathaccentV {vec}17E{r} \times \mathaccentV {vec}17E{c}$}}}{60}{figure.6.3}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Schichten entlang der Normalen $\mathaccentV {vec}17E{r} \times \mathaccentV {vec}17E{c}$}}}{60}{figure.6.3}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sortierung erfolgt durch Bestimmung der dominanten Achse}}}{60}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Die verschiedenen Ansichten der Ebenen eines dreidimensionalen Datensatzes}}{63}{figure.6.4}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Axiale Ansicht - $(x,y)$}}}{63}{figure.6.4}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Coronale Ansicht - $(x,z)$}}}{63}{figure.6.4}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Sagittale Ansicht - $(y,z)$}}}{63}{figure.6.4}
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Der Prozess von der Bildauswahl zur Anzeige}}{63}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Berechnung der Position und Koordinaten. Die graue Fl\IeC {\"a}che symbolisiert das Bild und der rote Rahmen stellt den sichtbaren Bildausschnitt dar.}}{64}{figure.6.6}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Die Koordinaten eines Bildes}}}{64}{figure.6.6}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Berechnung des sichtbaren Bereichs}}}{64}{figure.6.6}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Normalisierte Koordinaten}}}{64}{figure.6.6}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Vergleich der Nearest Neighbor, bilinearen und bikubischen Interpolation}}{67}{figure.6.7}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Der rote Rahmen stellt den vergr\IeC {\"o}\IeC {\ss }erten Ausschnitt aus den Abbildungen \ref {interpolation:nn}, \ref {interpolation:bilinear} und \ref {interpolation:bicubic} dar.}}}{67}{figure.6.7}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Nearest Neighbor Interpolation}}}{67}{figure.6.7}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Bilineare Interpolation}}}{67}{figure.6.7}
-\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Bikubische Interpolation}}}{67}{figure.6.7}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Bilineare Interpolation \cite [S.388]{burger:bv}}}{68}{figure.6.8}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Das patientenbasierte Koordinatensystem}}{69}{figure.6.9}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Die x- und z-Achse}}}{69}{figure.6.9}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Die y- und z-Achse}}}{69}{figure.6.9}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Beschriftung der Koordinatenachsen bei axialer Ebenendarstellung}}{70}{figure.6.10}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Einfache Darstellung der Orientierungslinien}}{71}{figure.6.11}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Axiale Ebenendarstellung}}}{71}{figure.6.11}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Orientierungslinie der axialen Darstellung in der coronalen Ebenendarstellung}}}{71}{figure.6.11}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Orientierungslinie der axialen Darstellung in der sagittalen Ebenendarstellung}}}{71}{figure.6.11}
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Anzeige eines referenzierten Punktes in axialer Ebene mit Hilfe der Orientierungslinien}}{72}{figure.6.12}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Punktauswahl in axialer Ebenendarstellung}}}{72}{figure.6.12}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Anzeige des referenzierten Punktes aus der axialen Darstellung in der coronalen Ebene}}}{72}{figure.6.12}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Anzeige des referenzierten Punktes aus der axialen Darstellung in der sagittalen Ebene}}}{72}{figure.6.12}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Rekonstruktion der coronalen und sagittalen Ebene}}{65}{figure.6.6}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Rekonstruktion von der axialen zur coronalen Ebene}}}{65}{figure.6.6}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Rekonstruktion von der axialen zur sagittalen Ebene}}}{65}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Rotation der Richtungsvektoren von axialer zu coronaler Darstellung}}{66}{figure.6.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Richtungsvektoren der axialen Bildebene werden um 90$^\circ $ um die x-Achse gedreht}}}{66}{figure.6.7}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Richtungsvektoren in coronaler Ausrichtung}}}{66}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Berechnung der Position und Koordinaten. Die graue Fl\IeC {\"a}che symbolisiert das Bild und der rote Rahmen stellt den sichtbaren Bildausschnitt dar.}}{68}{figure.6.8}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Die Koordinaten eines Bildes}}}{68}{figure.6.8}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Berechnung des sichtbaren Bereichs}}}{68}{figure.6.8}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Normalisierte Koordinaten}}}{68}{figure.6.8}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Vergleich der Nearest Neighbor, bilinearen und bikubischen Interpolation}}{70}{figure.6.9}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Der rote Rahmen stellt den vergr\IeC {\"o}\IeC {\ss }erten Ausschnitt aus den Abbildungen \ref {interpolation:nn}, \ref {interpolation:bilinear} und \ref {interpolation:bicubic} dar.}}}{70}{figure.6.9}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Nearest Neighbor Interpolation}}}{70}{figure.6.9}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Bilineare Interpolation}}}{70}{figure.6.9}
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Bikubische Interpolation}}}{70}{figure.6.9}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Bilineare Interpolation \cite [S.388]{burger:bv}}}{71}{figure.6.10}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Das patientenbasierte Koordinatensystem}}{73}{figure.6.11}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Die x- und z-Achse}}}{73}{figure.6.11}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Die y- und z-Achse}}}{73}{figure.6.11}
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Beschriftung der Koordinatenachsen bei axialer Ebenendarstellung}}{74}{figure.6.12}
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Einfache Darstellung der Orientierungslinien}}{75}{figure.6.13}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Axiale Ebenendarstellung}}}{75}{figure.6.13}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Orientierungslinie der axialen Darstellung in der coronalen Ebenendarstellung}}}{75}{figure.6.13}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Orientierungslinie der axialen Darstellung in der sagittalen Ebenendarstellung}}}{75}{figure.6.13}
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Anzeige eines referenzierten Punktes in axialer Ebene mit Hilfe der Orientierungslinien}}{75}{figure.6.14}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Punktauswahl in axialer Ebenendarstellung}}}{75}{figure.6.14}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Anzeige des referenzierten Punktes aus der axialen Darstellung in der coronalen Ebene}}}{75}{figure.6.14}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Anzeige des referenzierten Punktes aus der axialen Darstellung in der sagittalen Ebene}}}{75}{figure.6.14}
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Translation des Bildmittelpunkts}}{79}{figure.6.15}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Die Datei Application.e4xmi}}{85}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Einf\IeC {\"u}gen der Part-Struktur}}{85}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Einf\IeC {\"u}gen der Part-Struktur}}{86}{figure.7.3}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Erstellen der Klasse}}{86}{figure.7.4}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Anzeige des Parts im PartStack}}{88}{figure.7.5}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Die Werkzeugleiste im Application Model}}{89}{figure.7.6}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Erstellung einer Klasse f\IeC {\"u}r die Handlerimplementierung}}{89}{figure.7.7}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Einstellungen des neuen Men\IeC {\"u}punktes}}{90}{figure.7.8}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Anzeige der erweiterten Werkzeugleiste}}{90}{figure.7.9}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Standardinstallation eines 32-Bit Eclipse unter Windows 8}}{XIII}{figure.B.1}
+\contentsline {figure}{\numberline {B.2}{\ignorespaces e4 Projekt Builds}}{XIV}{figure.B.2}
+\contentsline {figure}{\numberline {B.3}{\ignorespaces e4 Repository Link}}{XV}{figure.B.3}
+\contentsline {figure}{\numberline {B.4}{\ignorespaces Installation neuer Software unter Eclipse}}{XV}{figure.B.4}
+\contentsline {figure}{\numberline {B.5}{\ignorespaces Angabe des Repository}}{XVI}{figure.B.5}
+\contentsline {figure}{\numberline {B.6}{\ignorespaces Auswahl der e4 Tools zur Installation}}{XVI}{figure.B.6}
+\contentsline {figure}{\numberline {B.7}{\ignorespaces Vorgang zum Importieren bereits bestehender Projekte}}{XVII}{figure.B.7}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Dialog zum Import von Eclipse-Projekten}}}{XVII}{figure.B.7}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Auswahl der Projekte}}}{XVII}{figure.B.7}
+\contentsline {figure}{\numberline {B.8}{\ignorespaces Der Package Explorer nach dem Importvorgang}}{XVIII}{figure.B.8}
+\contentsline {figure}{\numberline {B.9}{\ignorespaces Der Package Explorer nach dem Importvorgang}}{XVIII}{figure.B.9}
+\contentsline {figure}{\numberline {B.10}{\ignorespaces Konfigurationsfenster zu Anwendungseinstellungen und Anwendungsstart}}{XIX}{figure.B.10}
+\contentsline {figure}{\numberline {B.11}{\ignorespaces Mit jmedikit.product den Build erstellen}}{XX}{figure.B.11}
+\contentsline {figure}{\numberline {B.12}{\ignorespaces Optionen zur Erstellung des Builds}}{XX}{figure.B.12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Standardinstallation eines 32-Bit Eclipse unter Windows 8}}{XII}{figure.B.1}
-\contentsline {figure}{\numberline {B.2}{\ignorespaces e4 Projekt Builds}}{XIII}{figure.B.2}
-\contentsline {figure}{\numberline {B.3}{\ignorespaces e4 Repository Link}}{XIV}{figure.B.3}
-\contentsline {figure}{\numberline {B.4}{\ignorespaces Installation neuer Software unter Eclipse}}{XIV}{figure.B.4}
-\contentsline {figure}{\numberline {B.5}{\ignorespaces Angabe des Repository}}{XV}{figure.B.5}
-\contentsline {figure}{\numberline {B.6}{\ignorespaces Auswahl der e4 Tools zur Installation}}{XV}{figure.B.6}
-\contentsline {figure}{\numberline {B.7}{\ignorespaces Vorgang zum Importieren bereits bestehender Projekte}}{XVI}{figure.B.7}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Dialog zum Import von Eclipse-Projekten}}}{XVI}{figure.B.7}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Auswahl der Projekte}}}{XVI}{figure.B.7}
-\contentsline {figure}{\numberline {B.8}{\ignorespaces Der Package Explorer nach dem Importvorgang}}{XVII}{figure.B.8}
-\contentsline {figure}{\numberline {B.9}{\ignorespaces Der Package Explorer nach dem Importvorgang}}{XVII}{figure.B.9}
-\contentsline {figure}{\numberline {B.10}{\ignorespaces Konfigurationsfenster zu Anwendungseinstellungen und Anwendungsstart}}{XVIII}{figure.B.10}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Dialog zum Anlegen eines neuen Javaprojekts}}{XXIII}{figure.D.1}
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Auswahl des Output-Ordners}}{XXIV}{figure.D.2}
+\contentsline {figure}{\numberline {D.3}{\ignorespaces Auswahl der externen Bibliotheken}}{XXV}{figure.D.3}
+\contentsline {figure}{\numberline {D.4}{\ignorespaces Der Eclipse Workspace nach Anlegen des Projekts}}{XXVI}{figure.D.4}
+\contentsline {figure}{\numberline {D.5}{\ignorespaces Anlegen der Hauptklasse des Plug-ins}}{XXVI}{figure.D.5}

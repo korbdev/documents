@@ -58,47 +58,57 @@
 \contentsline {subsection}{\numberline {5.6.1}Plug-in als Grundstruktur}{45}{subsection.5.6.1}
 \contentsline {subsection}{\numberline {5.6.2}Erweiterung mit der Schablonenmethode}{46}{subsection.5.6.2}
 \contentsline {subsection}{\numberline {5.6.3}Singleton als Plug-in Manager}{46}{subsection.5.6.3}
-\contentsline {section}{\numberline {5.7}Externe Bibliotheken}{47}{section.5.7}
-\contentsline {subsection}{\numberline {5.7.1}dcm4che}{47}{subsection.5.7.1}
-\contentsline {subsubsection}{Java Advanced Imaging Image I/O Tools}{47}{subsubsection*.15}
-\contentsline {subsection}{\numberline {5.7.2}Simple ITK}{48}{subsection.5.7.2}
-\contentsline {subsection}{\numberline {5.7.3}Der Adapter zur Aufl\IeC {\"o}sung von Abh\IeC {\"a}ngigkeiten}{48}{subsection.5.7.3}
-\contentsline {section}{\numberline {5.8}Die Architektur der Bilddaten}{49}{section.5.8}
-\contentsline {subsection}{\numberline {5.8.1}Die einfache Fabrik}{50}{subsection.5.8.1}
-\contentsline {subsection}{\numberline {5.8.2}Struktur der Bilder im ImageViewPart}{51}{subsection.5.8.2}
-\contentsline {chapter}{\numberline {6}Implementierung}{54}{chapter.6}
-\contentsline {section}{\numberline {6.1}Implementierung der DICOM-Objekte}{54}{section.6.1}
-\contentsline {section}{\numberline {6.2}Der DicomBrowser}{55}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Die Baumstruktur}{55}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}Repr\IeC {\"a}sentation der Pixeldaten}{57}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}R\IeC {\"a}umliche Sortierung der Bilddaten}{59}{subsection.6.3.1}
-\contentsline {section}{\numberline {6.4}Zeichnen und manipulieren der Bilddaten}{61}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Berechnung der Bildkoordinaten}{64}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Bilineare Interpolation}{66}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3}Anzeige der Zusatzinformationen}{68}{subsection.6.4.3}
-\contentsline {subsubsection}{Das Koordinatensystem}{69}{subsubsection*.16}
-\contentsline {subsubsection}{Zeichnen der Orientierungslinien}{71}{subsubsection*.17}
-\contentsline {subsection}{\numberline {6.4.4}Implementierung der Werkzeuge}{73}{subsection.6.4.4}
-\contentsline {subsubsection}{Das Bild bewegen mit dem MoveTool}{74}{subsubsection*.18}
-\contentsline {subsubsection}{Skalierung mit dem ResizeTool}{74}{subsubsection*.19}
-\contentsline {subsubsection}{Justierung der Fensterung mit dem WindowTool}{74}{subsubsection*.20}
-\contentsline {subsubsection}{Punktauswahl mit dem PointTool}{74}{subsubsection*.21}
-\contentsline {section}{\numberline {6.5}Das Utility-Fenster}{74}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Debugging mit dem ConsoleView}{74}{subsection.6.5.1}
-\contentsline {subsection}{\numberline {6.5.2}DICOM-Objekte \IeC {\"u}ber DicomTagView ausgeben}{74}{subsection.6.5.2}
-\contentsline {section}{\numberline {6.6}Implementierung des Hauptmen\IeC {\"u}s und der Werkzeugleiste}{74}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Das Hauptmen\IeC {\"u}}{74}{subsection.6.6.1}
-\contentsline {subsection}{\numberline {6.6.2}Die Werkzeugleiste}{74}{subsection.6.6.2}
-\contentsline {chapter}{\numberline {7}Entwicklung von Erweiterungen}{75}{chapter.7}
-\contentsline {chapter}{Literaturverzeichnis}{I}{chapter*.22}
-\contentsline {chapter}{Abbildungsverzeichnis}{IV}{chapter*.23}
-\contentsline {chapter}{Tabellenverzeichnis}{VI}{chapter*.24}
-\contentsline {part}{\numberline {III}Anhang}{VII}{part.3}
-\contentsline {chapter}{\numberline {A}Darstellung der DICOM-Elemente im Speicher}{VIII}{appendix.A}
-\contentsline {section}{\numberline {A.1}Explizite VR mit [ OB \textpipe \ OW \textpipe \ OF \textpipe \ SQ \textpipe \ UT \textpipe \ UN ]}{VIII}{section.A.1}
-\contentsline {section}{\numberline {A.2}Explizite VR}{VIII}{section.A.2}
-\contentsline {section}{\numberline {A.3}Implizite VR}{VIII}{section.A.3}
-\contentsline {chapter}{\numberline {B}Installation der Eclipse e4 Umgebung}{XII}{appendix.B}
-\contentsline {section}{\numberline {B.1}Eclipse}{XII}{section.B.1}
-\contentsline {section}{\numberline {B.2}Eclipse e4 Tools}{XIII}{section.B.2}
-\contentsline {section}{\numberline {B.3}Import der jMediKit Projektdateien}{XV}{section.B.3}
+\contentsline {subsection}{\numberline {5.6.4}Plug-ins mit dynamischer Parameter\IeC {\"u}bergabe}{47}{subsection.5.6.4}
+\contentsline {section}{\numberline {5.7}Externe Bibliotheken}{48}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}dcm4che}{48}{subsection.5.7.1}
+\contentsline {subsubsection}{Java Advanced Imaging Image I/O Tools}{48}{subsubsection*.15}
+\contentsline {subsection}{\numberline {5.7.2}Simple ITK}{49}{subsection.5.7.2}
+\contentsline {subsection}{\numberline {5.7.3}Der Adapter zur Aufl\IeC {\"o}sung von Abh\IeC {\"a}ngigkeiten}{49}{subsection.5.7.3}
+\contentsline {section}{\numberline {5.8}Die Architektur der Bilddaten}{50}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}Die einfache Fabrik}{51}{subsection.5.8.1}
+\contentsline {subsection}{\numberline {5.8.2}Struktur der Bilder im ImageViewPart}{52}{subsection.5.8.2}
+\contentsline {chapter}{\numberline {6}Implementierung}{55}{chapter.6}
+\contentsline {section}{\numberline {6.1}Implementierung der DICOM-Objekte}{55}{section.6.1}
+\contentsline {section}{\numberline {6.2}Der DicomBrowser}{56}{section.6.2}
+\contentsline {section}{\numberline {6.3}Repr\IeC {\"a}sentation der Pixeldaten}{58}{section.6.3}
+\contentsline {section}{\numberline {6.4}R\IeC {\"a}umliche Sortierung der Bilddaten}{59}{section.6.4}
+\contentsline {section}{\numberline {6.5}Zeichnen und manipulieren der Bilddaten}{62}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Die Rekonstruktion der Ebenen}{65}{subsection.6.5.1}
+\contentsline {subsection}{\numberline {6.5.2}Berechnung der Bildkoordinaten}{67}{subsection.6.5.2}
+\contentsline {subsection}{\numberline {6.5.3}Bilineare Interpolation}{70}{subsection.6.5.3}
+\contentsline {subsection}{\numberline {6.5.4}Anzeige der Zusatzinformationen}{72}{subsection.6.5.4}
+\contentsline {subsubsection}{Das Koordinatensystem}{72}{subsubsection*.16}
+\contentsline {subsubsection}{Zeichnen der Orientierungslinien}{74}{subsubsection*.17}
+\contentsline {subsection}{\numberline {6.5.5}Implementierung der Werkzeuge}{76}{subsection.6.5.5}
+\contentsline {subsubsection}{Das Bild bewegen mit dem MoveTool}{78}{subsubsection*.18}
+\contentsline {subsubsection}{Skalierung mit dem ResizeTool}{79}{subsubsection*.19}
+\contentsline {subsubsection}{Das DefaultTool}{80}{subsubsection*.20}
+\contentsline {subsubsection}{Justierung der Fensterung mit dem WindowTool}{80}{subsubsection*.21}
+\contentsline {subsubsection}{Punktauswahl mit dem PointTool}{80}{subsubsection*.22}
+\contentsline {section}{\numberline {6.6}Dynamische Parametervergabe}{81}{section.6.6}
+\contentsline {section}{\numberline {6.7}Debugging der eigenen Plug-ins}{83}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Dateibasiertes Debugging}{83}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}Visuelles Debugging}{83}{subsection.6.7.2}
+\contentsline {chapter}{\numberline {7}Entwicklung von Erweiterungen}{84}{chapter.7}
+\contentsline {section}{\numberline {7.1}Entwicklung von Plug-ins}{84}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Konventionen}{84}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.2}Erweiterung der Anwendungsstruktur mit dem Eclipse Application Model}{84}{section.7.2}
+\contentsline {section}{\numberline {7.3}Erweiterung der Werkzeuge}{88}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Hinzuf\IeC {\"u}gen eines Men\IeC {\"u}punktes}{88}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Hinzuf\IeC {\"u}gen der Funktionalit\IeC {\"a}t}{91}{subsection.7.3.2}
+\contentsline {subsection}{\numberline {7.3.3}Hinzuf\IeC {\"u}gen der Werkzeuglogik}{93}{subsection.7.3.3}
+\contentsline {chapter}{Literaturverzeichnis}{I}{chapter*.23}
+\contentsline {chapter}{Abbildungsverzeichnis}{IV}{chapter*.24}
+\contentsline {chapter}{Tabellenverzeichnis}{VII}{chapter*.25}
+\contentsline {part}{\numberline {III}Anhang}{VIII}{part.3}
+\contentsline {chapter}{\numberline {A}Darstellung der DICOM-Elemente im Speicher}{IX}{appendix.A}
+\contentsline {section}{\numberline {A.1}Explizite VR mit [ OB \textpipe \ OW \textpipe \ OF \textpipe \ SQ \textpipe \ UT \textpipe \ UN ]}{IX}{section.A.1}
+\contentsline {section}{\numberline {A.2}Explizite VR}{IX}{section.A.2}
+\contentsline {section}{\numberline {A.3}Implizite VR}{IX}{section.A.3}
+\contentsline {chapter}{\numberline {B}Installation der Eclipse e4 Umgebung}{XIII}{appendix.B}
+\contentsline {section}{\numberline {B.1}Eclipse}{XIII}{section.B.1}
+\contentsline {section}{\numberline {B.2}Eclipse e4 Tools}{XIV}{section.B.2}
+\contentsline {section}{\numberline {B.3}Import der jMediKit Projektdateien}{XVI}{section.B.3}
+\contentsline {section}{\numberline {B.4}Erstellung eines neuen Builds von jMediKit}{XIX}{section.B.4}
+\contentsline {chapter}{\numberline {C}Iconverwaltung innerhalb der Anwendung}{XXI}{appendix.C}
+\contentsline {chapter}{\numberline {D}Die Verwendung von Eclipse zur Plug-in-Entwicklung}{XXIII}{appendix.D}

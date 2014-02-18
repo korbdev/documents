@@ -193,6 +193,23 @@ Nach den Anforderungen in Kapitel \ref{anforderungen} ist es nötig, Plug-in-Sch
 Der Manager \textit{PlugInClassLoader} ist als Singleton realisiert. Dadurch wird das Problem umgangen, dass mehrere Manager die gleichen Plug-ins laden. Passiert dies, sind gleiche Klassen zueinander inkompatibel und es kann nicht sichergestellt werden, welche Klasse von welchem Manager zur Verfügung gestellt wird.\\
 Damit neue Klassen zum Programmstart eingebunden werden können, wird der Java System Classloader über den Manager um einen URL-Classloader erweitert. So werden zu den bisherigen Klassen der Java Virtual Machine alle die Plug-in-Klassen hinzugefügt.
 
+\subsection{Plug-ins mit dynamischer Parameterübergabe} \label{genericdialog}
+
+Einen weiteren wichtigen Aspekt der Architektur zur Plug-in-Entwicklung stellt ein generischer Dialog dar. Der Anwender kann dieses Bedienfeld in sein Plug-in einbinden und so eine dynamische Parameterübergabe anstoßen.\\
+Das Grundlegende Fenster liefert die Klasse \textit{TitleAreaDialog} aus dem externen SWT- und JFace-Paket. jMediKit erweitert diese Klasse zu einem \textit{PlugInDialog}. Sie enthält eine Liste mit den Schnittstellen \textit{IPlugInDialogItem}. Dieses  Interface liefert die Grundfunktionen der Parametertypen wie zum Beispiel \textit{IntegerItem} und \textit{StringItem}. Der Plug-in-Dialog kann beliebig viele Elemente enthalten.\\
+Wird ein Plug-in vom Anwender entwickelt, kann der \textit{PlugInDialog} nicht direkt verwendet werden, da externe Bibliotheken wie SWT und JFace nicht vom Benutzer eingebunden werden und somit die Klassen und Funktionen aufgrund der Abhängigkeiten von \textit{PlugInDialog} und \textit{TitleAreaDialog} nicht aufgelöst werden.
+Um dieses Problem zu beheben wird die weitere Generalisierung \textit{GenericPlugInDialog} eingeführt. Dieser Dialog kann in konkreten Plug-ins instantiiert, angepasst und bearbeitet werden.
+
+\begin{figure}[htbp]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=9cm]{./img/plugindialog.pdf}}
+  \caption{Architektur des generischen Dialogs zur dynamischen Parameterbestimmung}
+  %\floatfoot{https://wiki.eclipse.org/Eclipse4}
+  \label{plugindialog}
+  \vspace{0.5cm}
+\end{figure}
+
 \section{Externe Bibliotheken}
 
 Fremde Bibliotheken werden aus verschiedenen Gründen benötigt. Zum einen für das Lesen von DICOM-Objekten und zum anderen bieten Bildverarbeitungsbibliotheken eine gute Grundlage an Funktionen. Zur Verarbeitung von DICOM-Dateien verwenden jMediKit die freie Bibliothek \glqq dcm4che\grqq. Für die Bildverarbeitung wird \glqq Simple ITK\grqq\ eingesetzt.

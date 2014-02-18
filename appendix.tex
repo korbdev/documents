@@ -53,11 +53,11 @@ Bei einer impliziten VR Darstellung besteht das Datenelement aus den drei konsek
 \end{sidewaystable}
 
 
-\chapter{Installation der Eclipse e4 Umgebung}
+\chapter{Installation der Eclipse e4 Umgebung} \label{install_eclipse}
 
 \section{Eclipse}
-Voraussetzung für Eclipse ist eine bereits installierte Java Virtual Machine. Werden keine Werkzeuge aus dem Java Development Kit benötigt, reicht eine Java Runtime Environment aus.
-Grundlage für die Plug-in und Rich Client Entwicklung ist eine Eclipse-Installation. Unter \textit{http://www.eclipse.org/downloads/} kann der aktuelle \textit{Eclipse Standard Client} für ein beliebiges Betriebssystem bezogen werden. Bei der Wahl zwischen 32- und 64-Bit muss die Version mit der installierten Java-Variante übereinstimmen, da sonst die Native Libraries nicht geladen werden können. Nach dem Entpacken des Zip-Archivs kann der Client über \textit{eclipse.exe} werden. Abbildung \ref{eclipsestd} zeigt das Programmfenster von Eclipse nach dem ersten Ausführen.\\
+Voraussetzung für Eclipse ist eine bereits installierte Java Virtual Machine. Werden keine Werkzeuge aus dem Java Development Kit benötigt, reicht eine Java Runtime Environment aus. Für die Entwicklung von jMediKit wurde Java 7 verwendet.\\
+Grundlage für die Plug-in und Rich Client Entwicklung ist eine Eclipse-Installation ab Version 4. Unter \textit{http://www.eclipse.org/downloads/} kann der aktuelle \textit{Eclipse Standard Client} für ein beliebiges Betriebssystem bezogen werden. Bei der Wahl zwischen 32- und 64-Bit muss die Version mit der installierten Java-Variante übereinstimmen, da sonst die Native Libraries nicht geladen werden können. Nach dem Entpacken des Zip-Archivs kann der Client über \textit{eclipse.exe} gestartet werden. Abbildung \ref{eclipsestd} zeigt das Programmfenster von Eclipse nach dem ersten Ausführen.\\
 
 \begin{figure}[H]
   \vspace{0.5cm}
@@ -179,4 +179,196 @@ Unter \textit{Run} $\rightarrow$ \textit{Run Configuration} können die Plug-ins
   \caption{Konfigurationsfenster zu Anwendungseinstellungen und Anwendungsstart}
   \label{addplugins}
   \vspace{0.5cm}
+\end{figure}
+
+\section{Erstellung eines neuen Builds von jMediKit}
+
+Um einen neuen Build von jMediKit zu veröffentlichen, muss die Datei \textit{jmedikit.product} im Projekt \textit{org.jmedikit.product} mit einem Doppelklick geöffnet werden. Darauf öffnet sich der \textit{Overview} zum Produkt, wie in Abbildung \ref{build} zu sehen ist. Am oberen rechten Rand des \textit{Overviews} sind vier Buttons angeordnet. Hier muss der dritte Button names \textit{Export an Eclipse product}(in der Abbildung \ref{build} rot markiert) gedrückt werden.
+
+\begin{figure}[H]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=8cm]{./img/jmedikit_build.png}}
+  \caption {Mit jmedikit.product den Build erstellen}
+  \label{build}
+  \vspace{0.5cm}
+\end{figure}
+
+Es öffnet sich ein Fenster mit diversen Optionen(Abbildung \ref{buildoptions}).Als \textit{Configuration} muss die \textit{jmedikit.product} gewählt werden. Unter \textit{Root Directory} wird das Wurzelverzeichnis von jMediKit bestimmt. Die Option \textit{Directory} ist das Exportverzeichnis, in dem die Anwendung nach dem Build zu finden ist. Die weiteren Optionen entsprechen der Abbildung \ref{buildoptions}. Mit \textit{Finish} wird der Build-Prozess gestartet.
+
+\begin{figure}[H]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=8cm]{./img/jmedikit_buildoptions.png}}
+  \caption {Optionen zur Erstellung des Builds}
+  \label{buildoptions}
+  \vspace{0.5cm}
+\end{figure}
+
+\chapter{Iconverwaltung innerhalb der Anwendung} \label{importicon}
+Die Icons der Anwendung werden mit Hilfe eines OSGi-Services verwaltet. Eclipse definiert das Interface \textit{IResourceProviderService}, mit dessen Hilfe die Bilddaten organisiert werden können. Die Metadaten des Services befinden sich im Projekt \textit{org.jmedikit.plugin} unter \textit{OSGI-INF}. Hier wird der spezifische Service bekannt gemacht und die implementierende Klasse festgelegt. Zusätzlich wird die Datei \textit{OSGI-INF/resource.properties} definiert, die alle Pfadangaben zu den Bilddateien enthält.\\
+Um neue Bilder und Icons hinzuzufügen muss zuerst die Datei \textit{resource.properties} um einen Bezeichner und die Pfadangabe erweitert werden. Ein neuer Eintrag kann an beliebiger Stelle, wie in Listing \ref{resource}, hinzugefügt werden.
+
+\lstset{
+language=sh,
+caption={resource.properties},
+label=resource,
+xleftmargin=1em,
+xrightmargin=1em,
+numbers=left,
+backgroundcolor=\color{lgrey},
+}  
+\begin{figure}[htbp]
+\begin{lstlisting}[frame=leftline]
+NEW_ICON_FILE=icons/mynewicon.png
+\end{lstlisting}
+
+\end{figure}
+
+Der \textit{ImageProvider} erweitert die von Eclipse bereitgestellte Klasse \textit{BasicImageProvider}, die das Interface des Services implementiert. \textit{ImageProvider} muss nun um den Bezeichner des neuen Icons mit einer Konstanten erweitert werden (Listing \ref{konst}).
+
+\lstset{
+language=Java,
+caption={Erweiternder Eintrag einer Konstanten in der Klasse \textit{ImageProvider}},
+label=konst,
+xleftmargin=1em,
+xrightmargin=1em,
+numbers=left,
+backgroundcolor=\color{lgrey},
+}  
+\begin{figure}[htbp]
+\begin{lstlisting}[frame=leftline]
+public final static String NEW_ICON_FILE = "NEW_ICON_FILE";
+\end{lstlisting}
+
+\end{figure}
+
+Die Bilddatei oder das Icon wird nach einem erneuten Build des Services verfügbar. Dieser kann zum Beispiel durch ein erneutes Speichern der Datei \textit{org.jmedikit.plugin/META-INF/MANIFEST.MF} angestoßen werden.
+Listing \ref{use} zeigt die Verwendung der neuen Bilder und Icons. Innerhalb der Klassen, die Strukturen des Application Models implementieren, kann mit der in Eclipse e4 verfügbaren \textit{Dependency Injection} gearbeitet werden\footnote{Ein umfassender Artikel zur Dependency Injection ist unter \cite{vogel:di} verfügbar.}. Existiert innerhalb des Lebenszyklus der Anwendung ein \textit{IResourcePool}-Objekt, kann es mit Hilfe der Annotation \textit{@Inject} in die Klasse injiziert werden. Mit dieser Instanz wird innerhalb der Anwendung ein SWT.Image mit der Methode \textit{getImageUnchecked} instantiiert.
+\lstset{
+language=Java,
+caption={Verwendung des ImageProviders mit dem IResourcePool},
+label=use,
+xleftmargin=1em,
+xrightmargin=1em,
+numbers=left,
+backgroundcolor=\color{lgrey},
+}  
+\begin{figure}[htbp]
+\begin{lstlisting}[frame=leftline]
+//Erzeugen eine SWT.Image aus dem ImageProvider
+public class PartClass{
+
+	/**
+	 * Den IResourcePool mittels 
+	 * Dependency Injection verfuegbar machen
+	 */
+	@Inject
+	IResourcePool provider;
+	
+	public void someMethod(){
+	 	Image icon = provider.getImageUnchecked(
+			ImageProvider.NEW_ICON_FILE
+	 	);
+	}
+}
+\end{lstlisting}
+
+\end{figure}
+
+\chapter{Die Verwendung von Eclipse zur Plug-in-Entwicklung}
+
+Dieses Kapitel beschreibt das Vorbereiten eines Projekts zur Entwicklung eines Plug-ins für jMediKit. Voraussetzung für diese Anleitung ist Eclipse ab Version 4. Zusätzlich wird entweder ein Build von jMediKit oder der Quelltext und die im Plug-in verwendeten externen Bibliotheken benötigt.\\
+Nachdem Eclipse geöffnet wurde, kann über \textit{File} $\rightarrow$ \textit{New} $\rightarrow$ \textit{Java Project} ein neues Javaprojekt angelegt werden. Abbildung \ref{newproject} zeigt den entsprechenden Dialog und die zu wählenden Eigenschaften. Es muss nur der Plug-in Name bestimmt werden. Die restlichen Einstellungen entsprechen den Standardwerten, können aber nach Bedarf angepasst werden.
+
+\begin{figure}[H]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=6cm]{./img/plugin_newprojekt.png}}
+  \caption{Dialog zum Anlegen eines neuen Javaprojekts}
+  \label{newproject}
+  \vspace{0.5cm}
+\end{figure}
+
+Mit einem Klick auf \textit{Next} wird man zu den nächsten Projektoptionen, wie in Abbildung \ref{binfolder} zu sehen, geleitet. Hier kann unter \textit{Default Output Folder} der Ordner entsprechend der Plug-in-Konventionen für die \textit{.class} Dateien gesetzt werden. Der Plug-in-Name im Beispiel lautet \textit{TestPlugIn}. Entsprechend ist unter \textit{Default Output Folder} der Wert \mbox{\textit{TestPlugIn/\_\_TestPlugIn}} einzutragen, wobei \textit{TestPlugIn} den Projektordner darstellt und die Binärdaten unter \textit{\_\_TestPlugIn} gespeichert werden.
+
+\begin{figure}[H]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=6cm]{./img/plugin_binfolder.png}}
+  \caption{Auswahl des Output-Ordners}
+  \label{binfolder}
+  \vspace{0.5cm}
+\end{figure}
+
+Im nächsten Schritt müssen die externen Bibliotheken dem Projekt hinzugefügt werden. Werden vom User selbst keine speziellen Bibliotheken verwendet, reicht das Inkludieren der jMediKit-Bibliothek und dem SimpleITK-Projekt.\\
+Dazu muss im aktuellen Dialogfenster der Reiter \textit{Libraries} ausgewählt werden. Wird mit einem jMediKit-Build gearbeitet, kann die Bibliothek mit dem Button \textit{Add External Jar} hinzugefügt werden. Nach einem Klick öffnet sich ein Dateidialog. Der Pfad zu der jMediKit-Jar befindet sich unter \newline
+\textit{jMedikit-Installation/}\textit{jmedikit/}\textit{plugins/}\textit{org.jmedikit.plugin\_versionsnummer}, wobei \textit{versionsnummer} für die Versionsnummer des aktuellen Builds steht(zum Beispiel\newline \textit{org.jmedikit.plugin\_1.0.0.201401220023}). Wird mit dem Quelltext von jMediKit gearbeitet, können die Projektdateien über den Button \textit{Add External Class Folder} hinzugefügt werden. Diese liegen im Ordner \textit{bin} im Projekt \textit{org.jmedikit.plugin}.\\
+Um die SimpleITK.jar einzubinden gibt es zwei Möglichkeiten. Wird mit dem Build gearbeitet, kann die jMediKit-Jar mit einem Zip-Programm geöffnet und SimpleITK aus dem Ordner \textit{lib} entpackt werden\footnote{Ist kein Programm zum Entpacken von jar-Dateien vorhanden, kann SimpleITK direkt von \textit{http://www.simpleitk.org/SimpleITK/resources/software.html} bezogen werden}. Bei der Verwendung der Quelldateien liegt die Bibliothek von SimpleITK im Projekt \textit{org.jmedikit.plugin} ebenfalls im Ordner \textit{lib}. Die Datei \textit{simpleitk-0.x.x.jar} kann nun mit dem Button \textit{Add External Jar} hinzugefügt werden.
+
+\begin{figure}[H]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=6cm]{./img/plugin_libs.png}}
+  \caption{Auswahl der externen Bibliotheken}
+  \label{libs}
+  \vspace{0.5cm}
+\end{figure}
+
+Mit einem Klick auf \textit{Finish} werden die Einstellungen übernommen und das Projekt angelegt. Wurden alle Schritte korrekt ausgeführt, hat das Plug-in-Projekt eine Struktur wie in Abbildung \ref{workspace}.
+
+\begin{figure}[H]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=10cm]{./img/plugin_workspace.png}}
+  \caption{Der Eclipse Workspace nach Anlegen des Projekts}
+  \label{workspace}
+  \vspace{0.5cm}
+\end{figure}
+
+Mit einem Rechtsklick auf den Ordner \textit{src} im Project Explorer, gefolgt \textit{New} $\rightarrow$ \textit{Class} kann die Hauptklasse des Plug-ins angelegt werden. Entsprechend der Plug-in-Konvetionen wird der Name \textit{\_\_TestPlugIn} und mit einem Klick auf \textit{Finish} erstellt.
+
+\begin{figure}[H]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=6cm]{./img/plugin_class.png}}
+  \caption{Anlegen der Hauptklasse des Plug-ins}
+  \label{class}
+  \vspace{0.5cm}
+\end{figure}
+
+Nach dem Erstellen der Klasse kann mit dem Entwickeln des Plug-ins begonnen werden. Ein HalloWelt-Plug-in hat folgende Struktur:
+
+\lstset{
+language=Java,
+caption={Implementierung eines HalloWelt-Plug-ins},
+label=singleton,
+xleftmargin=1em,
+xrightmargin=1em,
+numbers=left,
+backgroundcolor=\color{lgrey},
+}  
+\begin{figure}[htbp]
+\begin{lstlisting}[frame=leftline]
+import org.jmedikit.lib.core.APlugIn2D;
+import org.jmedikit.lib.image.AImage;
+
+
+public class __TestPlugIn extends APlugIn2D{
+
+	@Override
+	public AImage process(AImage img) {
+		System.out.println("Hello World");
+		return img;
+	}
+
+	@Override
+	protected int options() {
+		setOutput("pathToOutputFile");
+		return 0;
+	}
+
+}
+\end{lstlisting}
+
 \end{figure}

@@ -8,11 +8,13 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces Ganzzahlige Datentypen in Java}}{58}{table.6.1}
-\contentsline {table}{\numberline {6.2}{\ignorespaces Von jMediKit implementierte Bildtypen}}{58}{table.6.2}
+\contentsline {table}{\numberline {6.1}{\ignorespaces Ganzzahlige Datentypen in Java}}{59}{table.6.1}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Von jMediKit implementierte Bildtypen}}{59}{table.6.2}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Darstellung des Datenelements im Speicher wenn VR vom Typ OB, OW, OF, SQ, UT oder UN}}{IX}{table.A.1}
-\contentsline {table}{\numberline {A.2}{\ignorespaces Darstellung des Datenelements f\IeC {\"u}r alle anderen VR-Typen}}{X}{table.A.2}
-\contentsline {table}{\numberline {A.3}{\ignorespaces Darstellung des Datenelements f\IeC {\"u}r implizite VR.}}{XI}{table.A.3}
+\contentsline {table}{\numberline {A.1}{\ignorespaces Darstellung des Datenelements im Speicher wenn VR vom Typ OB, OW, OF, SQ, UT oder UN}}{X}{table.A.1}
+\contentsline {table}{\numberline {A.2}{\ignorespaces Darstellung des Datenelements f\IeC {\"u}r alle anderen VR-Typen}}{XI}{table.A.2}
+\contentsline {table}{\numberline {A.3}{\ignorespaces Darstellung des Datenelements f\IeC {\"u}r implizite VR.}}{XII}{table.A.3}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
