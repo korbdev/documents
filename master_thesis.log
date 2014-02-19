@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.7.4)  18 FEB 2014 01:41
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.7.4)  19 FEB 2014 03:21
 entering extended mode
 **master_thesis.tex
 (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.tex
@@ -51,6 +51,16 @@ Package scrreprt Info: You've used obsolete option `12pt'.
 (scrreprt)             used instead.
 (scrreprt)             You may simply replace `12pt'
 (scrreprt)             by `fontsize=12pt'.
+
+
+Class scrreprt Warning: You've used obsolete option `liststotoc'.
+(scrreprt)              Usage of this option indicates an old document and
+(scrreprt)              changes compatibility level using
+(scrreprt)              `listof=totoc,version=first'.
+(scrreprt)              If you don't want this, you should simply replace
+(scrreprt)              usage of option `liststotoc' by `listof=totoc'.
+
+Class scrreprt Info: Switching compatibility level to `first'.
 Class scrreprt Info: File `scrsize12pt.clo' used to setup font sizes on input l
 ine 1367.
 
@@ -1220,6 +1230,9 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \algorithmicindent=\skip87
 ) (C:\Users\rkorb\AppData\Roaming\MiKTeX\2.9\tex\latex\placeins\placeins.sty
 Package: placeins 2005/04/18  v 2.2
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\courier.sty"
+Package: courier 2005/04/12 PSNFSS-v9.2a (WaS) 
 ))
 (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.aux
 (C:\Users\rkorb\master_thesis\documents\thesis\master_title.aux)
@@ -1232,9 +1245,14 @@ Package: placeins 2005/04/18  v 2.2
 (C:\Users\rkorb\master_thesis\documents\thesis\implmentation.aux)
 (C:\Users\rkorb\master_thesis\documents\thesis\extending.aux
 
+LaTeX Warning: Label `select' multiply defined.
+
+
 LaTeX Warning: Label `groups' multiply defined.
 
-) (C:\Users\rkorb\master_thesis\documents\thesis\last.aux)
+) (C:\Users\rkorb\master_thesis\documents\thesis\diskussion.aux)
+(C:\Users\rkorb\master_thesis\documents\thesis\fazit.aux)
+(C:\Users\rkorb\master_thesis\documents\thesis\last.aux)
 (C:\Users\rkorb\master_thesis\documents\thesis\appendix.aux
 
 LaTeX Warning: Label `singleton' multiply defined.
@@ -1323,7 +1341,6 @@ Package pdftex.def Info: ./img/HL_WBM_de_B_300dpi.jpg used on input line 13.
 
 
 
-
 {C:/Users/rkorb/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/rk
 orb/master_thesis/documents/thesis/img/HL_WBM_de_B_300dpi.jpg>]) [2
 
@@ -1333,23 +1350,13 @@ orb/master_thesis/documents/thesis/img/HL_WBM_de_B_300dpi.jpg>]) [2
 
 ] [2]
 [3]
-Overfull \hbox (3.96521pt too wide) detected at line 109
- []\OT1/cmr/m/n/12 XIII
- []
-
-
-Overfull \hbox (3.64299pt too wide) detected at line 110
+Overfull \hbox (3.64299pt too wide) detected at line 122
  []\OT1/cmr/m/n/12 XIV
  []
 
 
-Overfull \hbox (3.64299pt too wide) detected at line 111
- []\OT1/cmr/m/n/12 XVI
- []
-
-
-Overfull \hbox (3.64299pt too wide) detected at line 112
- []\OT1/cmr/m/n/12 XIX
+Overfull \hbox (8.20822pt too wide) detected at line 124
+ []\OT1/cmr/m/n/12 XVII
  []
 
 )
@@ -1387,7 +1394,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 8.
 
-<./img/zyklen.pdf, id=252, 426.79147pt x 284.52798pt>
+<./img/zyklen.pdf, id=266, 426.79147pt x 284.52798pt>
 File: ./img/zyklen.pdf Graphic file (type pdf)
  <use ./img/zyklen.pdf>
 Package pdftex.def Info: ./img/zyklen.pdf used on input line 23.
@@ -1423,29 +1430,29 @@ Kapitel 2.
 
 
 
-] [9] [10] <./img/RadiAnt.png, id=353, 1203.49625pt x 699.61375pt>
+] [9] [10] <./img/RadiAnt.png, id=367, 1203.49625pt x 699.61375pt>
 File: ./img/RadiAnt.png Graphic file (type png)
 
 <use ./img/RadiAnt.png>
 Package pdftex.def Info: ./img/RadiAnt.png used on input line 73.
 (pdftex.def)             Requested size: 1203.49332pt x 699.61205pt.
 
-<./img/Screenshot-3DSlicer.png, id=358, 1320.935pt x 980.66376pt>
+<./img/Screenshot-3DSlicer.png, id=372, 1320.935pt x 980.66376pt>
 File: ./img/Screenshot-3DSlicer.png Graphic file (type png)
 
 <use ./img/Screenshot-3DSlicer.png>
 Package pdftex.def Info: ./img/Screenshot-3DSlicer.png used on input line 88.
 (pdftex.def)             Requested size: 1320.93178pt x 980.66136pt.
  [11 <C:/Users/rkorb/master_thesis/documents/thesis/img/RadiAnt.png>]
-<./img/imagej-window.png, id=369, 522.95375pt x 121.45375pt>
+<./img/imagej-window.png, id=383, 522.95375pt x 121.45375pt>
 File: ./img/imagej-window.png Graphic file (type png)
 
 <use ./img/imagej-window.png>
 Package pdftex.def Info: ./img/imagej-window.png used on input line 102.
 (pdftex.def)             Requested size: 522.95247pt x 121.45343pt.
  Excluding 'comment' comment.
-<./img/no.pdf, id=370, 28.4528pt x 28.4528pt> <use ./img/no.pdf>
-<use ./img/no.pdf> <./img/yes.pdf, id=371, 28.4528pt x 28.4528pt>
+<./img/no.pdf, id=384, 28.4528pt x 28.4528pt> <use ./img/no.pdf>
+<use ./img/no.pdf> <./img/yes.pdf, id=385, 28.4528pt x 28.4528pt>
 <use ./img/yes.pdf> <use ./img/no.pdf> <use ./img/no.pdf> <use ./img/yes.pdf>
 <use ./img/yes.pdf> <use ./img/yes.pdf> <use ./img/yes.pdf>
 <use ./img/yes.pdf> <use ./img/yes.pdf> <use ./img/yes.pdf>
@@ -1606,7 +1613,7 @@ Package pdftex.def Info: ./img/yes.pdf used on input line 162.
 master_thesis/documents/thesis/img/yes.pdf>] (C:\Users\rkorb\master_thesis\docu
 ments\thesis\grundlagenMbv.tex
 Kapitel 3.
-<./img/communication_neu.pdf, id=435, 845.0471pt x 597.50829pt>
+<./img/communication_neu.pdf, id=449, 845.0471pt x 597.50829pt>
 File: ./img/communication_neu.pdf Graphic file (type pdf)
 
 <use ./img/communication_neu.pdf>
@@ -1618,311 +1625,323 @@ Package pdftex.def Info: ./img/communication_neu.pdf used on input line 13.
 
 ] [16 <C:/Users/rkorb/master_thesis/documents/thesis/img/communication_neu.pdf>
 ]
-<./img/ermodel.pdf, id=480, 540.60269pt x 469.47095pt>
+<./img/ermodel.pdf, id=494, 540.60269pt x 469.47095pt>
 File: ./img/ermodel.pdf Graphic file (type pdf)
  <use ./img/ermodel.pdf>
-Package pdftex.def Info: ./img/ermodel.pdf used on input line 48.
+Package pdftex.def Info: ./img/ermodel.pdf used on input line 49.
 (pdftex.def)             Requested size: 540.60136pt x 469.46979pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 50--50
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
 [][]\OT1/cmr/m/n/12 Vereinfachte Dar-stel-lung der In-for-ma-ti-ons-ob-jekt-hie
 r-ar-chie von
  []
 
 [17 <C:/Users/rkorb/master_thesis/documents/thesis/img/ermodel.pdf>] [18]
-Underfull \hbox (badness 1603) in paragraph at lines 121--121
+Underfull \hbox (badness 1603) in paragraph at lines 123--123
 [][]\OT1/cmr/m/n/10 Unter der Trans-fer-sy-stax ver-stehn man ei-ne Men-ge an K
 o-die-rungs-vor-schrif-ten von DICOM-
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
 
  []
 
 
-Overfull \hbox (3.10672pt too wide) in paragraph at lines 143--145
+Overfull \hbox (3.10672pt too wide) in paragraph at lines 146--148
 \OT1/cmr/m/n/12 Dieser Teil ei-nes DICOM-Elements be-schreibt den Typ und das F
 or-mat des Wertes[[],
  []
 
-[20] [21] <./img/byteorder.pdf, id=579, 512.14938pt x 284.52798pt>
+[20] [21] <./img/byteorder.pdf, id=593, 512.14938pt x 284.52798pt>
 File: ./img/byteorder.pdf Graphic file (type pdf)
 
 <use ./img/byteorder.pdf>
-Package pdftex.def Info: ./img/byteorder.pdf used on input line 163.
+Package pdftex.def Info: ./img/byteorder.pdf used on input line 169.
 (pdftex.def)             Requested size: 512.14813pt x 284.52728pt.
- <./img/bits.pdf, id=586, 512.14938pt x 284.52798pt>
+ <./img/bits.pdf, id=600, 512.14938pt x 284.52798pt>
 File: ./img/bits.pdf Graphic file (type pdf)
 
 <use ./img/bits.pdf>
-Package pdftex.def Info: ./img/bits.pdf used on input line 180.
+Package pdftex.def Info: ./img/bits.pdf used on input line 186.
 (pdftex.def)             Requested size: 142.26378pt x 79.03342pt.
- <./img/bits16.pdf, id=587, 512.14938pt x 284.52798pt>
+ <./img/bits16.pdf, id=601, 512.14938pt x 284.52798pt>
 File: ./img/bits16.pdf Graphic file (type pdf)
 
 <use ./img/bits16.pdf>
-Package pdftex.def Info: ./img/bits16.pdf used on input line 180.
+Package pdftex.def Info: ./img/bits16.pdf used on input line 186.
 (pdftex.def)             Requested size: 142.26378pt x 79.03342pt.
- <./img/bits8.pdf, id=588, 512.14938pt x 284.52798pt>
+ <./img/bits8.pdf, id=602, 512.14938pt x 284.52798pt>
 File: ./img/bits8.pdf Graphic file (type pdf)
 
 <use ./img/bits8.pdf>
-Package pdftex.def Info: ./img/bits8.pdf used on input line 180.
+Package pdftex.def Info: ./img/bits8.pdf used on input line 186.
 (pdftex.def)             Requested size: 142.26378pt x 79.03342pt.
 
-Overfull \hbox (5.7636pt too wide) in paragraph at lines 180--181
+Overfull \hbox (5.7636pt too wide) in paragraph at lines 186--187
  [][] 
  []
 
 [22 <C:/Users/rkorb/master_thesis/documents/thesis/img/byteorder.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 185--187
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
 
  []
 
 [23 <C:/Users/rkorb/master_thesis/documents/thesis/img/bits.pdf> <C:/Users/rkor
 b/master_thesis/documents/thesis/img/bits16.pdf> <C:/Users/rkorb/master_thesis/
-documents/thesis/img/bits8.pdf>] <./img/ct.png, id=697, 120.45pt x 120.45pt>
+documents/thesis/img/bits8.pdf>] <./img/ct.png, id=711, 120.45pt x 120.45pt>
 File: ./img/ct.png Graphic file (type png)
 
 <use ./img/ct.png>
-Package pdftex.def Info: ./img/ct.png used on input line 224.
+Package pdftex.def Info: ./img/ct.png used on input line 231.
 (pdftex.def)             Requested size: 142.26378pt x 142.27678pt.
- <./img/mr.png, id=698, 120.45pt x 120.45pt>
+ <./img/mr.png, id=712, 120.45pt x 120.45pt>
 File: ./img/mr.png Graphic file (type png)
 
 <use ./img/mr.png>
-Package pdftex.def Info: ./img/mr.png used on input line 224.
+Package pdftex.def Info: ./img/mr.png used on input line 231.
 (pdftex.def)             Requested size: 142.26378pt x 142.27678pt.
- <./img/sono.png, id=699, 120.45pt x 120.45pt>
+ <./img/sono.png, id=713, 120.45pt x 120.45pt>
 File: ./img/sono.png Graphic file (type png)
 
 <use ./img/sono.png>
-Package pdftex.def Info: ./img/sono.png used on input line 224.
+Package pdftex.def Info: ./img/sono.png used on input line 231.
 (pdftex.def)             Requested size: 142.26378pt x 142.27678pt.
 
-Overfull \hbox (5.7636pt too wide) in paragraph at lines 224--226
+Overfull \hbox (5.7636pt too wide) in paragraph at lines 231--233
  [][] 
  []
 
-
-Overfull \hbox (16.48982pt too wide) in paragraph at lines 232--234
+[24]
+Overfull \hbox (16.48982pt too wide) in paragraph at lines 240--242
 \OT1/cmr/m/n/12 Im DICOM-Standard ist ein Al-go-rith-mus ge-ge-ben, um die Pi-x
 el-da-ten zu konvertieren[[],
  []
 
-[24]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 236.
- <./img/fensterung.pdf, id=710, 569.055pt x 569.055pt>
+put line 244.
+<./img/fensterung.pdf, id=722, 569.055pt x 569.055pt>
 File: ./img/fensterung.pdf Graphic file (type pdf)
 
 <use ./img/fensterung.pdf>
-Package pdftex.def Info: ./img/fensterung.pdf used on input line 261.
+Package pdftex.def Info: ./img/fensterung.pdf used on input line 269.
 (pdftex.def)             Requested size: 142.26378pt x 142.2634pt.
- <./img/window_a.png, id=711, 120.45pt x 120.45pt>
+ <./img/window_a.png, id=723, 120.45pt x 120.45pt>
 File: ./img/window_a.png Graphic file (type png)
 
 <use ./img/window_a.png>
-Package pdftex.def Info: ./img/window_a.png used on input line 261.
+Package pdftex.def Info: ./img/window_a.png used on input line 269.
 (pdftex.def)             Requested size: 142.26378pt x 142.27678pt.
- <./img/window_b.png, id=712, 120.45pt x 120.45pt>
+ <./img/window_b.png, id=724, 120.45pt x 120.45pt>
 File: ./img/window_b.png Graphic file (type png)
 
 <use ./img/window_b.png>
-Package pdftex.def Info: ./img/window_b.png used on input line 261.
+Package pdftex.def Info: ./img/window_b.png used on input line 269.
 (pdftex.def)             Requested size: 142.26378pt x 142.27678pt.
 
-Overfull \hbox (5.7636pt too wide) in paragraph at lines 261--263
+Overfull \hbox (5.7636pt too wide) in paragraph at lines 269--271
  [][] 
  []
 
 [25 <C:/Users/rkorb/master_thesis/documents/thesis/img/ct.png> <C:/Users/rkorb/
 master_thesis/documents/thesis/img/mr.png> <C:/Users/rkorb/master_thesis/docume
-nts/thesis/img/sono.png>]
-<./img/planar_b.pdf, id=745, 512.14938pt x 398.3382pt>
+nts/thesis/img/sono.png>] [26 <C:/Users/rkorb/master_thesis/documents/thesis/im
+g/fensterung.pdf> <C:/Users/rkorb/master_thesis/documents/thesis/img/window_a.p
+ng> <C:/Users/rkorb/master_thesis/documents/thesis/img/window_b.png>]
+<./img/planar_b.pdf, id=790, 512.14938pt x 398.3382pt>
 File: ./img/planar_b.pdf Graphic file (type pdf)
 
 <use ./img/planar_b.pdf>
-Package pdftex.def Info: ./img/planar_b.pdf used on input line 277.
+Package pdftex.def Info: ./img/planar_b.pdf used on input line 286.
 (pdftex.def)             Requested size: 227.62204pt x 177.03809pt.
 
-<./img/planar_a.pdf, id=746, 512.14938pt x 398.3382pt>
+<./img/planar_a.pdf, id=791, 512.14938pt x 398.3382pt>
 File: ./img/planar_a.pdf Graphic file (type pdf)
 
 <use ./img/planar_a.pdf>
-Package pdftex.def Info: ./img/planar_a.pdf used on input line 277.
+Package pdftex.def Info: ./img/planar_a.pdf used on input line 286.
 (pdftex.def)             Requested size: 227.62204pt x 177.03809pt.
 
-Overfull \hbox (26.38309pt too wide) in paragraph at lines 277--279
+Overfull \hbox (26.38309pt too wide) in paragraph at lines 286--288
  [][] 
  []
 
-[26 <C:/Users/rkorb/master_thesis/documents/thesis/img/fensterung.pdf> <C:/User
-s/rkorb/master_thesis/documents/thesis/img/window_a.png> <C:/Users/rkorb/master
-_thesis/documents/thesis/img/window_b.png>]
-<./img/2d.pdf, id=782, 455.24379pt x 284.52798pt>
+[27
+
+ <C:/Users/rkorb/master_thesis/documents/thesis/img/planar_b.pdf> <C:/Users/rko
+rb/master_thesis/documents/thesis/img/planar_a.pdf>]
+<./img/2d.pdf, id=853, 455.24379pt x 284.52798pt>
 File: ./img/2d.pdf Graphic file (type pdf)
  <use ./img/2d.pdf>
-Package pdftex.def Info: ./img/2d.pdf used on input line 293.
+Package pdftex.def Info: ./img/2d.pdf used on input line 303.
 (pdftex.def)             Requested size: 142.26378pt x 88.91476pt.
 
-<./img/3d.pdf, id=783, 455.24379pt x 284.52798pt>
+<./img/3d.pdf, id=854, 455.24379pt x 284.52798pt>
 File: ./img/3d.pdf Graphic file (type pdf)
  <use ./img/3d.pdf>
-Package pdftex.def Info: ./img/3d.pdf used on input line 293.
+Package pdftex.def Info: ./img/3d.pdf used on input line 303.
 (pdftex.def)             Requested size: 142.26378pt x 88.91476pt.
 
-<./img/time.pdf, id=784, 455.24379pt x 284.52798pt>
+<./img/time.pdf, id=855, 455.24379pt x 284.52798pt>
 File: ./img/time.pdf Graphic file (type pdf)
  <use ./img/time.pdf>
-Package pdftex.def Info: ./img/time.pdf used on input line 293.
+Package pdftex.def Info: ./img/time.pdf used on input line 303.
 (pdftex.def)             Requested size: 142.26378pt x 88.91476pt.
 
-Overfull \hbox (5.7636pt too wide) in paragraph at lines 293--295
+Overfull \hbox (5.7636pt too wide) in paragraph at lines 303--305
  [][] 
  []
 
-[27 <C:/Users/rkorb/master_thesis/documents/thesis/img/planar_b.pdf> <C:/Users/
-rkorb/master_thesis/documents/thesis/img/planar_a.pdf> <C:/Users/rkorb/master_t
-hesis/documents/thesis/img/2d.pdf> <C:/Users/rkorb/master_thesis/documents/thes
-is/img/3d.pdf> <C:/Users/rkorb/master_thesis/documents/thesis/img/time.pdf>]
-[28]
+[28 <C:/Users/rkorb/master_thesis/documents/thesis/img/2d.pdf> <C:/Users/rkorb/
+master_thesis/documents/thesis/img/3d.pdf> <C:/Users/rkorb/master_thesis/docume
+nts/thesis/img/time.pdf>]
 Kapitel 4.
 [29
 
-] <./img/adapter.pdf, id=931, 486.81876pt x 200.75pt>
+] <./img/adapter.pdf, id=945, 486.81876pt x 200.75pt>
 File: ./img/adapter.pdf Graphic file (type pdf)
 
 <use ./img/adapter.pdf>
-Package pdftex.def Info: ./img/adapter.pdf used on input line 325.
+Package pdftex.def Info: ./img/adapter.pdf used on input line 337.
 (pdftex.def)             Requested size: 486.81757pt x 200.7495pt.
  [30 <C:/Users/rkorb/master_thesis/documents/thesis/img/adapter.pdf>]
-Overfull \hbox (38.75365pt too wide) in paragraph at lines 335--336
+Overfull \hbox (38.75365pt too wide) in paragraph at lines 349--350
 \OT1/cmr/m/n/12 nen-ten[][][](Observer) er-hal-ten(update()) vom Her-aus-ge-ber
 (Subject) au-to-ma-tisch(notifyObservers())
  []
 
-<./img/observer.pdf, id=947, 372.39125pt x 254.9525pt>
+<./img/observer.pdf, id=961, 372.39125pt x 254.9525pt>
 File: ./img/observer.pdf Graphic file (type pdf)
 
 <use ./img/observer.pdf>
-Package pdftex.def Info: ./img/observer.pdf used on input line 340.
+Package pdftex.def Info: ./img/observer.pdf used on input line 354.
 (pdftex.def)             Requested size: 372.39034pt x 254.95186pt.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2013/08/26 1.5b listings language file
-) [31 <C:/Users/rkorb/master_thesis/documents/thesis/img/observer.pdf>]
-<./img/template.pdf, id=958, 351.3125pt x 235.88126pt>
+)
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 374.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+LaTeX Font Info:    Font shape `OT1/pcr/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/pcr/b/n' tried instead on input line 375.
+ [31 <C:/Users/rkorb/master_thesis/documents/thesis/img/observer.pdf>]
+<./img/template.pdf, id=972, 351.3125pt x 235.88126pt>
 File: ./img/template.pdf Graphic file (type pdf)
 
 <use ./img/template.pdf>
-Package pdftex.def Info: ./img/template.pdf used on input line 378.
+Package pdftex.def Info: ./img/template.pdf used on input line 393.
 (pdftex.def)             Requested size: 351.31163pt x 235.88068pt.
-
-Overfull \hbox (30.57033pt too wide) in paragraph at lines 391--394
+ [32]
+Overfull \hbox (30.57033pt too wide) in paragraph at lines 408--411
 \OT1/cmr/m/n/12 Dieses Ent-wurfs-mus-ter bie-tet ei-ne Schnitt-stel-le(Fabrik) 
 zur Er-zeu-gung von Ob-jek-ten(Produkte).
  []
 
 
-Overfull \hbox (2.34135pt too wide) in paragraph at lines 391--394
+Overfull \hbox (2.34135pt too wide) in paragraph at lines 408--411
 \OT1/cmr/m/n/12 zeu-gungs-mus-ter ein-ge-setzt wer-den, um Kon-struk-ti-on und 
 Re-pr[]asen-ta-ti-on zu trennen[[],
  []
 
-[32] <./img/factorymethod.pdf, id=979, 411.5375pt x 210.7875pt>
+[33 <C:/Users/rkorb/master_thesis/documents/thesis/img/template.pdf>]
+<./img/factorymethod.pdf, id=1004, 411.5375pt x 210.7875pt>
 File: ./img/factorymethod.pdf Graphic file (type pdf)
 
 <use ./img/factorymethod.pdf>
-Package pdftex.def Info: ./img/factorymethod.pdf used on input line 398.
+Package pdftex.def Info: ./img/factorymethod.pdf used on input line 415.
 (pdftex.def)             Requested size: 411.5365pt x 210.78699pt.
- [33 <C:/Users/rkorb/master_thesis/documents/thesis/img/template.pdf>] [34 <C:/
-Users/rkorb/master_thesis/documents/thesis/img/factorymethod.pdf>] <./img/plugi
-npattern.pdf, id=1020, 499.8675pt x 211.79124pt>
+LaTeX Font Info:    Font shape `OT1/pcr/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/pcr/m/sl' tried instead on input line 443.
+ [34 <C:/Users/rkorb/master_thesis/documents/thesis/img/factorymethod.pdf>]
+<./img/pluginpattern.pdf, id=1023, 499.8675pt x 211.79124pt>
 File: ./img/pluginpattern.pdf Graphic file (type pdf)
 
 <use ./img/pluginpattern.pdf>
-Package pdftex.def Info: ./img/pluginpattern.pdf used on input line 444.
+Package pdftex.def Info: ./img/pluginpattern.pdf used on input line 463.
 (pdftex.def)             Requested size: 499.86627pt x 211.79073pt.
-) [35 <C:/Users/rkorb/master_thesis/documents/thesis/img/pluginpattern.pdf>]
-(C:\Users\rkorb\master_thesis\documents\thesis\second.tex [36
+) [35] [36 <C:/Users/rkorb/master_thesis/documents/thesis/img/pluginpattern.pdf
+>]
+(C:\Users\rkorb\master_thesis\documents\thesis\second.tex [37
 
 
 
 ])
 (C:\Users\rkorb\master_thesis\documents\thesis\architecture.tex
 Kapitel 5.
-<./img/e4arch.pdf, id=1037, 569.055pt x 426.79147pt>
+<./img/e4arch.pdf, id=1059, 569.055pt x 426.79147pt>
 File: ./img/e4arch.pdf Graphic file (type pdf)
  <use ./img/e4arch.pdf>
 Package pdftex.def Info: ./img/e4arch.pdf used on input line 12.
 (pdftex.def)             Requested size: 569.0536pt x 426.79044pt.
 
-[37
+[38
 
 
 
-] [38 <C:/Users/rkorb/master_thesis/documents/thesis/img/e4arch.pdf>]
-[39] <./img/rcp_window.png, id=1098, 499.8675pt x 399.4925pt>
+] [39 <C:/Users/rkorb/master_thesis/documents/thesis/img/e4arch.pdf>]
+[40] <./img/rcp_window.png, id=1119, 499.8675pt x 399.4925pt>
 File: ./img/rcp_window.png Graphic file (type png)
 
 <use ./img/rcp_window.png>
 Package pdftex.def Info: ./img/rcp_window.png used on input line 68.
 (pdftex.def)             Requested size: 182.09486pt x 145.53009pt.
 
-<./img/rcp_part.png, id=1099, 499.8675pt x 399.4925pt>
+<./img/rcp_part.png, id=1120, 499.8675pt x 399.4925pt>
 File: ./img/rcp_part.png Graphic file (type png)
 
 <use ./img/rcp_part.png>
 Package pdftex.def Info: ./img/rcp_part.png used on input line 69.
 (pdftex.def)             Requested size: 182.09486pt x 145.53009pt.
 
-<./img/rcp_partStack.png, id=1100, 499.8675pt x 399.4925pt>
+<./img/rcp_partStack.png, id=1121, 499.8675pt x 399.4925pt>
 File: ./img/rcp_partStack.png Graphic file (type png)
 
 <use ./img/rcp_partStack.png>
 Package pdftex.def Info: ./img/rcp_partStack.png used on input line 70.
 (pdftex.def)             Requested size: 182.09486pt x 145.53009pt.
 
-<./img/rcp_partsash.png, id=1101, 499.8675pt x 399.4925pt>
+<./img/rcp_partsash.png, id=1122, 499.8675pt x 399.4925pt>
 File: ./img/rcp_partsash.png Graphic file (type png)
 
 <use ./img/rcp_partsash.png>
 Package pdftex.def Info: ./img/rcp_partsash.png used on input line 71.
 (pdftex.def)             Requested size: 182.09486pt x 145.53009pt.
- [40] [41 <C:/Users/rkorb/master_thesis/documents/thesis/img/rcp_window.png> <C
+ [41] [42 <C:/Users/rkorb/master_thesis/documents/thesis/img/rcp_window.png> <C
 :/Users/rkorb/master_thesis/documents/thesis/img/rcp_part.png> <C:/Users/rkorb/
 master_thesis/documents/thesis/img/rcp_partStack.png> <C:/Users/rkorb/master_th
 esis/documents/thesis/img/rcp_partsash.png>]
-<./img/jmedikit_ui.png, id=1127, 1443.3925pt x 848.16875pt>
+<./img/jmedikit_ui.png, id=1148, 1443.3925pt x 848.16875pt>
 File: ./img/jmedikit_ui.png Graphic file (type png)
 
 <use ./img/jmedikit_ui.png>
 Package pdftex.def Info: ./img/jmedikit_ui.png used on input line 98.
 (pdftex.def)             Requested size: 1443.38899pt x 848.16667pt.
- [42]
+ [43]
 Overfull \hbox (17.89636pt too wide) in paragraph at lines 148--149
  [][] 
  []
 
-[43 <C:/Users/rkorb/master_thesis/documents/thesis/img/jmedikit_ui.png>]
-<./img/toolfactory.pdf, id=1151, 509.905pt x 324.21124pt>
+[44 <C:/Users/rkorb/master_thesis/documents/thesis/img/jmedikit_ui.png>]
+<./img/toolfactory.pdf, id=1172, 509.905pt x 324.21124pt>
 File: ./img/toolfactory.pdf Graphic file (type pdf)
 
 <use ./img/toolfactory.pdf>
 Package pdftex.def Info: ./img/toolfactory.pdf used on input line 157.
 (pdftex.def)             Requested size: 509.90375pt x 324.21045pt.
- [44]
-<./img/APlugin.pdf, id=1160, 529.98pt x 340.27126pt>
+ [45]
+<./img/APlugin.pdf, id=1181, 529.98pt x 340.27126pt>
 File: ./img/APlugin.pdf Graphic file (type pdf)
  <use ./img/APlugin.pdf>
 Package pdftex.def Info: ./img/APlugin.pdf used on input line 176.
 (pdftex.def)             Requested size: 529.97868pt x 340.27042pt.
 
-[45 <C:/Users/rkorb/master_thesis/documents/thesis/img/toolfactory.pdf>]
-[46 <C:/Users/rkorb/master_thesis/documents/thesis/img/APlugin.pdf>]
-<./img/plugindialog.pdf, id=1194, 429.605pt x 339.2675pt>
+[46 <C:/Users/rkorb/master_thesis/documents/thesis/img/toolfactory.pdf>]
+[47 <C:/Users/rkorb/master_thesis/documents/thesis/img/APlugin.pdf>]
+<./img/plugindialog.pdf, id=1215, 429.605pt x 339.2675pt>
 File: ./img/plugindialog.pdf Graphic file (type pdf)
 
 <use ./img/plugindialog.pdf>
@@ -1933,45 +1952,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 207--207
 [][]\OT1/cmr/m/n/12 Architektur des ge-ne-ri-schen Dia-logs zur dy-na-mi-schen
  []
 
-[47 <C:/Users/rkorb/master_thesis/documents/thesis/img/plugindialog.pdf>]
+[48 <C:/Users/rkorb/master_thesis/documents/thesis/img/plugindialog.pdf>]
 Overfull \hbox (20.45258pt too wide) in paragraph at lines 223--224
 \OT1/cmr/m/n/12 wer-den. Die ben[]otig-ten Da-tei-en und Pa-ke-te k[]onnen un-t
 er \OT1/cmr/m/it/12 http://download.java.net/media/jai-
  []
 
-[48] [49] <./img/Dicomo.pdf, id=1226, 648.4225pt x 339.2675pt>
+[49] [50] <./img/Dicomo.pdf, id=1247, 648.4225pt x 339.2675pt>
 File: ./img/Dicomo.pdf Graphic file (type pdf)
 
 <use ./img/Dicomo.pdf>
 Package pdftex.def Info: ./img/Dicomo.pdf used on input line 238.
 (pdftex.def)             Requested size: 648.42091pt x 339.26666pt.
- [50 <C:/Users/rkorb/master_thesis/documents/thesis/img/Dicomo.pdf>] <./img/ima
-gemodel.pdf, id=1233, 393.47pt x 331.2375pt>
+ [51 <C:/Users/rkorb/master_thesis/documents/thesis/img/Dicomo.pdf>] <./img/ima
+gemodel.pdf, id=1254, 393.47pt x 331.2375pt>
 File: ./img/imagemodel.pdf Graphic file (type pdf)
 
 <use ./img/imagemodel.pdf>
 Package pdftex.def Info: ./img/imagemodel.pdf used on input line 256.
 (pdftex.def)             Requested size: 393.46902pt x 331.23668pt.
- [51 <C:/Users/rkorb/master_thesis/documents/thesis/img/imagemodel.pdf>]
+ [52 <C:/Users/rkorb/master_thesis/documents/thesis/img/imagemodel.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 270--271
 
  []
 
-<./img/imageview.pdf, id=1240, 376.40625pt x 300.12125pt>
+<./img/imageview.pdf, id=1261, 376.40625pt x 300.12125pt>
 File: ./img/imageview.pdf Graphic file (type pdf)
 
 <use ./img/imageview.pdf>
 Package pdftex.def Info: ./img/imageview.pdf used on input line 275.
 (pdftex.def)             Requested size: 376.40532pt x 300.12051pt.
- [52 <C:/Users/rkorb/master_thesis/documents/thesis/img/imageview.pdf>] <./img/
-ivcomposite.png, id=1258, 638.385pt x 579.16376pt>
+ [53 <C:/Users/rkorb/master_thesis/documents/thesis/img/imageview.pdf>] <./img/
+ivcomposite.png, id=1279, 638.385pt x 579.16376pt>
 File: ./img/ivcomposite.png Graphic file (type png)
 
 <use ./img/ivcomposite.png>
 Package pdftex.def Info: ./img/ivcomposite.png used on input line 290.
 (pdftex.def)             Requested size: 142.26378pt x 129.06015pt.
 
-<./img/ivcomposite4.png, id=1259, 638.385pt x 579.16376pt>
+<./img/ivcomposite4.png, id=1280, 638.385pt x 579.16376pt>
 File: ./img/ivcomposite4.png Graphic file (type png)
 
 <use ./img/ivcomposite4.png>
@@ -1982,8 +2001,8 @@ Underfull \hbox (badness 3668) in paragraph at lines 290--290
 []\OT1/cmr/m/n/10 (b) Vier Image-View-Com-po-si-tes
  []
 
-) [53 <C:/Users/rkorb/master_thesis/documents/thesis/img/ivcomposite.png> <C:/U
-sers/rkorb/master_thesis/documents/thesis/img/ivcomposite4.png>] [54]
+) [54 <C:/Users/rkorb/master_thesis/documents/thesis/img/ivcomposite.png> <C:/U
+sers/rkorb/master_thesis/documents/thesis/img/ivcomposite4.png>] [55]
 (C:\Users\rkorb\master_thesis\documents\thesis\implmentation.tex
 Kapitel 6.
 
@@ -1992,18 +2011,18 @@ Overfull \hbox (9.28397pt too wide) in paragraph at lines 9--12
 ards von DI-COM an. W[]ahrend
  []
 
-[55
+[56
 
 
 
-] <./img/dicombrowser.png, id=1288, 483.8075pt x 257.96375pt>
+] <./img/dicombrowser.png, id=1309, 483.8075pt x 257.96375pt>
 File: ./img/dicombrowser.png Graphic file (type png)
 
 <use ./img/dicombrowser.png>
 Package pdftex.def Info: ./img/dicombrowser.png used on input line 21.
 (pdftex.def)             Requested size: 483.80632pt x 257.9631pt.
- [56 <C:/Users/rkorb/master_thesis/documents/thesis/img/dicombrowser.png>] [57]
- [58]
+ [57 <C:/Users/rkorb/master_thesis/documents/thesis/img/dicombrowser.png>] [58]
+ [59]
 Underfull \hbox (badness 10000) in paragraph at lines 130--130
 []|\OT1/cmr/bx/n/12 Pixeltyp
  []
@@ -2029,24 +2048,24 @@ Overfull \hbox (1.38268pt too wide) in paragraph at lines 130--130
  []
 
 
-LaTeX Warning: Reference `treestructure' on page 59 undefined on input line 141
+LaTeX Warning: Reference `treestructure' on page 60 undefined on input line 141
 .
 
-[59] <./img/normalenvektor.pdf, id=1333, 426.79147pt x 284.52798pt>
+[60] <./img/normalenvektor.pdf, id=1354, 426.79147pt x 284.52798pt>
 File: ./img/normalenvektor.pdf Graphic file (type pdf)
 
 <use ./img/normalenvektor.pdf>
 Package pdftex.def Info: ./img/normalenvektor.pdf used on input line 152.
 (pdftex.def)             Requested size: 142.26378pt x 94.84097pt.
 
-<./img/normalenvektorstack.pdf, id=1334, 426.79147pt x 284.52798pt>
+<./img/normalenvektorstack.pdf, id=1355, 426.79147pt x 284.52798pt>
 File: ./img/normalenvektorstack.pdf Graphic file (type pdf)
 
 <use ./img/normalenvektorstack.pdf>
 Package pdftex.def Info: ./img/normalenvektorstack.pdf used on input line 152.
 (pdftex.def)             Requested size: 142.26378pt x 94.84097pt.
 
-<./img/dominantindex.pdf, id=1335, 426.79147pt x 284.52798pt>
+<./img/dominantindex.pdf, id=1356, 426.79147pt x 284.52798pt>
 File: ./img/dominantindex.pdf Graphic file (type pdf)
 
 <use ./img/dominantindex.pdf>
@@ -2057,7 +2076,7 @@ Overfull \hbox (5.7636pt too wide) in paragraph at lines 152--153
  [][] 
  []
 
-[60 <C:/Users/rkorb/master_thesis/documents/thesis/img/normalenvektor.pdf> <C:/
+[61 <C:/Users/rkorb/master_thesis/documents/thesis/img/normalenvektor.pdf> <C:/
 Users/rkorb/master_thesis/documents/thesis/img/normalenvektorstack.pdf
 
 pdfTeX warning: pdflatex.exe (file C:/Users/rkorb/master_thesis/documents/thesi
@@ -2076,22 +2095,22 @@ File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <12> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 182.
- [61]
-<./img/axial_xy.pdf, id=1468, 426.79147pt x 426.79147pt>
+ [62]
+<./img/axial_xy.pdf, id=1489, 426.79147pt x 426.79147pt>
 File: ./img/axial_xy.pdf Graphic file (type pdf)
 
 <use ./img/axial_xy.pdf>
 Package pdftex.def Info: ./img/axial_xy.pdf used on input line 200.
 (pdftex.def)             Requested size: 142.26378pt x 142.2613pt.
 
-<./img/coronal_xz.pdf, id=1469, 426.79147pt x 426.79147pt>
+<./img/coronal_xz.pdf, id=1490, 426.79147pt x 426.79147pt>
 File: ./img/coronal_xz.pdf Graphic file (type pdf)
 
 <use ./img/coronal_xz.pdf>
 Package pdftex.def Info: ./img/coronal_xz.pdf used on input line 200.
 (pdftex.def)             Requested size: 142.26378pt x 142.2613pt.
 
-<./img/sagittal_yz.pdf, id=1470, 426.79147pt x 426.79147pt>
+<./img/sagittal_yz.pdf, id=1491, 426.79147pt x 426.79147pt>
 File: ./img/sagittal_yz.pdf Graphic file (type pdf)
 
 <use ./img/sagittal_yz.pdf>
@@ -2108,13 +2127,13 @@ Underfull \hbox (badness 3514) in paragraph at lines 201--201
 -men-sio-na-len
  []
 
-[62] <./img/imageprocess.pdf, id=1477, 426.79147pt x 284.52798pt>
+[63] <./img/imageprocess.pdf, id=1498, 426.79147pt x 284.52798pt>
 File: ./img/imageprocess.pdf Graphic file (type pdf)
 
 <use ./img/imageprocess.pdf>
 Package pdftex.def Info: ./img/imageprocess.pdf used on input line 210.
 (pdftex.def)             Requested size: 426.79044pt x 284.52728pt.
- [63 <C:/Users/rkorb/master_thesis/documents/thesis/img/axial_xy.pdf> <C:/Users
+ [64 <C:/Users/rkorb/master_thesis/documents/thesis/img/axial_xy.pdf> <C:/Users
 /rkorb/master_thesis/documents/thesis/img/coronal_xz.pdf
 
 pdfTeX warning: pdflatex.exe (file C:/Users/rkorb/master_thesis/documents/thesi
@@ -2126,35 +2145,35 @@ pdfTeX warning: pdflatex.exe (file C:/Users/rkorb/master_thesis/documents/thesi
 s/img/sagittal_yz.pdf): PDF inclusion: multiple pdfs with page group included i
 n a single page
 > <C:/Users/rkorb/master_thesis/documents/thesis/img/imageprocess.pdf>]
-[64] <./img/axialcoronalmpr.pdf, id=1615, 426.79147pt x 426.79147pt>
+[65] <./img/axialcoronalmpr.pdf, id=1636, 426.79147pt x 426.79147pt>
 File: ./img/axialcoronalmpr.pdf Graphic file (type pdf)
 
 <use ./img/axialcoronalmpr.pdf>
 Package pdftex.def Info: ./img/axialcoronalmpr.pdf used on input line 247.
 (pdftex.def)             Requested size: 199.16928pt x 199.17233pt.
 
-<./img/axialsagittalmpr.pdf, id=1616, 426.79147pt x 426.79147pt>
+<./img/axialsagittalmpr.pdf, id=1637, 426.79147pt x 426.79147pt>
 File: ./img/axialsagittalmpr.pdf Graphic file (type pdf)
 
 <use ./img/axialsagittalmpr.pdf>
 Package pdftex.def Info: ./img/axialsagittalmpr.pdf used on input line 247.
 (pdftex.def)             Requested size: 199.16928pt x 199.17233pt.
- [65 <C:/Users/rkorb/master_thesis/documents/thesis/img/axialcoronalmpr.pdf> <C
+ [66 <C:/Users/rkorb/master_thesis/documents/thesis/img/axialcoronalmpr.pdf> <C
 :/Users/rkorb/master_thesis/documents/thesis/img/axialsagittalmpr.pdf>]
-<./img/rotation.pdf, id=1676, 426.79147pt x 284.52798pt>
+<./img/rotation.pdf, id=1697, 426.79147pt x 284.52798pt>
 File: ./img/rotation.pdf Graphic file (type pdf)
 
 <use ./img/rotation.pdf>
 Package pdftex.def Info: ./img/rotation.pdf used on input line 286.
 (pdftex.def)             Requested size: 170.71652pt x 113.8135pt.
 
-<./img/rotationc.pdf, id=1677, 426.79147pt x 284.52798pt>
+<./img/rotationc.pdf, id=1698, 426.79147pt x 284.52798pt>
 File: ./img/rotationc.pdf Graphic file (type pdf)
 
 <use ./img/rotationc.pdf>
 Package pdftex.def Info: ./img/rotationc.pdf used on input line 286.
 (pdftex.def)             Requested size: 170.71652pt x 113.8135pt.
- [66 <C:/Users/rkorb/master_thesis/documents/thesis/img/rotation.pdf> <C:/Users
+ [67 <C:/Users/rkorb/master_thesis/documents/thesis/img/rotation.pdf> <C:/Users
 /rkorb/master_thesis/documents/thesis/img/rotationc.pdf
 
 pdfTeX warning: pdflatex.exe (file C:/Users/rkorb/master_thesis/documents/thesi
@@ -2165,14 +2184,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
  []
 
-<./img/bildcoords.pdf, id=1759, 426.79147pt x 426.79147pt>
+<./img/bildcoords.pdf, id=1781, 426.79147pt x 426.79147pt>
 File: ./img/bildcoords.pdf Graphic file (type pdf)
 
 <use ./img/bildcoords.pdf>
 Package pdftex.def Info: ./img/bildcoords.pdf used on input line 319.
 (pdftex.def)             Requested size: 142.26378pt x 142.2613pt.
 
-<./img/offsetcoords.pdf, id=1760, 426.79147pt x 426.79147pt>
+<./img/offsetcoords.pdf, id=1782, 426.79147pt x 426.79147pt>
 File: ./img/offsetcoords.pdf Graphic file (type pdf)
 
 <use ./img/offsetcoords.pdf>
@@ -2183,7 +2202,7 @@ Underfull \hbox (badness 2932) in paragraph at lines 319--319
 []\OT1/cmr/m/n/10 (b) Be-rech-nung des sicht-ba-ren
  []
 
-<./img/bildausschnitt.pdf, id=1761, 426.79147pt x 426.79147pt>
+<./img/bildausschnitt.pdf, id=1783, 426.79147pt x 426.79147pt>
 File: ./img/bildausschnitt.pdf Graphic file (type pdf)
 
 <use ./img/bildausschnitt.pdf>
@@ -2194,10 +2213,10 @@ Overfull \hbox (5.7636pt too wide) in paragraph at lines 319--320
  [][] 
  []
 
-[67]
+[68]
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 339.
- [68 <C:/Users/rkorb/master_thesis/documents/thesis/img/bildcoords.pdf> <C:/Use
+ [69 <C:/Users/rkorb/master_thesis/documents/thesis/img/bildcoords.pdf> <C:/Use
 rs/rkorb/master_thesis/documents/thesis/img/offsetcoords.pdf> <C:/Users/rkorb/m
 aster_thesis/documents/thesis/img/bildausschnitt.pdf>]
 Overfull \hbox (1.17891pt too wide) in paragraph at lines 380--381
@@ -2208,7 +2227,7 @@ i-na-ten $(0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 25\OML/cmm/m/it/12 ; \OT1/cmr/m/n
 5)$
  []
 
-[69] <./img/interpol_src.png, id=1868, 120.45pt x 120.45pt>
+[70] <./img/interpol_src.png, id=1889, 120.45pt x 120.45pt>
 File: ./img/interpol_src.png Graphic file (type png)
 
 <use ./img/interpol_src.png>
@@ -2224,7 +2243,7 @@ Underfull \hbox (badness 1314) in paragraph at lines 405--405
 \OT1/cmr/m/n/10 stellt den ver-gr[]oer-ten
  []
 
-<./img/nn_interpol.png, id=1875, 503.8825pt x 503.8825pt>
+<./img/nn_interpol.png, id=1896, 503.8825pt x 503.8825pt>
 File: ./img/nn_interpol.png Graphic file (type png)
 
 <use ./img/nn_interpol.png>
@@ -2235,60 +2254,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 405--405
 []\OT1/cmr/m/n/10 (b) Nea-rest Neigh-bor
  []
 
-<./img/bilin.png, id=1876, 503.8825pt x 503.8825pt>
+<./img/bilin.png, id=1897, 503.8825pt x 503.8825pt>
 File: ./img/bilin.png Graphic file (type png)
  <use ./img/bilin.png>
 Package pdftex.def Info: ./img/bilin.png used on input line 405.
 (pdftex.def)             Requested size: 102.43008pt x 102.42776pt.
 
-<./img/bicubic.png, id=1877, 503.8825pt x 503.8825pt>
+<./img/bicubic.png, id=1898, 503.8825pt x 503.8825pt>
 File: ./img/bicubic.png Graphic file (type png)
  <use ./img/bicubic.png>
 Package pdftex.def Info: ./img/bicubic.png used on input line 405.
 (pdftex.def)             Requested size: 102.43008pt x 102.42776pt.
 
-<./img/bilinear_interpolation.pdf, id=1880, 426.79147pt x 284.52798pt>
+<./img/bilinear_interpolation.pdf, id=1901, 426.79147pt x 284.52798pt>
 File: ./img/bilinear_interpolation.pdf Graphic file (type pdf)
 
 <use ./img/bilinear_interpolation.pdf>
 Package pdftex.def Info: ./img/bilinear_interpolation.pdf used on input line 41
 5.
 (pdftex.def)             Requested size: 426.79044pt x 284.52728pt.
- [70 <C:/Users/rkorb/master_thesis/documents/thesis/img/interpol_src.png> <C:/U
+ [71 <C:/Users/rkorb/master_thesis/documents/thesis/img/interpol_src.png> <C:/U
 sers/rkorb/master_thesis/documents/thesis/img/nn_interpol.png> <C:/Users/rkorb/
 master_thesis/documents/thesis/img/bilin.png> <C:/Users/rkorb/master_thesis/doc
-uments/thesis/img/bicubic.png>] [71 <C:/Users/rkorb/master_thesis/documents/the
+uments/thesis/img/bicubic.png>] [72 <C:/Users/rkorb/master_thesis/documents/the
 sis/img/bilinear_interpolation.pdf>]
-<./img/coords1.pdf, id=1936, 426.79147pt x 426.79147pt>
+<./img/coords1.pdf, id=1957, 426.79147pt x 426.79147pt>
 File: ./img/coords1.pdf Graphic file (type pdf)
 
 <use ./img/coords1.pdf>
 Package pdftex.def Info: ./img/coords1.pdf used on input line 474.
 (pdftex.def)             Requested size: 199.16928pt x 199.17233pt.
 
-<./img/coords2.pdf, id=1937, 426.79147pt x 426.79147pt>
+<./img/coords2.pdf, id=1958, 426.79147pt x 426.79147pt>
 File: ./img/coords2.pdf Graphic file (type pdf)
 
 <use ./img/coords2.pdf>
 Package pdftex.def Info: ./img/coords2.pdf used on input line 474.
 (pdftex.def)             Requested size: 199.16928pt x 199.17233pt.
- [72]
-<./img/axialbsp.pdf, id=1948, 426.79147pt x 426.79147pt>
+ [73]
+<./img/axialbsp.pdf, id=1970, 426.79147pt x 426.79147pt>
 File: ./img/axialbsp.pdf Graphic file (type pdf)
 
 <use ./img/axialbsp.pdf>
 Package pdftex.def Info: ./img/axialbsp.pdf used on input line 494.
 (pdftex.def)             Requested size: 426.79044pt x 426.79044pt.
- [73 <C:/Users/rkorb/master_thesis/documents/thesis/img/coords1.pdf> <C:/Users/
+ [74 <C:/Users/rkorb/master_thesis/documents/thesis/img/coords1.pdf> <C:/Users/
 rkorb/master_thesis/documents/thesis/img/coords2.pdf>]
-<./img/lines_axial_single.pdf, id=2012, 341.43358pt x 341.43358pt>
+<./img/lines_axial_single.pdf, id=2033, 341.43358pt x 341.43358pt>
 File: ./img/lines_axial_single.pdf Graphic file (type pdf)
 
 <use ./img/lines_axial_single.pdf>
 Package pdftex.def Info: ./img/lines_axial_single.pdf used on input line 513.
 (pdftex.def)             Requested size: 142.26378pt x 142.26537pt.
 
-<./img/lines_coronal_single.pdf, id=2013, 341.43358pt x 341.43358pt>
+<./img/lines_coronal_single.pdf, id=2034, 341.43358pt x 341.43358pt>
 File: ./img/lines_coronal_single.pdf Graphic file (type pdf)
 
 <use ./img/lines_coronal_single.pdf>
@@ -2296,7 +2315,7 @@ Package pdftex.def Info: ./img/lines_coronal_single.pdf used on input line 513.
 
 (pdftex.def)             Requested size: 142.26378pt x 142.26537pt.
 
-<./img/lines_sagittal_single.pdf, id=2014, 341.43358pt x 341.43358pt>
+<./img/lines_sagittal_single.pdf, id=2035, 341.43358pt x 341.43358pt>
 File: ./img/lines_sagittal_single.pdf Graphic file (type pdf)
 
 <use ./img/lines_sagittal_single.pdf>
@@ -2308,14 +2327,14 @@ Overfull \hbox (5.7636pt too wide) in paragraph at lines 513--514
  [][] 
  []
 
-<./img/lines_axial.pdf, id=2015, 341.43358pt x 341.43358pt>
+<./img/lines_axial.pdf, id=2036, 341.43358pt x 341.43358pt>
 File: ./img/lines_axial.pdf Graphic file (type pdf)
 
 <use ./img/lines_axial.pdf>
 Package pdftex.def Info: ./img/lines_axial.pdf used on input line 527.
 (pdftex.def)             Requested size: 142.26378pt x 142.26537pt.
 
-<./img/lines_coronal.pdf, id=2016, 341.43358pt x 341.43358pt>
+<./img/lines_coronal.pdf, id=2037, 341.43358pt x 341.43358pt>
 File: ./img/lines_coronal.pdf Graphic file (type pdf)
 
 <use ./img/lines_coronal.pdf>
@@ -2326,7 +2345,7 @@ Underfull \hbox (badness 4634) in paragraph at lines 527--527
 []\OT1/cmr/m/n/10 (b) An-zei-ge des re-fe-ren-zier-ten
  []
 
-<./img/lines_sagittal.pdf, id=2017, 341.43358pt x 341.43358pt>
+<./img/lines_sagittal.pdf, id=2038, 341.43358pt x 341.43358pt>
 File: ./img/lines_sagittal.pdf Graphic file (type pdf)
 
 <use ./img/lines_sagittal.pdf>
@@ -2342,160 +2361,205 @@ Overfull \hbox (5.7636pt too wide) in paragraph at lines 527--528
  [][] 
  []
 
-[74 <C:/Users/rkorb/master_thesis/documents/thesis/img/axialbsp.pdf>] [75 <C:/U
+[75 <C:/Users/rkorb/master_thesis/documents/thesis/img/axialbsp.pdf>] [76 <C:/U
 sers/rkorb/master_thesis/documents/thesis/img/lines_axial_single.pdf> <C:/Users
 /rkorb/master_thesis/documents/thesis/img/lines_coronal_single.pdf> <C:/Users/r
 korb/master_thesis/documents/thesis/img/lines_sagittal_single.pdf> <C:/Users/rk
 orb/master_thesis/documents/thesis/img/lines_axial.pdf> <C:/Users/rkorb/master_
 thesis/documents/thesis/img/lines_coronal.pdf> <C:/Users/rkorb/master_thesis/do
-cuments/thesis/img/lines_sagittal.pdf>] [76] [77]
-<./img/movetool.pdf, id=2213, 426.79147pt x 341.43358pt>
+cuments/thesis/img/lines_sagittal.pdf>] [77] [78]
+<./img/movetool.pdf, id=2234, 426.79147pt x 341.43358pt>
 File: ./img/movetool.pdf Graphic file (type pdf)
 
 <use ./img/movetool.pdf>
 Package pdftex.def Info: ./img/movetool.pdf used on input line 586.
 (pdftex.def)             Requested size: 426.79044pt x 341.43274pt.
- [78] [79 <C:/Users/rkorb/master_thesis/documents/thesis/img/movetool.pdf>] [80
+ [79] [80 <C:/Users/rkorb/master_thesis/documents/thesis/img/movetool.pdf>] [81
 ]
-<./img/checkbox.png, id=2270, 402.75468pt x 219.06844pt>
+<./img/checkbox.png, id=2291, 402.75468pt x 219.06844pt>
 File: ./img/checkbox.png Graphic file (type png)
 
 <use ./img/checkbox.png>
 Package pdftex.def Info: ./img/checkbox.png used on input line 642.
 (pdftex.def)             Requested size: 402.7537pt x 219.06789pt.
 
-<./img/radiogroup.png, id=2271, 402.75468pt x 219.06844pt>
+<./img/radiogroup.png, id=2292, 402.75468pt x 219.06844pt>
 File: ./img/radiogroup.png Graphic file (type png)
 
 <use ./img/radiogroup.png>
 Package pdftex.def Info: ./img/radiogroup.png used on input line 648.
 (pdftex.def)             Requested size: 402.7537pt x 219.06789pt.
- [81 <C:/Users/rkorb/master_thesis/documents/thesis/img/checkbox.png>] <./img/f
-iledialog.png, id=2277, 402.75468pt x 219.06844pt>
+ [82 <C:/Users/rkorb/master_thesis/documents/thesis/img/checkbox.png>] <./img/f
+iledialog.png, id=2298, 402.75468pt x 219.06844pt>
 File: ./img/filedialog.png Graphic file (type png)
 
 <use ./img/filedialog.png>
 Package pdftex.def Info: ./img/filedialog.png used on input line 654.
 (pdftex.def)             Requested size: 402.7537pt x 219.06789pt.
 
-<./img/slider.png, id=2278, 402.75468pt x 219.06844pt>
+<./img/slider.png, id=2299, 402.75468pt x 219.06844pt>
 File: ./img/slider.png Graphic file (type png)
  <use ./img/slider.png>
 Package pdftex.def Info: ./img/slider.png used on input line 660.
 (pdftex.def)             Requested size: 402.7537pt x 219.06789pt.
 
-<./img/stringitem.png, id=2279, 402.75468pt x 219.06844pt>
+<./img/stringitem.png, id=2300, 402.75468pt x 219.06844pt>
 File: ./img/stringitem.png Graphic file (type png)
 
 <use ./img/stringitem.png>
 Package pdftex.def Info: ./img/stringitem.png used on input line 666.
 (pdftex.def)             Requested size: 402.7537pt x 219.06789pt.
- [82 <C:/Users/rkorb/master_thesis/documents/thesis/img/radiogroup.png> <C:/Use
+ [83 <C:/Users/rkorb/master_thesis/documents/thesis/img/radiogroup.png> <C:/Use
 rs/rkorb/master_thesis/documents/thesis/img/filedialog.png> <C:/Users/rkorb/mas
 ter_thesis/documents/thesis/img/slider.png>])
-[83 <C:/Users/rkorb/master_thesis/documents/thesis/img/stringitem.png>]
+[84 <C:/Users/rkorb/master_thesis/documents/thesis/img/stringitem.png>]
 (C:\Users\rkorb\master_thesis\documents\thesis\extending.tex
 Kapitel 7.
-<./img/part_exmi.png, id=2297, 861.2175pt x 532.99126pt>
+[85
+
+
+
+] ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+[86] [87] [88] [89]
+
+LaTeX Warning: Reference `importer' on page 90 undefined on input line 250.
+
+[90] [91] [92] <./img/dialog_example.png, id=2472, 402.75468pt x 221.32687pt>
+File: ./img/dialog_example.png Graphic file (type png)
+
+<use ./img/dialog_example.png>
+Package pdftex.def Info: ./img/dialog_example.png used on input line 346.
+(pdftex.def)             Requested size: 402.7537pt x 221.32631pt.
+ [93 <C:/Users/rkorb/master_thesis/documents/thesis/img/dialog_example.png>] [9
+4]
+Overfull \hbox (2.1706pt too wide) in paragraph at lines 414--415
+\OT1/cmr/m/n/12 Der So-belope-ra-tor dient als Kan-ten-de-tek-tor zur Vi-sua-li
+-sie-rung har-ter In-ten-sit[]ats[]uberg[]ange
+ []
+
+[95] [96] [97] <./img/part_exmi.png, id=2620, 861.2175pt x 532.99126pt>
 File: ./img/part_exmi.png Graphic file (type png)
 
 <use ./img/part_exmi.png>
-Package pdftex.def Info: ./img/part_exmi.png used on input line 16.
+Package pdftex.def Info: ./img/part_exmi.png used on input line 545.
 (pdftex.def)             Requested size: 861.2154pt x 532.98996pt.
- [84
-
-
-
-]
-<./img/part_add.png, id=2305, 861.2175pt x 531.48563pt>
+ [98]
+<./img/part_add.png, id=2628, 861.2175pt x 531.48563pt>
 File: ./img/part_add.png Graphic file (type png)
 
 <use ./img/part_add.png>
-Package pdftex.def Info: ./img/part_add.png used on input line 27.
+Package pdftex.def Info: ./img/part_add.png used on input line 556.
 (pdftex.def)             Requested size: 861.2154pt x 531.48433pt.
- [85 <C:/Users/rkorb/master_thesis/documents/thesis/img/part_exmi.png> <C:/User
-s/rkorb/master_thesis/documents/thesis/img/part_add.png>] <./img/part_part.png,
- id=2316, 861.2175pt x 526.21594pt>
+
+<./img/part_part.png, id=2631, 861.2175pt x 526.21594pt>
 File: ./img/part_part.png Graphic file (type png)
 
 <use ./img/part_part.png>
-Package pdftex.def Info: ./img/part_part.png used on input line 38.
+Package pdftex.def Info: ./img/part_part.png used on input line 567.
 (pdftex.def)             Requested size: 861.2154pt x 526.21466pt.
-
-<./img/part_class.png, id=2318, 395.22656pt x 326.72063pt>
+ [99 <C:/Users/rkorb/master_thesis/documents/thesis/img/part_exmi.png> <C:/User
+s/rkorb/master_thesis/documents/thesis/img/part_add.png>] <./img/part_class.png
+, id=2641, 395.22656pt x 326.72063pt>
 File: ./img/part_class.png Graphic file (type png)
 
 <use ./img/part_class.png>
-Package pdftex.def Info: ./img/part_class.png used on input line 49.
+Package pdftex.def Info: ./img/part_class.png used on input line 578.
 (pdftex.def)             Requested size: 395.22559pt x 326.71982pt.
- [86 <C:/Users/rkorb/master_thesis/documents/thesis/img/part_part.png> <C:/User
-s/rkorb/master_thesis/documents/thesis/img/part_class.png>] <./img/part_final.p
-ng, id=2330, 687.31781pt x 469.755pt>
+
+<./img/part_final.png, id=2644, 687.31781pt x 469.755pt>
 File: ./img/part_final.png Graphic file (type png)
 
 <use ./img/part_final.png>
-Package pdftex.def Info: ./img/part_final.png used on input line 102.
+Package pdftex.def Info: ./img/part_final.png used on input line 630.
 (pdftex.def)             Requested size: 687.31613pt x 469.75386pt.
- [87]
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
+ [100 <C:/Users/rkorb/master_thesis/documents/thesis/img/part_part.png> <C:/Use
+rs/rkorb/master_thesis/documents/thesis/img/part_class.png>] [101]
+Underfull \hbox (badness 10000) in paragraph at lines 637--638
 
  []
 
-<./img/tool_menu.png, id=2364, 861.2175pt x 526.96875pt>
+<./img/tool_menu.png, id=2684, 861.2175pt x 526.96875pt>
 File: ./img/tool_menu.png Graphic file (type png)
 
 <use ./img/tool_menu.png>
-Package pdftex.def Info: ./img/tool_menu.png used on input line 118.
+Package pdftex.def Info: ./img/tool_menu.png used on input line 646.
 (pdftex.def)             Requested size: 861.2154pt x 526.96745pt.
- [88 <C:/Users/rkorb/master_thesis/documents/thesis/img/part_final.png>]
-Overfull \hbox (13.58275pt too wide) in paragraph at lines 124--126
+ [102 <C:/Users/rkorb/master_thesis/documents/thesis/img/part_final.png>]
+Overfull \hbox (13.58275pt too wide) in paragraph at lines 652--654
 \OT1/cmr/m/n/12 stellt wer-den. []Ubli-cher-wei-se lie-gen Handler-klas-sen im 
 Packa-ge \OT1/cmr/m/it/12 org.jmedikit.plugin.gui.handler
  []
 
-<./img/tool_handlerclass.png, id=2372, 395.22656pt x 325.96782pt>
+<./img/tool_handlerclass.png, id=2693, 395.22656pt x 325.96782pt>
 File: ./img/tool_handlerclass.png Graphic file (type png)
 
 <use ./img/tool_handlerclass.png>
-Package pdftex.def Info: ./img/tool_handlerclass.png used on input line 130.
+Package pdftex.def Info: ./img/tool_handlerclass.png used on input line 658.
 (pdftex.def)             Requested size: 395.22559pt x 325.96701pt.
- [89 <C:/Users/rkorb/master_thesis/documents/thesis/img/tool_menu.png> <C:/User
-s/rkorb/master_thesis/documents/thesis/img/tool_handlerclass.png>]
-<./img/tool_handleditem.png, id=2381, 743.77875pt x 526.21594pt>
+ [103 <C:/Users/rkorb/master_thesis/documents/thesis/img/tool_menu.png> <C:/Use
+rs/rkorb/master_thesis/documents/thesis/img/tool_handlerclass.png>]
+<./img/tool_handleditem.png, id=2703, 743.77875pt x 526.21594pt>
 File: ./img/tool_handleditem.png Graphic file (type png)
 
 <use ./img/tool_handleditem.png>
-Package pdftex.def Info: ./img/tool_handleditem.png used on input line 141.
+Package pdftex.def Info: ./img/tool_handleditem.png used on input line 669.
 (pdftex.def)             Requested size: 743.77693pt x 526.21466pt.
 
-<./img/tool_menunew.png, id=2383, 713.66624pt x 456.95718pt>
+<./img/tool_menunew.png, id=2705, 713.66624pt x 456.95718pt>
 File: ./img/tool_menunew.png Graphic file (type png)
 
 <use ./img/tool_menunew.png>
-Package pdftex.def Info: ./img/tool_menunew.png used on input line 152.
+Package pdftex.def Info: ./img/tool_menunew.png used on input line 680.
 (pdftex.def)             Requested size: 713.66449pt x 456.95605pt.
- [90 <C:/Users/rkorb/master_thesis/documents/thesis/img/tool_handleditem.png> <
-C:/Users/rkorb/master_thesis/documents/thesis/img/tool_menunew.png>]
+ [104 <C:/Users/rkorb/master_thesis/documents/thesis/img/tool_handleditem.png> 
+<C:/Users/rkorb/master_thesis/documents/thesis/img/tool_menunew.png>]
 
-LaTeX Warning: Reference `factory' on page 91 undefined on input line 208.
+LaTeX Warning: Reference `factory' on page 105 undefined on input line 733.
 
-[91] [92] [93]) [94]
-(C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.bbl
+[105] [106] [107]) [108]
+(C:\Users\rkorb\master_thesis\documents\thesis\diskussion.tex
+Kapitel 8.
+) [109
+
+
+
+] (C:\Users\rkorb\master_thesis\documents\thesis\fazit.tex
+Kapitel 9.
+) [110
+
+
+
+] (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 64--69
 []\OT1/cmr/m/sc/12 Hochschule Lands-hut\OT1/cmr/m/n/12 :  \OT1/cmr/m/it/12 Mo-d
-ul-hand-buch BA BMT\OT1/cmr/m/n/12 .  []$\OT1/cmtt/m/n/12 https :$
+ul-hand-buch BA BMT\OT1/cmr/m/n/12 .  []$\OT1/pcr/m/n/12 https :$
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 64--69
-$\OT1/cmtt/m/n/12 / / www . haw-[]landshut . de / fileadmin / hs _ landshut _ e
-nglish / electrical _$
+$\OT1/pcr/m/n/12 / / www . haw-[]landshut . de / fileadmin / hs _ landshut _ en
+glish /$
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 64--69
-$\OT1/cmtt/m/n/12 engineering / download / pdf / Modulhandb % FCcher / Modulhan
-dbuch _ BA _ BMT _$
+$\OT1/pcr/m/n/12 electrical _ engineering / download / pdf / Modulhandb % FCche
+r /$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--69
+$\OT1/pcr/m/n/12 Modulhandbuch _ BA _ BMT _ WS _ 13 _ 14 _ SS _ 13 _ beschlosse
+n _ FR _ 2013 _$
+ []
+
+
+Underfull \hbox (badness 1122) in paragraph at lines 71--77
+[]\OT1/cmr/m/sc/12 Lehmann\OT1/cmr/m/n/12 , Gaetan ; \OT1/cmr/m/sc/12 Vil-vert
+\OT1/cmr/m/n/12 , Do-mai-ne de ; \OT1/cmr/m/sc/12 Tonddast-Navaei\OT1/cmr/m/n/1
+2 , Ali:
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.I}) has 
@@ -2507,17 +2571,47 @@ l.77
 
 
 ]
-Underfull \hbox (badness 1596) in paragraph at lines 112--118
+Underfull \hbox (badness 1142) in paragraph at lines 93--98
+[]\OT1/cmr/m/sc/12 National Elec-tri-cal Ma-nu-fac-tur-ers As-so-cia-ti-on\OT1/
+cmr/m/n/12 :  \OT1/cmr/m/it/12 Di-gi-tal Ima-
+ []
+
+
+Underfull \hbox (badness 6428) in paragraph at lines 112--118
 []\OT1/cmr/m/sc/12 Smith\OT1/cmr/m/n/12 , Jo-lin-da:  \OT1/cmr/m/it/12 Crea-te 
-3D image da-ta by a se-ries of 2D di-com fi-
+3D image da-ta by a se-ries of 2D di-
+ []
+
+
+Underfull \hbox (badness 4765) in paragraph at lines 112--118
+\OT1/cmr/m/it/12 com fi-les t\OT1/cmr/m/n/12 .  []$\OT1/pcr/m/n/12 http : / / w
+ww . itk . org / pipermail / insight-[]users /$
+ []
+
+
+Underfull \hbox (badness 4792) in paragraph at lines 138--145
+$\OT1/pcr/m/n/12 article . html # e4overview _ eclipse4$[]\OT1/cmr/m/n/12 .  Ve
+rsion:2013. --  Stand
  []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.II}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.154 \bibitem[Vog13c]{vogel:di}
-                                 [2]
+l.145 
+       [2]
+Underfull \hbox (badness 10000) in paragraph at lines 147--153
+[]\OT1/cmr/m/sc/12 Vogel\OT1/cmr/m/n/12 , Lars:  \OT1/cmr/m/it/12 Eclip-se IDE 
+Tu-to-ri-al\OT1/cmr/m/n/12 .  []$\OT1/pcr/m/n/12 http : / / www . vogella .$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--153
+$\OT1/pcr/m/n/12 com / tutorials / Eclipse / article . html # eclipseoverview$[
+]\OT1/cmr/m/n/12 .
+ []
+
+
 Underfull \hbox (badness 5217) in paragraph at lines 155--161
 []\OT1/cmr/m/sc/12 Vogel\OT1/cmr/m/n/12 , Lars:  \OT1/cmr/m/it/12 Using de-pen-
 den-cy in-jec-ti-on in Ja-va - In-tro-duc-ti-on\OT1/cmr/m/n/12 .
@@ -2525,8 +2619,8 @@ den-cy in-jec-ti-on in Ja-va - In-tro-duc-ti-on\OT1/cmr/m/n/12 .
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 155--161
-[]$\OT1/cmtt/m/n/12 http : / / www . vogella . com / tutorials / DependencyInje
-ction / article . html$[]\OT1/cmr/m/n/12 .
+[]$\OT1/pcr/m/n/12 http : / / www . vogella . com / tutorials / DependencyInjec
+tion /$
  []
 
 ) [3] (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.lof
@@ -2538,33 +2632,28 @@ r Bild-da-ten am han-dels[]ubli-
 [4
 
 ] [5]
-Overfull \hbox (3.96521pt too wide) detected at line 108
- []\OT1/cmr/m/n/12 XIII
- []
-
-
-Overfull \hbox (3.64299pt too wide) detected at line 109
+Overfull \hbox (3.64299pt too wide) detected at line 112
  []\OT1/cmr/m/n/12 XIV
  []
 
 
-Overfull \hbox (3.64299pt too wide) detected at line 112
+Overfull \hbox (3.64299pt too wide) detected at line 114
  []\OT1/cmr/m/n/12 XVI
  []
 
 
-Overfull \hbox (3.64299pt too wide) detected at line 113
+Overfull \hbox (3.64299pt too wide) detected at line 115
  []\OT1/cmr/m/n/12 XVI
  []
 
 
-Overfull \hbox (8.20822pt too wide) detected at line 114
+Overfull \hbox (8.20822pt too wide) detected at line 116
  []\OT1/cmr/m/n/12 XVII
  []
 
 
-Overfull \hbox (12.77345pt too wide) detected at line 117
- []\OT1/cmr/m/n/12 XVIII
+Overfull \hbox (8.20822pt too wide) detected at line 117
+ []\OT1/cmr/m/n/12 XVII
  []
 
 
@@ -2573,43 +2662,95 @@ Overfull \hbox (12.77345pt too wide) detected at line 118
  []
 
 
-Overfull \hbox (3.64299pt too wide) detected at line 119
+Overfull \hbox (3.64299pt too wide) detected at line 121
  []\OT1/cmr/m/n/12 XIX
  []
 
 
-Overfull \hbox (12.77345pt too wide) detected at line 124
- []\OT1/cmr/m/n/12 XXIII
+Overfull \hbox (3.64299pt too wide) detected at line 122
+ []\OT1/cmr/m/n/12 XIX
  []
 
 
-Overfull \hbox (12.45123pt too wide) detected at line 125
- []\OT1/cmr/m/n/12 XXIV
+Overfull \hbox (3.64299pt too wide) detected at line 124
+ []\OT1/cmr/m/n/12 XXI
  []
 
 
-Overfull \hbox (8.21239pt too wide) detected at line 126
- []\OT1/cmr/m/n/12 XXV
- []
-
-
-Overfull \hbox (12.45123pt too wide) detected at line 127
- []\OT1/cmr/m/n/12 XXVI
+Overfull \hbox (3.64299pt too wide) detected at line 125
+ []\OT1/cmr/m/n/12 XXI
  []
 
 
 Overfull \hbox (12.45123pt too wide) detected at line 128
+ []\OT1/cmr/m/n/12 XXIV
+ []
+
+
+Overfull \hbox (8.21239pt too wide) detected at line 129
+ []\OT1/cmr/m/n/12 XXV
+ []
+
+
+Overfull \hbox (12.45123pt too wide) detected at line 130
  []\OT1/cmr/m/n/12 XXVI
+ []
+
+
+Overfull \hbox (17.01646pt too wide) detected at line 131
+ []\OT1/cmr/m/n/12 XXVII
+ []
+
+
+Overfull \hbox (17.01646pt too wide) detected at line 132
+ []\OT1/cmr/m/n/12 XXVII
  []
 
 )
 \tf@lof=\write6
- [6] (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.lot)
+ [6] (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.lot
+Overfull \hbox (3.96521pt too wide) detected at line 19
+ []\OT1/cmr/m/n/12 XIII
+ []
+
+)
 \tf@lot=\write7
+
+
+Class scrreprt Warning: Usage of deprecated \float@listhead!
+(scrreprt)              You should use the features of package `tocbasic'
+(scrreprt)              instead of \float@listhead.
+(scrreprt)              Definition of \float@listhead my be removed from
+(scrreprt)              `scrreprt' soon, so it should not be used  on input lin
+e 88.
 
 [7
 
-] (C:\Users\rkorb\master_thesis\documents\thesis\last.tex [8
+] (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.lol
+Overfull \hbox (8.20822pt too wide) detected at line 33
+ []\OT1/cmr/m/n/12 XXII
+ []
+
+
+Overfull \hbox (8.20822pt too wide) detected at line 34
+ []\OT1/cmr/m/n/12 XXII
+ []
+
+
+Overfull \hbox (12.77345pt too wide) detected at line 35
+ []\OT1/cmr/m/n/12 XXIII
+ []
+
+
+Overfull \hbox (21.5817pt too wide) detected at line 37
+ []\OT1/cmr/m/n/12 XXVIII
+ []
+
+)
+\tf@lol=\write8
+ [8
+
+] (C:\Users\rkorb\master_thesis\documents\thesis\last.tex [9
 
 
 ])
@@ -2734,64 +2875,64 @@ Underfull \hbox (badness 6675) in paragraph at lines 32--32
 \OT1/cmr/m/n/12 gned in-te-
  []
 
-[9
+[10
 
 
 
-] [10] [11] [12]
+] [11] [12] [13]
 Anhang B.
 
 Underfull \hbox (badness 10000) in paragraph at lines 59--61
 
  []
 
-<./img/eclipse_std.png, id=2652, 1027.84pt x 768.8725pt>
+<./img/eclipse_std.png, id=3014, 1027.84pt x 768.8725pt>
 File: ./img/eclipse_std.png Graphic file (type png)
 
 <use ./img/eclipse_std.png>
 Package pdftex.def Info: ./img/eclipse_std.png used on input line 65.
 (pdftex.def)             Requested size: 1027.8375pt x 768.87062pt.
- [13
+ [14
 
  <C:/Users/rkorb/master_thesis/documents/thesis/img/eclipse_std.png>]
-<./img/e4download.png, id=2659, 1504.62125pt x 1006.76125pt>
+<./img/e4download.png, id=3021, 1504.62125pt x 1006.76125pt>
 File: ./img/e4download.png Graphic file (type png)
 
 <use ./img/e4download.png>
 Package pdftex.def Info: ./img/e4download.png used on input line 77.
 (pdftex.def)             Requested size: 1504.61758pt x 1006.75879pt.
 
-<./img/repolink.png, id=2661, 939.51pt x 978.65625pt>
+<./img/repolink.png, id=3023, 939.51pt x 978.65625pt>
 File: ./img/repolink.png Graphic file (type png)
  <use ./img/repolink.png>
 Package pdftex.def Info: ./img/repolink.png used on input line 89.
 (pdftex.def)             Requested size: 939.5077pt x 978.65387pt.
 
-[14 <C:/Users/rkorb/master_thesis/documents/thesis/img/e4download.png>]
-<./img/installnew.png, id=2668, 883.3pt x 691.58376pt>
+[15 <C:/Users/rkorb/master_thesis/documents/thesis/img/e4download.png>]
+<./img/installnew.png, id=3030, 883.3pt x 691.58376pt>
 File: ./img/installnew.png Graphic file (type png)
 
 <use ./img/installnew.png>
 Package pdftex.def Info: ./img/installnew.png used on input line 100.
 (pdftex.def)             Requested size: 883.29785pt x 691.58206pt.
- [15 <C:/Users/rkorb/master_thesis/documents/thesis/img/repolink.png> <C:/Users
+ [16 <C:/Users/rkorb/master_thesis/documents/thesis/img/repolink.png> <C:/Users
 /rkorb/master_thesis/documents/thesis/img/installnew.png>] <./img/insertrepo.pn
-g, id=2676, 486.81876pt x 188.705pt>
+g, id=3037, 486.81876pt x 188.705pt>
 File: ./img/insertrepo.png Graphic file (type png)
 
 <use ./img/insertrepo.png>
 Package pdftex.def Info: ./img/insertrepo.png used on input line 111.
 (pdftex.def)             Requested size: 486.81757pt x 188.70453pt.
 
-<./img/e4install.png, id=2678, 882.29625pt x 688.5725pt>
+<./img/e4install.png, id=3039, 882.29625pt x 688.5725pt>
 File: ./img/e4install.png Graphic file (type png)
 
 <use ./img/e4install.png>
 Package pdftex.def Info: ./img/e4install.png used on input line 122.
 (pdftex.def)             Requested size: 882.2941pt x 688.5708pt.
- [16 <C:/Users/rkorb/master_thesis/documents/thesis/img/insertrepo.png> <C:/Use
+ [17 <C:/Users/rkorb/master_thesis/documents/thesis/img/insertrepo.png> <C:/Use
 rs/rkorb/master_thesis/documents/thesis/img/e4install.png>] <./img/import.png, 
-id=2687, 522.95375pt x 659.46375pt>
+id=3049, 522.95375pt x 659.46375pt>
 File: ./img/import.png Graphic file (type png)
 
 <use ./img/import.png>
@@ -2802,30 +2943,30 @@ Underfull \hbox (badness 1360) in paragraph at lines 138--138
 []\OT1/cmr/m/n/10 (a) Dia-log zum Im-port von Eclipse-
  []
 
-<./img/importprojects.png, id=2688, 523.9575pt x 657.45625pt>
+<./img/importprojects.png, id=3050, 523.9575pt x 657.45625pt>
 File: ./img/importprojects.png Graphic file (type png)
 
 <use ./img/importprojects.png>
 Package pdftex.def Info: ./img/importprojects.png used on input line 138.
 (pdftex.def)             Requested size: 170.71652pt x 214.21248pt.
 
-<./img/imported.png, id=2690, 1025.8325pt x 767.86874pt>
+<./img/imported.png, id=3052, 1025.8325pt x 767.86874pt>
 File: ./img/imported.png Graphic file (type png)
 
 <use ./img/imported.png>
 Package pdftex.def Info: ./img/imported.png used on input line 156.
 (pdftex.def)             Requested size: 1025.83002pt x 767.86687pt.
- [17 <C:/Users/rkorb/master_thesis/documents/thesis/img/import.png> <C:/Users/r
+ [18 <C:/Users/rkorb/master_thesis/documents/thesis/img/import.png> <C:/Users/r
 korb/master_thesis/documents/thesis/img/importprojects.png>] <./img/launch.png,
- id=2700, 1180.41pt x 763.85374pt>
+ id=3062, 1180.41pt x 763.85374pt>
 File: ./img/launch.png Graphic file (type png)
 
 <use ./img/launch.png>
 Package pdftex.def Info: ./img/launch.png used on input line 167.
 (pdftex.def)             Requested size: 1180.40714pt x 763.85187pt.
- [18 <C:/Users/rkorb/master_thesis/documents/thesis/img/imported.png> <C:/Users
+ [19 <C:/Users/rkorb/master_thesis/documents/thesis/img/imported.png> <C:/Users
 /rkorb/master_thesis/documents/thesis/img/launch.png>]
-<./img/addplugins.png, id=2708, 1034.86626pt x 639.38875pt>
+<./img/addplugins.png, id=3070, 1034.86626pt x 639.38875pt>
 File: ./img/addplugins.png Graphic file (type png)
 
 <use ./img/addplugins.png>
@@ -2836,43 +2977,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 179--179
 [][]\OT1/cmr/m/n/12 Konfigurationsfenster zu An-wen-dungs-ein-stel-lun-gen und
  []
 
-<./img/jmedikit_build.png, id=2711, 736.25063pt x 557.83406pt>
+<./img/jmedikit_build.png, id=3073, 736.25063pt x 557.83406pt>
 File: ./img/jmedikit_build.png Graphic file (type png)
 
 <use ./img/jmedikit_build.png>
 Package pdftex.def Info: ./img/jmedikit_build.png used on input line 191.
 (pdftex.def)             Requested size: 736.24883pt x 557.83269pt.
- [19 <C:/Users/rkorb/master_thesis/documents/thesis/img/addplugins.png>]
-<./img/jmedikit_buildoptions.png, id=2719, 471.26062pt x 447.92343pt>
+ [20 <C:/Users/rkorb/master_thesis/documents/thesis/img/addplugins.png>]
+<./img/jmedikit_buildoptions.png, id=3081, 471.26062pt x 447.92343pt>
 File: ./img/jmedikit_buildoptions.png Graphic file (type png)
 
 <use ./img/jmedikit_buildoptions.png>
 Package pdftex.def Info: ./img/jmedikit_buildoptions.png used on input line 202
 .
 (pdftex.def)             Requested size: 471.25948pt x 447.92233pt.
- [20 <C:/Users/rkorb/master_thesis/documents/thesis/img/jmedikit_build.png> <C:
+ [21 <C:/Users/rkorb/master_thesis/documents/thesis/img/jmedikit_build.png> <C:
 /Users/rkorb/master_thesis/documents/thesis/img/jmedikit_buildoptions.png>]
 Anhang C.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
-File: lstlang1.sty 2013/08/26 1.5b listings language file
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 262.
- [21
+[22
 
-]
-[22]
+] [23]
 Anhang D.
-<./img/plugin_newprojekt.png, id=2763, 401.24907pt x 539.76656pt>
+<./img/plugin_newprojekt.png, id=3122, 401.24907pt x 539.76656pt>
 File: ./img/plugin_newprojekt.png Graphic file (type png)
 
 <use ./img/plugin_newprojekt.png>
 Package pdftex.def Info: ./img/plugin_newprojekt.png used on input line 287.
 (pdftex.def)             Requested size: 401.24808pt x 539.76524pt.
- [23
+ [24
 
  <C:/Users/rkorb/master_thesis/documents/thesis/img/plugin_newprojekt.png>]
-<./img/plugin_binfolder.png, id=2770, 401.24907pt x 539.76656pt>
+<./img/plugin_binfolder.png, id=3129, 401.24907pt x 539.76656pt>
 File: ./img/plugin_binfolder.png Graphic file (type png)
 
 <use ./img/plugin_binfolder.png>
@@ -2884,37 +3019,37 @@ Underfull \hbox (badness 1552) in paragraph at lines 307--307
 den, kann SimpleITK di-rekt von
  []
 
-[24 <C:/Users/rkorb/master_thesis/documents/thesis/img/plugin_binfolder.png>]
-<./img/plugin_libs.png, id=2777, 401.24907pt x 539.76656pt>
+[25 <C:/Users/rkorb/master_thesis/documents/thesis/img/plugin_binfolder.png>]
+<./img/plugin_libs.png, id=3136, 401.24907pt x 539.76656pt>
 File: ./img/plugin_libs.png Graphic file (type png)
 
 <use ./img/plugin_libs.png>
 Package pdftex.def Info: ./img/plugin_libs.png used on input line 312.
 (pdftex.def)             Requested size: 401.24808pt x 539.76524pt.
 
-<./img/plugin_workspace.png, id=2779, 770.88pt x 578.16pt>
+<./img/plugin_workspace.png, id=3138, 770.88pt x 578.16pt>
 File: ./img/plugin_workspace.png Graphic file (type png)
 
 <use ./img/plugin_workspace.png>
 Package pdftex.def Info: ./img/plugin_workspace.png used on input line 323.
 (pdftex.def)             Requested size: 770.87813pt x 578.15858pt.
- [25 <C:/Users/rkorb/master_thesis/documents/thesis/img/plugin_libs.png>]
+ [26 <C:/Users/rkorb/master_thesis/documents/thesis/img/plugin_libs.png>]
 Overfull \hbox (1.52563pt too wide) in paragraph at lines 329--330
 \OT1/cmr/m/n/12 kann die Haupt-klas-se des Plug-ins an-ge-legt wer-den. Ent-spr
 e-chend der Plug-in-Konvetionen
  []
 
-<./img/plugin_class.png, id=2786, 408.02437pt x 480.29437pt>
+<./img/plugin_class.png, id=3145, 408.02437pt x 480.29437pt>
 File: ./img/plugin_class.png Graphic file (type png)
 
 <use ./img/plugin_class.png>
 Package pdftex.def Info: ./img/plugin_class.png used on input line 334.
 (pdftex.def)             Requested size: 408.02338pt x 480.29318pt.
- [26 <C:/Users/rkorb/master_thesis/documents/thesis/img/plugin_workspace.png> <
-C:/Users/rkorb/master_thesis/documents/thesis/img/plugin_class.png>]) [27] 
+ [27 <C:/Users/rkorb/master_thesis/documents/thesis/img/plugin_workspace.png> <
+C:/Users/rkorb/master_thesis/documents/thesis/img/plugin_class.png>]) [28] 
 AED: pageslts setting LastPage 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 88.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 88.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 94.
 \c@pagesLTS.Roman.1.local.count=\count201
 
 AED: pageslts setting VeryLastPage via AfterLastShipout 
@@ -2922,10 +3057,10 @@ AED: pageslts setting VeryLastPage via AfterLastShipout
 AED: pageslts setting LastPages via AfterLastShipout 
 
 
-Package pageslts Info: Total number of pages is odd.
+Package pageslts Info: Total number of pages is even.
 
 
-\tf@tmb=\write8
+\tf@tmb=\write9
 (C:\Users\rkorb\master_thesis\documents\thesis\master_thesis.aux
 (C:\Users\rkorb\master_thesis\documents\thesis\master_title.aux)
 (C:\Users\rkorb\master_thesis\documents\thesis\einleitung.aux)
@@ -2936,10 +3071,12 @@ Package pageslts Info: Total number of pages is odd.
 (C:\Users\rkorb\master_thesis\documents\thesis\architecture.aux)
 (C:\Users\rkorb\master_thesis\documents\thesis\implmentation.aux)
 (C:\Users\rkorb\master_thesis\documents\thesis\extending.aux)
+(C:\Users\rkorb\master_thesis\documents\thesis\diskussion.aux)
+(C:\Users\rkorb\master_thesis\documents\thesis\fazit.aux)
 (C:\Users\rkorb\master_thesis\documents\thesis\last.aux)
 (C:\Users\rkorb\master_thesis\documents\thesis\appendix.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 88.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 88.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
 Package rerunfilecheck Info: File `master_thesis.tmb' has not changed.
 (rerunfilecheck)             Checksum: 252B24C2D41AA076940D1C43F9B7A94C;422.
 
@@ -2949,18 +3086,24 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 88.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
  ) 
 Here is how much of TeX's memory you used:
- 24414 strings out of 493921
- 413147 string characters out of 3144877
- 546981 words of memory out of 3000000
- 26412 multiletter control sequences out of 15000+200000
- 17043 words of font info for 62 fonts, out of 3000000 for 9000
+ 24950 strings out of 493921
+ 422180 string characters out of 3144877
+ 650655 words of memory out of 3000000
+ 26673 multiletter control sequences out of 15000+200000
+ 19036 words of font info for 69 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  68i,20n,71p,1434b,1979s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.46} has been referenced but does not ex
+pdfTeX warning (dest): name{Hfootnote.48} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.47} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.46} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.45} has been referenced but does not exis
 t, replaced by a fixed one
@@ -3097,32 +3240,34 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program
- Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmti7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmtt12.pfb><C:/Users/rkorb/AppData/Roaming/MiKTeX/2.9/fonts/
-type1/public/tipa/tipa12.pfb><C:/Users/rkorb/AppData/Roaming/MiKTeX/2.9/fonts/t
-ype1/public/tipa/tipasb10.pfb>
-Output written on master_thesis.pdf (127 pages, 12995969 bytes).
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmti12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmti7.pfb><C:/Users/rkorb/AppData/Roaming/MiKTeX/2.9/fonts/type1/publ
+ic/tipa/tipa12.pfb><C:/Users/rkorb/AppData/Roaming/MiKTeX/2.9/fonts/type1/publi
+c/tipa/tipasb10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/
+ucrb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrro8a.pfb>
+Output written on master_thesis.pdf (144 pages, 13118360 bytes).
 PDF statistics:
- 3315 PDF objects out of 3580 (max. 8388607)
- 648 named destinations out of 1000 (max. 500000)
- 1314 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3751 PDF objects out of 4296 (max. 8388607)
+ 892 named destinations out of 1000 (max. 500000)
+ 1375 words of extra memory for PDF output out of 10000 (max. 10000000)
 

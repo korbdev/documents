@@ -604,7 +604,7 @@ Das \textit{ResizeTool} ermöglicht dem Anwender das Bild zu verkleinern oder zu
 Ein Mausklick in die Zeichenfläche löst den Skalierungsprozess aus. Das Werkzeug reagiert speziell auf das \textit{MouseMove} Ereignis. Die Bewegung in y-Richtung auf der Zeichenfläche bestimmt den Skalierungsfaktor. Der Faktor wird folgendermaßen berechnet, wobei $S_y$ dem y-Wert des Startpunktes  und $E_y$ dem y-Wert des Endpunktes entspricht: 
 
 \begin{equation}
-scale = \frac{S_y - E_y}{100}
+scale = \frac{E_y - S_y}{100}
 \vspace{0.5cm}
 \end{equation}
 
@@ -630,7 +630,7 @@ Das Werkzeug \textit{PointTool} erfüllt zwei Aufgaben. Zum einen gibt es die M�
 	Dazu wird an der Position des Cursors ein Rechteckt mit den Pixeldaten gezeichnet.
 \end{itemize}
 
-\section{Dynamische Parametervergabe}
+\section{Dynamische Parametervergabe} \label{dynamicParameter}
 
 Mit dem Punktauswahlwerkzeug erhält der Benutzer die Möglichkeit, dynamisch spezifische Bildpunkte zu wählen. Die Selektion kann anschießend innerhalb eines Plug-ins ausgelesen werden. So können zum Beispiel Start- oder Saatpunkte für Algorithmen gesetzt werden. Als weiteren dynamischen Aspekt soll der Benutzer vor dem Ausführen eines Plug-ins selbst Parameter bestimmen können. So können beispielsweise Schwellwerte im Bezug zu speziellen Pixelwerten gewählt werden. Die dynamischen Parameter bestehen allerdings nicht immer aus numerischen Werten. So müssen ebenso Zeichenketten oder Dateien übergeben werden können. Durch die Dateiauswahl können beispielsweise Textdateien ausgewählt werden, die für ein Plug-in benötigte Datensätze enthalten. Des Weiteren besteht die Möglichkeit DICOM-Dateien zu laden, um unabhängige DICOM-Objekte innerhalb des Plug-ins als Referenzbilder zu erzeugen.\\
 Mit dem generischen Dialogfenster aus Abschnitt \ref{genericdialog} soll der Benutzer die Möglichkeit erhalten Parametertypen nach Wahl zusammenzustellen. Hierzu stellt die Klasse \textit{GenericPlugInDialog} verschiedene Typen zur Verfügung.
