@@ -20,7 +20,7 @@ Bei expliziter VR-Struktur besteht das Element aus vier konsekutiven Feldern. Is
 
 \section{Explizite VR}
 
-Diese Darstellung wird gewählt wenn VR \textit{nicht} vom Typ OB, OW, OF, SQ, UT oder UN ist. Der Unterschied besteht im Feld \glqq Value Length\grqq\. Bei der Form von Tabelle \ref{table:appendix_explizit} ist dieses Feld 32 Bit lange. Hier beträgt es lediglich 16 Bit \cite[7.1.2]{dicom:structure}. Der Grund liegt am erhöhten Speicherbedarf von \ref{table:appendix_explizit}, da die Länge des Wertes eine undefinierte Länge haben kann.
+Diese Darstellung wird gewählt wenn VR \textit{nicht} vom Typ OB, OW, OF, SQ, UT oder UN ist. Der Unterschied besteht im Feld \glqq Value Length\grqq. Bei der Form von Tabelle \ref{table:appendix_explizit} ist dieses Feld 32 Bit lange. Hier beträgt es lediglich 16 Bit \cite[7.1.2]{dicom:structure}. Der Grund liegt am erhöhten Speicherbedarf von \ref{table:appendix_explizit}, da die Länge des Wertes eine undefinierte Länge haben kann.
 
 \begin{sidewaystable}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|p{12cm}|}
@@ -36,7 +36,7 @@ Diese Darstellung wird gewählt wenn VR \textit{nicht} vom Typ OB, OW, OF, SQ, U
 
 \section{Implizite VR}
 
-Bei einer impliziten VR Darstellung besteht das Datenelement aus den drei konsekutive Feldern Tag, Value Length und dem Wert selbst \cite[7.1.3]{dicom:structure}.
+Bei einer impliziten VR Darstellung besteht das Datenelement aus den drei konsekutiven Feldern Tag, Value Length und dem Wert selbst \cite[7.1.3]{dicom:structure}.
 
 \begin{sidewaystable}
 	\begin{tabularx}{\textwidth}{|X|X|X|p{12cm}|}
@@ -103,7 +103,7 @@ Nachdem der Link kopiert wurde, kann Eclipse geöffnet werden. Nach einem Klick 
   \vspace{0.5cm}
 \end{figure}
 
-Mit dem Button \textit{Add} muss nun der zuvor kopierte Links als Repository angegeben werden. Der \textit{Name} kann frei vergeben werden und unter \textit{Location} muss der Link zum Repository eingetragen werden. Danach mittels \textit{OK} die Aktion bestätigen.
+Mit dem Button \textit{Add} wird nun der zuvor kopierte Link als Repository angegeben. Der \textit{Name} kann frei vergeben werden. Unter \textit{Location} muss man den Link zum Repository eingetragen. Danach mittels \textit{OK} die Aktion bestätigen.
 
 \begin{figure}[H]
   \vspace{0.5cm}
@@ -114,7 +114,7 @@ Mit dem Button \textit{Add} muss nun der zuvor kopierte Links als Repository ang
   \vspace{0.5cm}
 \end{figure}
 
-Nach einem korrekten Eintrag wird die Liste der verfügbaren Software, wie in Abbildung \ref{e4install} zu sehen ist, aktualisiert. Hier muss das Paket \textit{Eclipse 4 core tools} samt Unterpakete ausgewählt werden. Mit einem Klick auf \textit{Next} startet die Installationsroutine. Hierbei den Anweisungen auf dem Bildschirm folgen. Nach einer erfolgreichen Installation muss Eclipse neu gestartet werden.
+Nach einem korrekten Eintrag wird die Liste der verfügbaren Software, wie in Abbildung \ref{e4install} zu sehen ist, aktualisiert. Hier muss das Paket \textit{Eclipse 4 core tools} samt Unterpakete ausgewählt werden. Mit einem Klick auf \textit{Next} startet die Installationsroutine. Hierbei ist den Anweisungen auf dem Bildschirm zu folgen. Nach einer erfolgreichen Installation muss Eclipse neu gestartet werden.
 
 \begin{figure}[H]
   \vspace{0.5cm}
@@ -127,7 +127,7 @@ Nach einem korrekten Eintrag wird die Liste der verfügbaren Software, wie in Ab
 
 \section{Import der jMediKit Projektdateien}
 
-Die Projektdaten befinden sich als auf dem beiliegenden Datenträger. Das Wurzelverzeichnis kann als Eclipse Workspace benutzt werden. Dabei ist darauf zu achten, dass der Ordner \textit{/.metadata/.plugins} leer ist. Sollten sich Daten darin befinden, können diese gelöscht werden. Eclipse erstellt bei Bedarf die Plug-in-Daten neu. Der Workspace besteht aus den drei Projekten \textit{org.jmedikit.product}, \textit{org.jmedikit.feature} und \textit{org.jmedikit.plugin}. Beim ersten Öffnen ist der Package Explorer leer und die Projekte müssen importiert werden. Nach einem Klick auf \textit{File} $\rightarrow$ \textit{Import} erscheint ein Dialog wie in Abbildung \ref{importproject} zu sehen ist. Bei der Auswahl muss der Punkt unter \textit{General} $\rightarrow$ \textit{Existing Projects into Workspace} markiert und mit \textit{Next} bestätigt werden. Im folgenden Fenster (Abbildung \ref{selectimport}) muss unter ausgewähltem \textit{Select Root Directory} unter \textit{Browse} das Wurzelverzeichnis von jMediKit angegeben werde. Danach können die verfügbaren Projekte hinzugefügt und mittels Klick auf \textit{Finish} in den Eclipse Workspace importiert werden.
+Die Projektdaten befinden sich auf dem beiliegenden Datenträger. Das Wurzelverzeichnis kann als Eclipse Workspace benutzt werden. Dabei ist darauf zu achten, dass der Ordner \textit{/.metadata/.plugins} leer ist. Sollten sich Daten darin befinden, können diese gelöscht werden. Eclipse erstellt bei Bedarf die Plug-in-Daten neu. Der Workspace besteht aus den drei Projekten \textit{org.jmedikit.product}, \textit{org.jmedikit.feature} und \textit{org.jmedikit.plugin}. Beim ersten Öffnen ist der Package Explorer leer und die Projekte müssen importiert werden. Nach einem Klick auf \textit{File} $\rightarrow$ \textit{Import} erscheint ein Dialog wie in Abbildung \ref{importproject} zu sehen ist. Bei der Auswahl muss der Punkt unter \textit{General} $\rightarrow$ \textit{Existing Projects into Workspace} markiert und mit \textit{Next} bestätigt werden. Im folgenden Fenster (Abbildung \ref{selectimport}) muss unter ausgewähltem \textit{Select Root Directory} unter \textit{Browse} das Wurzelverzeichnis von jMediKit angegeben werde. Danach können die verfügbaren Projekte hinzugefügt und mittels Klick auf \textit{Finish} in den Eclipse Workspace importiert werden.
 
 \begin{figure}[H]
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill

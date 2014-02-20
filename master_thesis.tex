@@ -1,8 +1,7 @@
-\documentclass[12pt, a4paper, liststotoc]{scrreprt}
+\documentclass[12pt, a4paper, liststotoc, abstracton]{scrreprt}
 
 \input{header}
 \begin{document}
-
 
 %pagenumbering wird benoetigt um Warnung zu beheben.
 %wird wieder ueberschrieben
@@ -20,6 +19,8 @@
 \renewcommand{\thepage}{\roman{page}}
 %\pagestyle{headings}
 
+\include{abstract}
+
 \tableofcontents
 
 
@@ -29,8 +30,8 @@
 \setcounter{page}{1}
 
 %Thumbverzeichnis
-\addthumbsoverviewtocontents{chapter}{Kapitelübersicht}%Schreibt die Kapitelübersicht als Kapitel ins TOC
-\thumbsoverview{Kapitelübersicht} 
+%\addthumbsoverviewtocontents{chapter}{Kapitelübersicht}%Schreibt die Kapitelübersicht als Kapitel ins TOC
+%\thumbsoverview{Kapitelübersicht} 
 
 \pagestyle{fancy} %eigener Seitenstil
 \fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen

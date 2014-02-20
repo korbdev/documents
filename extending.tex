@@ -538,7 +538,7 @@ public List<AImage> process(List<AImage> arg0, int arg1) {
 Anders als die Plug-ins werden Erweiterungen der Anwendung mit dem Application Model erst nach einem erneuten Buildprozess integriert. Dadurch richtet sich die Kategorie der Modularisierung an Entwickler, die jMediKit gezielt erweitern.\\
 Als Beispiel für eine modulare Erweiterung soll im \textit{PartStack} des \textit{DicomBrowsers} ein neuer \textit{Part} hinzugefügt werden der theoretisch alle verfügbaren PACS im Netzwerk anzeigt. Implementiert wird nur eine minimale Oberfläche.\\
 Bevor die Struktur erweitert werden kann, muss entsprechend der Anleitung in Anhang \ref{install_eclipse} die Eclipse-Installation vorbereitet sein. Sind die drei Projekte im \textit{Project Explorer} vorhanden, kann mit der Erweiterung begonnen werden.\\
-Im Projekt \textit{org.jmedikit.plugin} befindet sich die Datei \textit{Application.e4xmi}\footnote{Die XML-Datei Application.e4xmi kann auch direkt im Quelltext bearbeitet werden. Die Darstellung in Eclipse erhöht die Benutzerfreundlichkeit zur Anpassung der Werte}. Darin sind alle strukturellen Informationen zu der Anwendungsoberfläche, Menüs, Handler, Commands und die Referenzen auf die implementierenden Klassen hinterlegt. Mit einem Doppelklick kann diese geöffnet werden und es zeigt sich ein Fenster wie in Abbildung \ref{e4xmi}. Die linke Spalte zeigt die Applikationsstruktur und rechts sind die entsprechenden Eigenschaften des gewählten Elements zu sehen. Ab dem Element \textit{Windows} im Strukturbaum werden die Anwendungsteile angezeigt. Dieser Teilbaum entspricht der Abbildung \ref{hierarchy} aus Kapitel \ref{architecture}. Da der \textit{PartStack} in dem der \textit{DicomBroweser} liegt erweitert werden soll, muss bis zu diesem Knoten navigiert werden. Der richtige \textit{PartStack} hat die Id \textit{org.jmedikit.plugin.dicombrowserStack}.
+Im Projekt \textit{org.jmedikit.plugin} befindet sich die Datei \textit{Application.e4xmi}\footnote{Die XML-Datei Application.e4xmi kann auch direkt im Quelltext bearbeitet werden. Die Darstellung in Eclipse erhöht die Benutzerfreundlichkeit zur Anpassung der Werte}. Darin sind alle strukturellen Informationen zu der Anwendungsoberfläche, Menüs, Handler, Commands und die Referenzen auf die implementierenden Klassen hinterlegt. Mit einem Doppelklick kann diese geöffnet werden und es zeigt sich ein Fenster wie in Abbildung \ref{e4xmi}. Die linke Spalte zeigt die Applikationsstruktur und rechts sind die entsprechenden Eigenschaften des gewählten Elements zu sehen. Ab dem Element \textit{Windows} im Strukturbaum werden die Anwendungsteile angezeigt. Dieser Teilbaum entspricht der Abbildung \ref{hierarchy} aus Kapitel \ref{architecture}. Da der \textit{PartStack} in dem der \textit{DicomBrowser} liegt erweitert werden soll, muss bis zu diesem Knoten navigiert werden. Der richtige \textit{PartStack} hat die Id \textit{org.jmedikit.plugin.dicombrowserStack}.
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
@@ -649,8 +649,8 @@ Das Menü selbst befindet sich im Applikationsbaum \textit{Window} unter dem Ele
   \vspace{0.5cm}
 \end{figure}
 
-Die \textit{Commands} sind im Strukturbaum direkt unter \textit{Application} zu finden. Wird das Element ausgewählt, erscheint auf der rechten Seite eine Liste bisher verfügbarer \textit{Commands}. Meinem Klick auf \textit{Add} kann ein neues hinzugefügt werden. In den nun angezeigten Einstellungen bekommt die \textit{Id} den Wert \textit{org.jmedikit.plugin.command.toolRoi} und als \textit{Name} wird \textit{toolRoi} eingetragen.\\
-Die Implementierung der Befehle finden in den \textit{Handlern} statt. Diese sind im Baum unter \textit{Window} angesiedelt. Nach der Auswahl erscheint die Liste der erstellten \textit{Handler}. Wie schon bei den \textit{Commands} wird ein neuer \textit{Handler} hinzugefügt und \textit{Id} sowie \textit{Name} vergeben. Unter dem Punkt \textit{Command} wird der zuvor erstellte Befehl angegeben. Mit einem Klick auf \textit{ClassURI} kann, wie in Abbildung \ref{tool_handlerclass} dargestellt, die entsprechende Klasse erstellt werden. Üblicherweise liegen Handlerklassen im Package \textit{org.jmedikit.plugin.gui.handler} und haben den Namen \textit{ToolNameHandler}.
+Die \textit{Commands} sind im Strukturbaum direkt unter \textit{Application} zu finden. Wird das Element ausgewählt, erscheint auf der rechten Seite eine Liste bisher verfügbarer \textit{Commands}. Mit einem Klick auf \textit{Add} kann ein neuer hinzugefügt werden. In den nun angezeigten Einstellungen bekommt die \textit{Id} den Wert \textit{org.jmedikit.plugin.command.toolRoi} und als \textit{Name} wird \textit{toolRoi} eingetragen.\\
+Die Implementierung der Befehle finden in den \textit{Handlern} statt. Diese sind im Baum unter \textit{Window} angesiedelt. Nach der Auswahl erscheint die Liste der erstellten \textit{Handler}. Wie schon bei den \textit{Commands} wird ein neuer \textit{Handler} hinzugefügt und \textit{Id} sowie \textit{Name} vergeben. Unter dem Punkt \textit{Command} wird der zuvor erstellte Befehl angegeben. Mit einem Klick auf \textit{ClassURI}, wie in Abbildung \ref{tool_handlerclass} dargestellt, kann die entsprechende Klasse erstellt werden. Üblicherweise liegen Handlerklassen im Package \textit{org.jmedikit.plugin.gui.handler} und haben den Namen \textit{ToolNameHandler}.
 
 \begin{figure}[H]
   \vspace{0.5cm}
@@ -685,7 +685,7 @@ Abbildung \ref{tool_menunew} zeigt die neue Werkzeugleiste mit dem \textit{ROITo
 
 \subsection{Hinzufügen der Funktionalität}
 
-Nach der Erweiterung der Werkzeugleiste kann die grundlegende Klasse des Werkzeugs erstellt werden. Wichtig ist die Generalisierung von \textit{ATool} wie in Listing \ref{toolclass} zu sehen ist.
+Nach der Erweiterung der Werkzeugleiste kann die grundlegende Klasse des Werkzeugs erstellt werden. Wichtig ist die Generalisierung von \textit{ATool}, wie in Listing \ref{toolclass} zu sehen ist.
 
 \lstset{
 language=Java,
@@ -762,7 +762,7 @@ protected ATool produce(String toolname, DicomCanvas c) {
 \end{figure}
 
 Im aktuellen Zustand reagiert das Werkzeug und der neue Menüpunkt noch nicht auf die Eingaben des Benutzers. Es fehlt die Implementierung des \textit{Handlers} und die Kommunikation mit dem \textit{ImageView}. Listing \ref{roihandler} zeigt die Umsetzung der Klasse \textit{ToolRoiHandler}. Das Interface \textit{IEventBroker} regelt die Kommunikation unter den \textit{Parts}. Die Annotation \textit{@Execute} bedeutet, dass die Methode automatisch aufgerufen wird, sobald der Menüpunkt betätigt wird. Sowohl \textit{@Inject} als auch \textit{@Execute} sind Teile des \textit{Dependency Injection Frameworks} von Eclipse. Ein umfassender Artikel ist unter \cite{vogel:di} zu finden.\\
-In der Methode \textit{execute} wird dem Werkzeug entsprechen die Fabrik instantiiert. Die Variable \textit{tool} enthält das auszulösende Event. Mit Hilfe des \textit{eventBroker} wird die Benutzereingabe an die lauschenden Methoden der Applikation geleitet. Die Methode \textit{post} erwartet die Event-Konstante und ein ToolEvent, welches die erzeugte Fabrik und den Werkzeugtyp als Parameter erhält.
+In der Methode \textit{execute} wird dem Werkzeug entsprechend die Fabrik instantiiert. Die Variable \textit{tool} enthält das auszulösende Event. Mit Hilfe des \textit{eventBroker} wird die Benutzereingabe an die lauschenden Methoden der Applikation geleitet. Die Methode \textit{post} erwartet die Event-Konstante und ein ToolEvent, welches die erzeugte Fabrik und den Werkzeugtyp als Parameter erhält.
 
 \lstset{
 language=Java,
@@ -797,7 +797,7 @@ Ziel des \textit{ROITools} ist es, beliebige rechteckige Flächen innerhalb des 
 
 \begin{itemize}
 \item \textbf{MouseMove} \\
-Bei jeder Mausbewegung wird geprüft, ob eine Maustaste gedrück wird. Ist dies der Fall, wird die Start- und die aktuelle Position solange in Datenelementen der Klasse gespeichert, bis die Taste gelöst wird.
+Bei jeder Mausbewegung wird geprüft, ob eine Maustaste gedrück wird. Ist dies der Fall, wird die Startposition und die Aktuelle solange in Datenelementen der Klasse gespeichert, bis die Taste gelöst wird.
 \item \textbf{MouseDown} \\
 Wird die Maustaste betätigt, werden die Koordinaten auf $0$ zurückgesetzt, damit eine neue Berechnung beginnen kann. Ohne Zurücksetzung wird die zuletzt markierte ROI nochmal auf die Zeichenfläche gemalt und bleibt bis zur ersten Mausbewegung sichtbar.
 \item \textbf{MouseUp} \\

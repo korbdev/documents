@@ -1,1 +1,22 @@
 \chapter{Diskussion}
+
+Für eine erfolgreiche Umsetzung der Arbeit stehen die Anforderungen an die Modularität und Erweiterbarkeit der zu entwickelnden Software und die Methoden zur Bildanzeige und Manipulation im Fokus. 
+
+\section*{Modularität}
+
+Mit dem Einsatz der \glqq Eclipse Rich Client Platform\grqq\ und dem zugehörigen OSGi-Framework \glqq Equinox\grqq\ wird eine modulare Anwendungsstruktur geschaffen. Durch das Hinzufügen von neuen Strukturelementen des Application Models und deren Implementierung kann jMediKit um neue Module erweitert werden. Dadurch wird die Tiefe der Anwendung mit den zur Verfügung stehenden Grundfunktionen erweitert. So ist es zum Beispiel möglich, die Anwendung um einen Bereich zu erweitern, der aus den Voxeldaten dreidimensionale Darstellungen berechnet.\\
+Um neue Module zu entwickeln, ist neben der Kenntnis der Struktur von jMediKit auch eine Einarbeitung in die Architektur der Eclipse-Plattform notwendig. Die Werkzeuge sind zum Beispiel fest mit der jMediKit-Architektur durch das Fabrikmuster verankert. Für eine Erweiterung benötigt ein Entwickler das Wissen zu Werkzeugleisten der Eclipse-Plattform und zur Werkzeugentwicklung von jMediKit. Zusätzlich können neue Funktionen ausschließlich nach einem erneuten Buildprozess der Anwendung hinzugefügt werden. Dadurch ist keine dynamische Modulerweiterung des aktuellen Systems möglich.
+
+\section*{Erweiterbarkeit}
+Das Architekturmuster Plug-in stellt diesen dynamischen Aspekt der Anwendungserweiterung zur Verfügung. Das bedeutet, Klassen können auch nach der Kompilierung zu dem System hinzugefügt werden. Dadurch wir eine Erweiterung möglich, ohne genaue Kenntnis des Systems und seine interne Funktionsweise besitzen zu müssen. Trotz des dynamischen Charakters sind die vom Anwender entwickelten Erweiterungen auf die Aspekte der Bildverarbeitung beschränkt und können keine Beiträge zur Anwendungsstruktur leisten.
+
+\section*{Bildanzeige und Manipulation}
+Mit der Verwendung der externen Bibliothek \glqq dcm4che\grqq\ als Werkzeug zur Verarbeitung der DICOM-Daten, können medizinsche Bilddaten entsprechend der Anforderungen angezeigt und manipuliert werden.Da Algorithmen sowohl in der initialen Ebenendarstellung, als auch in den rekonstruierten Darstellungen angewendet werden sollen, wird der gesamte Datensatz beim Einlesen in den Speicher geladen. Dadurch hat jMediKit einen hohen Speicherbedarf. So benötigt allein die Anzeige von vier Datensätzen mit 512 Schichten und einer Auflösung von 512 $\times$ 512 Pixel und einer Tiefe von 16-Bit ca. 1 Gigabyte Speicherplatz rein an Daten der Pixelwerte.
+
+\begin{equation}
+(312^3 \cdot 16)\cdot 4  = 8589934592 bit = 1 GB
+\end{equation}
+
+In der initialen Ebenendarstellung könnten Bildschichten problemlos bei Bedarf nachgeladen werden. Ein dreidimensionaler Algorithmus ist zur Berechnung allerdings abhängig von den restlichen Schichten. Auch Ebenenrekonstruktionen benötigen den gesamten Datensatz. Ein dynamisches Nachladen bei der Algorithmenanwendung und Rekonstruktion verlängert die Ausführungszeit des Programms und es musste die Wahl zwischen einem hohen Speicherbedarf und schneller Bedienung oder geringem Speicherbedarf bei verzögerter Bedienung getroffen werden.\\
+So könnten zukünftige Weiterentwicklungen einen Kompromiss zwischen Speicher und Ausführungszeit finden, um eine verbesserte Lösung zur Verfügung zu stellen. Caching-Algorithmen wären in der Lage den Ladevorgang und die Speicherung effizient zu verwalten.
+

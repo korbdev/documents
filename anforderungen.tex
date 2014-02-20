@@ -11,7 +11,7 @@ In diesem Kapitel werden die Anforderungen an eine modulare und erweiterbare Bil
 \section{Nichtfunktionale Anforderungen}
 
 Nach Balzert \cite[9]{balzert:swa} beschreiben nichtfunktionale Anforderungen, \textit{wie} ein System arbeitet. Sie üben besonderen Einfluss auf die Softwarearchitektur eines Systems aus.
-Während der Besprechungen konnten folgende nichtfunktionale Anforderungen ermittelt werden.
+Während der Besprechungen mit dem Laborleiter konnten folgende nichtfunktionale Anforderungen ermittelt werden.
 
 \begin{itemize}
 \item  \textbf{Modularer Aufbau des Systems}(1)\\
@@ -21,18 +21,18 @@ Während der Besprechungen konnten folgende nichtfunktionale Anforderungen ermit
 	Anwender sollen die Möglichkeit haben, das Programm mit selbst programmierten Algorithmen und Plug-ins zu erweitern. Die eigene Implementierung von Bildverarbeitungsprozessen ist essentiell im Bereich der Lehre.
 	
 \item \textbf{Die Programmiersprache Java}(3)\\
-	Die Studierenden des Studiengangs sollen im Modul \glqq medizinische Bildverarbeitung\grqq\ Ihre Kompetenzen im Bereich der Programmierung mit Java erweitern. Dadurch soll die Anwendung in Java umgesetzt und erweiterbar sein.
+	Die Studierenden des Studiengangs sollen im Modul \glqq medizinische Bildverarbeitung\grqq\ ihre Kompetenzen im Bereich der Programmierung mit Java erweitern. Dadurch soll die Anwendung in Java umgesetzt und erweiterbar sein.
 	
 \item \textbf{Externe Bildverarbeitungsbibliotheken}(4)\\
 	Algorithmen in der Bildverarbeitung sind oft komplex und umfangreich. Nicht jeder benötigte Verarbeitungsprozess eignet sich zum selbst implementieren (sowohl im Lehr- als auch Forschungsbereich). Durch den Einsatz von Bibliotheken wird ein grundlegender Satz an Algorithmen vorgegeben, auf den der Benutzer zurückgreifen und in den Plug-ins verwenden kann.
 	
-\item \textbf{Verarbeitung medizinische Daten mit Hilfe des DICOM-Standards}(5)\\
+\item \textbf{Verarbeitung medizinischer Daten mit Hilfe des DICOM-Standards}(5)\\
 	Medizinische Bilddaten besitzen neben den rohen Pixeldaten noch eine Vielzahl zusätzlicher Information, wie Patientendaten oder Seriennummern der Aufnahmen und benötigen eine spezielle Verarbeitung. Anders als übliche Grauwertbilder besitzen DICOM-Daten unter Anderem nicht 255 sondern bis zu $2^{16}$ verschiedene Grauwerte.
 \end{itemize}
 
 \section{Funktionale Anforderungen}
 
-Diese Art der Anforderungen legen fest, \textit{was} das Programm leisten soll und bestimmen Funktionen und Verhalten \cite[9]{balzert:swa}. Sie überschneiden sich oder stehen in Beziehung zu den nichtfunktionalen Anforderungen.
+Dieser Anforderungstyp legt fest, \textit{was} das Programm leisten soll und bestimmt Funktionen und Verhalten \cite[9]{balzert:swa}. Sie überschneiden sich oder stehen in Beziehung zu den nichtfunktionalen Anforderungen.
 
 \begin{itemize}
 \item \textbf{Dynamische Parameterübergabe bei einer Plug-in-Ausführung}(6)\\
@@ -44,7 +44,7 @@ Diese Art der Anforderungen legen fest, \textit{was} das Programm leisten soll u
 \item \textbf{Anwendung der Algorithmen im dreidimensionalen Raum}(8)\\
 	  Eine Vielzahl an Bildaufnahmen liegen als dreidimensionaler Datensatz vor. Eine Bildreihe muss folglich zusätzlich zur xy-Ebene auch in z-Richtung zu bearbeiten sein.
 
-\item \textbf{Darstellung mehrerer Bilddatensätze(9)}\\
+\item \textbf{Darstellung mehrerer Bilddatensätze}(9)\\
 	Das Programm soll mehrere dreidimensionale Bildreihen zur selben Zeit in verschiedenen Fenstern anzeigen können. Das erlaubt den Benutzern die Datensätze in Beziehung zueinander zu betrachten.
 
 \item \textbf{Darstellung aller Bildebenen}(10)\\
@@ -64,7 +64,7 @@ Diese Art der Anforderungen legen fest, \textit{was} das Programm leisten soll u
 
 \section{Evaluierung bestehender Software}
 
-Frei verfügbare Software im medizinischen Bereich beschränkt sich oft die vorgegebenen Funktionen des Programms und bietet keine Möglichkeiten der Erweiterung. Zusätzlich liegt der Fokus auf der Darstellung der Patientenbilder und weniger an den Algorithmen zur Bildverarbeitung. Abbildung \ref{radiant} zeigt den Screenshot des DicomViewers RadiAnt\footnote{http://www.radiantviewer.com/de/}. Die Bilder können einzeln, oder wie auf dem Bild zu sehen, im Bezug zueinander betrachtet werden. Die Werkzeugleiste oben ermöglicht die für DICOM-Bilder typischen Operationen.
+Frei verfügbare Software im medizinischen Bereich beschränkt sich oft auf die vorgegebenen Funktionen des Programms und bietet keine Möglichkeiten der Erweiterung. Zusätzlich liegt der Fokus auf der Darstellung der Patientenbilder und weniger an den Algorithmen zur Bildverarbeitung. Abbildung \ref{radiant} zeigt den Screenshot des DicomViewers RadiAnt\footnote{http://www.radiantviewer.com/de/}. Die Bilder können einzeln, oder wie auf dem Bild zu sehen, im Bezug zueinander betrachtet werden. Die Werkzeugleiste oben ermöglicht die für DICOM-Bilder typischen Operationen.
 Zwar gibt es auf dem Markt auch Open-Source Lösungen mit Schwerpunkt auf Bildverarbeitung, jedoch eigenen sich diese nur bedingt für den Einsatz in der Lehre. Die Programme bieten eine Vielzahl an Funktionen, allerdings benötigt die Entwicklung von Erweiterungen einen erheblichen Zeitaufwand.
  
 \begin{figure}[htbp]
@@ -79,7 +79,7 @@ Zwar gibt es auf dem Markt auch Open-Source Lösungen mit Schwerpunkt auf Bildve
 
 \section{Slicer 3D}
 
-Slicer 3D\footnote{http://www.slicer.org} (Abbildung \ref{slicer3d}) ist ein umfassendes Werkzeug für die medizinische Bildverarbeitung im zwei- und dreidimensionalen Raum. Die quelloffene Software bietet Möglichkeiten eigene Erweiterungen zu implementieren. Slicer verwendet als Bibliotheken unter anderem das Insight Toolkit und das Visualization Toolkit\footnote{Insight Toolkit(ITK) und Visualization Toolkit (VTK) sind umfassende in C++ entwickelte Programmbibliotheken zur medizinischen Bildverarbeitung und Visualisierung.}. Die Erweiterungen werden in Python implementiert und dienen zur Anwendung der Bildverarbeitungsalgorithmen. Es fehlt die Möglichkeit der modularen Erweiterung bezüglich neuer Funktionen. Das Labor setzt in naher Zukunft ein PACS ein und die Software soll Möglichkeiten bieten, dieses System später zu integrieren, um DICOM-Daten über das Netzwerk zu beziehen.
+Slicer 3D\footnote{http://www.slicer.org} (Abbildung \ref{slicer3d}) ist ein umfassendes Werkzeug für die medizinische Bildverarbeitung im zwei- und dreidimensionalen Raum. Die quelloffene Software bietet Möglichkeiten eigene Erweiterungen zu implementieren. Slicer verwendet als Bibliotheken unter anderem das Insight Toolkit und das Visualization Toolkit\footnote{Insight Toolkit(ITK) und Visualization Toolkit (VTK) sind umfassende in C++ entwickelte Programmbibliotheken zur medizinischen Bildverarbeitung und Visualisierung.}. Die Erweiterungen werden in Python implementiert und dienen zur Anwendung der Bildverarbeitungsalgorithmen. Es fehlt die Möglichkeit der modularen Erweiterung bezüglich neuer Funktionen. Das Labor setzt in naher Zukunft ein PACS ein und die zu entwickelnde Software soll Möglichkeiten bieten, dieses System später zu integrieren, um DICOM-Daten über das Netzwerk zu beziehen.
 %Das Modul \glqq medizinische Bildverarbeitung\grqq\ baut auf der Programmiersprache Java auf und ist eine weitere Voraussetzung für einen Einsatz im Lehrgebiet. Module in Slicer werden in Python %implementiert. Die Studierenden müssten damit eine zusätzliche Sprache lernen.\\
 
 \begin{figure}[htbp]
@@ -153,10 +153,10 @@ Für eine Software die an der Hochschule Landshut für Lehre sowie Forschung im 
     Dynamische Anzeige der Punkte(11)	&\includegraphics[width=0.5cm]{./img/yes.pdf} & \includegraphics[width=0.5cm]{./img/yes.pdf}  & \includegraphics[width=0.5cm]{./img/no.pdf}\\ \hline
     DICOM (5)									    & \includegraphics[width=0.5cm]{./img/yes.pdf}	& \includegraphics[width=0.5cm]{./img/yes.pdf}	& \includegraphics[width=0.5cm]{./img/no.pdf}\\ \hline	
     Plug-ins (2)		 							& \includegraphics[width=0.5cm]{./img/no.pdf}	& \includegraphics[width=0.5cm]{./img/yes.pdf} 	& \includegraphics[width=0.5cm]{./img/yes.pdf}  \\ \hline
-    Bibliotheken zur Bildverarbeitung (4)		 	& n.A.			& \includegraphics[width=0.5cm]{./img/yes.pdf}  		  		& \includegraphics[width=0.5cm]{./img/no.pdf}  \\ \hline
-    Dynamische Parameter (6)						& n.A.				& \includegraphics[width=0.5cm]{./img/yes.pdf}  		  		& \includegraphics[width=0.5cm]{./img/yes.pdf}  \\ \hline
-    Manuelle Punktauswahl (7)		 				& n.A.				& \includegraphics[width=0.5cm]{./img/yes.pdf}		  		& \includegraphics[width=0.5cm]{./img/yes.pdf} \\ \hline
-    Algorithmen in $(x, y, z)$ (8)					& n.A.& \includegraphics[width=0.5cm]{./img/yes.pdf}  &  \includegraphics[width=0.5cm]{./img/yes.pdf} \\ \hline
+    Bibliotheken zur Bildverarbeitung (4)		 	& \includegraphics[width=0.5cm]{./img/no.pdf}			& \includegraphics[width=0.5cm]{./img/yes.pdf}  		  		& \includegraphics[width=0.5cm]{./img/no.pdf}  \\ \hline
+    Dynamische Parameter (6)						& \includegraphics[width=0.5cm]{./img/no.pdf}				& \includegraphics[width=0.5cm]{./img/yes.pdf}  		  		& \includegraphics[width=0.5cm]{./img/yes.pdf}  \\ \hline
+    Manuelle Punktauswahl (7)		 				& \includegraphics[width=0.5cm]{./img/no.pdf}				& \includegraphics[width=0.5cm]{./img/yes.pdf}		  		& \includegraphics[width=0.5cm]{./img/yes.pdf} \\ \hline
+    Algorithmen in $(x, y, z)$ (8)					& \includegraphics[width=0.5cm]{./img/no.pdf}& \includegraphics[width=0.5cm]{./img/yes.pdf}  &  \includegraphics[width=0.5cm]{./img/yes.pdf} \\ \hline
     
     \bottomrule
     \end{tabularx}
@@ -164,5 +164,5 @@ Für eine Software die an der Hochschule Landshut für Lehre sowie Forschung im 
     \label{table:anforderungen}
 \end{table}
 
-Tabelle \ref{table:anforderungen} zeigt eine Gegenüberstellung der evaluierten Software zu den Anforderungen. Slicer3D und ImageJ erfüllen einen hohen Grad davon, allerdings fehlen wichtige sogenannte harte\footnote{Es wird zwischen harten und weichen Anforderungen unterschieden. Harte Anforderungen müssen erfüllt werden, während Weiche erfüllt werden können \cite[9]{balzert:swa}} Anforderungen. Slicer3D lässt einen einfachen Ansatz zur modularen Erweiterung der Benutzeroberfläche und Anwendungsfunktionen vermissen. ImageJ hingegen bietet diese Variabilität. Allerdings ist die Verarbeitung von DICOM-Daten nur über ein Plug-in möglich und es fehlt eine Grundlage in Algorithmen zur medizinischen Bildverarbeitung. Zusätzlich zu den vorgestellten Anwendungen bietet auch MatLab\footnote{http://www.mathworks.de/products/matlab/} umfangreiche Bildverarbeitungskomponenten, unter anderem auch zur Verarbeitung von DICOM-Objekten an. Die hohen Lizenzkosten sprechen allerdings deutlich gegen einen Einsatz in der Lehre, da Anwendungen nur auf begrenzt vielen Maschinen installiert werden können und dadurch die Zahl der Arbeitsplätze für Studierende erheblich unnötig eingeschränkt ist. Aufgaben können nur im Labor bearbeitet werden, was voraussetzt, dass das Labor zu jeder Zeit geöffnet werden muss.
-Da in den vorgestellten Anwendungen keine Lösung verfügbar ist, die alle Voraussetzungen erfüllt, soll eine Software entwickelt werden, die für das Labor für medizinische Bildverarbeitung, Algorithmen und Krankenhaus IT die benötigten funktionalen und nichtfunktionalen Anforderungen erfüllt.
+Tabelle \ref{table:anforderungen} zeigt eine Gegenüberstellung der evaluierten Software zu den Anforderungen. Slicer3D und ImageJ erfüllen einen hohen Grad davon, allerdings fehlen wichtige sogenannte harte\footnote{Es wird zwischen harten und weichen Anforderungen unterschieden. Harte Anforderungen müssen erfüllt werden, während Weiche erfüllt werden können \cite[9]{balzert:swa}} Anforderungen. Slicer3D lässt einen einfachen Ansatz zur modularen Erweiterung der Benutzeroberfläche und Anwendungsfunktionen vermissen. ImageJ hingegen bietet diese Variabilität. Allerdings ist die Verarbeitung von DICOM-Daten nur über ein Plug-in möglich und es fehlt eine Grundlage in Algorithmen zur medizinischen Bildverarbeitung. Zusätzlich zu den vorgestellten Anwendungen bietet auch MATLAB\footnote{http://www.mathworks.de/products/matlab/} umfangreiche Bildverarbeitungskomponenten, unter anderem auch zur Verarbeitung von DICOM-Objekten an. Die hohen Lizenzkosten sprechen allerdings deutlich gegen einen Einsatz in der Lehre, da Anwendungen nur auf begrenzt vielen Maschinen installiert werden können und dadurch die Zahl der Arbeitsplätze für Studierende erheblich unnötig eingeschränkt ist. Aufgaben können nur im Labor bearbeitet werden, was voraussetzt, dass das Labor zu jeder Zeit geöffnet werden muss.
+Da in den vorgestellten Anwendungen keine Lösung verfügbar ist, die alle Voraussetzungen erfüllen, soll eine Software entwickelt werden, die für das Labor für medizinische Bildverarbeitung, Algorithmen und Krankenhaus IT die benötigten funktionalen und nichtfunktionalen Anforderungen umsetzt.

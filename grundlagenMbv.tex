@@ -5,7 +5,7 @@
 
 \section{DICOM}\label{grundlagen:dicom}
 Der Name DICOM steht für \textit{Digital Imaging and COmmunication in Medicine}. Der Umgang mit diesem Standard ist essentieller Bestandteil der zu entwickelnden Software. Pianykh\cite[1]{pianykh:dicom} beschreibt, dass DICOM nicht nur aus Pixel und deren zugehörigen Werten besteht. Wie der Name sagt, ist auch die Kommunikation fest im Standard verankert. Damit ist die Übertragung der Daten von medizinischen Geräten(Modalitäten) zum zentralen Speicher und deren Verteilung gemeint. Des weiteren spielt die dauerhafte Speicherung der digitalen Aufnahmen eine große Rolle. Daher wird im gleichen Zug mit DICOM immer ein PACS genannt. Das Akronym PACS bedeutet \textit{Picture Archiving and Communication System} und besteht sowohl aus Hardware (Server, Speicherung) als auch Software(Verteilung und Kommunikation).\\
-Abbildung \ref{communication} illustriert das Zusammenspiel des DICOM-Standards und dem zentralen Datenspeicher. Zuerst wird mittels der Modalitäten(z.B. mit dem Computertomographen oder einem Ultraschallgerät) die digitale Aufnahme erzeugt. Danach wird das Bild vom Gerät an das PACS gesendet. Hier werden die Aufnahmen und Patientendetails in die Datenbank und den Speicher abgelegt. Wird eine Aufnahme benötigt, können Clients Anfragen mit dem Patientennamen stellen und erhalten darauf die zugehörige Serie mit der digitalen Aufnahme.
+Abbildung \ref{communication} illustriert das Zusammenspiel des DICOM-Standards und dem zentralen Datenspeicher. Zuerst wird mittels der Modalitäten(z.B. mit dem Computertomographen oder einem Ultraschallgerät) die digitale Aufnahme erzeugt. Danach wird das Bild vom Gerät an das PACS gesendet. Hier werden die Aufnahmen und Patientendetails in die Datenbank und den Speicher abgelegt. Wird eine Aufnahme benötigt, können Clients Anfragen mit dem Patientennamen stellen und erhalten darauf die zugehörige Serie mit den digitalen Aufnahmen.
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
@@ -36,7 +36,7 @@ Bevor die Pixeldaten genauer betrachtet werden können, muss der prinzipielle Au
 	\item	\textbf{Study}\\
 	Study symbolisiert eine medizinische Studie. Eine Studie ist eine Sammlung von mehreren Serien, die von Modalitäten wie CT und MR aufgezeichnet werden. Eine Studie ist exakt einem Patient zugeordnet.
 	\item \textbf{Series}\\
-	Eine Serie ist ein Folge von Bildern, die von einer Modalität erzeugt wird. Die Aufnahmen eines CT werden einer Serie zugeordnet. Jede Serie gehört zu nur einer Studie. Eine Serie muss allerdings nicht zwingend aus Bildern bestehen. So können Serien auch aus Messdaten oder Registrierungsdaten zusammengesetzt werden \cite[A.1.2]{dicom:iod}.
+	Eine Serie ist eine Folge von Bildern, die von einer Modalität erzeugt wird. Die Aufnahmen eines CT werden einer Serie zugeordnet. Jede Serie gehört zu nur einer Studie. Eine Serie muss allerdings nicht zwingend aus Bildern bestehen. So können Serien auch aus Messdaten oder Registrierungsdaten zusammengesetzt werden \cite[A.1.2]{dicom:iod}.
 	\item \textbf{Image, Real World Values}\\
 	Auf der unteren Hierarchiestufe stehen Objekte wie Bilddaten oder die Lage des Patienten im Raum während der Aufnahme. Ein Bild wird genau einer Serie zugeordnet.
 \end{itemize}
@@ -54,7 +54,7 @@ Aus diesen vier elementaren Objekten ergibt sich folgende Informationsstruktur f
 \end{figure}
 
 Der DICOM-Viewer OsiriX bietet auf der Herstellerseite\footnote{http://www.osirix-viewer.com/datasets/} die Möglichkeit Testdaten zu beziehen. Betrachtet man die Repräsentation der Daten auf der Festplatte hält sich die Ordnerstruktur an obiges ER-Modell.\\
-Abbildung \ref{filesystemrep} zeigt eine schematische Darstellung der Dateien. Die Beispieldaten von OsiriX bestehen aus einem Patient, dem eine Studie sowie zwei Serien à 100 Aufnahmen zugeordnet werden.
+Abbildung \ref{filesystemrep} zeigt eine schematische Darstellung der Dateien. Die Beispieldaten von OsiriX bestehen aus einem Patienten, dem eine Studie sowie zwei Serien à 100 Aufnahmen zugeordnet werden.
 
 \tikzstyle{every node}=[draw=black,thick,anchor=west]
 %\tikzstyle{selected}=[draw=red,fill=red!30]
@@ -120,7 +120,7 @@ Betrachtet man den folgenden Satz(vgl. \cite[S.46]{pianykh:dicom}), kann dieser 
 \textit{\glqq John Doe, männlich, geboren am 01. Januar 1970\grqq}
 \end{center}
 
-Wie aus dem Beispiel von Tabelle \ref{table:patientname} zu erkennen, lässt sich ein DICOM-Element nochmals in atomare Teile aufgespalten. Folglich besteht ein Datenelement aus einem beschreibenden \textit{Tag}, einer \textit{VR(Value Representation)}, einem Wert und der \textit{VR (Value Multiplicity)}. Das Element selbst nimmt eine von drei Darstellungsmöglichkeiten ein. Zusätzlich liegt im Speicherabbild des Datenelements die Länge des Wertes\footnote{John\^{}Doe besitzt aufgrund der Zeichenmenge eine Länge von acht}. Abhängig von der Transfersytax\footnote{Unter der Transfersystax verstehn man eine Menge an Kodierungsvorschriften von DICOM-Objekten\cite[S.63 Section 10]{dicom:structure}. Zu diesen Vorschriften gehört zum Beispiel die Reihenfolge der Bytes im DICOM-Element oder die Komprimierung der Bilddaten} des DICOM-Objekts ist der VR-Teil optional. Die weiteren beiden Darstellungen unterscheiden sich in der Kodierung der benötigten Länge des Werts \cite[7.1]{dicom:structure}.  Anhang \ref{appendix:speicher} auf Seite \pageref{appendix:speicher} zeigt wie Datenelemente im Speicher abgelegt werden und wie viel Speicherplatz pro Element reserviert werden muss.
+Wie aus dem Beispiel von Tabelle \ref{table:patientname} zu erkennen, lässt sich ein DICOM-Element nochmals in atomare Teile aufgespalten. Folglich besteht ein Datenelement aus einem beschreibenden \textit{Tag}, einer \textit{VR(Value Representation)}, einem Wert und der \textit{VR (Value Multiplicity)}. Das Element selbst nimmt eine von drei Darstellungsmöglichkeiten ein. Zusätzlich liegt im Speicherabbild des Datenelements die Länge des Wertes\footnote{John\^{}Doe besitzt aufgrund der Zeichenmenge eine Länge von acht}. Abhängig von der Transfersyntax\footnote{Unter der Transfersyntax versteht man eine Menge an Kodierungsvorschriften von DICOM-Objekten\cite[S.63 Section 10]{dicom:structure}. Zu diesen Vorschriften gehört zum Beispiel die Reihenfolge der Bytes im DICOM-Element oder die Komprimierung der Bilddaten} des DICOM-Objekts ist der VR-Teil optional. Die weiteren beiden Darstellungen unterscheiden sich in der Kodierung der benötigten Länge des Werts \cite[7.1]{dicom:structure}.  Anhang \ref{appendix:speicher} auf Seite \pageref{appendix:speicher} zeigt wie Datenelemente im Speicher abgelegt werden und wie viel Speicherplatz pro Element reserviert werden muss.
 
 \begin{table}
     \begin{tabularx}{\textwidth}{|p{4cm}|p{4cm}|X|X|X|}
@@ -139,7 +139,7 @@ Wie aus dem Beispiel von Tabelle \ref{table:patientname} zu erkennen, lässt sic
 
 \subsection{Tags in Datenelementen}
 
-Ein DICOM-Element wie PatientName kann über ein Tag identifiziert werden. Ein Tag ist in einem DICOM-Objekt einzigartig und darf nur ein mal benutzt werden. Die numerische Darstellung hat die Form (\textit{gggg}, \textit{eeee}) wobei die hexadezimalen Ziffern \textit{g} die Gruppe des DICOM-Elements beschreiben. Das \textit{e} beschreibt das Element der Gruppe \textit{g} definiert. Wie in Tabelle  \ref{table:translation} zu sehen, steht 0010 für die Gruppe \textit{Patient} und 0030 für das Element \textit{PatientBirthDate} und ist der Patientengruppe zugehörig. Zusätzlich zu diesen Eigenschaften, kann bestimmt werden, ob der Ursprung eines DICOM-Elements im Standard- oder einem privaten Data Dictionary liegt. Eine gerade Gruppen-Ziffer zeigt, dass das Element Teil des Standards ist, während ungerade für proprietäre Elemente stehen\footnote{Ausgenommen aus dieser Regel sind folgende Gruppen: (0000, eeee), (0002, eeee), (0004, eeee), (0006, eeee), (0001, eeee), (0003, eeee), (0005, eeee), (0007, eeee), (FFFF, eeee)}\cite[7.1]{dicom:structure}. Die Reihenfolge der Tags ist in numerischer Folge in aufsteigender Form sortiert. Fällt während des Einleseprozesses in einer Datei auf, dass die Reihenfolge nicht korrekt ist, kann die Integrität des DICOM-Objekts nicht gewährleistet werden und deutet zum Beispiel auf eine modifizierte Datei hin.\\
+Ein DICOM-Element wie PatientName kann über ein Tag identifiziert werden. Ein Tag ist in einem DICOM-Objekt einzigartig und darf nur ein mal benutzt werden. Die numerische Darstellung hat die Form (\textit{gggg}, \textit{eeee}) wobei die hexadezimalen Ziffern \textit{g} die Gruppe des DICOM-Elements beschreiben. Das Zeichen \textit{e} beschreibt das Element  aus der Gruppe \textit{g}. Wie in Tabelle  \ref{table:translation} zu sehen, steht 0010 für die Gruppe \textit{Patient} und 0030 für das Element \textit{PatientBirthDate} und ist der Patientengruppe zugehörig. Zusätzlich zu diesen Eigenschaften, kann bestimmt werden, ob der Ursprung eines DICOM-Elements im Standard- oder einem privaten Data Dictionary liegt. Eine gerade Gruppen-Ziffer zeigt, dass das Element Teil des Standards ist, während ungerade für proprietäre Elemente stehen\footnote{Ausgenommen aus dieser Regel sind folgende Gruppen: (0000, eeee), (0002, eeee), (0004, eeee), (0006, eeee), (0001, eeee), (0003, eeee), (0005, eeee), (0007, eeee), (FFFF, eeee)}\cite[7.1]{dicom:structure}. Die Reihenfolge der Tags ist in numerischer Folge in aufsteigender Form sortiert. Fällt während des Einleseprozesses in einer Datei auf, dass die Reihenfolge nicht korrekt ist, kann die Integrität des DICOM-Objekts nicht gewährleistet werden und deutet zum Beispiel auf eine modifizierte Datei hin.\\
 
 \FloatBarrier
 \subsection{VR - Value Representation}
@@ -325,11 +325,11 @@ Nach dieser ersten Klassifikation kann nochmals zwischen klassenbasierten und ob
 Die im folgenden dargestellten Entwurfsmuster bilden nur einen kleinen Teil der verfügbaren Muster ab. Diese Auswahl wird durch die Nutzung in der zu entwickelnden Software besonders hervorgehoben und genauer erläutert. Die konkrete Umsetzung wird im Kapitel \glqq \ref{architecture}. \nameref{architecture} \grqq\ detailliert dargestellt.
 
 \section{Strukturmuster}
-Strukturmuster bestimmen die Zusammensetzung der Klassen oder Objekte. Während dieser Abschlussarbeit wird im Speziellen auf das Muster \textit{Adapter} eingegangen, um externe Bibliotheken mit internen Klassen zu verknüpfen.
+Strukturmuster bestimmen die Zusammensetzung der Klassen oder Objekte. In dieser Abschlussarbeit wird im Speziellen auf das Muster \textit{Adapter} eingegangen. Damit können externe inkompatible Bibliotheken mit internen Klassen verknüpft werden und ermöglichen dadurch eine Zusammenarbeit, die ohne den Adapter nicht möglich wäre.
 
 \FloatBarrier
 \subsection*{Adapter}
-Der Adapter passt Schnittstellen an, um Zusammenarbeit inkompatibler Objekte und Klassen zu ermöglichen. Er wird vorwiegend eingesetzt wenn die Schnittstelle einer Komponente nicht zu der einer benötigten Klasse passt und somit nicht gemeinsam verwendet werden können\cite[5.1]{starke:swa}. Ein Adapter aus der realen Welt ist gut mit dem Muster zu vergleichen. Ein Monitor mit VGA-Eingang(Client) benötigt eine Grafikkarte mit einem VGA-Ausgang zur Kommunikation. Hat die Karte jedoch nur eine DVI-Buchse(zu adaptierende Klasse) wird ein Adapter(Interface Adapter) benötigt, um das Signal umzuwandelnd. Abbildung \ref{adapterpattern} zeigt das Schema des Entwurfsmusters.
+Der Adapter passt Schnittstellen an, um die Zusammenarbeit inkompatibler Objekte und Klassen zu ermöglichen. Er wird vorwiegend eingesetzt wenn die Schnittstelle einer Komponente nicht zu der einer benötigten Klasse passt und somit nicht gemeinsam verwendet werden können\cite[5.1]{starke:swa}. Ein Adapter aus der realen Welt ist gut mit dem Muster zu vergleichen. Ein Monitor mit VGA-Eingang(Client) benötigt eine Grafikkarte mit einem VGA-Ausgang zur Kommunikation. Hat die Karte jedoch nur eine DVI-Buchse(zu adaptierende Klasse) wird ein Adapter(Interface Adapter) benötigt, um das Signal umzuwandeln. Abbildung \ref{adapterpattern} zeigt das Schema des Entwurfsmusters.
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
@@ -360,7 +360,7 @@ Wenn der Zustand mehrerer Objekte von einem anderen Objektzustand abhängt, kann
 \FloatBarrier
 \subsection{Schablonenmethode}
 
-Die Schablonenmethode wird eingesetzt, wenn Teile eines Algorithmus flexibel austauschbar sein sollen. Ein Rezept für Weihnachtsgebäck könnte zum Beispiellisting folgende Vorgehensweise wie in Listing \ref{beispielgebaeck} haben. Abbildung \ref{templatemethod} zeigt das UML Diagramm dieses Entwurfsmusters. Eine Abstrakte Klasse definiert eine Vorgehensweise \textit{templateMethod()}. Im Beispiel ist das die Klasse \textit{Gebaeck}. Abgeleitete Klassen definieren die genaue Vorgehensweise des Algorithmus durch die implementierten abstrakten Methoden \textit{Operation1() - Operation3()}( im Beispiel sind das die Methoden \textit{vermengeZutaten() - backen()}). Die Backzeiten von Spekulatius und Keksen sind unterschiedlich. Durch die spezifische Umsetzung von \textit{backen()} wird die Backzeit individuell angepasst. Das bedeutet die Vorgehensweise ist identisch, die Umsetzung kann spezifisch variieren.
+Die Schablonenmethode wird eingesetzt, wenn Teile eines Algorithmus flexibel austauschbar sein sollen. Ein Rezept für Weihnachtsgebäck könnte zum Beispiel folgende Vorgehensweise wie in Listing \ref{beispielgebaeck} haben. Abbildung \ref{templatemethod} zeigt das UML Diagramm dieses Entwurfsmusters. Eine abstrakte Klasse definiert eine Vorgehensweise \textit{templateMethod()}. Im Beispiel ist das die Klasse \textit{Gebaeck}. Abgeleitete Klassen definieren die genaue Vorgehensweise des Algorithmus durch die implementierten abstrakten Methoden \textit{Operation1() - Operation3()}( im Beispiel sind das die Methoden \textit{vermengeZutaten() - backen()}). Die Backzeiten von Spekulatius und Keksen sind unterschiedlich. Durch die spezifische Umsetzung von \textit{backen()} wird die Backzeit individuell angepasst. Das bedeutet die Vorgehensweise ist identisch, die Umsetzung kann spezifisch variieren.
 \lstset{
 language=Java,
 caption={Beispiel zur Schablonenmethode},
@@ -406,8 +406,8 @@ Erzeugungsmuster übernehmen die Erstellung der Objekte zur Laufzeit. Wie beschr
 \subsection{Fabrik Methode} \label{fabrikmethod}
 
 Dieses Entwurfsmuster bietet eine Schnittstelle(Fabrik) zur Erzeugung von Objekten(Produkte). Stehen die konkreten Objekttypen erst zur Laufzeit des Programms fest, kann dieses Erzeugungsmuster eingesetzt werden, um Konstruktion und Repräsentation zu trennen\cite[3.3]{starke:swa}.\\
-Abbildung \ref{factorymethod} zeigt den Aufbau in einem UML-Diagramm. Als Beispiel kann man einen Handwerker(Client) mit seinem Lehrling(\textit{Factory}) betrachten, der Schrauben(\textit{Product}$\rightarrow$ \textit{Schraube8mm}, \textit{Schraube10mm}) zureichen muss. Der Handwerker muss nicht selbst von der Leiter steigen und im Werkzeugkasten nach der passende Schraube suchen. Er bittet den Lehrling zum Beispiel eine Schraube8mm zu bringen.
-Das Wissen über konkrete Schrauben stellt eine konkrete Fabrik dar. So ist der Lehrlich auch in der Lage andere Werkzeugkategorien zu verwalten. Jedes Werkzeug spezialisiert von AbtractProduct und das Wissen über die Kategorie von AbstractFactory.
+Abbildung \ref{factorymethod} zeigt den Aufbau in einem UML-Diagramm. Als Beispiel kann man einen Handwerker(Client) mit seinem Lehrling(\textit{Factory}) betrachten, der Schrauben(\textit{Product}$\rightarrow$ \textit{Schraube\_8mm}, \textit{Schraube\_10mm}) zureichen muss. Der Handwerker muss nicht selbst von der Leiter steigen und im Werkzeugkasten nach der passende Schraube suchen. Er bittet den Lehrling zum Beispiel eine Schraube 8mm zu bringen.
+Das Wissen über konkrete Schrauben stellt eine konkrete Fabrik dar. So ist der Lehrling auch in der Lage andere Werkzeugkategorien zu verwalten. Jedes Werkzeug spezialisiert von AbstractProduct und das Wissen über die Kategorie von AbstractFactory.
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
@@ -422,7 +422,7 @@ Das Wissen über konkrete Schrauben stellt eine konkrete Fabrik dar. So ist der 
 \subsection{Singleton}
 
 Ein Singleton-Entwurfsmuster wird eingesetzt, wenn es nur eine Instanz einer Klasse geben darf\cite[3.4]{starke:swa}. Das ist unter Anderem bei Konfigurationsklassen von Software sinnvoll, da eine Manipulation von unterschiedlichen Quellen ausgeschlossen werden kann.\\
-das Codelisting \ref{singleton} zeigt eine primitive Umsetzung in Java, die Intention eines Singletons wird allerdings deutlich. Durch die Sichtbarkeit \textit{private} des Konstruktors wird eine externe Instanziierung unterbunden. Die einzige Instanz der Klasse ist das private statische Datenelement \textit{Singleton s}. Zugriff darauf erlaubt nur die statische Methode \textit{getInstance()}.
+Das Codelisting \ref{singleton} zeigt eine primitive Umsetzung in Java, die Intention eines Singletons wird allerdings deutlich. Durch die Sichtbarkeit \textit{private} des Konstruktors wird eine externe Instanziierung unterbunden. Die einzige Instanz der Klasse ist das private statische Datenelement \textit{Singleton s}. Zugriff darauf erlaubt nur die statische Methode \textit{getInstance()}.
 
 \lstset{
 language=Java,
