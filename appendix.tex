@@ -64,7 +64,7 @@ Grundlage für die Plug-in und Rich Client Entwicklung ist eine Eclipse-Installa
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/eclipse_std.png}}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/eclipse_std.png}}
   \caption{Standardinstallation eines 32-Bit Eclipse unter Windows 8}
   \label{eclipsestd}
   \vspace{0.5cm}
@@ -76,7 +76,7 @@ Eine weitere Voraussetzung ist eine Installation der e4 Tools. Das e4 Projekt is
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/e4download.png}}
+  \fbox{\includegraphics[angle=0,width=0.8\textwidth]{./img/e4download.png}}
   \caption{e4 Projekt Builds}
   \label{e4download}
   \vspace{0.5cm}
@@ -88,7 +88,7 @@ Dieser Link (\textit{http://download.eclipse.org/ e4/ downloads/ drops/ S-0.15-2
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/repolink.png}}
+  \fbox{\includegraphics[angle=0,width=0.8\textwidth]{./img/repolink.png}}
   \caption{e4 Repository Link}
   \label{repolink}
   \vspace{0.5cm}
@@ -99,7 +99,7 @@ Nachdem der Link kopiert wurde, kann Eclipse geöffnet werden. Nach einem Klick 
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/installnew.png}}
+  \fbox{\includegraphics[angle=0,width=0.7\textwidth]{./img/installnew.png}}
   \caption{Installation neuer Software unter Eclipse}
   \label{installnew}
   \vspace{0.5cm}
@@ -110,7 +110,7 @@ Mit dem Button \textit{Add} wird nun der zuvor kopierte Link als Repository ange
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=6cm]{./img/insertrepo.png}}
+  \fbox{\includegraphics[angle=0,width=0.5\textwidth]{./img/insertrepo.png}}
   \caption{Angabe des Repository}
   \label{insertrepo}
   \vspace{0.5cm}
@@ -121,7 +121,7 @@ Nach einem korrekten Eintrag wird die Liste der verfügbaren Software, wie in Ab
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/e4install.png}}
+  \fbox{\includegraphics[angle=0,width=0.7\textwidth]{./img/e4install.png}}
   \caption{Auswahl der e4 Tools zur Installation}
   \label{e4install}
   \vspace{0.5cm}
@@ -135,8 +135,8 @@ Die Projektdaten befinden sich auf dem beiliegenden Datenträger. Das Wurzelverz
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
 \centering
 \fbox{
-\subfigure[Dialog zum Import von Eclipse-Projekten]{\includegraphics[width=6cm]{./img/import.png} \label{importproject}}
-\subfigure[Auswahl der Projekte]{\includegraphics[width=6cm]{./img/importprojects.png} \label{selectimport}}
+\subfigure[Dialog zum Import von Eclipse-Projekten]{\includegraphics[width=0.5\textwidth]{./img/import.png} \label{importproject}}
+\subfigure[Auswahl der Projekte]{\includegraphics[width=0.5\textwidth]{./img/importprojects.png} \label{selectimport}}
 }
 \caption{Vorgang zum Importieren bereits bestehender Projekte}
 \label{import}
@@ -155,19 +155,19 @@ wie in Abbildung \ref{finishedimport} zu sehen, im Package Explorer vorhanden.
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/imported.png}}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/imported.png}}
   \caption{Der Package Explorer nach dem Importvorgang}
   \label{finishedimport}
   \vspace{0.5cm}
 \end{figure}
 
-Im Projekt \textit{org.jmedikit.product} befindet sich die Datei \textit{jmedikit.product}. Nach einem Doppelklick wird die Datei im Eclipse-Editor geöffnet und zeigt die Grundlegende Anwedungsdefinition von jMediKit und den zugehörigen Einstellungen. Unter dem Tab \textit{Overview} im Bereich \textit{Test} kann jMediKit mit einem Klick auf \textit{Launch an Eclipse application} gestartet werden. Abbildung \ref{launchjmedikit} hebt die Schaltfläche hervor. Bei einem ersten Start wird jMediKit mit einer Fehlermeldung geschlossen, da von Eclipse noch nicht alle zum Start notwendigen Plug-ins geladen wurden, welche von jMediKit benötigt werden.
+Im Projekt \textit{org.jmedikit.product} befindet sich die Datei \textit{jmedikit.product}. Nach einem Doppelklick wird die Datei im Eclipse-Editor geöffnet und zeigt die Grundlegende Anwedungsdefinition von jMediKit und den zugehörigen Einstellungen. Unter dem Tab \textit{Overview} im Bereich \textit{Testing} kann jMediKit mit einem Klick auf \textit{Launch an Eclipse application} gestartet werden. Abbildung \ref{launchjmedikit} hebt die Schaltfläche hervor. Bei einem ersten Start wird jMediKit mit einer Fehlermeldung geschlossen, da von Eclipse noch nicht alle zum Start notwendigen Plug-ins geladen wurden, welche von jMediKit benötigt werden.
 
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/launch.png}}
-  \caption{Der Package Explorer nach dem Importvorgang}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/launch.png}}
+  \caption{Erster Start der Anwendung über Eclipse}
   \label{launchjmedikit}
   \vspace{0.5cm}
 \end{figure}
@@ -177,19 +177,19 @@ Unter \textit{Run} $\rightarrow$ \textit{Run Configuration} können die Plug-ins
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/addplugins.png}}
+  \fbox{\includegraphics[angle=0,width=0.6\textwidth]{./img/addplugins.png}}
   \caption{Konfigurationsfenster zu Anwendungseinstellungen und Anwendungsstart}
   \label{addplugins}
   \vspace{0.5cm}
 \end{figure}
 
-\section{Installation des Java Advanced Imaging Image I/O Tools}
+\section{Installation des Java Advanced Imaging Image I/O Tools} \label{jai_install}
 jMediKit benutzt die externe Bibliothek \glqq dcm4che\grqq, um DICOM-Objekte zu laden und die Bilder auf der Zeichenfläche anzuzeigen. \glqq dcm4che\grqq\ selbst benötigt das Paket \glqq Java Advanced Imaging Image I/O Tools\grqq. Ist das Tool noch nicht installiert, kann unter der Adresse \textit{http://download.java.net/media/jai-imageio/builds/release/1.1/}, entsprechend dem Betriebssystem und der Installationsart, die richtige Version zum Installieren gewählt werden. Ob der JDK- oder JRE-Installationstyp verwendet werden soll, hängt von der in Eclipse verwendeten Java Runtime Environment ab. Ist eine eigenständige JRE istalliert, hat diese beispielsweise den Pfad \textit{/JAVA\_HOME/jre7/} und es wird die JRE-Variante installiert. Hat die JRE zum Beispiel einen Pfad der Form \textit{/JAVA\_HOME/ jdk1.7.0\_45/jre} ist die Java Runtime Environment des Java Development Kits im Einsatz.\\
 Um zu prüfen, welche Java Runtime Environment von Eclipse verwendet wird, muss der Einstellungsdialog unter \textit{Window} $\rightarrow$ \textit{Preferences} geöffnet und der Punkt \textit{Java} $\rightarrow$ \textit{Installed JREs} gewählt werden. Abbildung \ref{jai} zeigt den Dialog mit einer JRE und dem Pfad C:$\backslash$Program Files (x86)$\backslash$Java$\backslash$jre7.
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/jaiimageio.png}}
+  \fbox{\includegraphics[angle=0,width=0.5\textwidth]{./img/jaiimageio.png}}
   \caption{Die von Eclipse verwendeten Java Runtime Environments}
   \label{jai}
   \vspace{0.5cm}
@@ -207,7 +207,7 @@ Um einen neuen Build von jMediKit zu veröffentlichen, muss die Datei \textit{jm
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/jmedikit_build.png}}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/jmedikit_build.png}}
   \caption {Mit jmedikit.product den Build erstellen}
   \label{build}
   \vspace{0.5cm}
@@ -218,7 +218,7 @@ Es öffnet sich ein Fenster mit diversen Optionen(Abbildung \ref{buildoptions}).
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/jmedikit_buildoptions.png}}
+  \fbox{\includegraphics[angle=0,width=0.6\textwidth]{./img/jmedikit_buildoptions.png}}
   \caption {Optionen zur Erstellung des Builds}
   \label{buildoptions}
   \vspace{0.5cm}
@@ -306,7 +306,7 @@ Nachdem Eclipse geöffnet wurde, kann über \textit{File} $\rightarrow$ \textit{
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=6cm]{./img/plugin_newprojekt.png}}
+  \fbox{\includegraphics[angle=0,width=0.5\textwidth]{./img/plugin_newprojekt.png}}
   \caption{Dialog zum Anlegen eines neuen Javaprojekts}
   \label{newproject}
   \vspace{0.5cm}
@@ -317,7 +317,7 @@ Mit einem Klick auf \textit{Next} wird man zu den nächsten Projektoptionen, wie
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=6cm]{./img/plugin_binfolder.png}}
+  \fbox{\includegraphics[angle=0,width=0.5\textwidth]{./img/plugin_binfolder.png}}
   \caption{Auswahl des Output-Ordners}
   \label{binfolder}
   \vspace{0.5cm}
@@ -331,7 +331,7 @@ Um die SimpleITK.jar einzubinden gibt es zwei Möglichkeiten. Wird mit dem Build
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=6cm]{./img/plugin_libs.png}}
+  \fbox{\includegraphics[angle=0,width=0.5\textwidth]{./img/plugin_libs.png}}
   \caption{Auswahl der externen Bibliotheken}
   \label{libs}
   \vspace{0.5cm}
@@ -342,7 +342,7 @@ Mit einem Klick auf \textit{Finish} werden die Einstellungen übernommen und das
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=10cm]{./img/plugin_workspace.png}}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/plugin_workspace.png}}
   \caption{Der Eclipse Workspace nach Anlegen des Projekts}
   \label{workspace}
   \vspace{0.5cm}
@@ -353,7 +353,7 @@ Mit einem Rechtsklick auf den Ordner \textit{src} im Project Explorer, gefolgt v
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=6cm]{./img/plugin_class.png}}
+  \fbox{\includegraphics[angle=0,width=0.5\textwidth]{./img/plugin_class.png}}
   \caption{Anlegen der Hauptklasse des Plug-ins}
   \label{class}
   \vspace{0.5cm}
@@ -364,7 +364,7 @@ Nach dem Erstellen der Klasse kann mit dem Entwickeln des Plug-ins begonnen werd
 \lstset{
 language=Java,
 caption={Implementierung eines HalloWelt-Plug-ins},
-label=singleton,
+label=helloworldplugin,
 xleftmargin=1em,
 xrightmargin=1em,
 numbers=left,

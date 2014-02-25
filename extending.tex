@@ -3,10 +3,12 @@
 
 Das Java Medical Imaging Toolkit bietet sowohl dem Enwickler, als auch dem Anwender Spielraum, die Anwendung zu erweitern. Dieses Kapitel beschreibt die Entwicklung verschiedener Plug-ins in zwei- und dreidimensionalem Raum. Zusätzlich zeigt der Entwurf eines neuen Moduls und eine Implementierung eines Werkzeugs wie die Basisfunktionen von jMediKit erweitert werden.
 
+\FloatBarrier
 \section{Entwicklung von Plug-ins}
 
 Die Entwicklung von Plug-ins ermöglicht eine Funktionserweiterung der Anwendung, ohne einen neuen Buildprozess. Bei Programmstart wird der in der Anwendung angegebene Plug-in-Ordner nach allen verfügbaren Erweiterungen durchsucht und eingebunden. Damit Plug-ins vom Programm korrekt gefunden werden können, müssen diverse Konventionen bei der Entwicklung beachtet werden, die im nächsten Abschnitt erläutet werden.
 
+\FloatBarrier
 \subsection{Konventionen}
 Damit der Importvorgang der Plug-ins ohne Komplikationen verläuft, ist die Anwendung auf die Konsistenz der Plug-ins angwiesen. Die folgenden Konventionen bestimmen diese Konsistenz.
 
@@ -155,13 +157,14 @@ public class __3dPlugIn extends APlugIn2D{
 
 
 \FloatBarrier
+\pagebreak
 \subsection{Nützliche Funktionen}
 
 Neben den Bilddaten stellt jMediKit weitere Funktionen für die Plug-in-Entwicklung zur Verfügung. So können DICOM-Objekte und ganze Bäume zusätzlich geladen werden und Tags und Bilder aus den Objekten zur Verarbeitung gelesen werden. Die dynamische Parameterübergabe stellt eine weitere Funktion dar, die es ermöglicht, eigenen Optionsdialoge für Plug-ins zu erstellen. In folgender Liste werden diese Features genauer erläutert.
 
 \subsubsection{Erstellung eines Bildes vom Typ AImage}
 Bilder können unter jMediKit auf zwei Arten erzeugt werden. Mit expliziter Bilderzeugung kann das Objekt entsprechend dem gewünschten Bildtyp direkt instantiiert werden.\\
-In vielen Fällen ist der Typ des Parameterbildes in \textit{process} unbekannt und der Anwender ist von einer impliziter Objekterzeugung abhängig. Mit der statischen Methode \textit{getAbstractImage} der Klasse \textit{SimpleImageFactory} kann der Bildtyp eines Referenzbildes übergeben werden. Entsprechend der Referenz wird ein neues Bildobjekt mit passendem Typ zurückgegeben. Listing \ref{ieimg} zeigt jeweils ein Beispiel der Objekterzeugung.
+In vielen Fällen ist der Typ des Parameterbildes in \textit{process} unbekannt und der Anwender ist von einer impliziter Objekterzeugung abhängig. Mit der statischen Methode \textit{get\-AbstractImage} der Klasse \textit{SimpleImageFactory} kann der Bildtyp eines Referenzbildes übergeben werden. Entsprechend der Referenz wird ein neues Bildobjekt mit passendem Typ zurückgegeben. Listing \ref{ieimg} zeigt jeweils ein Beispiel der Objekterzeugung.
 
 \lstset{
 language=Java,
@@ -267,7 +270,7 @@ DicomObject obj = (DicomObject) tree.lookUpDicomTreeItem("UID");
 \end{figure}
 
 \subsubsection{DICOM-Tags aus DICOM-Objekten auslesen}
-Neue DICOM-Objekte können entweder durch das Auslesen eines DICOM-Baumes, oder durch die explizite Instantiierung durch Angabe eines Dateipfads erstellt werden. Zuerst wird das Objekt entsprechend der Zeile $5$ oder Zeile $9$ wie in Listing \ref{readObjs} erzeugt. Die Klasse \textit{DicomObject} stellt unter anderem die Methode \textit{getTagData}(in Zeile $14$) zur Verfügung und erhält als Parameter eine Stringrepräsentation des Tags und den Typ des Rückgabewertes. Alle möglichen Rückgabe-Typen sind in \textit{DicomObject} als Konstanten festgelegt und müssen entsprechend der Value Representation des Tags gesetzt werden. \textit{PatientName} hat als VR den Wert \textit{PN} und wird als Zeichenkette behandelt. Dadurch wird als Rückgabetyp \textit{DicomObject.RETURN\_STRING} gewählt.
+Neue DICOM-Objekte können entweder durch das Auslesen eines DICOM-Baumes, oder durch die explizite Instantiierung durch Angabe eines Dateipfads erstellt werden. Zuerst wird das Objekt entsprechend der Zeile $5$ oder Zeile $9$ wie in Listing \ref{readObjs} erzeugt. Die Klasse \textit{DicomObject} stellt unter anderem die Methode \textit{getTagData}(in Zeile $14$) zur Verfügung und erhält als Parameter eine Stringrepräsentation des Tags und den Typ des Rückgabewertes. Alle möglichen Rückgabe-Typen sind in \textit{DicomObject} als Konstanten festgelegt und müssen entsprechend der Value Representation des Tags gesetzt werden. \textit{Patient\-Name} hat als VR den Wert \textit{PN} und wird als Zeichenkette behandelt. Dadurch wird als Rückgabetyp \textit{DicomObject.RETURN\_STRING} gewählt.
 
 \lstset{
 language=Java,
@@ -351,16 +354,27 @@ Die Abbildung \ref{dialog_example} zeigt die visuelle Darstellung des individuel
 \end{figure}
 
 \FloatBarrier
-\subsection{Der Laplace Operator}
+\subsection{Der Laplace-Operator}
 
-Der Laplace Operator wird zur Schärfung von Bildern eingesetzt und dient als Beispiel für die Umsetzung eines zweidimensionalen Plug-ins. Die \textit{process}-Methode aus Listing \ref{laplace} zeigt eine Implementierung des Filters. Der Parameter \textit{arg0} enthalt die aktuelle Bildschicht des aktiven ImageViews.\\
+Der Laplace-Operator wird zur Schärfung von Bildern eingesetzt und dient als Beispiel für die Umsetzung eines zweidimensionalen Plug-ins. Die \textit{process}-Methode aus Listing \ref{laplace} zeigt eine Implementierung des Filters. Der Parameter \textit{arg0} enthalt die aktuelle Bildschicht des aktiven ImageViews.\\
 In Zeile $6$ wird mit Hilfe der einfachen Fabrikfunktion das Bild für die Filterergebnisse erzeugt, da der Bildtyp von \textit{arg0} nicht explizit bekannt ist. In Zeile $16$ wird das Quellbild \textit{arg0} durchlaufen und gefiltert. In Zeile $31$ wird \textit{copySignificantAttributes} aufgerufen. Damit werden essentielle Bildeigenschaften vom Parameterbild in das aufrufende Bild kopiert. Zu den Eigenschaften zählen zum Beispiel \textit{WindowWidth}, \textit{WindowCenter} oder \textit{ImagePosition}.\\
 Sind diese Werte vom Anwender im Rückgabewert von \textit{process} nicht gesetzt, werden die Eigenschaften von \textit{arg0} in das Ergebnisbild von jMediKit kopiert. Damit wird eine korrekte Anzeige im ImageView garantiert.\\
 Nach der Rückgabe des geschärften Bildes, wird es von der Anwendung angezeigt.
 
+\begin{figure*}[htb]
+%\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
+\centering
+\fbox{
+\subfigure[Anzeige des ungefilterten Bildes im \textit{ImageViewComposite}]{\includegraphics[width=0.48\textwidth]{./img/laplace.png} \label{laplace:unfiltered}}
+\subfigure[Anzeige des Bildes, nachdem der Laplace-Operator angewendet wurde]{\includegraphics[width=0.48\textwidth]{./img/laplace_filtered.png} \label{laplace:filtered}}
+}
+\caption{Filterung eines medizinischen Bildes mit dem Laplace-Operator}
+\label{laplace_filter}
+\end{figure*}
+
 \lstset{
 language=Java,
-caption={Implementierung der process-Methode des Laplace Operators},
+caption={Implementierung der process-Methode des Laplace-Operators},
 label=laplace,
 xleftmargin=1em,
 xrightmargin=1em,
@@ -410,13 +424,13 @@ public AImage process(AImage arg0) {
 \end{figure}
  
 \FloatBarrier
-\subsection{Der Sobel Operator}
+\subsection{Der Sobel-Operator}
 
-Der Sobeloperator dient als Kantendetektor zur Visualisierung harter Intensitätsübergänge in Bildern. Listing \ref{sobel} zeigt die Implementierung von \textit{process}\footnote{Zur Übersichtlichkeit wurde ein Teil des Quelltextes ausgelassen. Der vollständige Code befindet sich auf dem beiliegenden Datenträger.}.
+Der Sobel-Operator dient als Kantendetektor zur Visualisierung harter Intensitätsübergänge in Bildern. Listing \ref{sobel} zeigt die Implementierung von \textit{process}\footnote{Zur Übersichtlichkeit wurde ein Teil des Quelltextes ausgelassen. Der vollständige Code befindet sich auf dem beiliegenden Datenträger.}.
 
 \lstset{
 language=Java,
-caption={Implementierung der process-Methode des Sobel Operators},
+caption={Implementierung der process-Methode des Sobel-Operators},
 label=sobel,
 xleftmargin=1em,
 xrightmargin=1em,
@@ -460,6 +474,17 @@ public List<AImage> process(List<AImage> arg0, int arg1) {
 
 Sobel wird im Beispiel als 3D-Plug-in realisiert, wie die Parameter der Methode zeigen. Der wesentliche Unterschied zur Laplace-Implementierung liegt in Zeile $9$, indem der gesamte Bildstapel durchlaufen wird und der Filter auf den Ebenen x, y und z arbeitet.
 
+\begin{figure*}[htb]
+%\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
+\centering
+\fbox{
+\subfigure[Anzeige des ungefilterten Bildes im \textit{ImageViewComposite}]{\includegraphics[width=0.48\textwidth]{./img/laplace.png} \label{sobel:unfiltered}}
+\subfigure[Anzeige einer Bildschicht, nachdem der Sobel-Operator auf den Bildstapel angewendet wurde]{\includegraphics[width=0.48\textwidth]{./img/sobel_filtered.png} \label{sobel:filtered}}
+}
+\caption{Filterung eines medizinischen Bildes mit dem Sobel-Operator}
+\label{sobel_filter}
+\end{figure*}
+
 \FloatBarrier
 \subsection{Der ConnectedThresholdImageFilter aus dem SimpleITK}
 
@@ -492,6 +517,18 @@ backgroundcolor=\color{lgrey},
 \end{figure}
 
 Listing \ref{connproc} zeigt die Implementierung des Filters. Die Liste in Zeile $2$ dient zur Speicherung der segmentierten Bilder. Da der ConnectedThresholdImageFilter ein 3D-Plug-in ist, wird in Zeile $4$ der Bildstapel durchlaufen. Folgend werden, falls vorhanden, die Saatpunkte der aktuellen Schicht gelesen(Zeile $5$) und anschließend aus dem Bild ein SimpleITK-Bild erzeugt(Zeile $7$). In Zeile $8$ erfolgt die Instantiierung des Filters selbst. Damit der Filter arbeiten kann, müssen einige Werte gesetzt werden. Die Zeilen $10-12$ legen die Schwellwerte aus dem Dialog fest und es wird ein Wert bestimmt, den zu ersetzende Pixel zugewiesen bekommen. $14-23$ dienen dem Auslesen der Saatpunkte. Jeder definierte Punkt wird dem Filter zugewiesen. Innerhalb des SimpleITK werden die Punkte als \textit{VectorUInt32} repräsentiert. Mit dem zweidimensionalen Vektor werden die Saatpunkte konvertiert. Zeile $23$ führt den Algorithmus mit der \textit{execute}-Methode aus. Nach einer Konvertierung in ein \textit{AImage} in $24$, wird das Ergebnisbild der Liste hinzugefügt. Ist der komplette Bildstapel abgearbeitet, werden die segmentierten Daten im aktiven ImageView angezeigt.
+
+\begin{figure*}[htb]
+%\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
+\centering
+\fbox{
+\subfigure[Anzeige des ungefilterten Bildes im \textit{ImageViewComposite}. Die rot markierten Punkt sind die ausgewählten Saatpunkte.]{\includegraphics[width=0.41\textwidth]{./img/ctf.png} \label{ctf:unfiltered}}
+\subfigure[Anzeige einer Schicht der segmentierten Struktur, nachdem der ConnectedThresholdImageFilter auf den Bildstapel angewendet wurde]{\includegraphics[width=0.41\textwidth]{./img/ctf_filtered.png} \label{ctf:filtered}}
+}
+\caption{Segmentierung einer Struktur mit dem ConnectedThresholdImageFilter}
+\label{ctf_filter}
+\end{figure*}
+
 \lstset{
 language=Java,
 caption={Implementierung der process-Methode des ConnectedThresholdImageFilters},
@@ -539,11 +576,11 @@ public List<AImage> process(List<AImage> arg0, int arg1) {
 Anders als die Plug-ins werden Erweiterungen der Anwendung mit dem Application Model erst nach einem erneuten Buildprozess integriert. Dadurch richtet sich die Kategorie der Modularisierung an Entwickler, die jMediKit gezielt erweitern.\\
 Als Beispiel für eine modulare Erweiterung soll im \textit{PartStack} des \textit{DicomBrowsers} ein neuer \textit{Part} hinzugefügt werden, der theoretisch alle verfügbaren PACS im Netzwerk anzeigt. Implementiert wird nur eine minimale Oberfläche.\\
 Bevor die Struktur erweitert werden kann, muss entsprechend der Anleitung in Anhang \ref{install_eclipse} die Eclipse-Installation vorbereitet sein. Sind die drei Projekte im \textit{Project Explorer} vorhanden, kann mit der Erweiterung begonnen werden.\\
-Im Projekt \textit{org.jmedikit.plugin} befindet sich die Datei \textit{Application.e4xmi}\footnote{Die XML-Datei Application.e4xmi kann auch direkt im Quelltext bearbeitet werden. Die Darstellung in Eclipse erhöht die Benutzerfreundlichkeit zur Anpassung der Werte}. Darin sind alle strukturellen Informationen zu der Anwendungsoberfläche, Menüs, Handler, Commands und die Referenzen auf die implementierenden Klassen hinterlegt. Mit einem Doppelklick kann diese geöffnet werden und es zeigt sich ein Fenster wie in Abbildung \ref{e4xmi}. Die linke Spalte zeigt die Applikationsstruktur und rechts sind die entsprechenden Eigenschaften des gewählten Elements zu sehen. Ab dem Element \textit{Windows} im Strukturbaum werden die Anwendungsteile angezeigt. Dieser Teilbaum entspricht der Abbildung \ref{hierarchy} aus Kapitel \ref{architecture}. Da der \textit{PartStack} in dem der \textit{DicomBrowser} liegt erweitert werden soll, muss bis zu diesem Knoten navigiert werden. Der richtige \textit{PartStack} hat die Id \textit{org.jmedikit.plugin.dicombrowserStack}.
+Im Projekt \textit{org.jmedikit.plugin} befindet sich die Datei \textit{Application.e4xmi}\footnote{Die XML-Datei Application.e4xmi kann auch direkt im Quelltext bearbeitet werden. Die Darstellung in Eclipse erhöht die Benutzerfreundlichkeit zur Anpassung der Werte}. Darin sind alle strukturellen Informationen zu der Anwendungsoberfläche, Menüs, Handler, Com\-mands und die Referenzen auf die implementierenden Klassen hinterlegt. Mit einem Doppelklick kann diese geöffnet werden und es zeigt sich ein Fenster wie in Abbildung \ref{e4xmi}. Die linke Spalte zeigt die Applikationsstruktur und rechts sind die entsprechenden Eigenschaften des gewählten Elements zu sehen. Ab dem Element \textit{Windows} im Strukturbaum werden die Anwendungsteile angezeigt. Dieser Teilbaum entspricht der Abbildung \ref{hierarchy} aus Kapitel \ref{architecture}. Da der \textit{PartStack} in dem der \textit{DicomBrowser} liegt erweitert werden soll, muss bis zu diesem Knoten navigiert werden. Der richtige \textit{PartStack} hat die Id \textit{org.jmedikit.plugin.dicombrowserStack}.
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/part_exmi.png}}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/part_exmi.png}}
    \caption{Die Datei Application.e4xmi}
   \label{e4xmi}
   \vspace{0.5cm}
@@ -554,7 +591,7 @@ Nach der Auswahl des \textit{PartStack}-Elements sind rechts dessen Eigenschafte
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/part_add.png}}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/part_add.png}}
    \caption{Einfügen der Part-Struktur}
   \label{partadd}
   \vspace{0.5cm}
@@ -565,8 +602,8 @@ Folgend öffnen sich rechts die Eigenschaften des neu angelegten Parts. Wichtige
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/part_part.png}}
-   \caption{Einfügen der Part-Struktur}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/part_part.png}}
+   \caption{Eigenschaften der Part-Struktur}
   \label{partpart}
   \vspace{0.5cm}
 \end{figure}
@@ -576,13 +613,11 @@ Die zu erstellende Klasse repräsentiert neben der Benutzeroberfläche auch die 
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=6cm]{./img/part_class.png}}
+  \fbox{\includegraphics[angle=0,width=0.5\textwidth]{./img/part_class.png}}
    \caption{Erstellen der Klasse}
   \label{partclass}
   \vspace{0.5cm}
 \end{figure}
-
-Listing \ref{partexample} zeigt eine Beispielimplementierung des \textit{Parts}. Die Annotation \textit{@PostConstruct} sorgt dafür, dass die Methode automatisch nach dem Instantiieren des Objekts ausgelöst wird. Diese enthält als Paramter ein \textit{Composite} und stellt den Einhängepunkt für die weitere Benutzeroberfläche dar.
 
 \lstset{
 language=Java,
@@ -595,26 +630,20 @@ backgroundcolor=\color{lgrey},
 }  
 \begin{figure}[htbp]
 \begin{lstlisting}[frame=leftline]
-//imports
-
 public class DicomNetwork {
 
   @PostConstruct
   public void postConstruct(Composite parent) {
-	
     //definiert das Layout des Elternelements
     //2 Spalten mit gleicher Breite
     GridLayout pGrid = new GridLayout(2, true);
     GridData parentData = new GridData(GridData.FILL_HORIZONTAL);
-    
     parent.setLayout(pGrid);
     parent.setLayoutData(parentData);
 
     //GUI
-
     //Suchfeld
     Text search = new Text(parent, SWT.BORDER);
-    
     //Suchbutton
     Button button = new Button(parent, SWT.NONE);
     button.setText("Suche PACS");	
@@ -622,13 +651,13 @@ public class DicomNetwork {
 }
 \end{lstlisting}
 \end{figure}
-
+Listing \ref{partexample} zeigt eine Beispielimplementierung des \textit{Parts}. Die Annotation \textit{@PostConstruct} sorgt dafür, dass die Methode automatisch nach dem Instantiieren des Objekts ausgelöst wird. Diese enthält als Paramter ein \textit{Composite} und stellt den Einhängepunkt für die weitere Benutzeroberfläche dar.\\
 Abbildung \ref{partfinal} zeigt den neuen \textit{Part} in der linken Spalte der Anwendung. Damit wurde dem \textit{PartStack} in dem der \textit{DicomBrowser} enthalten ist das neue \textit{DicomNetwork} eingefügt.
 
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/part_final.png}}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/part_final.png}}
    \caption{Anzeige des Parts im PartStack}
   \label{partfinal}
   \vspace{0.5cm}
@@ -644,7 +673,7 @@ Das Menü selbst befindet sich im Applikationsbaum \textit{Window} unter dem Ele
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/tool_menu.png}}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/tool_menu.png}}
    \caption{Die Werkzeugleiste im Application Model}
   \label{toolmenu}
   \vspace{0.5cm}
@@ -656,29 +685,28 @@ Die Implementierung der Befehle finden in den \textit{Handlern} statt. Diese sin
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=6cm]{./img/tool_handlerclass.png}}
+  \fbox{\includegraphics[angle=0,width=0.5\textwidth]{./img/tool_handlerclass.png}}
    \caption{Erstellung einer Klasse für die Handlerimplementierung}
   \label{tool_handlerclass}
   \vspace{0.5cm}
 \end{figure}
 
-Im nächsten Schritt erfolgt das Hinzufügen eines \textit{HandledToolItem} zu dem Element unter \textit{Window} $\rightarrow$ \textit{TrimBars} $\rightarrow$ \textit{WindowTrim - Top} $\rightarrow$ \textit{ToolBar}. Die Reihenfolge der Liste entspricht der Darstellung in der Anwendung. Unter den Einstellungen muss \textit{Id}, \textit{Label} und \textit{Command} mit Werten belegt werden. Als \textit{Type} muss die Option \textit{Radio} gewählt werden, da genau ein Werkzeug aktiv ausgewählt sein darf. Unter dem Punkt \textit{IconURI} wird bei Bedarf ein Bild angegeben. Abbildung \ref{tool_handleditem} zeigt die gesetzten Einstellungen.
+Im nächsten Schritt erfolgt das Hinzufügen eines \textit{HandledToolItem} zu dem Element unter \textit{Window} $\rightarrow$ \textit{TrimBars} $\rightarrow$ \textit{WindowTrim - Top} $\rightarrow$ \textit{ToolBar}. Die Reihenfolge der Liste entspricht der Darstellung in der Anwendung. Unter den Einstellungen muss \textit{Id}, \textit{Label} und \textit{Command} mit Werten belegt werden. Als \textit{Type} muss die Option \textit{Radio} gewählt werden, da genau ein Werkzeug aktiv ausgewählt sein darf. Unter dem Punkt \textit{IconURI} wird bei Bedarf ein Bild angegeben. Abbildung \ref{tool_handleditem} zeigt die gesetzten Einstellungen und \ref{tool_menunew} die neue Werkzeugleiste mit dem \textit{ROITool} als erweiterten Eintrag.
 
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/tool_handleditem.png}}
+  \fbox{\includegraphics[angle=0,width=0.8\textwidth]{./img/tool_handleditem.png}}
    \caption{Einstellungen des neuen Menüpunktes}
   \label{tool_handleditem}
   \vspace{0.5cm}
 \end{figure}
 
-Abbildung \ref{tool_menunew} zeigt die neue Werkzeugleiste mit dem \textit{ROITool} als erweiterten Eintrag.
 
 \begin{figure}[H]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/tool_menunew.png}}
+  \fbox{\includegraphics[angle=0,width=0.8\textwidth]{./img/tool_menunew.png}}
    \caption{Anzeige der erweiterten Werkzeugleiste}
   \label{tool_menunew}
   \vspace{0.5cm}
@@ -803,6 +831,8 @@ Bei jeder Mausbewegung wird geprüft, ob eine Maustaste gedrück wird. Ist dies 
 Wird die Maustaste betätigt, werden die Koordinaten auf $0$ zurückgesetzt, damit eine neue Berechnung beginnen kann. Ohne Zurücksetzung wird die zuletzt markierte ROI nochmal auf die Zeichenfläche gemalt und bleibt bis zur ersten Mausbewegung sichtbar.
 \item \textbf{MouseUp} \\
  Befindet sich nach dem Loslassen der Maustaste der Start- und Endpunkt des Cursors innerhalb des Bildes, wird eine \textit{Region Of Interest} berechnet. Dazu werden zuerst die Bildkoordinaten der beiden Punkte ermittelt. Darauf folgt eine Normalisierung der Koordinaten und ein Eintrag der im Anschluss erzeugten ROI im Bild.
+
+\pagebreak
 \item \textbf{PostCalculation} \\
 Nach der Werteberechnung wird das Rechteck der potentiellen ROI auf der Zeichenfläche dargestellt.
 \end{itemize}

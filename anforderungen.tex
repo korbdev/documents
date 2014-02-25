@@ -2,12 +2,15 @@
 \addthumb{Anforderungen an das zu entwickelnde Programm}{\huge{\textbf{\thechapter.}}}{white}{haw_rot} 
 
 %\section{Anforderungen an eine modulare und erweiterbare Bildverarbeitungssoftware}\label{einleitung:anforderungen}
+
+\FloatBarrier
 \section{Einführung}
 %Die Software soll grundsätzlich sowohl die Eigenschaften der Modularität, als auch der Erweiterbarkeit besitzen. Die Architektur soll offen für Weiterentwicklungen des Grundsystems sein, damit %neue Funktionen leicht eingebaut werden können. Die Variabilität der Software durch Hilfe von Erweiterungen ist wichtig für Lehre und Forschung, um in der Versuchsdurchführung möglichst %uneingeschränkt im Bereich der Software zu sein. Bei Bedarf kann eine individueller Ansatz implementiert und in das Programm integriert werden.\\
 
 In diesem Kapitel werden die Anforderungen an eine modulare und erweiterbare Bildverarbeitungssoftware gezeigt. In mehreren Besprechungen der Stakeholder\footnote{Ein Stakeholder beschreibt einen Teilnehmer eines Projektes.} wurden die Anforderungen ermittelt. Diese werden in die beiden Bereiche \textit{Nichtfunktionale Anforderungen} und \textit{Funktionale Anforderungen} eingeteilt. Nach einer Evaluierung bestehender Anwendungen wird entschieden, ob eine eigene Software implementiert werden soll.
 
 
+\FloatBarrier
 \section{Nichtfunktionale Anforderungen}
 
 Nach Balzert \cite[9]{balzert:swa} beschreiben nichtfunktionale Anforderungen, \textit{wie} ein System arbeitet. Sie üben besonderen Einfluss auf die Softwarearchitektur eines Systems aus.
@@ -30,6 +33,7 @@ Während der Besprechungen mit dem Laborleiter konnten folgende nichtfunktionale
 	Medizinische Bilddaten besitzen neben den rohen Pixeldaten noch eine Vielzahl zusätzlicher Information, wie Patientendaten oder Seriennummern der Aufnahmen und benötigen eine spezielle Verarbeitung. Anders als übliche Grauwertbilder besitzen DICOM-Pixeldaten nicht zwingend 255 sondern bis zu $2^{16}$ verschiedene Grauwerte.
 \end{itemize}
 
+\FloatBarrier
 \section{Funktionale Anforderungen}
 
 Dieser Anforderungstyp legt fest, \textit{was} das Programm leisten soll und bestimmt Funktionen und Verhalten \cite[9]{balzert:swa}. Sie überschneiden sich oder stehen in Beziehung zu den nichtfunktionalen Anforderungen.
@@ -62,6 +66,7 @@ Dieser Anforderungstyp legt fest, \textit{was} das Programm leisten soll und bes
 % Seitenrand positioniert, die Fußnote erhält die Nummer 3
 % Der Fußnotenbefehl wird nochmal geschützt
 
+\FloatBarrier
 \section{Evaluierung bestehender Software}
 
 Frei verfügbare Software im medizinischen Bereich beschränkt sich oft auf die vorgegebenen Funktionen des Programms und bietet keine Möglichkeiten der Erweiterung. Zusätzlich liegt der Fokus auf der Darstellung der Patientenbilder und weniger an den Algorithmen zur Bildverarbeitung. Abbildung \ref{radiant} zeigt den Screenshot des DicomViewers RadiAnt\footnote{http://www.radiantviewer.com/de/}. Die Bilder können einzeln, oder wie auf dem Bild zu sehen, im Bezug zueinander betrachtet werden. Die Werkzeugleiste oben ermöglicht die für DICOM-Bilder typischen Operationen.
@@ -70,13 +75,14 @@ Zwar gibt es auf dem Markt auch Open-Source Lösungen mit Schwerpunkt auf Bildve
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=9cm]{./img/RadiAnt.png}}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/RadiAnt.png}}
    \caption{RadiAnt - DicomViewer}
   \label{radiant}
   \vspace{0.5cm}
 \end{figure}
 
 
+\FloatBarrier
 \section{Slicer 3D}
 
 Slicer 3D\footnote{http://www.slicer.org} (Abbildung \ref{slicer3d}) ist ein umfassendes Werkzeug für die medizinische Bildverarbeitung im zwei- und dreidimensionalen Raum. Die quelloffene Software bietet Möglichkeiten eigene Erweiterungen zu implementieren. Slicer verwendet als Bibliotheken unter anderem das  Insight Segmentation and Registration Toolkit und das Visualization Toolkit\footnote{ Insight Segmentation and Registration Toolkit(ITK) und Visualization Toolkit (VTK) sind umfassende in C++ entwickelte Programmbibliotheken zur medizinischen Bildverarbeitung und Visualisierung.}. Die Erweiterungen werden in Python implementiert und dienen zur Anwendung der Bildverarbeitungsalgorithmen. Es fehlt die Möglichkeit der modularen Erweiterung bezüglich neuer Funktionen. Das Labor setzt in naher Zukunft ein PACS ein und die zu entwickelnde Software soll Möglichkeiten bieten, dieses System später zu integrieren, um DICOM-Daten über das Netzwerk zu beziehen.
@@ -85,8 +91,8 @@ Slicer 3D\footnote{http://www.slicer.org} (Abbildung \ref{slicer3d}) ist ein umf
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=9cm]{./img/Screenshot-3DSlicer.png}}
-  \caption{Screenshot Slicer 3D \cite{slicer:screen}}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/Screenshot-3DSlicer.png}}
+  \caption{Screenshot des Programms Slicer 3D \cite{slicer:screen}}
   \label{slicer3d}
   \vspace{0.5cm}
 \end{figure}
@@ -136,6 +142,7 @@ Für eine Software die an der Hochschule Landshut für Lehre sowie Forschung im 
 \end{itemize} 
 \end{comment}
 
+\FloatBarrier
 \section{Ein Vergleich der verfügbaren Anwendung mit den Anforderungen der Stakeholder}
 
 \begin{table}

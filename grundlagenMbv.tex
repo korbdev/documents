@@ -10,13 +10,13 @@ Abbildung \ref{communication} illustriert das Zusammenspiel des DICOM-Standards 
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=10cm]{./img/communication_neu.pdf}}
+  \fbox{\includegraphics[angle=0,width=0.8\textwidth]{./img/communication_neu.pdf}}
   \caption{Kommunikationsprozess von Aufnahme zur Verarbeitung \cite[S. 19]{pianykh:dicom}}
   \label{communication}
   \vspace{0.5cm}
 \end{figure}
 
-%\pagebreak
+\pagebreak
 DICOM\footnote{Unter ftp://medical.nema.org/medical/dicom/ lässt sich der aktuelle Standard abrufen. Die Kapitel befinden sich im Ordner zum jeweiligen Jahr der Veröffentlichung. Aktuell sind die Dokumente von 2011.} ist daher nicht nur ein einzelner Standard, sondern verknüpft die standardisierte 
 \begin{itemize}
 \item Kommunikation
@@ -26,6 +26,7 @@ DICOM\footnote{Unter ftp://medical.nema.org/medical/dicom/ lässt sich der aktue
 %Im Rahmen dieser Abschlussarbeit liegt der Fokus auf den Bilddaten, daher wird auf die Kommunikation- und Speicheraspekte nicht im Detail eingegangen.
 Im Rahmen dieser Abschlussarbeit wird zur Softwareentwicklung nur der Standard der Bilddaten verwendet. Daher wird in den Grundlagen nur auf die bildspezifischen Eigenschaften von DICOM eingegangen und die Erläuterung von Kommunikation und Speicherung vernachlässigt.
 
+\FloatBarrier
 \subsection{Die DICOM Information Object Definitionen} \label{grundlagen:iod}
 Bevor die Pixeldaten genauer betrachtet werden können, muss der prinzipielle Aufbau der DICOM-Objekte beschrieben werden. Teil 3 des Standards\cite[A.1.2]{dicom:iod} zeigt den relationalen Aufbau der DICOM-Objekte. Vereinfacht können die elementaren Informationsobjekte in drei Teile aufgeteilt werden.
 
@@ -52,8 +53,12 @@ Aus diesen vier elementaren Objekten ergibt sich folgende Informationsstruktur f
 \end{figure}
 
 Der DICOM-Viewer OsiriX bietet auf der Herstellerseite\footnote{http://www.osirix-viewer.com/datasets/} die Möglichkeit Testdaten zu beziehen. Betrachtet man die Repräsentation der Daten auf der Festplatte, hält sich die Ordnerstruktur an obiges ER-Modell.\\
-Abbildung \ref{filesystemrep} zeigt eine schematische Darstellung der Dateien. Die Beispieldaten von OsiriX bestehen aus einem Patienten, dem eine Studie sowie zwei Serien à 100 Aufnahmen zugeordnet werden.
 
+\pagebreak
+Abbildung \ref{filesystemrep} zeigt eine schematische Darstellung der Dateien. Die Beispieldaten von OsiriX bestehen aus einem Patienten, dem eine Studie sowie zwei Serien à 100 Aufnahmen zugeordnet werden.
+Bei näherer Betrachtung fällt auf, dass die Dateinamen beider Serien des Patienten identisch sind. Eine korrekte Zuordnung von DICOM-Dateien zur Serie ist daher nicht immer garantiert. Unabhängig von einer Repräsentation im Dateisystem oder Pfadangaben in der Datenbank eines PACS ist das Vertrauen auf Dateipfade unsicher, da durch eine einfache Dateimanipulation die Zuordnung nicht mehr hergestellt werden kann.\\
+Um eine zuverlässige Verknüpfung zu gewährleisten besitzt jeder Patient\footnote{Die Identifikationsnummern von Patienten sind meist nur innerhalb einer Institution oder Krankenhauses einzigartig, da diese manuell vergeben werden können\cite[5.6.2]{pianykh:dicom}.}, jede Studie und jede Serie eine eindeutige Identifikationsnummer. Diese Art der Informationen wird in den einzelnen Dateien mit Hilfe von Einträgen aus dem DICOM Data Dictionary\cite{dicom:dd} hinterlegt. Die DICOM-Dateien beschreibt Pianykh \cite[S. 47]{pianykh:dicom}
+als eine Kopie im Speicher vom tatsächlichen DICOM-Objekt.
 \tikzstyle{every node}=[draw=black,thick,anchor=west]
 %\tikzstyle{selected}=[draw=red,fill=red!30]
 \tikzstyle{optional}=[dashed,fill=gray!50]
@@ -91,9 +96,6 @@ Abbildung \ref{filesystemrep} zeigt eine schematische Darstellung der Dateien. D
 \end{tikzpicture}
 \end{figure}
 
-Bei näherer Betrachtung fällt auf, dass die Dateinamen beider Serien des Patienten identisch sind. Eine korrekte Zuordnung von DICOM-Dateien zur Serie ist daher nicht immer garantiert. Unabhängig von einer Repräsentation im Dateisystem oder Pfadangaben in der Datenbank eines PACS ist das Vertrauen auf Dateipfade unsicher, da durch eine einfache Dateimanipulation die Zuordnung nicht mehr hergestellt werden kann.\\
-Um eine zuverlässige Verknüpfung zu gewährleisten besitzt jeder Patient\footnote{Die Identifikationsnummern von Patienten sind meist nur innerhalb einer Institution oder Krankenhauses einzigartig, da diese manuell vergeben werden können\cite[5.6.2]{pianykh:dicom}.}, jede Studie und jede Serie eine eindeutige Identifikationsnummer. Diese Art der Informationen wird in den einzelnen Dateien mit Hilfe von Einträgen aus dem DICOM Data Dictionary\cite{dicom:dd} hinterlegt. Die DICOM-Dateien beschreibt Pianykh \cite[S. 47]{pianykh:dicom}
-als eine Kopie im Speicher vom tatsächlichen DICOM-Objekt.
 
 \FloatBarrier
 \subsection{Von Patientendaten der realen Welt zu digitalen DICOM-Objekten} \label{grundlagen:dicomObjects}
@@ -117,7 +119,6 @@ Betrachtet man den folgenden Satz(vgl. \cite[S.46]{pianykh:dicom}), kann dieser 
 \begin{center}
 \textit{\glqq John Doe, männlich, geboren am 01. Januar 1970\grqq}
 \end{center}
-
 Wie aus dem Beispiel von Tabelle \ref{table:patientname} zu erkennen, lässt sich ein DICOM-Element nochmals in atomare Teile aufspalten. Folglich besteht ein Datenelement aus einem beschreibenden \textit{Tag}, einer \textit{VR(Value Representation)}, einem Wert und der \textit{VR (Value Multiplicity)}. Das Element selbst nimmt eine von drei Darstellungsmöglichkeiten ein. Zusätzlich liegt im Speicherabbild des Datenelements die Länge des Wertes\footnote{John\^{}Doe besitzt aufgrund der Zeichenmenge eine Länge von acht.}. Abhängig von der Transfersyntax\footnote{Unter der Transfersyntax versteht man eine Menge an Kodierungsvorschriften von DICOM-Objekten\cite[S.63 Section 10]{dicom:structure}. Zu diesen Vorschriften gehört zum Beispiel die Reihenfolge der Bytes im DICOM-Element oder die Komprimierung der Bilddaten.} des DICOM-Objekts ist der VR-Teil optional. Die weiteren beiden Darstellungen unterscheiden sich in der Kodierung der benötigten Länge des Werts \cite[7.1]{dicom:structure}.  Anhang \ref{appendix:speicher} auf Seite \pageref{appendix:speicher} zeigt wie Datenelemente im Speicher abgelegt werden und wie viel Speicherplatz pro Element reserviert werden muss.
 
 \begin{table}
@@ -135,18 +136,21 @@ Wie aus dem Beispiel von Tabelle \ref{table:patientname} zu erkennen, lässt sic
     \label{table:translation}
 \end{table}
 
+\FloatBarrier
 \subsection{Tags in Datenelementen}
 
 Ein DICOM-Element wie \textit{PatientName} kann über ein Tag identifiziert werden. Ein Tag ist in einem DICOM-Objekt einzigartig und darf nur ein mal benutzt werden. Die numerische Darstellung hat die Form (\textit{gggg}, \textit{eeee}) wobei die hexadezimalen Ziffern \textit{g} die Gruppe des DICOM-Elements beschreiben. Das Zeichen \textit{e} beschreibt das Element  aus der Gruppe \textit{g}. Wie in Tabelle  \ref{table:translation} zu sehen, steht 0010 für die Gruppe \textit{Patient} und 0030 für das Element \textit{PatientBirthDate} und ist der Patientengruppe zugehörig. Zusätzlich zu diesen Eigenschaften, kann bestimmt werden, ob der Ursprung eines DICOM-Elements im Standard- oder einem privaten Data Dictionary liegt. Eine gerade Gruppen-Ziffer zeigt, dass das Element Teil des Standards ist, während ungerade für proprietäre Elemente stehen\footnote{Ausgenommen aus dieser Regel sind folgende Gruppen: (0000, eeee), (0002, eeee), (0004, eeee), (0006, eeee), (0001, eeee), (0003, eeee), (0005, eeee), (0007, eeee), (FFFF, eeee).}\cite[7.1]{dicom:structure}. Die Reihenfolge der Tags ist in numerischer Folge in aufsteigender Form sortiert. Fällt während des Einleseprozesses in einer Datei auf, dass die Reihenfolge nicht korrekt ist, kann die Integrität des DICOM-Objekts nicht gewährleistet werden und deutet zum Beispiel auf eine modifizierte Datei hin.\\
 
 \FloatBarrier
 \subsection{VR - Value Representation}
-Dieser Teil eines DICOM-Elements beschreibt den Typ und das Format des Wertes\cite[6.2]{dicom:structure}. Der Umfang an verschiedenen Value Representations reicht von Zeichenketten wie PersonName (PN) im Datenelement (0010,0010) PatientName über Datumsangaben (DA) bis zu numerischen Werten(FL) und Sequenzen (SQ). Eine vollständige Liste ist im Standard unter \cite[Table 6.2.1]{dicom:structure} zu finden.\\
+Dieser Teil eines DICOM-Elements beschreibt den Typ und das Format des Wertes\cite[6.2]{dicom:structure}. Der Umfang an verschiedenen Value Representations reicht von Zeichenketten wie PersonName (PN) im Datenelement (0010,0010) PatientName über Datumsangaben (DA) bis zu numerischen Werten(FL) und Sequenzen (SQ). Eine vollständige Liste ist im Standard unter \cite[Table 6.2.1]{dicom:structure} zu finden.
 Bezüglich der Vollständigkeit soll erwähnt werden, dass ein Datenelement mit VR-Typ SQ wiederum ein DICOM-Object enthalten kann und dadurch eine Baumstruktur entsteht.
 
 \FloatBarrier
 \subsection{VM - Value Multiplicity}
-Value Multiplicity bestimmt die Anzahl an Werten, die in einem DICOM-Element enthalten sind. Die Werte werden durch einen Backslash \textbackslash voneinander getrennt. Der explizite Wert der Value Multiplicity kann aus dem Data Dictionary entnommen werden \cite[6.4]{dicom:structure}. Der Patientenname enthält einen Wert als Zeichenkette. Die Lage des Patienten im Raum wird mit Hilfe von drei Winkeln beschrieben. Dieses DICOM-Element hat eine Value Multiplicity von drei. Die Werte für die Winkel $\alpha, \beta, \gamma$ werden als Zeichenkette \textit{$0\backslash0\backslash1$} dargestellt.
+Value Multiplicity bestimmt die Anzahl an Werten, die in einem DICOM-Element enthalten sind. Die Werte werden durch einen Backslash \textbackslash voneinander getrennt. Der explizite Wert der Value Multiplicity kann aus dem Data Dictionary entnommen werden \cite[6.4]{dicom:structure}. Der Patientenname enthält einen Wert als Zeichenkette.
+\pagebreak
+ Die Lage des Patienten im Raum wird mit Hilfe von drei Winkeln beschrieben. Dieses DICOM-Element hat eine Value Multiplicity von drei. Die Werte für die Winkel $\alpha, \beta, \gamma$ werden als Zeichenkette \textit{$0\backslash0\backslash1$} dargestellt.
 
 \FloatBarrier
 \section{DICOM Pixeldaten und Bildformate}
@@ -164,7 +168,7 @@ Grafik \ref{byteorder} zeigt die Kodierungsreihenfolge. Little Endian kodiert vo
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
-  \includegraphics[angle=0,width=10cm]{./img/byteorder.pdf}
+  \fbox{\includegraphics[angle=0,width=10cm]{./img/byteorder.pdf}}
   %\floatfoot{Vorlage für diese Darstellung ist die Grafik in \cite[A.1.2]{dicom:iod}}
   \caption{Kodierungsreihenfolge von 4 Byte bei Little Endian- und Big Endian-Darstellung}
   \label{byteorder}
@@ -178,9 +182,9 @@ Das Intervall der Werte ist abhängig von der Anzahl an gespeicherten Bits. Hat 
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
 \centering
 \fbox{
-\subfigure[Pixel im Speicher]{\includegraphics[width=5cm]{./img/bits.pdf} \label{bits:pixel}}
-\subfigure[BitsAllocated 16, BitsStored 12, HighBit 11]{\includegraphics[width=5cm]{./img/bits16.pdf} \label{bits:16}}
-\subfigure[BitsAllocated 8, BitsStored 8, HighBit 7]{\includegraphics[width=5cm]{./img/bits8.pdf} \label{bits:8}}
+\subfigure[Pixel im Speicher]{\includegraphics[width=0.33\textwidth]{./img/bits.pdf} \label{bits:pixel}}
+\subfigure[BitsAllocated 16, BitsStored 12, HighBit 11]{\includegraphics[width=0.33\textwidth]{./img/bits16.pdf} \label{bits:16}}
+\subfigure[BitsAllocated 8, BitsStored 8, HighBit 7]{\includegraphics[width=0.33\textwidth]{./img/bits8.pdf} \label{bits:8}}
 }
 \caption{Beispiele unterschiedlicher Speicherbelegung}
 \label{bits}
@@ -223,9 +227,9 @@ Eine Grauwerttiefe von 8 Bit wird überlicherweise in der industriellen Bildvera
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
 \centering
 \fbox{
-\subfigure[CT]{\includegraphics[width=5cm]{./img/ct.png} \label{ct}}
-\subfigure[MR]{\includegraphics[width=5cm]{./img/mr.png} \label{mr}}
-\subfigure[Ultraschall]{\includegraphics[width=5cm]{./img/sono.png} \label{sono}}
+\subfigure[CT]{\includegraphics[width=0.33\textwidth]{./img/ct.png} \label{ct}}
+\subfigure[MR]{\includegraphics[width=0.33\textwidth]{./img/mr.png} \label{mr}}
+\subfigure[Ultraschall]{\includegraphics[width=0.33\textwidth]{./img/sono.png} \label{sono}}
 }
 \caption{Verschieden Graustufenbilder}
 \label{grey}
@@ -260,9 +264,9 @@ Im DICOM-Standard ist ein Algorithmus gegeben, um die Pixeldaten zu konvertieren
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
 \centering
 \fbox{
-\subfigure[Fensterungstechnik]{\includegraphics[width=5cm]{./img/fensterung.pdf} \label{window_graph}}
-\subfigure[Window Center 50; Window Width 350]{\includegraphics[width=5cm]{./img/window_a.png} \label{window_a}}
-\subfigure[Window Center -124; Window Width 3134]{\includegraphics[width=5cm]{./img/window_b.png} \label{window_b}}
+\subfigure[Fensterungstechnik]{\includegraphics[width=0.33\textwidth]{./img/fensterung.pdf} \label{window_graph}}
+\subfigure[Window Center 50; Window Width 350]{\includegraphics[width=0.33\textwidth]{./img/window_a.png} \label{window_a}}
+\subfigure[Window Center -124; Window Width 3134]{\includegraphics[width=0.33\textwidth]{./img/window_b.png} \label{window_b}}
 }
 \caption{Fensterungstechnik zur Darstellung medizinischer Bilddaten am handelsüblichen Monitor \cite[S. 249]{handels:mbv}}
 \label{window_sub}
@@ -277,8 +281,8 @@ Wie bereits beschrieben, ist das Datenelement SamplesPerPixel mit einem Wert von
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
 \centering
 \fbox{
-\subfigure[PlanarConfiguration = 0]{\includegraphics[width=8cm]{./img/planar_b.pdf} \label{planar_a}}
-\subfigure[PlanarConfiguration = 1]{\includegraphics[width=8cm]{./img/planar_a.pdf} \label{plaanr_b}}
+\subfigure[PlanarConfiguration = 0]{\includegraphics[width=0.5\textwidth]{./img/planar_b.pdf} \label{planar_a}}
+\subfigure[PlanarConfiguration = 1]{\includegraphics[width=0.5\textwidth]{./img/planar_a.pdf} \label{plaanr_b}}
 }
 %\floatfoot{Vorlage für die Grafik der Fensterungstechnik ist\cite[Abbildung 8.1]{handels:mbv}; Die Beispieldaten stammen von http://www.osirix-viewer.com/datasets/ - abgerufen am 19.01.2014}
 \caption{Kodierung der RGB-Werte im Datenelement PixelData mit Hilfe der PlanarConfiguration}
@@ -293,9 +297,9 @@ Sowohl die Grauwertdarstellungen, als auch Farbbilder wurden bisher nur als eine
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
 \centering
 \fbox{
-\subfigure[2D Darstellung]{\includegraphics[width=5cm]{./img/2d.pdf} \label{2d}}
-\subfigure[3D Bildfolge]{\includegraphics[width=5cm]{./img/3d.pdf} \label{3d}}
-\subfigure[zeitlich Abhängige 3D Bildfolge]{\includegraphics[width=5cm]{./img/time.pdf} \label{time3d}}
+\subfigure[2D Darstellung]{\includegraphics[width=0.33\textwidth]{./img/2d.pdf} \label{2d}}
+\subfigure[3D Bildfolge]{\includegraphics[width=0.33\textwidth]{./img/3d.pdf} \label{3d}}
+\subfigure[zeitlich Abhängige 3D Bildfolge]{\includegraphics[width=0.3\textwidth]{./img/time.pdf} \label{time3d}}
 }
 %\floatfoot{Vorlage für die Grafik der Fensterungstechnik ist\cite[Abbildung 8.1]{handels:mbv}; Die Beispieldaten stammen von http://www.osirix-viewer.com/datasets/ - abgerufen am 19.01.2014}
 \caption{Darstellung von 2- und 3-dimensionalen Bilddaten}
@@ -331,7 +335,7 @@ Der Adapter passt Schnittstellen an, um die Zusammenarbeit inkompatibler Objekte
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=12cm]{./img/adapter.pdf}}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/adapter.pdf}}
    \caption{UML Klassendiagramm zum Adapter \cite[S. 78]{starke:swa}}
   \label{adapterpattern}
   \vspace{0.5cm}
@@ -348,7 +352,7 @@ Wenn der Zustand mehrerer Objekte von einem anderen Objektzustand abhängt, kann
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=12cm]{./img/observer.pdf}}
+  \fbox{\includegraphics[angle=0,width=0.7\textwidth]{./img/observer.pdf}}
    \caption{UML Klassendiagramm zum Observer\cite[S. 71]{starke:swa}}
   \label{observer}
   \vspace{0.5cm}
@@ -387,7 +391,7 @@ public abstract class Gebaeck{
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=12cm]{./img/template.pdf}}
+  \fbox{\includegraphics[angle=0,width=0.8\textwidth]{./img/template.pdf}}
    \caption{UML Klassendiagramm der Schablonenmethode\cite[S. 69]{starke:swa}}
   \label{templatemethod}
   \vspace{0.5cm}
@@ -409,7 +413,7 @@ Das Wissen über konkrete Schrauben stellt eine konkrete Fabrik dar. So ist der 
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=12cm]{./img/factorymethod.pdf}}
+  \fbox{\includegraphics[angle=0,width=0.8\textwidth]{./img/factorymethod.pdf}}
    \caption{UML Klassendiagramm zur Fabrik Methode \cite[S. 35]{starke:swa}}
   \label{factorymethod}
   \vspace{0.5cm}
@@ -451,14 +455,15 @@ public class Singleton{
 \FloatBarrier
 \section{Das Architekturmuster Plug-in}
 
-Wird eine Software entwickelt, sollte das Open-Closed-Prinzip angewendet werden. Dieses besagt, dass Software sowohl offen, als auch geschlossen sein soll\cite[1.8]{goll:swa}. Bei Objektorientierten Programmiersprachen ist die Vererbung ein Beispiel, die den Widerspruch erläutert. Abgeleitete Klassen \textit{erweitern} die Fähigkeiten der Superklasse, die wiederum \textit{nicht verändert} werden. Die Superklasse ist offen für Erweiterung und geschlossen für Veränderung.\\
+Wird eine Software entwickelt, sollte das Open-Closed-Prinzip angewendet werden. Dieses besagt, dass Software sowohl offen, als auch geschlossen sein soll\cite[1.8]{goll:swa}. Bei Objekt\-orientierten Programmiersprachen ist die Vererbung ein Beispiel, die den Widerspruch erläutert. Abgeleitete Klassen \textit{erweitern} die Fähigkeiten der Superklasse, die wiederum \textit{nicht verändert} werden. Die Superklasse ist offen für Erweiterung und geschlossen für Veränderung.\\
 Das Beispiel der Vererbung bezieht sich auf eine Klasse. Durch eine Erweiterung auf die Ebene der Softwarearchitektur entsteht das Plug-in-Muster. Das bedeutet, ein Plug-in stellt einem fertigen System zusätzliche Erweiterungen bereit, die zur Laufzeit eingebunden werden können und dem System vorher unbekannt sind. Die Kommunikation wird durch eine Schnittstelle möglich, die das System zur Verfügung stellt. Wird diese Schnittstelle implementiert kann die Klasse eingebunden werden. Abbildung \ref{pluginpattern} zeigt die Interaktion von Schnittstelle, System und konkreten Plug-ins.
 
-\begin{figure}[htbp]
+\begin{figure}[]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=15cm]{./img/pluginpattern.pdf}}
+  \fbox{\includegraphics[angle=0,width=\textwidth]{./img/pluginpattern.pdf}}
    \caption{UML Klassendiagramm des Architekturmusters Plug-in \cite[S. 316]{goll:swa}}
   \label{pluginpattern}
   \vspace{0.5cm}
+  \vfill
 \end{figure}

@@ -14,12 +14,14 @@
 \clearpage
 
 %Veraendert die Seitennummerierung zu roemischen Zeichen...
-\setcounter{page}{1}
-
-\renewcommand{\thepage}{\roman{page}}
 %\pagestyle{headings}
 
 \include{abstract}
+
+\pagestyle{headings}
+
+\setcounter{page}{1}
+\renewcommand{\thepage}{\roman{page}}
 
 \tableofcontents
 

@@ -7,7 +7,7 @@ Nach einer Beschreibung wie die DICOM-Objekte repräsentiert werden, wird umfang
 \FloatBarrier
 \section{Implementierung der DICOM-Objekte}
 
-Die beiden Schnittstellen \textit{IDicomData} und \textit{IDicomImageData} bilden die Grundlagen aller DICOM-Objekte die vom jMediKit erzeugt werden und sind gleichzeitig die einzige Kommunikationsmöglichkeit zu den externen Bibliotheken. Der abstrakte Adapter \textit{ADicomObject} stellt die Funktionen beider Schnittstellen zur Verfügung. Die wichtigsten Methoden stellen das Auslesen der Pixel und den einzelnen Tags eines DICOM-Objekts dar. \\
+Die beiden Schnittstellen \textit{IDicomData} und \textit{IDicomImageData} bilden die Grundlagen aller DICOM-Objekte die vom jMediKit erzeugt werden und sind gleichzeitig die einzige Kommunikationsmöglichkeit zu den externen Bibliotheken. Der abstrakte Adapter \textit{ADicom\-Object} stellt die Funktionen beider Schnittstellen zur Verfügung. Die wichtigsten Methoden stellen das Auslesen der Pixel und den einzelnen Tags eines DICOM-Objekts dar. \\
 Das eingebundene \textit{dcm4che} bietet neben der Verarbeitung von DICOM-Objekten auch eine Implementierung des Kommunikations- und Speicherstandards von DICOM an. Während der aktuellen Entwicklung wurde allerdings nur ein Bruchteil der DICOM-Verarbeitung zur Erfüllung der Anforderungen benötigt und der Kommunikations- und Speicherprozess fand keine Beachtung. Bei einer Implementierung sollte dennoch eine zukünftige Erweiterung im Auge behalten werden. Dabei soll ebenso das Open-Closed-Prinzip Beachtung finden.\\
 Hierbei werden die Schnittstellen in fachspezifische Domänen eingeteilt. Das bedeutet, \textit{IDicomData} ist für das Verarbeiten der Tags zuständig, während \textit{IDicomImageData} ausschließlich Bilddaten verarbeitet. Für weitere Versionen können weitere Domänen implementiert werden, wie zum Beispiel eine Schnittstelle \textit{IDicomNetworkData}. Der Adapter vereint die Domänen zu einem vollen DICOM-Objekt. 
 
@@ -147,9 +147,9 @@ Ein Tag, der räumliche Informationen enthält ist \textit{Slice Location}. Nach
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
 \centering
 \fbox{
-\subfigure[Darstellung der beiden Richtungsvektoren der Bildebene und zugehörige Normale $\vec{r} \times \vec{c}$]{\includegraphics[width=5cm]{./img/normalenvektor.pdf} \label{sort:single}}
-\subfigure[Schichten entlang der Normalen $\vec{r} \times \vec{c}$]{\includegraphics[width=5cm]{./img/normalenvektorstack.pdf} \label{sort:stack}}
-\subfigure[Sortierung erfolgt durch Bestimmung der dominanten Achse]{\includegraphics[width=5cm]{./img/dominantindex.pdf} \label{sort:dominant}}
+\subfigure[Darstellung der beiden Richtungsvektoren der Bildebene und zugehörige Normale $\vec{r} \times \vec{c}$]{\includegraphics[width=0.31\textwidth]{./img/normalenvektor.pdf} \label{sort:single}} \hspace{0.2cm}
+\subfigure[Schichten entlang der Normalen $\vec{r} \times \vec{c}$]{\includegraphics[width=0.31\textwidth]{./img/normalenvektorstack.pdf}\hfill \label{sort:stack}} \hspace{0.2cm}
+\subfigure[Sortierung erfolgt durch Bestimmung der dominanten Achse]{\includegraphics[width=0.31\textwidth]{./img/dominantindex.pdf} \label{sort:dominant}}
 }
 \caption{Räumliche Sortierung der DICOM-Objekte}
 \label{sort}
@@ -195,20 +195,20 @@ Zusätzlich zu den Werkzeugen gibt es drei verschiedene Ansichten, aus denen der
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
 \centering
 \fbox{
-\subfigure[Axiale Ansicht - $(x,y)$]{\includegraphics[width=5cm]{./img/axial_xy.pdf} \label{layers:axial}}
-\subfigure[Coronale Ansicht - $(x,z)$]{\includegraphics[width=5cm]{./img/coronal_xz.pdf} \label{layers:coronal}}
-\subfigure[Sagittale Ansicht - $(y,z)$]{\includegraphics[width=5cm]{./img/sagittal_yz.pdf} \label{layers:sagittal}}
+\subfigure[Axiale Ansicht - $(x,y)$]{\includegraphics[width=0.31\textwidth]{./img/axial_xy.pdf} \label{layers:axial}}
+\subfigure[Coronale Ansicht - $(x,z)$]{\includegraphics[width=0.31\textwidth]{./img/coronal_xz.pdf} \label{layers:coronal}}
+\subfigure[Sagittale Ansicht - $(y,z)$]{\includegraphics[width=0.31\textwidth]{./img/sagittal_yz.pdf} \label{layers:sagittal}}
 }
 \caption{Die verschiedenen Ansichten der Ebenen eines dreidimensionalen Datensatzes}
 \label{layers}
 \end{figure*}
-
+\pagebreak
 Die Faktoren DICOM-Objekt, Bedienelemente der Composites, Werkzeuge und die verschiedenen Ansichten der Ebenen beeinflussen maßgeblich den Prozess der Anzeige der Bilddaten. Die Vorgehensweise wird in Abbildung \ref{imageprocess} visualisiert. Der Prozess gliedert sich in sechs zentrale Verarbeitungsblöcke und zwei Einhängepunkte(Hooks) für Werkzeuge, die für eine Verarbeitung vom Öffnen der Datei bis zur Anzeige auf dem Bildschirm nötig sind.
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=10cm]{./img/imageprocess.pdf}}
+  \fbox{\includegraphics[angle=0,width=0.75\textwidth]{./img/imageprocess.pdf}}
    \caption{Der Prozess von der Bildauswahl zur Anzeige}
   \label{imageprocess}
   \vspace{0.5cm}
@@ -223,6 +223,8 @@ Die Faktoren DICOM-Objekt, Bedienelemente der Composites, Werkzeuge und die vers
 	Wird ein Bild auf der Zeichenfläche verschoben, ändern sich die Koordinaten des Bildes. Dieser Block übernimmt die Berechnung, damit die Daten korrekt angezeigt werden.
 \item \textbf{Bild interpolieren}\\
 	Bei einer Skalierung ändert sich die Bildgröße. Die fehlenden Pixel einer Vergrößerung müssen interpoliert werden.
+	
+\pagebreak
 \item \textbf{Fensterung}\\
 	Mit Hilfe der Fensterung werden die Grauwerte entsprechend den Werten von Window Width und Window Center auf den Bereich von 0 - 255 abgebildet.
 \item \textbf{Bild zeichnen}\\
@@ -243,8 +245,8 @@ Mit einem dreidimensionalen Datensatz ist es möglich, eine beliebige Ebene durc
 \begin{figure*}[htb]
 \centering
 \fbox{
-\subfigure[Rekonstruktion von der axialen zur coronalen Ebene]{\includegraphics[width=7cm]{./img/axialcoronalmpr.pdf} \label{mpr:ac}}
-\subfigure[Rekonstruktion von der axialen zur sagittalen Ebene]{\includegraphics[width=7cm]{./img/axialsagittalmpr.pdf} \label{mpr:as}}
+\subfigure[Rekonstruktion von der axialen zur coronalen Ebene]{\includegraphics[width=0.48\textwidth]{./img/axialcoronalmpr.pdf} \label{mpr:ac}}\hspace{0.2cm}
+\subfigure[Rekonstruktion von der axialen zur sagittalen Ebene]{\includegraphics[width=0.48\textwidth]{./img/axialsagittalmpr.pdf} \label{mpr:as}}
 }
 \caption{Rekonstruktion der coronalen und sagittalen Ebene}
 \label{mpr}
@@ -282,8 +284,8 @@ Die Drehung erfolgt mit Hilfe der Drehmatrizen. Es wird zuerst um die x-, gefolg
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
 \centering
 \fbox{
-\subfigure[Richtungsvektoren der axialen Bildebene werden um 90$^\circ$ um die x-Achse gedreht]{\includegraphics[width=6cm]{./img/rotation.pdf} \label{rota:a}}
-\subfigure[Richtungsvektoren in coronaler Ausrichtung]{\includegraphics[width=6cm]{./img/rotationc.pdf} \label{rota:c}}
+\subfigure[Richtungsvektoren der axialen Bildebene werden um 90$^\circ$ um die x-Achse gedreht]{\includegraphics[width=0.4\textwidth]{./img/rotation.pdf} \label{rota:a}} \hspace{0.5cm}
+\subfigure[Richtungsvektoren in coronaler Ausrichtung]{\includegraphics[width=0.4\textwidth]{./img/rotationc.pdf} \label{rota:c}}
 }
 \caption{Rotation der Richtungsvektoren von axialer zu coronaler Darstellung}
 \label{rota}
@@ -391,9 +393,10 @@ Mit den berechneten Werten der normalisierten Koordinaten $(0.25, 0.25)$ und $(0
  y_2 = 0.75 \cdot 512 =  384
 \end{equation}
 
+\FloatBarrier
 \subsection{Bilineare Interpolation}
 
-Es können verschiedene Interpolationsmethoden eingesetzt werden, um das Bild oder einen Bildausschnitt zu vergrößern oder zu verkleinern. Die Abbildungen \ref{interpolation} zeigen die Ergebnisse einer Nearest Neighbor, biliniearer und bikubischen Interpolation. Das Nearest Neighbor Verfahren stellt die schnellste Interpolationsmethode dar, liefert allerdings auch gleichzeitig die schlechtesten Ergebnisse. In Abbildung \ref{interpolation:nn} erkennt man deutlich die Stufenbildung im Bild.\\
+Es können verschiedene Interpolationsmethoden eingesetzt werden, um das Bild oder einen Bildausschnitt zu vergrößern oder zu verkleinern. Die Abbildungen \ref{interpolation} zeigen die Ergebnisse einer Nearest Neighbor, biliniearer und bikubischen Interpolation. Das Nearest Neighbor Verfahren stellt die schnellste Interpolationsmethode dar, liefert allerdings auch gleichzeitig die schlechtesten Ergebnisse. In Abbildung \ref{interpolation:nn} erkennt man deutlich die Stufenbildung im Bild.
 Bessere Ergebnisse liefert die bilineare Interpolation bei einer moderaten Laufzeit. Eine nochmals verbesserte Darstellung kann durch die bikubische Interpolation erreicht werden, benötigt allerdings den größten Rechenaufwand. Die bilinieare Methode liefert einen guten Kompromiss aus Qualität des skalierten Bildes und benötigter Rechenzeit.
 
 \begin{figure*}[htb]
@@ -442,6 +445,8 @@ E = A + (x_0 - x) \cdot (B - A)
 F = C + (x_0 - x) \cdot (D-C)
 \end{equation}
 
+\pagebreak
+
 Nach der horizontalen Interpolation wird der finale Wert \textit{G} aus dem Abstand von $y_0$ und $y$ berechnet.
 
 \begin{equation}
@@ -450,10 +455,12 @@ G = E + (y_0 - y) \cdot (F-E)
 
 Der Wert von \textit{G} kann nun beim Zielbild \textit{Z} an die aktuelle Position gesetzt werden. Bei Farbbildern wird jeder Kanal separat interpoliert.
 
+\FloatBarrier
 \subsection{Anzeige der Zusatzinformationen}
 
 Gefolgt von bilinearen Interpolation wird das Bild gezeichnet. Als nächster Schritt werden dem Benutzer direkt auf der Zeichenfläche wichtige Zusatzinformationen angezeigt. So kann der Anwender die aktuelle Größe des Bildes in Pixeln und das prozentuale Verhältnis zum Originalbild ablesen, sowie die gewählten Fensterungswerte einsehen. Neben den Bildeigenschaften werden auch dynamische Inhalte angezeigt, wie das Patientenkoordinatensystem und die Orientierungslinien. Orientierungslinien markieren in gleichen geöffneten 3D-Datensätzen mit unterschiedlicher Ebenenansicht einen gemeinsamen Punkt. Diese dynamischen Aspekte werden folgend erläutert.
 
+\FloatBarrier
 \subsubsection{Das Koordinatensystem}
 
 Der DICOM-Standard definiert ein sogenanntes \textit{Reference Coordinate System} \cite[S. 55]{dicom:iod} und dient zur Orientierung des Patienten im Raum. Es werden sechs Richtungen der drei Achsen definiert, womit die Lage des Patienten beschrieben werden kann \cite[C.7.6.1.1.1]{dicom:iod}. 
@@ -478,7 +485,7 @@ Der DICOM-Standard definiert ein sogenanntes \textit{Reference Coordinate System
 \label{coords:both}
 \end{figure*}
 
-Wie in Abbildung \ref{coords:xz} dargestellt, steigt die x-Achse in Richtung der linken Hand das Patienten. Die Werte der y-Achse nehmen von der Vorderseite zur Rückseite des Patienten zu. Die z-Achse erhöht sich in Richtung der Füße zum Kopf des Patienten\cite[C.7.6.2.1.1]{dicom:iod}.\\
+Wie in Abbildung \ref{coords:xz} dargestellt, steigt die x-Achse in Richtung der linken Hand das Patienten. Die Werte der y-Achse nehmen von der Vorderseite zur Rückseite des Patienten zu. Die z-Achse erhöht sich in Richtung der Füße zum Kopf des Patienten \cite[C.7.6.2.1.1]{dicom:iod}.
 Unter Berücksichtigung des DICOM-Tags \textit{Image Orientation} kann mit dessen Vektoren kann die Beschriftung der Koordinatenachsen bestimmt werden. Durch den maximalen Betrag der Elemente der Vektoren werden die dominanten Achsen ermittelt. Dadurch erhält man die Koordinatenachsen der Bildebene. Des weiteren kann durch die Achsen die Ebenendarstellung bestimmt werden. Ein dominanter xy-Anteil bedeutet \textit{axiale} Ebenendarstellung, der xz-Anteil ist die \textit{coronale} Ansicht und der yz-Anteil die \textit{sagittale} Darstellung.
 
 \begin{equation}
@@ -499,6 +506,7 @@ Beispiel \ref{orientationvecs} zeigt zwei Vektoren von \textit{ImageOrientation}
   \vspace{0.5cm}
 \end{figure}
 
+\FloatBarrier
 \subsubsection{Zeichnen der Orientierungslinien}\label{scoutinglines}
 
 Wenn mehrere gleiche Datensätze in unterschiedlichen Ebenendarstellungen geöffnet sind, helfen dem Anwender die Orientierungslinien bei der Navigation durch den dreidimensionalen Datensatz. Abbildung \ref{lines:single:a} zeigt eine axiale Ebenendarstellung als aktuelle Anzeige, die vom Benutzer bedient wird. Zusätzlich sind die coronale (Abbildung \ref{lines:c}) und sagittale Ansicht (Abbildung \ref{lines:s}) geöffnet. Da der Anwender in der axialen Ansicht arbeitet, werden Änderungen der Bildanzeige an die beiden Beobachter weitergegeben.\\
@@ -531,13 +539,15 @@ Die Koordinaten zum Einzeichnen der Orientierungslinien sind abhängig von der Q
 \label{lines}
 \end{figure*}
 
-Abbildung \ref{lines:a} zeigt einen vom Anwender gewählten Punkt in der axialen Darstellung. Wieder müssen alle Beobachter, also Bildanzeigen mit dem gleichen Datensatz, nach der Auswahl aktualisiert werden. Die Abbildungen \ref{lines:single} zeigen nur die aktuell vom Nutzer gewählte Bildschicht der aktiven Anzeige. Bei einer direkten Punktauswahl wird in allen Ansichten der gleiche Punkt im Raum $(x, y, z)$ referenziert. Das bedeutet, es werden sowohl die horizontale, als auch die vertikale Orientierungslinie eingezeichnet. Zusätzlich wird die angezeigte Bildschicht der Beobachter den Koordinaten angepasst. Der gewählte Punkt wird jeweils durch den Schnittpunkt der Orientierungslinien symbolisiert. Das Beispiel der Abbildungen in \ref{lines} zeigt eine aktive axiale Ansicht sowie eine coronale und sagittale Ebenendarstellung als Beobachter.\\
-Der vom Anwender gewählte Punkt im Raum ist:
+Abbildung \ref{lines:a} zeigt einen vom Anwender gewählten Punkt in der axialen Darstellung. Wieder müssen alle Beobachter, also Bildanzeigen mit dem gleichen Datensatz, nach der Auswahl aktualisiert werden. Die Abbildungen \ref{lines:single} zeigen nur die aktuell vom Nutzer gewählte Bildschicht der aktiven Anzeige. Bei einer direkten Punktauswahl wird in allen Ansichten der gleiche Punkt im Raum $(x, y, z)$ referenziert. Das bedeutet, es werden sowohl die horizontale, als auch die vertikale Orientierungslinie eingezeichnet. Zusätzlich wird die angezeigte Bildschicht der Beobachter den Koordinaten angepasst. Der gewählte Punkt wird jeweils durch den Schnittpunkt der Orientierungslinien symbolisiert. Das Beispiel der Abbildungen in \ref{lines} zeigt eine aktive axiale Ansicht sowie eine coronale und sagittale Ebenendarstellung als Beobachter. Der vom Anwender gewählte Punkt im Raum ist:
 
 \begin{equation}
 P_{axial}=\left(\begin{array}{c} x_{axial} \\ y_{axial} \\ z_{axial} \end{array}\right) 
 \vspace{0.5cm}
 \end{equation}
+
+\pagebreak
+
 Aus diesem Punkt müssen die Koordinaten für die Orientierungslinien und der Bildschicht bestimmt werden.
 Für die Darstellung von der axialen Ansicht zum referenzierten coronalen Punkt folgt aus Abbildung \ref{lines:c}:
 \begin{equation}
@@ -549,6 +559,7 @@ P_{coronal}=\left(\begin{array}{c} x_{coronal} \\ y_{coronal} \\ z_{coronal} \en
 Mit diesen Koordinaten ergeben sich für die coronale Ebenendarstellung die vertikale Orientierungslinie von $(x_{axial}, 0)$ bis $(x_{axial}, height)$, die horizontale Linie $(0, z_{axial})$ bis $(width, z_{axial})$ und der Index der Bildschicht $y_{axial}$.\\
 Auch dieses Vorgehen ist abhängig von der Quell- und Zieldarstellung der aktiven Darstellung und Beobachtern.
 
+\FloatBarrier
 \subsection{Implementierung der Werkzeuge}
 
 Die Anzeige der Orientierungslinien komplettiert die Funktionalitäten zur Bilddarstellung, Navigation und Orientierung. Der nächste Schritt befasst sich mit der Manipulation der Bilddaten mit den zur Verfügung gestellten Werkzeugen.\\
@@ -574,6 +585,7 @@ Damit die Zeichenfläche gelesen und bearbeitet werden kann, steht jedem Werkzeu
 Damit markieren Start und Ende die Strecke der Maus vom Drücken der Maustaste bis zum Loslassen selbiger.\\
 Aus diesen verfügbaren Informationen lassen sich vielfältige Werkzeuge erzeugen. 
 
+\FloatBarrier
 \subsubsection{Das Bild bewegen mit dem MoveTool}
 Mit Hilfe des \textit{MoveTools} lässt sich die aktuelle Bildschicht über die Zeichenfläche schieben. Beim ersten Klick innerhalb des \textit{DicomCanvas} speichert das Werkzeug die Cursorposition als Startpunkt. Solange die Maustaste gedrückt bleibt, wird der neue Mittelpunkt des Bildes aus der aktuellen Mauszeigerposition bestimmt. Die Berechnung erfolgt mit dem Verbindungsvektor aus Startpunkt S und dem Endpunkt E mit 
 \begin{equation}
@@ -582,17 +594,17 @@ Mit Hilfe des \textit{MoveTools} lässt sich die aktuelle Bildschicht über die 
 \end{equation}
 
 Die direkte Berechnung von $\overrightarrow{SE}$ ist aufgrund mehrerer aufeinanderfolgender Zeichenzyklen nicht möglich. Abbildung \ref{movetool} zeigt diese Zyklen durch die roten Pfeile. Bei jeder Mausbewegung wird die Zeichenfläche neu gezeichnet. 
-
+Nach der ersten Translation befindet sich der Bildmittelpunkt an der Stelle $S + \overrightarrow{SE_1}$, in der folgenden an $S + \overrightarrow{SE_2}$ bis die Maus an $E_n$ losgelassen wird und der neue Bildmittelpunkt $S + \overrightarrow{SE_n}$ ist (dargestellt durch die gestrichelten Linien). Da bei jeder Translation ein neuer Bildmittelpunkt bestimmt wird, erfolgt die richtige Berechnung aus der Differenz zwischen der vorherigen und der aktuellen Transformation. Durch Addition von Bildmittelpunkt und der Differenz erhält man das richtig translierte aktuelle Bildzentrum.
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=8cm]{./img/movetool.pdf}}
+  \fbox{\includegraphics[angle=0,width=0.6\textwidth]{./img/movetool.pdf}}
    \caption{Translation des Bildmittelpunkts}
   \label{movetool}
   \vspace{0.5cm}
 \end{figure}
 
-Nach der ersten Translation befindet sich der Bildmittelpunkt an der Stelle $S + \overrightarrow{SE_1}$, in der folgenden an $S + \overrightarrow{SE_2}$ bis die Maus an $E_n$ losgelassen wird und der neue Bildmittelpunkt $S + \overrightarrow{SE_n}$ ist (dargestellt durch die gestrichelten Linien). Da bei jeder Translation ein neuer Bildmittelpunkt bestimmt wird, erfolgt die richtige Berechnung aus der Differenz zwischen der vorherigen und der aktuellen Transformation. Durch Addition von Bildmittelpunkt und der Differenz erhält man das richtig translierte aktuelle Bildzentrum.
+
 
 \begin{equation}
 E_n= E_{n-1} + (\overrightarrow{SE_{n-1}}-\overrightarrow{SE_n})
@@ -601,6 +613,7 @@ E_n= E_{n-1} + (\overrightarrow{SE_{n-1}}-\overrightarrow{SE_n})
 
 $E_n$ ist der zu bestimmende Bildmittelpunkt für die Translation. Das aktuelle Zentrum ist $E_{n-1}$. Die zuletzt durchgeführte Verschiebung ist $\overrightarrow{SE_{n-1}}$, während die aktuelle durch $\overrightarrow{SE_n}$ dargestellt ist.
 
+\FloatBarrier
 \subsubsection{Skalierung mit dem ResizeTool}
 
 Das \textit{ResizeTool} ermöglicht dem Anwender das Bild zu verkleinern oder zu vergrößern. Durch das Zoomen können Details auch in kleinen Bildgrößen genauer betrachtet werden\footnote{Das vergrößerte Bild ist nur eine Interpolation der originalen Pixelwerte.}.\\
@@ -616,7 +629,7 @@ Ein Endpunkt in positiver Richtung\footnote{Da der Ursprung der Zeichenfläche i
 
 \subsubsection{Das DefaultTool}
 
-Das \textit{DefaultTool} stellt ein besonderes Werkzeug dar, da es selbst keine Funktionalitäten implementiert. Es nutzt die Funktionen des \textit{MoveTools} und des \textit{ResizeTools}. Im \textit{DefaultTool} wird geprüft, welche Maustaste gedrückt wird. Bei einem Linksklick wird das \textit{MoveTool} und der Translationsprozess ausgeführt. Ein Klick mit der rechten Maustaste in das Bild nimmt die Koordinaten des Cursors auf, um darauf alle weiteren Zeichenflächen, die Beobachter, zu informieren, dass ein Punkt gewählt wurde. Darauf aktualisieren die Beobachter Bildschicht und Orientierungslinien wie in Abschnitt \ref{scoutinglines} beschrieben. Das \textit{ResizeTool} wird durch das Drehen des Mausrads angestoßen und bewirkt pro Einheit eine Größenänderung von $10\%$.
+Das \textit{DefaultTool} stellt ein besonderes Werkzeug dar, da es selbst keine Funktionalitäten implementiert. Es nutzt die Funktionen des \textit{MoveTools} und des \textit{ResizeTools}. Im \textit{DefaultTool} wird geprüft, welche Maustaste gedrückt wird. Bei einem Linksklick wird das \textit{Move\-Tool} und der Translationsprozess ausgeführt. Ein Klick mit der rechten Maustaste in das Bild nimmt die Koordinaten des Cursors auf, um darauf alle weiteren Zeichenflächen, die Beobachter, zu informieren, dass ein Punkt gewählt wurde. Darauf aktualisieren die Beobachter Bildschicht und Orientierungslinien wie in Abschnitt \ref{scoutinglines} beschrieben. Das \textit{ResizeTool} wird durch das Drehen des Mausrads angestoßen und bewirkt pro Einheit eine Größenänderung von $10\%$.
 
 \subsubsection{Justierung der Fensterung mit dem WindowTool}
 
@@ -633,6 +646,7 @@ Das Werkzeug \textit{PointTool} erfüllt zwei Aufgaben. Zum einen gibt es die M�
 	Dazu wird an der Position des Cursors ein Rechteckt mit den Pixeldaten gezeichnet.
 \end{itemize}
 
+\FloatBarrier
 \section{Dynamische Parametervergabe} \label{dynamicParameter}
 
 Mit dem Punktauswahlwerkzeug erhält der Benutzer die Möglichkeit, dynamisch spezifische Bildpunkte zu wählen. Die Selektion kann anschießend innerhalb eines Plug-ins ausgelesen werden. So können zum Beispiel Start- oder Saatpunkte für Algorithmen gesetzt werden. Als weiteren dynamischen Aspekt soll der Benutzer vor dem Ausführen eines Plug-ins selbst Parameter bestimmen können. So können beispielsweise Schwellwerte im Bezug zu speziellen Pixelwerten gewählt werden. Die dynamischen Parameter bestehen allerdings nicht immer aus numerischen Werten. So müssen ebenso Zeichenketten oder Dateien übergeben werden können. Durch die Dateiauswahl können beispielsweise Textdateien ausgewählt werden, die für ein Plug-in benötigte Datensätze enthalten. Darüber hinaus besteht die Möglichkeit DICOM-Dateien zu laden, um unabhängige DICOM-Objekte innerhalb des Plug-ins als Referenzbilder zu erzeugen.\\
@@ -642,31 +656,32 @@ Mit dem generischen Dialogfenster aus Abschnitt \ref{genericdialog} soll der Ben
 \item \textbf{Checkbox}\\
 Die Checkbox wird verwendet wenn ein bool'scher Parametertyp gewünscht wird. Markiert symbolisiert die Box den Wert \textit{true}, ansonsten \textit{false}.
 \begin{figure}[H]
-\includegraphics[angle=0,width=6cm]{./img/checkbox.png}
+\includegraphics[angle=0,width=9cm]{./img/checkbox.png}
 \end{figure}
 
 \item \textbf{RadioGroup}\\
 Mit Hilfe der Radio Group kann ein bestimmter Wert aus einer Gruppe gewählt werden. Der Parametertyp gibt jeweils die Selektion als Zeichenkette zurück.
 \begin{figure}[H]
-\includegraphics[angle=0,width=6cm]{./img/radiogroup.png}
+\includegraphics[angle=0,width=9cm]{./img/radiogroup.png}
 \end{figure}
 
 \item \textbf{FileDialog}\\
 Mit dem FileDialog kann der Anwender eine Datei in das Plug-in laden. Wird der Parameter ausgelesen, wird der Pfad als Zeichenkette zurückgegeben.
 \begin{figure}[H]
-\includegraphics[angle=0,width=6cm]{./img/filedialog.png}
+\includegraphics[angle=0,width=9cm]{./img/filedialog.png}
 \end{figure}
 
+\pagebreak
 \item \textbf{Slider}\\
 Der Slider definiert ein Intervall $[x,y]$ aus dem ein Wert gewählt werden kann. Dieser Parametertyp wird eingesetzt, wenn untere und obere Wertgrenzen existieren oder die Benutzereingabe begrenzt werden soll. Der Wert wird als Fließkommazahl zurückgegeben.
 \begin{figure}[H]
-\includegraphics[angle=0,width=6cm]{./img/slider.png}
+\includegraphics[angle=0,width=9cm]{./img/slider.png}
 \end{figure}
 
 \item \textbf{StringItem, IntegerItem, FloatItem}\\
 Diese drei Parametertypen verhalten sich ähnlich. Sie nehmen den jeweiligen Wert des entsprechenden Typs entgegen und geben diesen beim Auslesen wieder zurück.
 \begin{figure}[H]
-\includegraphics[angle=0,width=6cm]{./img/stringitem.png}
+\includegraphics[angle=0,width=9cm]{./img/stringitem.png}
 \end{figure}
 
 \end{itemize}

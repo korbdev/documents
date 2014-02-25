@@ -3,11 +3,11 @@
 \thumbcontents {Grundlagen der medizinischen Bildverarbeitung}{\relax \fontsize {24.88}{30}\selectfont {\textbf {3.}}}{white}{haw_rot}{14}{thumbs.3}{0}
 \thumbcontents {Grundlagen zu Entwurfsmustern der Softwareentwicklung}{\relax \fontsize {24.88}{30}\selectfont {\textbf {4.}}}{white}{haw_rot}{28}{thumbs.4}{0}
 \thumbcontents {Softwarearchitektur des Java Medical Imaging Toolkit}{\relax \fontsize {24.88}{30}\selectfont {\textbf {5.}}}{white}{haw_rot}{37}{thumbs.5}{0}
-\thumbcontents {Implementierung}{\relax \fontsize {24.88}{30}\selectfont {\textbf {6.}}}{white}{haw_rot}{55}{thumbs.6}{0}
-\thumbcontents {Entwicklung von Erweiterungen}{\relax \fontsize {24.88}{30}\selectfont {\textbf {7.}}}{white}{haw_rot}{85}{thumbs.7}{0}
-\thumbcontents {Diskussion}{\relax \fontsize {24.88}{30}\selectfont {\textbf {8.}}}{white}{haw_rot}{110}{thumbs.8}{0}
-\thumbcontents {Fazit}{\relax \fontsize {24.88}{30}\selectfont {\textbf {9.}}}{white}{haw_rot}{112}{thumbs.9}{0}
+\thumbcontents {Implementierung}{\relax \fontsize {24.88}{30}\selectfont {\textbf {6.}}}{white}{haw_rot}{56}{thumbs.6}{0}
+\thumbcontents {Entwicklung von Erweiterungen}{\relax \fontsize {24.88}{30}\selectfont {\textbf {7.}}}{white}{haw_rot}{86}{thumbs.7}{0}
+\thumbcontents {Diskussion}{\relax \fontsize {24.88}{30}\selectfont {\textbf {8.}}}{white}{haw_rot}{114}{thumbs.8}{0}
+\thumbcontents {Fazit}{\relax \fontsize {24.88}{30}\selectfont {\textbf {9.}}}{white}{haw_rot}{116}{thumbs.9}{0}
 \thumbcontents {Darstellung der DICOM-Elemente im Speicher}{\relax \fontsize {24.88}{30}\selectfont {\textbf {A}}}{white}{haw_rot}{X}{thumbs.10}{0}
 \thumbcontents {Installation der Eclipse e4 Umgebung}{\relax \fontsize {24.88}{30}\selectfont {\textbf {B}}}{white}{haw_rot}{XIV}{thumbs.11}{0}
-\thumbcontents {Iconverwaltung innerhalb der Anwendung}{\relax \fontsize {24.88}{30}\selectfont {\textbf {C}}}{white}{haw_rot}{XXIII}{thumbs.12}{0}
-\thumbcontents {Die Verwendung von Eclipse zur Plug-in-Entwicklung}{\relax \fontsize {24.88}{30}\selectfont {\textbf {D}}}{white}{haw_rot}{XXV}{thumbs.13}{0}
+\thumbcontents {Iconverwaltung innerhalb der Anwendung}{\relax \fontsize {24.88}{30}\selectfont {\textbf {C}}}{white}{haw_rot}{XXVII}{thumbs.12}{0}
+\thumbcontents {Die Verwendung von Eclipse zur Plug-in-Entwicklung}{\relax \fontsize {24.88}{30}\selectfont {\textbf {D}}}{white}{haw_rot}{XXIX}{thumbs.13}{0}
