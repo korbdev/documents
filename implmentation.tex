@@ -1,6 +1,7 @@
 \chapter{Implementierung} \label{implementation}
+\addthumb{Implementierung}{\huge{\textbf{\thechapter.}}}{white}{haw_rot} 
 
-Dieses Kapitel erläutert den Implementierungsvorgang des Java Medical Imaging Toolkits. Besonderer Wert wird auf die Umsetzung der Blattknoten wie in Kapitel \ref{architecture} Abschnitt \ref{jmedikit_structure} gelegt, da diese Anwendungsteile direkt mit dem Anwender in Aktion treten.\\
+Dieses Kapitel erläutert den Implementierungsvorgang des Java Medical Imaging Toolkits. Besonderen Wert wird auf die Umsetzung der Blattknoten wie in Kapitel \ref{architecture} Abschnitt \ref{jmedikit_structure} beschrieben gelegt, da diese Anwendungsteile direkt mit dem Anwender in Aktion treten.\\
 Nach einer Beschreibung wie die DICOM-Objekte repräsentiert werden, wird umfangreich auf die Bilddarstellung und Manipulation eingegangen.
 
 \FloatBarrier
@@ -8,11 +9,11 @@ Nach einer Beschreibung wie die DICOM-Objekte repräsentiert werden, wird umfang
 
 Die beiden Schnittstellen \textit{IDicomData} und \textit{IDicomImageData} bilden die Grundlagen aller DICOM-Objekte die vom jMediKit erzeugt werden und sind gleichzeitig die einzige Kommunikationsmöglichkeit zu den externen Bibliotheken. Der abstrakte Adapter \textit{ADicomObject} stellt die Funktionen beider Schnittstellen zur Verfügung. Die wichtigsten Methoden stellen das Auslesen der Pixel und den einzelnen Tags eines DICOM-Objekts dar. \\
 Das eingebundene \textit{dcm4che} bietet neben der Verarbeitung von DICOM-Objekten auch eine Implementierung des Kommunikations- und Speicherstandards von DICOM an. Während der aktuellen Entwicklung wurde allerdings nur ein Bruchteil der DICOM-Verarbeitung zur Erfüllung der Anforderungen benötigt und der Kommunikations- und Speicherprozess fand keine Beachtung. Bei einer Implementierung sollte dennoch eine zukünftige Erweiterung im Auge behalten werden. Dabei soll ebenso das Open-Closed-Prinzip Beachtung finden.\\
-Hierbei werden die Schnittstellen in fachspezifische Domänen eingeteilt. Das bedeutet \textit{IDicomData} ist für das Verarbeiten der Tags zuständig, während \textit{IDicomImageData} ausschließlich Bilddaten verarbeitet. Für weitere Versionen können weitere Domänen implementiert werden, wie zum Beispiel eine Schnittstelle \textit{IDicomNetworkData}. Der Adapter vereint die Domänen zu einem vollen DICOM-Objekt. 
+Hierbei werden die Schnittstellen in fachspezifische Domänen eingeteilt. Das bedeutet, \textit{IDicomData} ist für das Verarbeiten der Tags zuständig, während \textit{IDicomImageData} ausschließlich Bilddaten verarbeitet. Für weitere Versionen können weitere Domänen implementiert werden, wie zum Beispiel eine Schnittstelle \textit{IDicomNetworkData}. Der Adapter vereint die Domänen zu einem vollen DICOM-Objekt. 
 
 \FloatBarrier
-\section{Der DicomBrowser}
-Der DicomBrowser ist der zentrale Part zum Transfer der DICOM-Dateien aus dem Dateisystem zu les- und verarbeitbaren DICOM-Objekten. Abbildung \ref{dicombrowser} zeigt die Darstellung nach dem Einlesen eines Ordners mit DICOM-Dateien. Die Repräsentation entspricht dem ER-Modell aus Kapitel \ref{grundlagen} Abschnitt \ref{grundlagen:iod}. Der Knoten $/$ symbolisiert die Wurzel. \textit{BRAINX}\footnote{Beispieldatensätze verfremden die tätslchlichen Patientennamen. Originale Datensätze hätten die Form \textit{Nachname\^{}Vorname}} ist der für diesen Patienten eindeutige Wert seiner Patienten-Id, gefolgt von in diesem Beispiel einer Studie, die wiederum aus sieben Serien besteht. Die einzelnen DICOM-Objekte als Blattknoten werden aufgrund der Übersichtlichkeit nicht angezeigt.\\
+\section{Der DicomBrowser} \label{treestructure}
+Der DicomBrowser ist der zentrale Part zum Transfer der DICOM-Dateien aus dem Dateisystem zu les- und verarbeitbaren DICOM-Objekten. Abbildung \ref{dicombrowser} zeigt die Darstellung nach dem Einlesen eines Ordners mit DICOM-Dateien. Die Repräsentation entspricht dem ER-Modell aus Kapitel \ref{grundlagen} Abschnitt \ref{grundlagen:iod}. Der Knoten $/$ symbolisiert die Wurzel. \textit{BRAINX} ist der für diesen Patienten eindeutige Wert seiner Patienten-Id, gefolgt von, in diesem Beispiel einer Studie, die wiederum aus sieben Serien besteht. Die einzelnen DICOM-Objekte als Blattknoten werden aufgrund der Übersichtlichkeit nicht angezeigt.\\
 Die Repräsentation der Dateien ist nicht immer geordnet wie es das ER-Modell vorgibt und man kann nicht von einer sortierten Ordnerstruktur ausgehen. Die PACS-Software \textit{dcm4chee} ordnet die Daten beispielsweise nach dem Aufnahmedatum. Es wird eine Datenstruktur benötigt, die der DICOM Object Definiton entspricht.
 
 \begin{figure}[htbp]
@@ -36,7 +37,7 @@ h = max(4)
 und folgende konkrete Höhen der Knotentypen.
 \begin{equation}
 h_{Root} = 0 \qquad
-h_{Patienenname} = 1 \qquad 
+h_{Patient} = 1 \qquad 
 h_{Study} = 2 \qquad
 h_{Series} = 3 \qquad
 h_{Oject} = 4
@@ -65,8 +66,8 @@ Zwei Klassen des Quelltextes liefern die Basis des Baums:
   level 2/.style={sibling distance=5cm},
   level 4/.style={sibling distance = 3cm, level distance = 2cm},
    level 5/.style={sibling distance=1cm},]
-  \node {$\backslash$}
-    child { node{Patientname}
+  \node {/}
+    child { node{Patient}
       child { node{Study}
         child {node{Series}
         	child {node{Object}}
@@ -77,7 +78,7 @@ Zwei Klassen des Quelltextes liefern die Basis des Baums:
         }
       }
     }
-    child { node{Patientname}
+    child { node{Patient}
     	child{ node{Study}
     	  child{ node{Series}
     	  	child {node{Object}}
@@ -90,14 +91,14 @@ Zwei Klassen des Quelltextes liefern die Basis des Baums:
 
 Da nun die Datenstruktur bestimmt ist, fehlt das Vorgehen zur Sortierung der Daten. Abbildung \ref{filesystemrep} in Abschnitt \ref{grundlagen:dicom} zeigt eine mögliche Dateistruktur. Das liefert allerdings keine Sicherheit, dass die Dateien immer vorsortiert zur Verfügung stehen. Liegen alle DICOM-Dateien in einem Ordner, wäre eine Einteilung in Patienten und Serien etc. nicht mehr möglich.\\
 Wie bereits in Abschnitt \ref{grundlagen:dicom} beschrieben besitzt jeder Patient, jede Studie und jede Serie eine eigene eindeutige Identifikationsnummer(UID), die eine modellgerechte Sortierung ermöglicht. Die Tags, die diese UIDs enthalten sind \textit{Patient ID}, \textit{Study Instace UID}, \textit{Series Instance UID} und \textit{SOP Instance UID}.\\
-Jede Datei repräsentiert ein Blatt im Baum und somit ein DICOM-Objekt. Dadurch muss die abstrakte Klasse ADicomObjekt aus der Architekturbeschreibung aus Kapitel \ref{architecture} Abschnitt \ref{adapter_dependencies} angepasst werden und erweitert die abstrakte Superklasse ADicomTreeItem. Somit erben alle DICOM-Objekte die Eigenschaften eines Knoten im Baum. Zur weiteren Klassifizierung der Knoten werden die Klassen \textit{DicomPatientItem}, \textit{DicomStudyItem} und \textit{DicomSeriesItem}, die alle von \textit{ADicomTreeItem} erben, eingesetzt.
+Jede Datei repräsentiert ein Blatt im Baum und somit ein DICOM-Objekt. Dadurch muss die abstrakte Klasse \textit{ADicomObjekt} aus der Architekturbeschreibung aus Kapitel \ref{architecture} Abschnitt \ref{adapter_dependencies} angepasst werden und erweitert die abstrakte Superklasse \textit{ADicomTreeItem}. Somit erben alle DICOM-Objekte die Eigenschaften eines Knoten im Baum. Zur weiteren Klassifizierung der Knoten werden die Klassen \textit{DicomPatientItem}, \textit{DicomStudyItem} und \textit{DicomSeriesItem}, die alle von \textit{ADicomTreeItem} erben, eingesetzt.
 Bei der Instantiierung des DICOM-Objekts wird direkt die UID über \textit{SOP Instance UID} zugewiesen. Als nächster Schritt wird aus dem DICOM-Objekt der Pfad von der Wurzel zum Objekt ermittelt. Dazu werden \textit{Patient ID}, \textit{Study Instace UID} und \textit{Series Instance UID} des Objekts ausgelesen. Nun wird der Baum nach den entsprechenden Objekten und den UIDs durchsucht. Sind diese nicht vorhanden, wird das zugehörige Objekt erzeugt und in den Baum eingefügt, bis letztendlich das DICOM-Objekt als Blatt eingehängt werden kann.\\
 Mittels dieser Sortierung entsprechen die Elemente im DicomBrowser der Darstellung des ER-Modells.
 
 \FloatBarrier
 \section{Repräsentation der Pixeldaten}
 
-Ganzzahlige Datentypen in Java (\textit{byte}, \textit{short}, \textit{int}, \textit{long}) werden im Zweierkomplement kodiert\cite[S.106]{java:insel}]. Dadurch sind nur Werte im Bereich von $[-2^{BIT-1}, 2^{BIT-1}-1]$. Das entspricht beim Datentyp \textit{short} dem Intervall von $[-2^{15}, 2^{15}-1] \rightarrow [-32768, 32767]$.\\
+Ganzzahlige Datentypen in Java (\textit{byte}, \textit{short}, \textit{int}, \textit{long}) werden im Zweierkomplement kodiert\cite[S.106]{java:insel}]. Dadurch sind nur Werte im Bereich von $[-2^{BIT-1}, 2^{BIT-1}-1]$ wobei $BIT$ dem Speicherbedarf eines einzelnen Datums des Datentyps entspricht. Das entspricht beim Typ \textit{short} dem Intervall von $[-2^{15}, 2^{15}-1] \rightarrow [-32768, 32767]$.\\
 Medizinische Grauwertbilder besitzen meist eine Tiefe von 8-, 12- und 16-Bit. Zusätzlich bestimmt der DICOM-Tag \textit{PixelRepresentation}, ob Pixelwerte vorzeichenbehaftet sind. Durch diese variablen Eigenschaften entstehen unterschiedliche Bildtypen. Aus dem Abschnitt \ref{grey_images} wird deutlich, dass Grauwertbilder mit einer Tiefe von 16-Bit den Bereich von $[0,65535]$ abdecken. Dadurch entsteht eine Diskrepanz zwischen dem 16-Bit Java Datentyp \textit{short} und den Grauwerten. Die Pixelwerte können vom Typ \textit{short} nicht aufgenommen werden. Das gleiche Missverhältnis entsteht bei einer Tiefe von 8-Bit. Wie in Tabelle \ref{java:datentypen} zu sehen, fasst der Datentyp \textit{byte} maximal einen Wert von 127 während der größte Pixelwert 255 entspricht. Daraus folgt, dass Grauwertbilder ohne vorzeichenbehaftete Werte (Unsigned) mit dem nächsthöheren Datentyp repräsentiert werden.
 
 \begin{table}
@@ -138,8 +139,8 @@ Der Datentyp \textit{int} könnte alle Pixelwerte eines DICOM-Objekts aufnehmen.
 \FloatBarrier
 \section{Räumliche Sortierung der Bilddaten}
 
-Beim Erstellen des Baums aus Abschnitt \ref{treestructure} wird rekursiv das Verzeichnis durchlaufen und nach lesbaren DICOM-Objekten gesucht. Ist die Suche erfolgreich, wird das Objekt dem Baum hinzugefügt. Hierbei kann das Problem auftreten, dass Dateien in der falschen Reihenfolge importiert werden. So kann es passieren, dass ein Importvorgang abhängig vom Dateinamen Objekte dem Baum hinzufügt. Die räumliche Reihenfolge der einzelnen Schichten entspricht allerdings keineswegs dem Dateinamen\footnote{Je nach Sortierung innerhalb des Betriebssystems könnte ein Import auch nach dem Änderungsdatum erfolgen} oder anderen dateibezogenen Reihenfolgen. Dadurch wird, wie schon bei der Sortierung nach dem ER-Modell, eine Methode benötigt, mittels DICOM-Tags die korrekte Reihenfolge der Bilddaten herzustellen.\\
-Der Standard verfügt über mehrere Tags, welche die richtige Reihenfolge andeuten. \textit{Instance Number} ist nach dem Standard \cite[C.7.6.1]{dicom:iod} eine Nummer, die ein Bild identifiziert. Während der Entwicklung entsprach dieser Wert der Testbilder der dargestellten Reihenfolge, jedoch ist keine Information enthalten ob diese der tatsächlichen Reihenfolge im Raum entspricht. So könnte der Wert für die Aufnahmenreihenfolge oder andere konsekutive auf- oder absteigende Folgen stehen. Dadurch ist \textit{Instance Number} nur bedingt geeignet.\\
+Beim Erstellen des Baumes aus Abschnitt \ref{treestructure} wird rekursiv das Verzeichnis durchlaufen und nach lesbaren DICOM-Objekten gesucht. Ist die Suche erfolgreich, wird das Objekt dem Baum hinzugefügt. Hierbei kann das Problem auftreten, dass Dateien in der falschen Reihenfolge importiert werden. So kann es passieren, dass ein Importvorgang, abhängig vom Dateinamen, Objekte dem Baum hinzufügt. Die räumliche Reihenfolge der einzelnen Schichten entspricht allerdings keineswegs dem Dateinamen\footnote{Je nach Sortierung innerhalb des Betriebssystems könnte ein Import auch nach dem Änderungsdatum erfolgen.} oder anderen dateibezogenen Reihenfolgen. Dadurch wird, wie schon bei der Sortierung nach dem ER-Modell, eine Methode benötigt, mittels DICOM-Tags die korrekte Reihenfolge der Bilddaten herzustellen.\\
+Der Standard verfügt über mehrere Tags, welche die richtige Reihenfolge andeuten. \textit{Instance Number} ist nach dem Standard \cite[C.7.6.1]{dicom:iod} eine Nummer, die ein Bild identifiziert. Während der Entwicklung entsprach dieser Wert der Testbilder der dargestellten Reihenfolge, jedoch ist keine Information enthalten, ob diese der tatsächlichen Reihenfolge im Raum entspricht. So könnte der Wert für die Aufnahmenreihenfolge oder andere konsekutive auf- oder absteigende Folgen stehen. Dadurch ist \textit{Instance Number} nur bedingt geeignet.\\
 Ein Tag, der räumliche Informationen enthält ist \textit{Slice Location}. Nach dem Standard \cite[C.7.6.2]{dicom:iod} ist dieser Wert die relative Position der Bildebene in mm. Es ist allerdings keine Information enthalten, ob die Sortierung in steigender oder fallender Reihenfolge erfolgt. Da der Tag zusätzlich nur optional vorhanden ist, kann eine Nutzung zur Bestimmung der Anordnung ausgeschlossen werden.
 
 \begin{figure*}[htb]
@@ -155,7 +156,7 @@ Ein Tag, der räumliche Informationen enthält ist \textit{Slice Location}. Nach
 \end{figure*}
 
 In der Mailingliste des Insight Segmentation and Registration Toolkits \cite{itk:mail} wird eine Berechnung über die Attribute \textit{Image Position} und \textit{Image Orientation} vorgeschlagen.
-\textit{Image Position} enthält die $x$, $y$ und $z$ Koordinate in mm und \textit{Image Orientation} den Richtungskosinus\footnote{Ein Richtungskosinus beschreibt die Winkel des Vektors zu den drei Koordinatenachsen} der ersten Reihe und Spalte des Bildes in Abhängigkeit des Patienten. Diese beiden Richtungsvektoren spannen die Bildebene auf und müssen nach \cite[C.7.6.2.1.1]{dicom:iod} orthogonal zueinander sein.\\
+\textit{Image Position} enthält die $x$, $y$ und $z$ Koordinate in mm und \textit{Image Orientation} den Richtungskosinus\footnote{Ein Richtungskosinus beschreibt die Winkel des Vektors zu den drei Koordinatenachsen.} der ersten Reihe und Spalte des Bildes in Abhängigkeit des Patienten. Diese beiden Richtungsvektoren spannen die Bildebene auf und müssen nach \cite[C.7.6.2.1.1]{dicom:iod} orthogonal zueinander sein.\\
 Die Abbildungen in \ref{sort} zeigen das Koordinatensystem des Patienten als rechtshändiges System\cite[S.419]{dicom:iod}. Dieses ist um 180 Grad um die x-Achse gedreht. In Abbildung \ref{sort:single} ist die Bildebene sowie die beiden Richtungsvektoren $\vec{c}$ der ersten Spalte und $\vec{r}$ der ersten Reihe dargestellt. Mit Hilfe des Kreuzproduktes lässt sich nun die Normale der Ebene bestimmen. Die räumliche Anordnung der Schichten erfolgt entlang des Normalenvektors $\vec{r} \times \vec{c}$ (Abbildung \ref{sort:stack}). Die Richtungsvektoren könnten folgende Darstellung besitzen:
 
 \begin{equation}
@@ -179,7 +180,7 @@ Mit Hilfe dieser Kriterien lassen sich die Bilder über den Tag \textit{Image Po
 \label{example_sort}
 \end{equation}
 
-Durch eine Implementierung des Interface \textit{Comparable\textless AImage\textgreater} in \textit{AImage} unter Berücksichtigung dieser Vorgehensweise ist eine einfache und für diesen Zweck ausreichend schnelle Sortierung der Bildebenen möglich. Somit erfolgt die Anordnung des Baumes und der Bilder unabhängig der Dateistruktur.\\
+Durch eine Implementierung des Interface \textit{Comparable\textless AImage\textgreater} in \textit{AImage}, unter Berücksichtigung dieser Vorgehensweise, ist eine einfache und für diesen Zweck ausreichend schnelle Sortierung der Bildebenen möglich. Somit erfolgt die Anordnung des Baumes und der Bilder unabhängig von der Dateistruktur.\\
 Voraussetzung für diese Umsetzung ist, dass die Bildebenen parallel zu den Koordinatenachsen verlaufen. Bei Bildreihen mit Kurven oder einem schrägen Verlauf kann keine dominante Achse bestimmt werden.
 
 \FloatBarrier
@@ -202,7 +203,7 @@ Zusätzlich zu den Werkzeugen gibt es drei verschiedene Ansichten, aus denen der
 \label{layers}
 \end{figure*}
 
-Die Faktoren DICOM-Objekt, Bedienelemente der Composites, Werkzeuge und die verschiedenen Ansichten der Ebenen beeinflussen maßgeblich den Prozess der Anzeige der Bilddaten. Die Vorgehensweise wird in Abbildung \ref{imageprocess} visualisiert. Der Prozess gliedert sich in sechs zentrale Verarbeitungsblöcke und zwei Einhängepunkte(Hooks) für Werkzeuge.
+Die Faktoren DICOM-Objekt, Bedienelemente der Composites, Werkzeuge und die verschiedenen Ansichten der Ebenen beeinflussen maßgeblich den Prozess der Anzeige der Bilddaten. Die Vorgehensweise wird in Abbildung \ref{imageprocess} visualisiert. Der Prozess gliedert sich in sechs zentrale Verarbeitungsblöcke und zwei Einhängepunkte(Hooks) für Werkzeuge, die für eine Verarbeitung vom Öffnen der Datei bis zur Anzeige auf dem Bildschirm nötig sind.
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
@@ -249,7 +250,7 @@ Mit einem dreidimensionalen Datensatz ist es möglich, eine beliebige Ebene durc
 \label{mpr}
 \end{figure*}
 
-Die Abbildungen \ref{mpr} zeigen jeweils die \textit{erste} Bildschicht der axialen Quelldarstellung als blaue und die \textit{letzte} Schicht der Zieldarstellung als rote Voxel. Da die Quell- und Zielebene immer orthogonal zueinander sind, kann auf zeitintensive Berechnungen verzichtet werden. Die neuen Bildebenen können über die Indizes der Pixel der verschiedenen Bilder schnell bestimmt werden. Die Bildgröße der rekonstruierten Ebene ist abhängig von der ursprünglichen Ebenendarstellung. So entspricht, wie Abbildung \ref{mpr:ac} zeigt, die Höhe(y) eines coronalen Bildes der Tiefe(z) einer axialen Darstellung und die coronale Tiefe(z) der axialen Höhe(y). Die Bildbreite bleibt unverändert. Die erste Pixelreihe der Rekonstruktion kann mit den Werten der letzten Reihe der ersten axialen Bildschicht belegt werden. Ein Algorithmus könnte wie folgt implementiert werden:
+Die Abbildungen \ref{mpr} zeigen jeweils die \textit{erste} Bildschicht der axialen Quelldarstellung als blaue und die \textit{letzte} Schicht der Zieldarstellung als rote Voxel. Da die Quell- und Zielebene immer orthogonal zueinander sind, kann auf zeitintensive geometrische  Berechnungen verzichtet werden. Die neuen Bildebenen können über die Indizes der Pixel der verschiedenen Bilder schnell bestimmt werden. Die Bildgröße der rekonstruierten Ebene ist abhängig von der ursprünglichen Ebenendarstellung. So entspricht, wie Abbildung \ref{mpr:ac} zeigt, die Höhe(y) eines coronalen Bildes der Tiefe(z) einer axialen Darstellung und die coronale Tiefe(z) der axialen Höhe(y). Die Bildbreite bleibt unverändert. Die erste Pixelreihe der Rekonstruktion kann mit den Werten der letzten Reihe der ersten axialen Bildschicht belegt werden. Algorithmus \ref{mpr_algo} zeigt die Möglichkeit einer Implementierung.
 
 \begin{algorithm}
 \caption{Berechnung der Bildebenen von axialer zu coronaler Darstellung}
@@ -307,7 +308,8 @@ Die Rotationsrichtung und die Drehachse ist, wie die rekonstruierten Bilder, abh
 \FloatBarrier
 
 \subsection{Berechnung der Bildkoordinaten}
-Die Werkzeuge zur Translation und Skalierung beeinflussen die Koordinaten des Bildes. Während das Verschieben unproblematisch für die Performance der Anwendung ist, hat die Skalierung, im Besonderen die Vergrößerung, maßgeblichen Einfluss auf die Rechenzeit. Angenommen die Zeichenfläche hat eine Größe von $500 \times 500$ und $250.000$ Pixel und das Bild mit den Maßen $1000 \times 1000$  und $1.000.000$ Pixel die doppelte Größe. Daraus folgt, dass maximal $\frac{1}{4}$ der Pixel des Bildes auf der Zeichenfläche angezeigt werden können. Die sechs Blöcke des Prozesses verarbeiten auch die nicht sichtbaren Anteile des Bildes und verbrauchen dadurch unnötig Rechenzeit. In dem Beispiel bedeutet das einen Mehraufwand von $75\%$. Um diese zusätzliche Rechenzeit einzusparen, darf die Berechnung der Bildkoordinaten nur den aktuell sichtbaren Bereich in die Rechnungen einbeziehen.\\
+Nach einer eventuellen Ebenenrekonstruktion und der Initalisierung der Bilddaten können die Koordinaten und Eigenschaften des Bildes auf der Zeichenfläche bestimmt werden. 
+Die Werkzeuge zur Translation und Skalierung beeinflussen die Koordinaten des Bildes. Während das Verschieben unproblematisch für die Performance der Anwendung ist, hat die Skalierung, im Besonderen die Vergrößerung, maßgeblichen Einfluss auf die Rechenzeit. Angenommen die Zeichenfläche hat eine Größe von $500 \times 500$ und $250.000$ Pixel und das Bild mit den Maßen $1000 \times 1000$  und $1.000.000$ Pixel die doppelte Größe. Daraus folgt, dass maximal $\frac{1}{4}$ der Pixel des Bildes auf der Zeichenfläche angezeigt werden können. Die sechs Blöcke des Zeichenprozesses verarbeiten auch die nicht sichtbaren Anteile des Bildes und verbrauchen dadurch unnötig Rechenzeit. In dem Beispiel bedeutet das einen Mehraufwand von $75\%$. Um diese zusätzliche Rechenzeit einzusparen, darf die Berechnung der Bildkoordinaten nur den aktuell sichtbaren Bereich in die Rechnungen einbeziehen.\\
 
 \begin{figure*}[htb]
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
@@ -321,8 +323,8 @@ Die Werkzeuge zur Translation und Skalierung beeinflussen die Koordinaten des Bi
 \label{coords}
 \end{figure*}
 
-Wie Abbildung \ref{coords:bild} zeigt, bestimmt \textit{DicomCanvas} das Koordinatensystem mit der linken oberen Ecke als Ursprung. Die Position der Bilder wird durch vier Parameter bestimmt. Die Koordinaten $(x, y)$ legen den Ursprung des Bildes fest und $(widht, height)$ bestimmen mit Breite und Höhe die Dimension. Die tatsächlichen Koordinaten des Bildes sind dadurch $(x, y)$ und $(x+width, y+height)$. Liegen diese vier Parameter außerhalb der Zeichenfläche wie in Abbildung \ref{coords:offset}, muss der Abstand (offset) von x, y, width und height zum Canvas berechnet werden.\\
-Das \textit{DicomCanvas} speichert nur das Originalbild und den aktuell sichtbaren Bildausschnitt. Da bei skalierten Bildern nur die Dimension und nicht die Pixeldaten hinterlegt sind, muss der sichtbare Bereich aus dem Original interpoliert werden. Um die richtigen Pixelwerte zu finden, wird mit normalisierten Koordinaten zwischen den Werten $(0, 0)$ für $(x,y)$ und $(1, 1)$ für $(x+width, y+height)$ gearbeitet. Abbildung \ref{coords:normal} zeigt ein Bild mit der Dimension $512 \times 512$, das um den Faktor vier auf $2048\times2048$ vergrößert wurde. Der sichtbare Bildausschnitt erstreckt sich von $(512, 512)$ bis $(1536, 1536)$. Das entspricht dem Bereich von $(128, 128)$ bis $(384, 384)$ im Originalbild. Mit Hilfe der normalisierten Koordinaten lassen sich die Bildbereiche bei gleichem Seitenverhältnis von Original und skaliertem Bild unabhängig von der Größe bestimmen. Für den Bildausschnitt im Beispiel entspricht der Bereich in normalisierter Darstellung $(0.25, 0.25)$ für $(x,y)$ und $(0.75, 0.75)$ für $(width, height)$. Mit gegebenen Pixelwerten lassen sich die normalisierten Koordinaten wie folgt bestimmen.
+Wie Abbildung \ref{coords:bild} zeigt, bestimmt \textit{DicomCanvas} das Koordinatensystem mit der linken oberen Ecke als Ursprung. Die Position der Bilder wird durch vier Parameter bestimmt. Die Koordinaten $(x, y)$ legen den Ursprung des Bildes fest und $(widht, height)$ bestimmen mit Breite und Höhe die Dimension. Die tatsächlichen Koordinaten des Bildes sind dadurch $(x, y)$ und $(x+width, y+height)$. Liegen diese vier Parameter außerhalb der Zeichenfläche wie in Abbildung \ref{coords:offset}, muss der Abstand (offset) von \textit{x}, \textit{y}, \textit{width} und \textit{height} zum Canvas berechnet werden.\\
+Das \textit{DicomCanvas} speichert nur das Originalbild und den aktuell sichtbaren Bildausschnitt. Da bei skalierten Bildern nur die Dimension und nicht die Pixeldaten selbst hinterlegt sind, muss der sichtbare Bereich aus dem Original interpoliert werden. Um die richtigen Pixelwerte zu finden, wird mit normalisierten Koordinaten zwischen den Werten $(0, 0)$ für $(x,y)$ und $(1, 1)$ für $(x+width, y+height)$ gearbeitet. Abbildung \ref{coords:normal} zeigt ein Bild mit der Dimension $512 \times 512$, das um den Faktor vier auf $2048\times2048$ vergrößert wurde. Der sichtbare Bildausschnitt erstreckt sich von $(512, 512)$ bis $(1536, 1536)$. Das entspricht dem Bereich von $(128, 128)$ bis $(384, 384)$ im Originalbild. Mit Hilfe der normalisierten Koordinaten lassen sich die Bildbereiche bei gleichem Seitenverhältnis von Original und skaliertem Bild unabhängig von der Größe bestimmen. Für den Bildausschnitt im Beispiel entspricht der Bereich in normalisierter Darstellung $(0.25, 0.25)$ für $(x,y)$ und $(0.75, 0.75)$ für $(width, height)$. Mit gegebenen Pixelwerten lassen sich die normalisierten Koordinaten wie folgt bestimmen.
 
 \begin{equation}
  x_{norm} = \frac{x}{width} \qquad
@@ -344,7 +346,7 @@ Mit diesen Hilfsmitteln lässt sich nun der obere linke und untere rechte Abstan
 \end{equation}
 
 ermitteln. $x$ und $y$ sind der Abstand vom Ursprung des Koordinatensystems zum Ursprung des Bildes und somit nicht Teil des sichtbaren Bildausschnittes. Der Betrag ist notwendig, da nur Werte zwischen 0 und 1 als normalisierte Koordinaten akzeptiert werden.\\
-Angenommen es existiert das Bild aus dem Beispiel in Abbildung \ref{coords:normal} mit den Koordinaten $(-512, -512)$, $(1536, 1536)$ und einer Dimension $(width, height)$ von $()2048, 2048)$ sowie eine Zeichenfläche mit der Dimension $(0, 0)$ und $(1024, 1024)$, dann ergeben sich daraus folgende normalisierte Koordinaten:
+Angenommen es existiert das Bild aus dem Beispiel in Abbildung \ref{coords:normal} mit den Koordinaten $(-512, -512)$, $(1536, 1536)$ und einer Dimension $(width, height)$ von $(2048, 2048)$ sowie eine Zeichenfläche mit der Dimension $(0, 0)$ und $(1024, 1024)$, dann ergeben sich daraus folgende normalisierte Koordinaten:
 
 \begin{equation}
  x_{norm} = \frac{|-512|}{2048} = 0.25\qquad
@@ -352,14 +354,14 @@ Angenommen es existiert das Bild aus dem Beispiel in Abbildung \ref{coords:norma
 \end{equation}
 
 Sind $x$ und/oder $y$ \textgreater= 0 folgt daraus, dass die obere linke Ecke des Bildes vollständig zu sehen ist. Das entspricht dem normalisierten Werten $(0, 0)$.\\
-Der nächste Schritt ist die Prüfung der unteren Rechten Ecke. Bevor die Koordinaten bestimmt werden, muss der Abstand berechnet werden, da dieser nicht wie bei $x$ und $y$ abgelesen werden kann. Durch Subtraktion der Bildkoordinaten $(x+width, y+height)$ von der Zeichenfläche erhält man den Abstand zwischen Bild und Canvas.
+Der nächste Schritt ist die Prüfung der unteren rechten Ecke. Bevor die Koordinaten bestimmt werden, muss der Abstand berechnet werden, da dieser nicht wie bei $x$ und $y$ abgelesen werden kann. Durch Subtraktion der Bildkoordinaten $(x+width, y+height)$ von der Zeichenfläche erhält man den Abstand \textit{offset} zwischen Bild- und Canvasrand.
 
 \begin{equation}
  offset_{width} = x + width - width_{Canvas}\qquad
  offset_{height} = y + height - height_{Canvas}
 \end{equation}
 
-Subtrahiert man den Abstand von der Bilddimension erhält man die tatsächlichen Koordinaten, die noch im sichtbaren Bereich der Zeichenfläche liegen. Damit lassen sich die normalisierten Koordinaten berechnen.
+Subtrahiert man den Abstand von der Bilddimension, erhält man die tatsächlichen Koordinaten die noch im sichtbaren Bereich der Zeichenfläche liegen. Damit lassen sich die normalisierten Koordinaten berechnen.
 
 \begin{equation}
  x_{norm} = \frac{width - offset_{width}}{width} \qquad
@@ -392,7 +394,7 @@ Mit den berechneten Werten der normalisierten Koordinaten $(0.25, 0.25)$ und $(0
 \subsection{Bilineare Interpolation}
 
 Es können verschiedene Interpolationsmethoden eingesetzt werden, um das Bild oder einen Bildausschnitt zu vergrößern oder zu verkleinern. Die Abbildungen \ref{interpolation} zeigen die Ergebnisse einer Nearest Neighbor, biliniearer und bikubischen Interpolation. Das Nearest Neighbor Verfahren stellt die schnellste Interpolationsmethode dar, liefert allerdings auch gleichzeitig die schlechtesten Ergebnisse. In Abbildung \ref{interpolation:nn} erkennt man deutlich die Stufenbildung im Bild.\\
-Bessere Ergebnisse liefert die bilineare Interpolation bei einer moderaten Laufzeit. Eine nochmals verbesserte Darstellung kann durch die bikubische Interpolation erreicht werden, benötigt allerdings den größten Rechenaufwand. Die bilinieare Methode liefert einen guten Kompromiss aus Qualität des skalierten Bildes und benötigte Rechenzeit.
+Bessere Ergebnisse liefert die bilineare Interpolation bei einer moderaten Laufzeit. Eine nochmals verbesserte Darstellung kann durch die bikubische Interpolation erreicht werden, benötigt allerdings den größten Rechenaufwand. Die bilinieare Methode liefert einen guten Kompromiss aus Qualität des skalierten Bildes und benötigter Rechenzeit.
 
 \begin{figure*}[htb]
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
@@ -407,7 +409,7 @@ Bessere Ergebnisse liefert die bilineare Interpolation bei einer moderaten Laufz
 \label{interpolation}
 \end{figure*}
 
-Bei der bilinearen Interpolation werden die zu der Koordinate $(x_0, y_0)$ nächstliegenden vier Werte der Bildpunkte des Originalbildes zur Interpolation verwendet\cite[S.387]{burger:bv}. In Abbildung \ref{bilinear_interpolation} sind das \textit{A}, \textit{B}, \textit{C} und \textit{D}. Zuerst findet eine Interpolation in x-Richtung statt. Daraus ergeben sich die Werte \textit{E} und \textit{F}. Durch die Interpolation in y-Richtung der Werte \textit{E} und \textit{F} wird der finale Wert \textit{G} ermittelt.
+Bei der bilinearen Interpolation werden die, zu der Koordinate $(x_0, y_0)$ nächstliegenden, vier Werte der Bildpunkte des Originalbildes zur Interpolation verwendet\cite[S.387]{burger:bv}. In Abbildung \ref{bilinear_interpolation} sind das \textit{A}, \textit{B}, \textit{C} und \textit{D}. Zuerst findet eine Interpolation in x-Richtung statt. Daraus ergeben sich die Werte \textit{E} und \textit{F}. Durch die Interpolation in y-Richtung der Werte \textit{E} und \textit{F} wird der finale Wert \textit{G} ermittelt.
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
@@ -450,7 +452,7 @@ Der Wert von \textit{G} kann nun beim Zielbild \textit{Z} an die aktuelle Positi
 
 \subsection{Anzeige der Zusatzinformationen}
 
-Dem Benutzer werden direkt auf der Zeichenfläche wichtige Zusatzinformationen angezeigt. So kann der Anwender die aktuelle Größe des Bildes in Pixeln und das prozentuale Verhältnis zum Originalbild ablesen, sowie die gewählten Fensterungswerte einsehen. Neben den Bildeigenschaften werden auch dynamische Inhalte angezeigt, wie das Patientenkoordinatensystem und die Orientierungslinien. Orientierungslinien markieren in gleichen geöffneten 3D-Datensätzen mit unterschiedlicher Ebenenansicht einen gemeinsamen Punkt. Diese dynamischen Aspekte werden folgend erläutert.
+Gefolgt von bilinearen Interpolation wird das Bild gezeichnet. Als nächster Schritt werden dem Benutzer direkt auf der Zeichenfläche wichtige Zusatzinformationen angezeigt. So kann der Anwender die aktuelle Größe des Bildes in Pixeln und das prozentuale Verhältnis zum Originalbild ablesen, sowie die gewählten Fensterungswerte einsehen. Neben den Bildeigenschaften werden auch dynamische Inhalte angezeigt, wie das Patientenkoordinatensystem und die Orientierungslinien. Orientierungslinien markieren in gleichen geöffneten 3D-Datensätzen mit unterschiedlicher Ebenenansicht einen gemeinsamen Punkt. Diese dynamischen Aspekte werden folgend erläutert.
 
 \subsubsection{Das Koordinatensystem}
 
@@ -477,7 +479,7 @@ Der DICOM-Standard definiert ein sogenanntes \textit{Reference Coordinate System
 \end{figure*}
 
 Wie in Abbildung \ref{coords:xz} dargestellt, steigt die x-Achse in Richtung der linken Hand das Patienten. Die Werte der y-Achse nehmen von der Vorderseite zur Rückseite des Patienten zu. Die z-Achse erhöht sich in Richtung der Füße zum Kopf des Patienten\cite[C.7.6.2.1.1]{dicom:iod}.\\
-Unter Berücksichtigung des DICOM-Tags \textit{Image Orientation} mit dessen Vektoren kann die Beschriftung der Koordinatenachsen bestimmt werden. Durch den maximalen Betrag der Elemente der Vektoren werden die dominanten Achsen ermittelt. Dadurch erhält man die Koordinatenachsen der Bildebene. Des weiteren kann durch die Achsen die Ebenendarstellung bestimmt werden. Ein dominanter xy-Anteil bedeutet \textit{axiale} Ebenendarstellung, der xz-Anteil ist die \textit{coronale} Ansicht und der yz-Anteil die \textit{sagittale} Darstellung.
+Unter Berücksichtigung des DICOM-Tags \textit{Image Orientation} kann mit dessen Vektoren kann die Beschriftung der Koordinatenachsen bestimmt werden. Durch den maximalen Betrag der Elemente der Vektoren werden die dominanten Achsen ermittelt. Dadurch erhält man die Koordinatenachsen der Bildebene. Des weiteren kann durch die Achsen die Ebenendarstellung bestimmt werden. Ein dominanter xy-Anteil bedeutet \textit{axiale} Ebenendarstellung, der xz-Anteil ist die \textit{coronale} Ansicht und der yz-Anteil die \textit{sagittale} Darstellung.
 
 \begin{equation}
 \vec{r}=\left(\begin{array}{c} 1 \\ 0 \\ 0 \end{array}\right) \qquad
@@ -499,7 +501,7 @@ Beispiel \ref{orientationvecs} zeigt zwei Vektoren von \textit{ImageOrientation}
 
 \subsubsection{Zeichnen der Orientierungslinien}\label{scoutinglines}
 
-Wenn mehrere gleiche Datensätze in unterschiedlichen Ebenendarstellungen geöffnet sind, helfen dem Anwender die Orientierungslinien bei der Navigation durch den dreidimensionalen Datensatz. Abbildung \ref{lines:single:a} zeigt eine axiale Ebenedarstellung als aktuelle Anzeige, die vom Benutzer bedient wird. Zusätzlich sind die coronale (Abbildung \ref{lines:c}) und sagittale Ansicht (Abbildung \ref{lines:s}) geöffnet. Da der Anwender in der axialen Ansicht arbeitet, werden Änderungen der Bildanzeige an die beiden Beobachter weitergegeben.\\
+Wenn mehrere gleiche Datensätze in unterschiedlichen Ebenendarstellungen geöffnet sind, helfen dem Anwender die Orientierungslinien bei der Navigation durch den dreidimensionalen Datensatz. Abbildung \ref{lines:single:a} zeigt eine axiale Ebenendarstellung als aktuelle Anzeige, die vom Benutzer bedient wird. Zusätzlich sind die coronale (Abbildung \ref{lines:c}) und sagittale Ansicht (Abbildung \ref{lines:s}) geöffnet. Da der Anwender in der axialen Ansicht arbeitet, werden Änderungen der Bildanzeige an die beiden Beobachter weitergegeben.\\
 Navigiert der Nutzer mit der Scrollleiste durch den axialen Datensatz, wird mit Hilfe des Oberserver-Musters bei jeder Änderung die aktuelle z-Koordinate der Bildschicht an die coronale und sagittale Darstellung übertragen. Dieser z-Wert wird an der entsprechenden Stelle der Bildschicht als, im Beispiel blaue, Orientierungslinie eingezeichnet. \\
 Wie in den Abbildungen \ref{lines:single} zu sehen ist, entspricht die z-Koordinate in axialer Ansicht der y-Koordinate der coronalen und sagittalen Darstellung. Daraus folgt, dass die Orientierungslinie an der Stelle von $(0, y_{coronal}) $ bis $(width, y_{coronal})$ sowie von $(0, y_{sagittal}) $ bis $(width, y_{sagittal})$ für $y_{coronal}, y_{sagittal} = z_{axial}$
 
@@ -550,7 +552,7 @@ Auch dieses Vorgehen ist abhängig von der Quell- und Zieldarstellung der aktive
 \subsection{Implementierung der Werkzeuge}
 
 Die Anzeige der Orientierungslinien komplettiert die Funktionalitäten zur Bilddarstellung, Navigation und Orientierung. Der nächste Schritt befasst sich mit der Manipulation der Bilddaten mit den zur Verfügung gestellten Werkzeugen.\\
-Die Werkzeuge bilden die Schnittstelle zwischen Anwender und dem System. So werden Benutzereingaben entgegengenommen, interpretiert und auf der Zeichenfläche umgesetzt. Das \textit{DicomCanvas} reagiert mit Hilfe verschiedener \textit{Listener} auf die eintretenden Ereignisse, wie beispielsweise einem Mausklick oder Tastendruck. Diese Ereignisse, auch \textit{Events} genannt, werden an das Werkzeug weitergeleitet, damit das Bild und die Zeichenfläche manipuliert werden kann. Das Canvas ruft die Werkzeuge bei gängigen Maus-Events auf, die in der folgenden Liste genauer dargestellt werden.
+Die Werkzeuge bilden die Schnittstelle zwischen Anwender und dem System. So werden Benutzereingaben entgegengenommen, interpretiert und auf der Zeichenfläche umgesetzt. Das \textit{DicomCanvas} reagiert mit Hilfe verschiedener \textit{Listener} auf die eintretenden Ereignisse, wie beispielsweise einem Mausklick oder Tastendruck. Diese Ereignisse, auch \textit{Events} genannt, werden an das Werkzeug weitergeleitet, damit das Bild und die Zeichenfläche manipuliert werden können. Das Canvas ruft die Werkzeuge bei gängigen Maus-Events auf, die in der folgenden Liste genauer dargestellt werden.
 
 \begin{itemize}
 \item \textbf{MouseEnter} \\
@@ -558,13 +560,13 @@ Die Werkzeuge bilden die Schnittstelle zwischen Anwender und dem System. So werd
 \item \textbf{MouseExit} \\
 	Das Ereignis ist das Gegenstück zu MouseEnter. Beim Verlassen tritt dieses Event ein.
 \item \textbf{MouseMove} \\
-	Solange sich der Mauszeiger auf der Zeichenfläche befindet und in Bewegung ist, wird das Werkzeug mit den aktuellen Koordinaten des Cursors aktualsiert.
+	Solange sich der Mauszeiger auf der Zeichenfläche befindet und in Bewegung ist, wird das Werkzeug mit den aktuellen Koordinaten des Cursors aktualisiert.
 \item \textbf{MouseDown} \\
-	Dieses Ereignis tritt ein, wenn der Mauszeiger gedrückt wird und sich über der Zeichenfläche befindet. Zusätzlich wird im Werkzeug hinterlegt, dass eine Maustaste\footnote{Das Event wird unabhängig von der Nummer der gedrückten Maustaste ausgelöst. Innerhalb der Funktion, die das Ereignis abfängt, kann ausgelesen werden, ob die erste, zweiter oder dritte Maustaste betätigt wurde.} gedrückt wurde.
+	Dieses Ereignis tritt ein, wenn der Mauszeiger gedrückt wird und sich über der Zeichenfläche befindet. Zusätzlich wird im Werkzeug hinterlegt, dass eine Maustaste\footnote{Das Event wird unabhängig von der Nummer der gedrückten Maustaste ausgelöst. Innerhalb der Funktion, die das Ereignis abfängt, kann ausgelesen werden, ob die erste, zweite oder dritte Maustaste betätigt wurde.} gedrückt wurde.
 \item \textbf{MouseUp} \\
 	Wird die Maustaste nach dem Drücken losgelassen, tritt das MouseUp-Ereignis ein. Dies wird innerhalb des Werkzeugs übernommen.
 \item \textbf{MouseWheel} \\
-	Beim Bewegen des Mausrads wird unabhängig von der Richtung das MouseWheel-Event ausgelöst\footnote{Die Drehrichtung kann, wie bei den Mausklicks, innerhalb der abfangenden Funktion ausgelesen werden}.
+	Beim Bewegen des Mausrads wird unabhängig von der Richtung das MouseWheel-Event ausgelöst\footnote{Die Drehrichtung kann, wie bei den Mausklicks, innerhalb der abfangenden Funktion ausgelesen werden.}.
 \end{itemize}
 
 Zusätzlich zu den Ereignissen definieren Werkzeuge noch zwei Einhängepunkte (Hooks), die in den Zeichenprozess eingebunden werden. Wie in Abschnitt \ref{drawandmanipulate} in Abbildung \ref{imageprocess} dargestellt, werden diese Hooks vor der Berechnung der Bildkoordinaten und nach dem Zeichenprozess der Zusatzinformationen aufgerufen. Die Einhängepunkte bieten den Werkzeugen die Möglichkeit, etwas zu dem Zeichenprozess beizutragen, falls diese Funktion gewünscht ist. So kann beispielsweise ein Fenster am Mauszeiger gezeichnet werden, das aktuelle Informationen über Pixelwerte darstellt.\\
@@ -601,7 +603,7 @@ $E_n$ ist der zu bestimmende Bildmittelpunkt für die Translation. Das aktuelle 
 
 \subsubsection{Skalierung mit dem ResizeTool}
 
-Das \textit{ResizeTool} ermöglicht dem Anwender das Bild zu verkleinern oder zu vergrößern. Durch das Zoomen können Details auch in kleinen Bildgrößen genauer betrachtet werden\footnote{Das vergrößerte Bild ist nur eine Interpolation der originalen Pixelwerte}.\\
+Das \textit{ResizeTool} ermöglicht dem Anwender das Bild zu verkleinern oder zu vergrößern. Durch das Zoomen können Details auch in kleinen Bildgrößen genauer betrachtet werden\footnote{Das vergrößerte Bild ist nur eine Interpolation der originalen Pixelwerte.}.\\
 Ein Mausklick in die Zeichenfläche löst den Skalierungsprozess aus. Das Werkzeug reagiert speziell auf das \textit{MouseMove} Ereignis. Die Bewegung in y-Richtung auf der Zeichenfläche bestimmt den Skalierungsfaktor. Der Faktor wird folgendermaßen berechnet, wobei $S_y$ dem y-Wert des Startpunktes  und $E_y$ dem y-Wert des Endpunktes entspricht: 
 
 \begin{equation}
@@ -609,7 +611,7 @@ scale = \frac{E_y - S_y}{100}
 \vspace{0.5cm}
 \end{equation}
 
-Ein Endpunkt in positiver Richtung\footnote{Da der Ursprung der Zeichenfläche in der oberen linken Ecke liegt, ist die positive y-Richtung die untere Kante des Canvas} vergrößert das Bild, während ein Ziehen der Maus in die negative Richtung das Bild verkleinert. Mit einer Division durch $100$ entspricht eine Mausbewegung um $10$ Pixel in positiver oder negativer Richtung eine Größenänderung von $10\%$. Bei einem Verhältnis von $1:1$ lässt sich die Skalierung nicht mehr kontrollieren, da die Größe rasch zu- beziehungsweise abnimmt.\\
+Ein Endpunkt in positiver Richtung\footnote{Da der Ursprung der Zeichenfläche in der oberen linken Ecke liegt, ist die positive y-Richtung die untere Kante des Canvas.} vergrößert das Bild, während ein Ziehen der Maus in die negative Richtung das Bild verkleinert. Mit einer Division durch $100$ entspricht eine Mausbewegung um $10$ Pixel in positiver oder negativer Richtung eine Größenänderung von $10\%$. Bei einem Verhältnis von $1:1$ lässt sich die Skalierung nicht mehr kontrollieren, da die Größe rasch zu- beziehungsweise abnimmt.\\
 Ähnlich dem \textit{MoveTool} muss vor der Skalierung der alte Faktor abgezogen werden, damit in gleichem Verhältnis skaliert wird.
 
 \subsubsection{Das DefaultTool}
@@ -622,7 +624,7 @@ Eine Einstellung der Fensterungswerte kann mit dem \textit{WindowTool} vorgenomm
 
 \subsubsection{Punktauswahl mit dem PointTool}
 
-Das Werkzeug \textit{PointTool} erfüllt zwei Aufgaben. Zum einen gibt es die Möglichkeit einzelne Punkte zu markieren und im Bild zu hinterlegen, zum anderen können zu den Pixeln mit Hilfe eines Tooltips\footnote{Tooltips sind kleine Fenster, die an der Stelle des Cursors Informationen einblenden} zusätzliche Informationen angezeigt werden. Dazu zählen die Koordinaten des Pixels, der tatsächliche Wert und der mit Hilfe der Fensterung interpolierte Wert. Aus der aktuellen Position und den Bildkoordinaten kann bestimmt werden, ob der Cursor innerhalb des Bildes liegt. Liegt der Mauszeiger im Bild können Punkte gewählt und Informationen zu den Pixelwerten ausgegeben werden.
+Das Werkzeug \textit{PointTool} erfüllt zwei Aufgaben. Zum einen gibt es die Möglichkeit einzelne Punkte zu markieren und im Bild zu hinterlegen, zum anderen können zu den Pixeln mit Hilfe eines Tooltips\footnote{Tooltips sind kleine Fenster, die an der Stelle des Cursors Informationen einblenden.} zusätzliche Informationen angezeigt werden. Dazu zählen die Koordinaten des Pixels, der tatsächliche Wert und der mit Hilfe der Fensterung interpolierte Wert. Aus der aktuellen Position und den Bildkoordinaten kann bestimmt werden, ob der Cursor innerhalb des Bildes liegt. Liegt der Mauszeiger im Bild können Punkte gewählt und Informationen zu den Pixelwerten ausgegeben werden.
 \begin{itemize}
 \item \textbf{Punktauswahl}\\
 	Ein Punkt wird gewählt nachdem eine Maustaste betätigt und wieder gelöst wird. Liegt der Punkt innerhalb des Bildes, erfolgt eine Umrechnung in normalisierte Koordinaten im Intervall $[0,1]$ und wird dem Bild hinzugefügt.
@@ -669,15 +671,16 @@ Diese drei Parametertypen verhalten sich ähnlich. Sie nehmen den jeweiligen Wer
 
 \end{itemize}
 
-Die unterschiedlichen Parametertypen können beliebig miteinander in einem einzigen Dialog kombiniert werden.
+Die unterschiedlichen Parametertypen können in einem einzigen Dialog beliebig miteinander kombiniert werden.
 
 \section{Debugging der eigenen Plug-ins}
 
+Um beispielsweise die dynamisch gesetzten Parameter in der Entwicklung von Plug-ins zu prüfen, werden Methoden für Testausgaben und zum Debugging benötigt. 
 Das Java Medical Imaging Toolkit bietet sowohl eine dateibasierte, als auch eine visuelle Ausgabeart um das Debugging zu erleichtern und eventuelles Fehlverhalten der Plug-ins zu finden.
 
 \subsection{Dateibasiertes Debugging}
 Debugging hilft dem Benutzer Variablen zu überprüfen oder Programmabläufe zu verstehen. Da ein umfassendes Debugsystem nicht verfügbar ist, muss die Fehlersuche über Programmausgaben erfolgen. Da die Standardausgabe im Rich Client nicht einsehbar ist, wird mit Dateien gearbeitet, die Ausgaben mit \textit{System.out} protokollieren.\\
-In der Klasse \textit{APlugIn} ist eine Methode \textit{setOutput} definiert. Da sowohl \textit{APlugIn2D} als auch \textit{APlugIn3D} von dieser Klasse erben, ist die Methode in allen Plug-ins verfügbar. Wird diese zum Beispiel in den Optionen einen Plug-ins aufgerufen, wird die Standardausgabge \textit{out} von \textit{java.lang.System} auf die als Parameter spezifizierte Datei umgeleitet. Dadurch werden alle Aufrufe von \textit{System.out.println} in dieser Datei abgelegt.
+In der Klasse \textit{APlugIn} ist eine Methode \textit{setOutput} definiert. Da sowohl \textit{APlugIn2D} als auch \textit{APlugIn3D} von dieser Klasse erben, ist die Methode in allen Plug-ins verfügbar. Wird diese zum Beispiel in den Optionen eines Plug-ins aufgerufen, wird die Standardausgabge \textit{out} von \textit{java.lang.System} auf die als Parameter spezifizierte Datei umgeleitet. Dadurch werden alle Aufrufe von \textit{System.out.println} in dieser Datei abgelegt.
 
 \subsection{Visuelles Debugging}
 In manchen Situationen ist es nützlich, spezielle Zwischenschritte der Algorithmen ausgeben zu lassen. Manche Bildverarbeitungsprozesse erwarten zum Beispiel ein vorgefiltertes Bild oder ein spezielles Bildformat wie ein Binärbild. Das visuelle Debugging erlaubt die Kontrolle dieser Zwischenschritte durch eine unabhängige Bildausgabe.\\

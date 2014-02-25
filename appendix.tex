@@ -1,16 +1,18 @@
 \chapter{Darstellung der DICOM-Elemente im Speicher} \label{appendix:speicher}
+\addthumb{Darstellung der DICOM-Elemente im Speicher}{\huge{\textbf{\thechapter}}}{white}{haw_rot}
+
 \section{Explizite VR mit [ OB \textpipe\ OW \textpipe\ OF \textpipe\ SQ \textpipe\ UT \textpipe\ UN ]}
 
 Bei expliziter VR-Struktur besteht das Element aus vier konsekutiven Feldern. Ist die VR vom Typ OB, OW, OF, SQ, UT oder UN wird das Datenelement wie in Tabelle \ref{table:appendix_explizit} im Speicher abgelegt. Die reservierten 2 Byte im VR-Teil sind für zukünftige Weiterentwicklungen des DICOM-Standards.\cite[7.1.2]{dicom:structure}
 
 \begin{sidewaystable}
-    \begin{tabularx}{\textwidth}{|X|X|p{5cm}|X|X|p{8cm}|}
+    \begin{tabularx}{\textwidth}{|X|X|p{4cm}|X|X|p{8cm}|}
     \toprule \hline
    \multicolumn{2}{|l|}{\textbf{Tag}} 	&	\multicolumn{2}{l|}{\textbf{VR}} 		&		\textbf{Value Length}   	& 	\textbf{Value} \\ \hline
-    Group \# 16-bit unsigned integer & Element \# 16-bit unsigned integer  &  VR 2-byte character String [OB | OW | OF | SQ | UT | UN ] & Reservierter
-    Bereich & 32-bit unsigned integer  &  Gerade Anzahl an Byte. Enthält den Wert des Datenelements. Kodierung abhängig von VT-Typ und Transfersyntax. Wenn die Länge nicht definiert ist wird diese auf \glqq Sequence Delimitation\grqq\ limitiert. \\ \hline
+    Group\# 16-bit unsigned integer & Element\# 16-bit unsigned integer  &  VR 2-byte character String [OB | OW | OF | SQ | UT | UN ] & Reservierter
+    Bereich & 32-bit unsigned integer  &  Gerade Anzahl an Byte. Enthält den Wert des Datenelements. Kodierung abhängig von VT-Typ und Transfersyntax. Wenn die Länge nicht definiert ist, wird diese auf \glqq Sequence Delimitation\grqq\ limitiert. \\ \hline
 	
-	2 Byte & 2 Byte & 2 Byte & 2 Byte & 4 Byte & Anzahl an Byte entsprechend der \glqq Value Length\grqq\, wenn von explizieter Länge \\ \hline
+	2 Byte & 2 Byte & 2 Byte & 2 Byte & 4 Byte & Anzahl an Byte entsprechend der \glqq Value Length\grqq\, wenn von expliziter Länge \\ \hline
 	
 	\bottomrule
     \end{tabularx}
@@ -20,13 +22,13 @@ Bei expliziter VR-Struktur besteht das Element aus vier konsekutiven Feldern. Is
 
 \section{Explizite VR}
 
-Diese Darstellung wird gewählt wenn VR \textit{nicht} vom Typ OB, OW, OF, SQ, UT oder UN ist. Der Unterschied besteht im Feld \glqq Value Length\grqq. Bei der Form von Tabelle \ref{table:appendix_explizit} ist dieses Feld 32 Bit lange. Hier beträgt es lediglich 16 Bit \cite[7.1.2]{dicom:structure}. Der Grund liegt am erhöhten Speicherbedarf von \ref{table:appendix_explizit}, da die Länge des Wertes eine undefinierte Länge haben kann.
+Diese Darstellung wird gewählt, wenn VR \textit{nicht} vom Typ OB, OW, OF, SQ, UT oder UN ist. Der Unterschied besteht im Feld \glqq Value Length\grqq. Bei der Form von Tabelle \ref{table:appendix_explizit} ist dieses Feld 32 Bit lang. Hier beträgt es lediglich 16 Bit \cite[7.1.2]{dicom:structure}. Der Grund liegt am erhöhten Speicherbedarf von \ref{table:appendix_explizit}, da die Länge des Wertes eine undefinierte Länge haben kann.
 
 \begin{sidewaystable}
 	\begin{tabularx}{\textwidth}{|X|X|X|X|p{12cm}|}
 	\toprule \hline
 	\multicolumn{2}{|l|}{\textbf{Tag}} & \textbf{VR} 2 & \textbf{Value Length} & \textbf{Value} 4 \\ \hline
-	Group \# 16-bit unsigned integer & Element \# 16-bit unsigned integer & VR 2-byte character String 2 & 16-bit unsigned integer & Gerade Anzahl an Byte. Enthält den Wert des Datenelements. Kodierung abhängig von VT-Typ und Transfersyntax. \\ \hline
+	Group\# 16-bit unsigned integer & Element\# 16-bit unsigned integer & VR 2-byte character String 2 & 16-bit unsigned integer & Gerade Anzahl an Byte. Enthält den Wert des Datenelements. Kodierung abhängig von VT-Typ und Transfersyntax. \\ \hline
 	2 Byte & 2 Byte & 2 Byte & 2 Byte & \glqq Value Length\grqq\ Byte \\ \hline
 	\bottomrule
 	\end{tabularx}
@@ -42,7 +44,7 @@ Bei einer impliziten VR Darstellung besteht das Datenelement aus den drei konsek
 	\begin{tabularx}{\textwidth}{|X|X|X|p{12cm}|}
 	\toprule \hline
 	\multicolumn{2}{|l|}{\textbf{Tag}} & \textbf{Value Length} 2 & \textbf{Value} \\ \hline
-	Group \# 16-bit unsigned integer & Element \# 16-bit unsigned integer & 32-bit unsigned integer & Gerade Anzahl an Byte. Enthält den Wert des Datenelements. Kodierung abhängig von VT-Typ spezifiziert in \cite{dicom:dd} und Transfersyntax. Wenn die Länge nicht definiert ist wird diese auf \glqq Sequence Delimitation\grqq\ limitiert. \\ \hline
+	Group\# 16-bit unsigned integer & Element\# 16-bit unsigned integer & 32-bit unsigned integer & Gerade Anzahl an Byte. Enthält den Wert des Datenelements. Kodierung abhängig von VT-Typ spezifiziert in \cite{dicom:dd} und Transfersyntax. Wenn die Länge nicht definiert ist wird diese auf \glqq Sequence Delimitation\grqq\ limitiert. \\ \hline
 	2 Byte & 2 Byte & 2 Byte & \glqq Value Length\grqq\ Byte oder undefinierte Länge \\ \hline
 	
 	\bottomrule
@@ -54,7 +56,7 @@ Bei einer impliziten VR Darstellung besteht das Datenelement aus den drei konsek
 
 
 \chapter{Installation der Eclipse e4 Umgebung} \label{install_eclipse}
-
+\addthumb{Installation der Eclipse e4 Umgebung}{\huge{\textbf{\thechapter}}}{white}{haw_rot}
 \section{Eclipse}
 Voraussetzung für Eclipse ist eine bereits installierte Java Virtual Machine. Werden keine Werkzeuge aus dem Java Development Kit benötigt, reicht eine Java Runtime Environment aus. Für die Entwicklung von jMediKit wurde Java 7 verwendet.\\
 Grundlage für die Plug-in und Rich Client Entwicklung ist eine Eclipse-Installation ab Version 4. Unter \textit{http://www.eclipse.org/downloads/} kann der aktuelle \textit{Eclipse Standard Client} für ein beliebiges Betriebssystem bezogen werden. Bei der Wahl zwischen 32- und 64-Bit muss die Version mit der installierten Java-Variante übereinstimmen, da sonst die Native Libraries nicht geladen werden können. Nach dem Entpacken des Zip-Archivs kann der Client über \textit{eclipse.exe} gestartet werden. Abbildung \ref{eclipsestd} zeigt das Programmfenster von Eclipse nach dem ersten Ausführen.\\
@@ -103,7 +105,7 @@ Nachdem der Link kopiert wurde, kann Eclipse geöffnet werden. Nach einem Klick 
   \vspace{0.5cm}
 \end{figure}
 
-Mit dem Button \textit{Add} wird nun der zuvor kopierte Link als Repository angegeben. Der \textit{Name} kann frei vergeben werden. Unter \textit{Location} muss man den Link zum Repository eingetragen. Danach mittels \textit{OK} die Aktion bestätigen.
+Mit dem Button \textit{Add} wird nun der zuvor kopierte Link als Repository angegeben. Der \textit{Name} kann frei vergeben werden. Unter \textit{Location} muss man den Link zum Repository eintragen. Danach mittels \textit{OK} die Aktion bestätigen.
 
 \begin{figure}[H]
   \vspace{0.5cm}
@@ -127,7 +129,7 @@ Nach einem korrekten Eintrag wird die Liste der verfügbaren Software, wie in Ab
 
 \section{Import der jMediKit Projektdateien}
 
-Die Projektdaten befinden sich auf dem beiliegenden Datenträger. Das Wurzelverzeichnis kann als Eclipse Workspace benutzt werden. Dabei ist darauf zu achten, dass der Ordner \textit{/.metadata/.plugins} leer ist. Sollten sich Daten darin befinden, können diese gelöscht werden. Eclipse erstellt bei Bedarf die Plug-in-Daten neu. Der Workspace besteht aus den drei Projekten \textit{org.jmedikit.product}, \textit{org.jmedikit.feature} und \textit{org.jmedikit.plugin}. Beim ersten Öffnen ist der Package Explorer leer und die Projekte müssen importiert werden. Nach einem Klick auf \textit{File} $\rightarrow$ \textit{Import} erscheint ein Dialog wie in Abbildung \ref{importproject} zu sehen ist. Bei der Auswahl muss der Punkt unter \textit{General} $\rightarrow$ \textit{Existing Projects into Workspace} markiert und mit \textit{Next} bestätigt werden. Im folgenden Fenster (Abbildung \ref{selectimport}) muss unter ausgewähltem \textit{Select Root Directory} unter \textit{Browse} das Wurzelverzeichnis von jMediKit angegeben werde. Danach können die verfügbaren Projekte hinzugefügt und mittels Klick auf \textit{Finish} in den Eclipse Workspace importiert werden.
+Die Projektdaten befinden sich auf dem beiliegenden Datenträger. Das Wurzelverzeichnis kann als Eclipse Workspace benutzt werden. Dabei ist darauf zu achten, dass der Ordner \textit{/.metadata/.plugins} leer ist. Sollten sich Daten darin befinden, können diese gelöscht werden. Eclipse erstellt bei Bedarf die Plug-in-Daten neu. Der Workspace besteht aus den drei Projekten \textit{org.jmedikit.product}, \textit{org.jmedikit.feature} und \textit{org.jmedikit.plugin}. Beim ersten Öffnen ist der Package Explorer leer und die Projekte müssen importiert werden. Nach einem Klick auf \textit{File} $\rightarrow$ \textit{Import} erscheint ein Dialog wie in Abbildung \ref{importproject} zu sehen ist. Bei der Auswahl muss der Punkt unter \textit{General} $\rightarrow$ \textit{Existing Projects into Workspace} markiert und mit \textit{Next} bestätigt werden. Im folgenden Fenster (Abbildung \ref{selectimport}) muss unter ausgewähltem \textit{Select Root Directory} unter \textit{Browse} das Wurzelverzeichnis von jMediKit angegeben werden. Danach können die verfügbaren Projekte hinzugefügt und mittels Klick auf \textit{Finish} in den Eclipse Workspace importiert werden.
 
 \begin{figure}[H]
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
@@ -159,7 +161,7 @@ wie in Abbildung \ref{finishedimport} zu sehen, im Package Explorer vorhanden.
   \vspace{0.5cm}
 \end{figure}
 
-Im Projekt \textit{org.jmedikit.product} befindet sich die Datei \textit{jmedikit.product}. Nach einem Doppelklick wird die Datei im Eclipse-Editor geöffnet und zeigt die Grundlegende Anwedungsdefinition von jMediKit und den zugehörigen Einstellungen. Unter dem Tab \textit{Overview} im Bereich \textit{Test} kann jMediKit mit einem Klick auf \textit{Launch an Eclipse application} gestartet werden. Abbildung \ref{launchjmedikit} hebt die Schaltfläche hervor. Bei einem ersten Start wird jMediKit mit einer Fehlermeldung geschlossen, da von Eclipse noch nicht alle zum Start notwendigen Plug-ins geladen wurden, welche von der jMediKit benötigt werden.
+Im Projekt \textit{org.jmedikit.product} befindet sich die Datei \textit{jmedikit.product}. Nach einem Doppelklick wird die Datei im Eclipse-Editor geöffnet und zeigt die Grundlegende Anwedungsdefinition von jMediKit und den zugehörigen Einstellungen. Unter dem Tab \textit{Overview} im Bereich \textit{Test} kann jMediKit mit einem Klick auf \textit{Launch an Eclipse application} gestartet werden. Abbildung \ref{launchjmedikit} hebt die Schaltfläche hervor. Bei einem ersten Start wird jMediKit mit einer Fehlermeldung geschlossen, da von Eclipse noch nicht alle zum Start notwendigen Plug-ins geladen wurden, welche von jMediKit benötigt werden.
 
 \begin{figure}[H]
   \vspace{0.5cm}
@@ -180,6 +182,23 @@ Unter \textit{Run} $\rightarrow$ \textit{Run Configuration} können die Plug-ins
   \label{addplugins}
   \vspace{0.5cm}
 \end{figure}
+
+\section{Installation des Java Advanced Imaging Image I/O Tools}
+jMediKit benutzt die externe Bibliothek \glqq dcm4che\grqq, um DICOM-Objekte zu laden und die Bilder auf der Zeichenfläche anzuzeigen. \glqq dcm4che\grqq\ selbst benötigt das Paket \glqq Java Advanced Imaging Image I/O Tools\grqq. Ist das Tool noch nicht installiert, kann unter der Adresse \textit{http://download.java.net/media/jai-imageio/builds/release/1.1/}, entsprechend dem Betriebssystem und der Installationsart, die richtige Version zum Installieren gewählt werden. Ob der JDK- oder JRE-Installationstyp verwendet werden soll, hängt von der in Eclipse verwendeten Java Runtime Environment ab. Ist eine eigenständige JRE istalliert, hat diese beispielsweise den Pfad \textit{/JAVA\_HOME/jre7/} und es wird die JRE-Variante installiert. Hat die JRE zum Beispiel einen Pfad der Form \textit{/JAVA\_HOME/ jdk1.7.0\_45/jre} ist die Java Runtime Environment des Java Development Kits im Einsatz.\\
+Um zu prüfen, welche Java Runtime Environment von Eclipse verwendet wird, muss der Einstellungsdialog unter \textit{Window} $\rightarrow$ \textit{Preferences} geöffnet und der Punkt \textit{Java} $\rightarrow$ \textit{Installed JREs} gewählt werden. Abbildung \ref{jai} zeigt den Dialog mit einer JRE und dem Pfad C:$\backslash$Program Files (x86)$\backslash$Java$\backslash$jre7.
+\begin{figure}[H]
+  \vspace{0.5cm}
+  \centering
+  \fbox{\includegraphics[angle=0,width=8cm]{./img/jaiimageio.png}}
+  \caption{Die von Eclipse verwendeten Java Runtime Environments}
+  \label{jai}
+  \vspace{0.5cm}
+\end{figure}
+
+Ob die Image I/O Tools installiert sind, kann über den Ordner der externen Bibliotheken der Java-Installation geprüft werden. Sind im Ordner \textit{/PATH\_TO\_JRE/lib/ext/} die .jar-Pakete \textit{jai\_imageio} und \textit{clibwrapper\_jiio} vorhanden, kann \glqq dcm4che\grqq\ auf die Bibliothek zugreifen.\\
+Die Java Advanced Imaging Image I/O Tools sind nur in einer 32-Bit Version verfügbar. Bei einer Installation werden native Bibliotheken in die JRE integriert. Werden die Tools mit einer 64-Bit Java und Eclipse Version eingesetzt, sind diese nativen Bibliotheken nicht verfügbar.
+Eine Installation für eine 64-Bit JRE erfolgt über das Verschieben der .jar-Dateien \textit{jai\_imageio} und \textit{clibwrapper\_jiio} in das Verzeichnis \textit{/PATH\_TO\_x64JRE/lib/ext/} der 64-Bit JRE.\\
+Durch das Fehlen des nativen Codes einer 64-Bit Installation können nicht alle DICOM-Bilder geladen werden, da zum Beispiel eine Komprimierung im Format \textit{JPEG2000} davon abhängig ist. 
 
 \section{Erstellung eines neuen Builds von jMediKit}
 
@@ -206,6 +225,8 @@ Es öffnet sich ein Fenster mit diversen Optionen(Abbildung \ref{buildoptions}).
 \end{figure}
 
 \chapter{Iconverwaltung innerhalb der Anwendung} \label{importicon}
+\addthumb{Iconverwaltung innerhalb der Anwendung}{\huge{\textbf{\thechapter}}}{white}{haw_rot}
+
 Die Icons der Anwendung werden mit Hilfe eines OSGi-Services verwaltet. Eclipse definiert das Interface \textit{IResourceProviderService}, mit dessen Hilfe die Bilddaten organisiert werden können. Die Metadaten des Services befinden sich im Projekt \textit{org.jmedikit.plugin} unter \textit{OSGI-INF}. Hier wird der spezifische Service bekannt gemacht und die implementierende Klasse festgelegt. Zusätzlich wird die Datei \textit{OSGI-INF/resource.properties} definiert, die alle Pfadangaben zu den Bilddateien enthält.\\
 Um neue Bilder und Icons hinzuzufügen muss zuerst die Datei \textit{resource.properties} um einen Bezeichner und die Pfadangabe erweitert werden. Ein neuer Eintrag kann an beliebiger Stelle, wie in Listing \ref{resource}, hinzugefügt werden.
 
@@ -277,6 +298,7 @@ public class PartClass{
 \end{figure}
 
 \chapter{Die Verwendung von Eclipse zur Plug-in-Entwicklung}
+\addthumb{Die Verwendung von Eclipse zur Plug-in-Entwicklung}{\huge{\textbf{\thechapter}}}{white}{haw_rot}
 
 Dieses Kapitel beschreibt das Vorbereiten eines Projekts zur Entwicklung eines Plug-ins für jMediKit. Voraussetzung für diese Anleitung ist Eclipse ab Version 4. Zusätzlich wird entweder ein Build von jMediKit oder der Quelltext und die im Plug-in verwendeten externen Bibliotheken benötigt.\\
 Nachdem Eclipse geöffnet wurde, kann über \textit{File} $\rightarrow$ \textit{New} $\rightarrow$ \textit{Java Project} ein neues Javaprojekt angelegt werden. Abbildung \ref{newproject} zeigt den entsprechenden Dialog und die zu wählenden Eigenschaften. Es muss nur der Plug-in Name bestimmt werden. Die restlichen Einstellungen entsprechen den Standardwerten, können aber nach Bedarf angepasst werden.
@@ -290,7 +312,7 @@ Nachdem Eclipse geöffnet wurde, kann über \textit{File} $\rightarrow$ \textit{
   \vspace{0.5cm}
 \end{figure}
 
-Mit einem Klick auf \textit{Next} wird man zu den nächsten Projektoptionen, wie in Abbildung \ref{binfolder} zu sehen, geleitet. Hier kann unter \textit{Default Output Folder} der Ordner entsprechend der Plug-in-Konventionen für die \textit{.class} Dateien gesetzt werden. Der Plug-in-Name im Beispiel lautet \textit{TestPlugIn}. Entsprechend ist unter \textit{Default Output Folder} der Wert \mbox{\textit{TestPlugIn/\_\_TestPlugIn}} einzutragen, wobei \textit{TestPlugIn} den Projektordner darstellt und die Binärdaten unter \textit{\_\_TestPlugIn} gespeichert werden.
+Mit einem Klick auf \textit{Next} wird man zu den nächsten Projektoptionen, wie in Abbildung \ref{binfolder} zu sehen, geleitet. Hier kann unter \textit{Default Output Folder} der Ordner entsprechend der Plug-in-Konventionen für die \textit{.class} Dateien gesetzt werden. Der Plug-in-Name im Beispiel lautet \textit{TestPlugIn}. Entsprechend ist unter \textit{Default Output Folder} der Wert \mbox{\textit{TestPlugIn/\_\_TestPlugIn}} einzutragen, wobei \textit{TestPlugIn} den Projektordner darstellt und die Binärdaten unter \textit{\_\_TestPlugIn} gespeichert werden. Der Name des Output-Ordners für die Binärdaten kann später manuell in Eclipse mit einem \textit{Rechtsklick auf das Projekt} $\rightarrow$ \textit{Build Path} $\rightarrow$ \textit{Configure Build Path} $\rightarrow$ \textit{Unter dem Tab Source} $\rightarrow$ \textit{Default Output Folder} ausgelesen oder geändert werden.
 
 \begin{figure}[H]
   \vspace{0.5cm}
@@ -303,8 +325,8 @@ Mit einem Klick auf \textit{Next} wird man zu den nächsten Projektoptionen, wie
 
 Im nächsten Schritt müssen die externen Bibliotheken dem Projekt hinzugefügt werden. Werden vom User selbst keine speziellen Bibliotheken verwendet, reicht das Inkludieren der jMediKit-Bibliothek und dem SimpleITK-Projekt.\\
 Dazu muss im aktuellen Dialogfenster der Reiter \textit{Libraries} ausgewählt werden. Wird mit einem jMediKit-Build gearbeitet, kann die Bibliothek mit dem Button \textit{Add External Jar} hinzugefügt werden. Nach einem Klick öffnet sich ein Dateidialog. Der Pfad zu der jMediKit-Jar befindet sich unter \newline
-\textit{jMedikit-Installation/}\textit{jmedikit/}\textit{plugins/}\textit{org.jmedikit.plugin\_versionsnummer}, wobei \textit{versionsnummer} für die Versionsnummer des aktuellen Builds steht(zum Beispiel\newline \textit{org.jmedikit.plugin\_1.0.0.201401220023}). Wird mit dem Quelltext von jMediKit gearbeitet, können die Projektdateien über den Button \textit{Add External Class Folder} hinzugefügt werden. Diese liegen im Ordner \textit{bin} im Projekt \textit{org.jmedikit.plugin}.\\
-Um die SimpleITK.jar einzubinden gibt es zwei Möglichkeiten. Wird mit dem Build gearbeitet, kann die jMediKit-Jar mit einem Zip-Programm geöffnet und SimpleITK aus dem Ordner \textit{lib} entpackt werden\footnote{Ist kein Programm zum Entpacken von jar-Dateien vorhanden, kann SimpleITK direkt von \textit{http://www.simpleitk.org/SimpleITK/resources/software.html} bezogen werden}. Bei der Verwendung der Quelldateien liegt die Bibliothek von SimpleITK im Projekt \textit{org.jmedikit.plugin} ebenfalls im Ordner \textit{lib}. Die Datei \textit{simpleitk-0.x.x.jar} kann nun mit dem Button \textit{Add External Jar} hinzugefügt werden.
+\textit{jMedikit-Installation/}\textit{jmedikit/}\textit{plugins/}\textit{org.jmedikit.plugin\_versionsnummer}, wobei \textit{versionsnummer} für die Versionsnummer des aktuellen Builds steht(zum Beispiel\newline \textit{org.jmedikit.plugin\_1.0.0.201401220023}). Wird mit dem Quelltext von jMediKit gearbeitet, können die Projektdateien über den Button \textit{Add External Class Folder} hinzugefügt werden. Diese liegen im Ordner \textit{bin} im Projekt \textit{org.jmedikit.plugin}. Der Vollständige Pfad ist \textit{/WORKSPACE/org.jmedikit.plugin/bin/}.\\
+Um die SimpleITK.jar einzubinden gibt es zwei Möglichkeiten. Wird mit dem Build gearbeitet, kann die jMediKit-Jar mit einem Zip-Programm geöffnet und SimpleITK aus dem Ordner \textit{lib} entpackt werden\footnote{Ist kein Programm zum Entpacken von jar-Dateien vorhanden, kann SimpleITK direkt von \textit{http://www.simpleitk.org/SimpleITK/resources/software.html} bezogen werden}. Bei der Verwendung der Quelldateien liegt die Bibliothek von SimpleITK im Projekt \textit{org.jmedikit.plugin} ebenfalls im Ordner \textit{lib} mit dem vollständigen Pfad \textit{/WORKSPACE/org.jmedikit.plugin/lib/SimpleITK/}. Die Datei \textit{simpleitk-0.x.x.jar} kann nun mit dem Button \textit{Add External Jar} hinzugefügt werden.
 
 \begin{figure}[H]
   \vspace{0.5cm}
@@ -326,7 +348,7 @@ Mit einem Klick auf \textit{Finish} werden die Einstellungen übernommen und das
   \vspace{0.5cm}
 \end{figure}
 
-Mit einem Rechtsklick auf den Ordner \textit{src} im Project Explorer, gefolgt \textit{New} $\rightarrow$ \textit{Class} kann die Hauptklasse des Plug-ins angelegt werden. Entsprechend der Plug-in-Konvetionen wird der Name \textit{\_\_TestPlugIn} und mit einem Klick auf \textit{Finish} erstellt.
+Mit einem Rechtsklick auf den Ordner \textit{src} im Project Explorer, gefolgt von \textit{New} $\rightarrow$ \textit{Class}, kann die Hauptklasse des Plug-ins angelegt werden. Entsprechend der Plug-in-Konvetionen wird der Name \textit{\_\_TestPlugIn} mit einem Klick auf \textit{Finish} erstellt.
 
 \begin{figure}[H]
   \vspace{0.5cm}

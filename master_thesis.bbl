@@ -7,6 +7,13 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[Art13]{e4:screen}
+\textsc{Arthorne}, John:
+\newblock \emph{Eclipse SDK 4.2}.
+\newblock \url{{https://wiki.eclipse.org/Eclipse4}}.
+\newblock \,Version:\,2013. --
+\newblock Stand 05.02.2014
+
 \bibitem[Bal11]{balzert:swa}
 \textsc{Balzert}, Helmut:
 \newblock \emph{Lehrbuch der Softwaretechnik - Entwurf, Implementierung,
@@ -36,6 +43,14 @@
 \newblock \emph{Patterns kompakt - Entwurfsmuster für effektive
   Software-Entwicklung}.
 \newblock Springer Vieweg, 2013
+
+\bibitem[Far14]{slicer:screen}
+\textsc{Farhat}, N.:
+\newblock \emph{Tutorial Video 2014 January}.
+\newblock
+  \url{{http://www.slicer.org/publications/bitstream/viewbiglogo/2511/Farhat-Slicer-3D-Printing}}.
+\newblock \,Version:\,2014. --
+\newblock Stand 05.02.2014
 
 \bibitem[GD13]{goll:swa}
 \textsc{Goll}, Joachim ; \textsc{Dausmann}, Manfred:

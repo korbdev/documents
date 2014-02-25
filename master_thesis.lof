@@ -1,13 +1,13 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Kondratieff-Zyklen}}{2}{figure.1.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Kondratieff-Zyklen \cite [S.32]{hensen:gesundeGesellschaft}}}{2}{figure.1.1}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces RadiAnt - DicomViewer}}{10}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Screenshot Slicer 3D}}{11}{figure.2.2}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Screenshot Slicer 3D \cite {slicer:screen}}}{11}{figure.2.2}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Die Benutzeroberfl\IeC {\"a}che von ImageJ}}{12}{figure.2.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Kommunikationsprozess von Aufnahme zur Verarbeitung}}{15}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Vereinfachte Darstellung der Informationsobjekthierarchie von Dicomelementen}}{16}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Repr\IeC {\"a}sentation der Information Objekte im Dateisystem}}{17}{figure.3.3}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Kommunikationsprozess von Aufnahme zur Verarbeitung \cite [S. 19]{pianykh:dicom}}}{15}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Vereinfachte Darstellung der Informationsobjekthierarchie von Dicomelementen \cite [A.1.2]{dicom:iod}}}{16}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Repr\IeC {\"a}sentation der DICOM Informations Objects im Dateisystem}}{17}{figure.3.3}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Kodierungsreihenfolge von 4 Byte bei Little Endian- und Big Endian-Darstellung}}{21}{figure.3.4}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Beispiele unterschiedlicher Speicherbelegung}}{22}{figure.3.5}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Pixel im Speicher}}}{22}{figure.3.5}
@@ -17,7 +17,7 @@
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {CT}}}{24}{figure.3.6}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {MR}}}{24}{figure.3.6}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Ultraschall}}}{24}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Fensterungstechnik zur Darstellung medizinischer Bilddaten am handels\IeC {\"u}blichen Monitor}}{25}{figure.3.7}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Fensterungstechnik zur Darstellung medizinischer Bilddaten am handels\IeC {\"u}blichen Monitor \cite [S. 249]{handels:mbv}}}{25}{figure.3.7}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Fensterungstechnik}}}{25}{figure.3.7}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Window Center 50; Window Width 350}}}{25}{figure.3.7}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Window Center -124; Window Width 3134}}}{25}{figure.3.7}
@@ -29,13 +29,13 @@
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {3D Bildfolge}}}{27}{figure.3.9}
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {zeitlich Abh\IeC {\"a}ngige 3D Bildfolge}}}{27}{figure.3.9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces UML Klassendiagramm zum Adapter}}{29}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces UML Klassendiagramm zum Observer}}{30}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces UML Klassendiagramm der Schablonenmethode}}{32}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces UML Klassendiagramm zur Fabrik Methode}}{33}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces UML Klassendiagramm des Architekturmusters Plug-in}}{35}{figure.4.5}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces UML Klassendiagramm zum Adapter \cite [S. 78]{starke:swa}}}{29}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces UML Klassendiagramm zum Observer\cite [S. 71]{starke:swa}}}{30}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces UML Klassendiagramm der Schablonenmethode\cite [S. 69]{starke:swa}}}{32}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces UML Klassendiagramm zur Fabrik Methode \cite [S. 35]{starke:swa}}}{33}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces UML Klassendiagramm des Architekturmusters Plug-in \cite [S. 316]{goll:swa}}}{35}{figure.4.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Architektur der Eclipse e4 Plattform zur Entwicklung von Rich Client Applikationen}}{38}{figure.5.1}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Architektur der Eclipse e4 Plattform zur Entwicklung von Rich Client Applikationen \cite {e4:screen}}}{38}{figure.5.1}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Verschiedene Elemente des Application Models}}{41}{figure.5.2}
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Window}}}{41}{figure.5.2}
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Part}}}{41}{figure.5.2}
@@ -94,17 +94,17 @@
 \contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Anzeige des referenzierten Punktes aus der axialen Darstellung in der sagittalen Ebene}}}{76}{figure.6.14}
 \contentsline {figure}{\numberline {6.15}{\ignorespaces Translation des Bildmittelpunkts}}{79}{figure.6.15}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Beispiel der Ordnerstruktur zwei verschiedener Plug-ins}}{86}{figure.7.1}
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Die visuelle Darstellung des Dialogs aus Listing \ref {dynamicex}}}{92}{figure.7.2}
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Die Datei Application.e4xmi}}{98}{figure.7.3}
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Einf\IeC {\"u}gen der Part-Struktur}}{98}{figure.7.4}
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Einf\IeC {\"u}gen der Part-Struktur}}{99}{figure.7.5}
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Erstellen der Klasse}}{99}{figure.7.6}
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Anzeige des Parts im PartStack}}{101}{figure.7.7}
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Die Werkzeugleiste im Application Model}}{102}{figure.7.8}
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Erstellung einer Klasse f\IeC {\"u}r die Handlerimplementierung}}{102}{figure.7.9}
-\contentsline {figure}{\numberline {7.10}{\ignorespaces Einstellungen des neuen Men\IeC {\"u}punktes}}{103}{figure.7.10}
-\contentsline {figure}{\numberline {7.11}{\ignorespaces Anzeige der erweiterten Werkzeugleiste}}{103}{figure.7.11}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Beispiel der Ordnerstruktur zwei verschiedener Plug-ins}}{87}{figure.7.1}
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Die visuelle Darstellung des Dialogs aus Listing \ref {dynamicex}}}{93}{figure.7.2}
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Die Datei Application.e4xmi}}{100}{figure.7.3}
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Einf\IeC {\"u}gen der Part-Struktur}}{100}{figure.7.4}
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Einf\IeC {\"u}gen der Part-Struktur}}{101}{figure.7.5}
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Erstellen der Klasse}}{101}{figure.7.6}
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Anzeige des Parts im PartStack}}{103}{figure.7.7}
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Die Werkzeugleiste im Application Model}}{104}{figure.7.8}
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Erstellung einer Klasse f\IeC {\"u}r die Handlerimplementierung}}{104}{figure.7.9}
+\contentsline {figure}{\numberline {7.10}{\ignorespaces Einstellungen des neuen Men\IeC {\"u}punktes}}{105}{figure.7.10}
+\contentsline {figure}{\numberline {7.11}{\ignorespaces Anzeige der erweiterten Werkzeugleiste}}{105}{figure.7.11}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -121,12 +121,13 @@
 \contentsline {figure}{\numberline {B.8}{\ignorespaces Der Package Explorer nach dem Importvorgang}}{XIX}{figure.B.8}
 \contentsline {figure}{\numberline {B.9}{\ignorespaces Der Package Explorer nach dem Importvorgang}}{XIX}{figure.B.9}
 \contentsline {figure}{\numberline {B.10}{\ignorespaces Konfigurationsfenster zu Anwendungseinstellungen und Anwendungsstart}}{XX}{figure.B.10}
-\contentsline {figure}{\numberline {B.11}{\ignorespaces Mit jmedikit.product den Build erstellen}}{XXI}{figure.B.11}
-\contentsline {figure}{\numberline {B.12}{\ignorespaces Optionen zur Erstellung des Builds}}{XXI}{figure.B.12}
+\contentsline {figure}{\numberline {B.11}{\ignorespaces Die von Eclipse verwendeten Java Runtime Environments}}{XXI}{figure.B.11}
+\contentsline {figure}{\numberline {B.12}{\ignorespaces Mit jmedikit.product den Build erstellen}}{XXII}{figure.B.12}
+\contentsline {figure}{\numberline {B.13}{\ignorespaces Optionen zur Erstellung des Builds}}{XXII}{figure.B.13}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {D.1}{\ignorespaces Dialog zum Anlegen eines neuen Javaprojekts}}{XXIV}{figure.D.1}
-\contentsline {figure}{\numberline {D.2}{\ignorespaces Auswahl des Output-Ordners}}{XXV}{figure.D.2}
-\contentsline {figure}{\numberline {D.3}{\ignorespaces Auswahl der externen Bibliotheken}}{XXVI}{figure.D.3}
-\contentsline {figure}{\numberline {D.4}{\ignorespaces Der Eclipse Workspace nach Anlegen des Projekts}}{XXVII}{figure.D.4}
-\contentsline {figure}{\numberline {D.5}{\ignorespaces Anlegen der Hauptklasse des Plug-ins}}{XXVII}{figure.D.5}
+\contentsline {figure}{\numberline {D.1}{\ignorespaces Dialog zum Anlegen eines neuen Javaprojekts}}{XXV}{figure.D.1}
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Auswahl des Output-Ordners}}{XXVI}{figure.D.2}
+\contentsline {figure}{\numberline {D.3}{\ignorespaces Auswahl der externen Bibliotheken}}{XXVII}{figure.D.3}
+\contentsline {figure}{\numberline {D.4}{\ignorespaces Der Eclipse Workspace nach Anlegen des Projekts}}{XXVIII}{figure.D.4}
+\contentsline {figure}{\numberline {D.5}{\ignorespaces Anlegen der Hauptklasse des Plug-ins}}{XXVIII}{figure.D.5}

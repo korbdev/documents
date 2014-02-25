@@ -1,4 +1,5 @@
 \chapter{Entwicklung von Erweiterungen} \label{extending}
+\addthumb{Entwicklung von Erweiterungen}{\huge{\textbf{\thechapter.}}}{white}{haw_rot} 
 
 Das Java Medical Imaging Toolkit bietet sowohl dem Enwickler, als auch dem Anwender Spielraum, die Anwendung zu erweitern. Dieses Kapitel beschreibt die Entwicklung verschiedener Plug-ins in zwei- und dreidimensionalem Raum. Zusätzlich zeigt der Entwurf eines neuen Moduls und eine Implementierung eines Werkzeugs wie die Basisfunktionen von jMediKit erweitert werden.
 
@@ -16,9 +17,9 @@ Die Basisklasse eines Plug-ins ist entweder \textit{APlugIn2D} oder \textit{APlu
 Der Name der Klasse des Plug-ins, die von \textit{APlugIn2D} oder \textit{APlugIn3D} erbt, muss mit \textit{zwei Unterstrichen} beginnen. Zusätzlich muss das erste Zeichen ein Buchstabe oder eine Ziffer sein. Listing \ref{regexp} zeigt den regulären Ausdruck zur Beurteilung gültiger Namen. Korrekt sind zum Beispiel \textit{\_\_Test} oder \textit{\_\_3DTest\_Plug\_in}. Ungültig ist beispielsweise \textit{\_Test} oder \textit{\_\_\_TestPlugIn}.
 Da ein Plug-in in Beziehung zu anderen Klassen oder Paketen stehen kann, die entweder selbst implementiert oder von Bibliotheken zur Verfügung gestellt werden, wird so die Hauptklasse der Erweiterung kenntlich gemacht.
 \item \textbf{Ordnername}\\
-Der Ordner, in dem ein Plug-in enthalten ist, muss den identischen Namen wie die Hauptklasse des Plug-ins haben. Ist dieser Name \textit{\_\_Test}, muss der \textit{Wurzelordner} der die Erweiterung enthält ebenfalls \textit{\_\_Test heißen}.
+Der Ordner, in dem ein Plug-in enthalten ist, muss den identischen Namen wie die Hauptklasse des Plug-ins haben. Ist dieser Name \textit{\_\_Test}, muss der \textit{Wurzelordner} der die Erweiterung enthält ebenfalls \textit{\_\_Test} heißen.
 \item \textbf{Ordnerstruktur}\\
-Wenn Plug-ins mit Hilfe der Eclipse-Entwicklungsumgebung entwickelt werden, entspricht der bin-Ordner der korrekten Struktur. Ist die Hauptklasse nicht in einem Package organisiert, liegt die Plug-in-Klasse direkt im Plug-in-Ordner und hätte die Struktur \textit{/plugins/\_\_Test/\_\_Test.class}. Erfolgt die Entwicklung mit Packages ist die Struktur \textit{/plugins/\_\_Test/de/korb/\_\_Test.class} wenn die Klasse \_\_Test im Package \textit{de.korb} liegt. \textit{/plugins} ist der Ordner, der die einzelnen Plug-ins enthält. Dieser muss in den Einstellungen der Anwendung spezifiziert werden. Das bedeutet, dass jMediKit alle Plug-ins in \textit{/plugins} findet, wenn die Ordner mit doppeltem Unterstrich beginnen und eine \textit{.class}-Datei mit identischen Namen beinhalten, die APlugIn2D oder APlugIn3D generalisieren. Abbildung \ref{filesystemplugin} zeigt die Ordnerstruktur zweier Plug-ins. \_\_PlugInA ist ohne, während \_\_PlugInB mit Packages organisiert wird. \_\_PlugInB definiert zusätzlich eine eigenen Bibliotheksklasse. Wird der Ordner \textit{plugins} in den Einstellungen angegeben, werden bei Programmstart die beiden Plug-ins initialisiert und können verwendet werden.
+Wenn Plug-ins mit Hilfe der Eclipse-Entwicklungsumgebung entwickelt werden, entspricht der Output-Ordner mit den \textit{.class-Dateien} eines Eclipse-Projekts der korrekten Struktur. Ist die Hauptklasse nicht in einem Package organisiert, liegt die Plug-in-Klasse direkt im Plug-in-Ordner und hätte die Struktur \textit{/plugins/\_\_Test/\_\_Test.class}. Erfolgt die Entwicklung mit Packages ist die Struktur \textit{/plugins/\_\_Test/de/korb/\_\_Test.class} wenn die Klasse \_\_Test im Package \textit{de.korb} liegt. \textit{/plugins} ist der Ordner, der die einzelnen Plug-ins enthält. Dieser muss in den Einstellungen der Anwendung spezifiziert werden. Das bedeutet, dass jMediKit alle Plug-ins in \textit{/plugins} findet, wenn die Ordner mit doppeltem Unterstrich beginnen und eine \textit{.class}-Datei mit identischen Namen beinhalten, die APlugIn2D oder APlugIn3D generalisieren. Abbildung \ref{filesystemplugin} zeigt die Ordnerstruktur zweier Plug-ins. \_\_PlugInA ist ohne, während \_\_PlugInB mit Packages organisiert wird. \_\_PlugInB definiert zusätzlich eine eigenen Bibliotheksklasse. Wird der Ordner \textit{plugins} in den Einstellungen angegeben, werden bei Programmstart die beiden Plug-ins initialisiert und können verwendet werden. Nach einer neuen Belegung der Einstellungen, muss die Anwendung neu gestartet werden.
 \end{itemize}
 
 \lstset{
@@ -91,9 +92,9 @@ Das Java Medical Imaging Toolkit stellt zwei Typen von Plug-ins bereit. Der Anwe
 
 \begin{itemize}
 \item \textbf{options}\\
-Die Methode \textit{options} wird \textit{einmalig} \textit{vor} der Ausführung des Plug-ins aufgerufen. Hier können wahlweise Parameter gesetzt werden, die für weitere Berechnung benötigt werden.
+Die Methode \textit{options} wird \textit{einmalig} \textit{vor} der Ausführung des Plug-ins aufgerufen. Hier können wahlweise Parameter gesetzt werden, die für weitere Berechnungen benötigt werden.
 \item \textbf{process}\\
-Das Kernelement eines Plug-ins stellt \textit{process} dar. Als Parameter ist entweder das aktuell gewählte Bild im ImageView oder im Fall eines 3D-Plug-ins der Bildstapel übergeben. Beim Rückgabewert muss beachtet werden, dass die Bildanzahl mit der im Parameter übereinstimmt, da sonst weitere Berechnungen wie zum Beispiel die Ebenenrekonstruktionen nicht korrekt ausgeführt werden können.
+Das Kernelement eines Plug-ins stellt \textit{process} dar. Als Parameter ist entweder das aktuell gewählte Bild im ImageView oder im Fall eines 3D-Plug-ins der Bildstapel als Parameter der Methode enthalten. Beim Rückgabewert muss beachtet werden, dass die Bildanzahl mit der im Parameter übereinstimmt, da sonst weitere Berechnungen, wie zum Beispiel die Ebenenrekonstruktionen, nicht korrekt ausgeführt werden können.
 
 \end{itemize}
 
@@ -192,7 +193,7 @@ System.out.println(i_simg.getImageType());
 
 \subsubsection{Erzeugung eines SimpleITK-Bildes}
 
-Bildobjekte von jMediKit und SimpleITK sind zueinander inkompatibel. Mit Hilfe von Konvertierungsfunktionen in beide Richtungen wird dieses Problem behoben. Die Anwendung erfolgt ähnlich der \textit{SimpleImageFactory} mit dem Unterschied, dass als Parameter das Bild selbst übergeben wird und eine Kopie als entsprechender Typ und Format zurückgegeben wird. Listing \ref{itkimg} zeigt ein Beispiel einer Konvertierung. Die Klasse \textit{SimpleITKFactory} stellt die Funktionen \textit{getITKImage} und \textit{getAImage} zu einer Konvertierung bereit.
+Bildobjekte von jMediKit und SimpleITK sind zueinander inkompatibel. Mit Hilfe von Konvertierungsfunktionen in beide Richtungen wird dieses Problem behoben. Die Anwendung erfolgt ähnlich der \textit{SimpleImageFactory}, mit dem Unterschied, dass als Parameter das Bild selbst übergeben wird und eine Kopie als entsprechender Typ und Format zurückgegeben wird. Listing \ref{itkimg} zeigt ein Beispiel einer Konvertierung. Die Klasse \textit{SimpleITKFactory} stellt die Funktionen \textit{getITKImage} und \textit{getAImage} zu einer Konvertierung bereit.
 
 \lstset{
 language=Java,
@@ -220,7 +221,7 @@ System.out.println(converted_img.getImageType());
 
 \subsubsection{Saatpunkte und ROIs auslesen}
 
-Die Anwendung stellt die zwei Selektionswerkzeuge \textit{PointTool} und \textit{ROITool} bereit. Zum einen können Punkte gesetzt und zum anderen Bildbereiche markiert werden. Jede Bildinstanz stellt, wie in Listing \ref{select} zu sehen, jeweils einen Getter bereit, der eine Liste der Datenstruktur zurück gibt.
+Die Anwendung stellt die zwei Selektionswerkzeuge \textit{PointTool} und \textit{ROITool} bereit. Das ROITool wird in Abschnitt \ref{roitool} als Beispiel der Werkzeugerweiterung entwickelt. Zum einen können Punkte gesetzt und zum anderen Bildbereiche markiert werden. Jede Bildinstanz stellt, wie in Listing \ref{select} zu sehen, jeweils einen Getter bereit, der eine Liste der Datenstruktur zurück gibt.
 
 \lstset{
 language=Java,
@@ -252,7 +253,7 @@ Ist es notwendig, dass ein zusätzlicher DICOM-Baum in das Plug-in geladen werde
 \lstset{
 language=Java,
 caption={Saatpunkte und Regions Of Interest aus einem AImage ermitteln},
-label=select,
+label=importer,
 xleftmargin=1em,
 xrightmargin=1em,
 numbers=left,
@@ -266,7 +267,7 @@ DicomObject obj = (DicomObject) tree.lookUpDicomTreeItem("UID");
 \end{figure}
 
 \subsubsection{DICOM-Tags aus DICOM-Objekten auslesen}
-Neue DICOM-Objekte können entweder durch das Auslesen eines DICOM-Baums erstellt, oder durch die explizite Instantiierung durch Angabe eines Dateipfads. Zuerst wird das Objekt entsprechend der Zeile $5$ oder Zeile $9$ wie in Listing \ref{readObjs} erzeugt. Die Klasse \textit{DicomObject} stellt unter anderem die Methode \textit{getTagData}(in Zeile $14$) zur Verfügung und erhält als Parameter eine Stringrepräsentation des Tags und den Typ des Rückgabewertes. Alle möglichen Typen sind in \textit{DicomObject} als Konstanten festgelegt und müssen entsprechend der Value Representation des Tags gesetzt werden. \textit{PatientName} hat als VR \textit{PN} und wird als Zeichenkette behandelt. Dadurch wird als Rückgabetyp \textit{DicomObject.RETURN\_STRING} gewählt.
+Neue DICOM-Objekte können entweder durch das Auslesen eines DICOM-Baumes, oder durch die explizite Instantiierung durch Angabe eines Dateipfads erstellt werden. Zuerst wird das Objekt entsprechend der Zeile $5$ oder Zeile $9$ wie in Listing \ref{readObjs} erzeugt. Die Klasse \textit{DicomObject} stellt unter anderem die Methode \textit{getTagData}(in Zeile $14$) zur Verfügung und erhält als Parameter eine Stringrepräsentation des Tags und den Typ des Rückgabewertes. Alle möglichen Rückgabe-Typen sind in \textit{DicomObject} als Konstanten festgelegt und müssen entsprechend der Value Representation des Tags gesetzt werden. \textit{PatientName} hat als VR den Wert \textit{PN} und wird als Zeichenkette behandelt. Dadurch wird als Rückgabetyp \textit{DicomObject.RETURN\_STRING} gewählt.
 
 \lstset{
 language=Java,
@@ -298,8 +299,8 @@ String name = (String) obj.getTagData("PatientName", DicomObject.RETURN_STRING);
 
 \subsubsection{Erstellung eines Dialogfensters}
 In Kapitel \ref{implementation} Abschnitt \ref{dynamicParameter} wurden alle Dialogoptionen für eine dynamische Parametervergabe gezeigt. Listing \ref{dynamicex} zeigt die Anwendung eines \textit{GenericPlugInDialog}.\\
-Innerhalb des Plug-ins wird der Dialog \textit{dialog} als Datenelement hinterlegt, damit die Werte von \textit{process} ausgelesen werden können. In der Methode \textit{options} wird der Dialog erzeugt und die Dialogelemente hinzugefügt. Die RadioGroup nimmt als Parameter den Namen\footnote{Der Name dient zur eindeutigen Zuordnung, um später die Werte auslesen zu können.}, ein Array von Strings, welche die einzelnen Elemente der Gruppe symbolisieren und einen Standartwert welches Element ausgewählt dargestellt werden soll.\\
-Der Slider bekommt ebenfalls einen Namen und den Standardwert, gefolgt von Anfangswert, Endwert, Schrittweite und Nachkommastellen. Im Beispiel können im Slider Werte von $0.0$ - $3.0$ gewählt werden, also $max(\frac{30}{10^1})$. Eine Inkrementierung der Nachkommastelle erhöht die Genauigkeit. Zwei Nachkommastellen des Intervalls $[0,3]$ erlauben Werte zwischen $0.00$ - $3.00$. Ein Intervall $[0,30]$ mit zwei Nachkommastellen kann mit dem Aufruf \textit{dialog.addSlider(\glqq Name\grqq, 1, 0, 3000, 1, 2)} erzeugt werden($max(\frac{3000}{10^2})$).
+Innerhalb des Plug-ins wird der Dialog \textit{dialog} als Datenelement hinterlegt, damit die Werte von \textit{process} ausgelesen werden können. In der Methode \textit{options} wird der Dialog erzeugt und die Dialogelemente hinzugefügt. Die RadioGroup nimmt als Parameter den Namen\footnote{Der Name dient zur eindeutigen Zuordnung, um später die Werte auslesen zu können.}, ein Array von Strings, welche die einzelnen Elemente der Gruppe symbolisieren und einen Standartwert welches Element als ausgewählt dargestellt werden soll.\\
+Der Slider bekommt ebenfalls einen Namen und den Standardwert, gefolgt von Anfangswert, Endwert, Schrittweite und Nachkommastellen. Im Beispiel hat der Slider als Parameter für min = 0, max = 30 und digits = 1.Damit können im Slider Werte von $0.0$ - $3.0$ gewählt werden. Das Intervall berechnet sich aus $\frac{value}{10^{digit}}$. Eine Inkrementierung der Nachkommastelle erhöht die Genauigkeit. Zwei Nachkommastellen des Intervalls $[0,3]$ erlauben Werte zwischen $0.00$ - $3.00$. Ein Intervall $[0,30]$ mit zwei Nachkommastellen kann mit dem Aufruf \textit{dialog.addSlider(\glqq Name\grqq, 1, 0, 3000, 1, 2)} erzeugt werden($max(\frac{3000}{10^2})$).
 
 \lstset{
 language=Java,
@@ -354,7 +355,7 @@ Die Abbildung \ref{dialog_example} zeigt die visuelle Darstellung des individuel
 
 Der Laplace Operator wird zur Schärfung von Bildern eingesetzt und dient als Beispiel für die Umsetzung eines zweidimensionalen Plug-ins. Die \textit{process}-Methode aus Listing \ref{laplace} zeigt eine Implementierung des Filters. Der Parameter \textit{arg0} enthalt die aktuelle Bildschicht des aktiven ImageViews.\\
 In Zeile $6$ wird mit Hilfe der einfachen Fabrikfunktion das Bild für die Filterergebnisse erzeugt, da der Bildtyp von \textit{arg0} nicht explizit bekannt ist. In Zeile $16$ wird das Quellbild \textit{arg0} durchlaufen und gefiltert. In Zeile $31$ wird \textit{copySignificantAttributes} aufgerufen. Damit werden essentielle Bildeigenschaften vom Parameterbild in das aufrufende Bild kopiert. Zu den Eigenschaften zählen zum Beispiel \textit{WindowWidth}, \textit{WindowCenter} oder \textit{ImagePosition}.\\
-Sind diese Werte vom Anwender im Rückgabewert von \textit{process} nicht gesetzt, werden die Eigenschaften von \textit{arg0} in das Ergebnisbild kopiert. Damit wird eine korrekte Anzeige im ImageView garantiert.\\
+Sind diese Werte vom Anwender im Rückgabewert von \textit{process} nicht gesetzt, werden die Eigenschaften von \textit{arg0} in das Ergebnisbild von jMediKit kopiert. Damit wird eine korrekte Anzeige im ImageView garantiert.\\
 Nach der Rückgabe des geschärften Bildes, wird es von der Anwendung angezeigt.
 
 \lstset{
@@ -411,7 +412,7 @@ public AImage process(AImage arg0) {
 \FloatBarrier
 \subsection{Der Sobel Operator}
 
-Der Sobeloperator dient als Kantendetektor zur Visualisierung harter Intensitätsübergänge in Bildern. Listing \ref{sobel} zeigt die Implementierung von \textit{process}\footnote{Zur Übersichtlichkeit wurde ein Teil des Quelltextes ausgelassen. Der vollständige Code befindet sich auf dem beiliegenden Datenträger}.
+Der Sobeloperator dient als Kantendetektor zur Visualisierung harter Intensitätsübergänge in Bildern. Listing \ref{sobel} zeigt die Implementierung von \textit{process}\footnote{Zur Übersichtlichkeit wurde ein Teil des Quelltextes ausgelassen. Der vollständige Code befindet sich auf dem beiliegenden Datenträger.}.
 
 \lstset{
 language=Java,
@@ -536,7 +537,7 @@ public List<AImage> process(List<AImage> arg0, int arg1) {
 \FloatBarrier
 \section{Erweiterung der Anwendungsstruktur mit dem Eclipse Application Model}
 Anders als die Plug-ins werden Erweiterungen der Anwendung mit dem Application Model erst nach einem erneuten Buildprozess integriert. Dadurch richtet sich die Kategorie der Modularisierung an Entwickler, die jMediKit gezielt erweitern.\\
-Als Beispiel für eine modulare Erweiterung soll im \textit{PartStack} des \textit{DicomBrowsers} ein neuer \textit{Part} hinzugefügt werden der theoretisch alle verfügbaren PACS im Netzwerk anzeigt. Implementiert wird nur eine minimale Oberfläche.\\
+Als Beispiel für eine modulare Erweiterung soll im \textit{PartStack} des \textit{DicomBrowsers} ein neuer \textit{Part} hinzugefügt werden, der theoretisch alle verfügbaren PACS im Netzwerk anzeigt. Implementiert wird nur eine minimale Oberfläche.\\
 Bevor die Struktur erweitert werden kann, muss entsprechend der Anleitung in Anhang \ref{install_eclipse} die Eclipse-Installation vorbereitet sein. Sind die drei Projekte im \textit{Project Explorer} vorhanden, kann mit der Erweiterung begonnen werden.\\
 Im Projekt \textit{org.jmedikit.plugin} befindet sich die Datei \textit{Application.e4xmi}\footnote{Die XML-Datei Application.e4xmi kann auch direkt im Quelltext bearbeitet werden. Die Darstellung in Eclipse erhöht die Benutzerfreundlichkeit zur Anpassung der Werte}. Darin sind alle strukturellen Informationen zu der Anwendungsoberfläche, Menüs, Handler, Commands und die Referenzen auf die implementierenden Klassen hinterlegt. Mit einem Doppelklick kann diese geöffnet werden und es zeigt sich ein Fenster wie in Abbildung \ref{e4xmi}. Die linke Spalte zeigt die Applikationsstruktur und rechts sind die entsprechenden Eigenschaften des gewählten Elements zu sehen. Ab dem Element \textit{Windows} im Strukturbaum werden die Anwendungsteile angezeigt. Dieser Teilbaum entspricht der Abbildung \ref{hierarchy} aus Kapitel \ref{architecture}. Da der \textit{PartStack} in dem der \textit{DicomBrowser} liegt erweitert werden soll, muss bis zu diesem Knoten navigiert werden. Der richtige \textit{PartStack} hat die Id \textit{org.jmedikit.plugin.dicombrowserStack}.
 \begin{figure}[H]
@@ -559,7 +560,7 @@ Nach der Auswahl des \textit{PartStack}-Elements sind rechts dessen Eigenschafte
   \vspace{0.5cm}
 \end{figure}
 
-Folgend öffnen sich rechts die Eigenschaften des neu angelegten Parts. Wichtige Einstellungen sind \textit{Id}, \textit{Label} und \textit{ClassURI}. Mit Hilfe der Id kann der Part im Quelltext referenziert werden und das Label ist der sichtbare Titel des \textit{Parts} in der Anwendung. Noch ist keine Klasse für das neue Strukturelement definiert worden. Dies kann mit einem Klick auf \textit{ClassURI} erledigt werden. Soll ein Icon neben dem Titel erscheinen, muss zuvor eine Bilddatei nach der Anleitung in Anhang \ref{importicon} importiert werden\footnote{Grundsätzlich ist es ausreichend die Bilddateien im \textit{icon}-Ordner zu speichern, aufgrund einer durchgehenden Konsistenz ist es allerdings besser das Bild komplett zu importieren}.
+Folgend öffnen sich rechts die Eigenschaften des neu angelegten Parts. Wichtige Einstellungen sind \textit{Id}, \textit{Label} und \textit{ClassURI}. Mit Hilfe der Id kann der Part im Quelltext referenziert werden und das Label ist der sichtbare Titel des \textit{Parts} in der Anwendung. Noch ist keine Klasse für das neue Strukturelement definiert worden. Dies kann mit einem Klick auf \textit{ClassURI} erledigt werden. Soll ein Icon neben dem Titel erscheinen, muss zuvor eine Bilddatei nach der Anleitung in Anhang \ref{importicon} importiert werden\footnote{Grundsätzlich ist es ausreichend, die Bilddateien im \textit{icon}-Ordner zu speichern, aufgrund einer durchgehenden Konsistenz ist es allerdings besser das Bild komplett zu importieren.}.
 
 \begin{figure}[H]
   \vspace{0.5cm}
@@ -633,11 +634,11 @@ Abbildung \ref{partfinal} zeigt den neuen \textit{Part} in der linken Spalte der
   \vspace{0.5cm}
 \end{figure}
 
-\section{Erweiterung der Werkzeuge}
+\section{Erweiterung der Werkzeuge} \label{roitool}
+Neben der Möglichkeit die Anwendungsstruktur zur erweitern und anzupassen, besitzen auch die Werkzeuge von jMediKit den modularen Charakter.
 Im folgenden Abschnitt wird der Werkzeugleiste ein weiteres Tool hinzugefügt. Ähnlich dem \textit{PointTool} sollen Bildbereiche ausgewählt werden. Der Unterschied besteht darin, dass keine Punkte bestimmt werden, sondert ein rechteckiger Bildbereich als \textit{Region Of Interest}(ROI) markiert werden kann. Damit werden die Selektionswerkzeuge um das \textit{ROITool erweitert}.\\
 
-\subsection{Hinzufügen eines Menüpunktes}
-
+\subsection{Hinzufügen eines Menüpunktes} 
 Das Menü selbst befindet sich im Applikationsbaum \textit{Window} unter dem Element \textit{TrimBars} $\rightarrow$ \textit{WindowTrim - Top} $\rightarrow$ \textit{ToolBar} und enthält \textit{HandledToolItems}-Strukturen des Application Models als Menüpunkte (Abbildung \ref{toolmenu}). Das bedeutet, dass zu jedem Eintrag ein \textit{Command} mit dem zugehörigen \textit{Handler} erstellt werden muss.
 
 \begin{figure}[H]
@@ -650,7 +651,7 @@ Das Menü selbst befindet sich im Applikationsbaum \textit{Window} unter dem Ele
 \end{figure}
 
 Die \textit{Commands} sind im Strukturbaum direkt unter \textit{Application} zu finden. Wird das Element ausgewählt, erscheint auf der rechten Seite eine Liste bisher verfügbarer \textit{Commands}. Mit einem Klick auf \textit{Add} kann ein neuer hinzugefügt werden. In den nun angezeigten Einstellungen bekommt die \textit{Id} den Wert \textit{org.jmedikit.plugin.command.toolRoi} und als \textit{Name} wird \textit{toolRoi} eingetragen.\\
-Die Implementierung der Befehle finden in den \textit{Handlern} statt. Diese sind im Baum unter \textit{Window} angesiedelt. Nach der Auswahl erscheint die Liste der erstellten \textit{Handler}. Wie schon bei den \textit{Commands} wird ein neuer \textit{Handler} hinzugefügt und \textit{Id} sowie \textit{Name} vergeben. Unter dem Punkt \textit{Command} wird der zuvor erstellte Befehl angegeben. Mit einem Klick auf \textit{ClassURI}, wie in Abbildung \ref{tool_handlerclass} dargestellt, kann die entsprechende Klasse erstellt werden. Üblicherweise liegen Handlerklassen im Package \textit{org.jmedikit.plugin.gui.handler} und haben den Namen \textit{ToolNameHandler}.
+Die Implementierung der Befehle finden in den \textit{Handlern} statt. Diese sind im Baum unter \textit{Window} angesiedelt. Nach der Auswahl erscheint die Liste der erstellten \textit{Handler}. Wie schon bei den \textit{Commands}, wird ein neuer \textit{Handler} hinzugefügt und \textit{Id} sowie \textit{Name} vergeben. Unter dem Punkt \textit{Command} wird der zuvor erstellte Befehl angegeben. Mit einem Klick auf \textit{ClassURI}, wie in Abbildung \ref{tool_handlerclass} dargestellt, kann die entsprechende Klasse erstellt werden. Üblicherweise liegen Handlerklassen im Package \textit{org.jmedikit.plugin.gui.handler} und haben den Namen \textit{ToolNameHandler}.
 
 \begin{figure}[H]
   \vspace{0.5cm}
@@ -735,7 +736,7 @@ Nachdem die Tool-Klasse und das Event kreiert wurden, kann das neue Werkzeug der
 \lstset{
 language=Java,
 caption={Modifikation der SelectionToolFactory},
-label=groups,
+label=factory,
 xleftmargin=1em,
 xrightmargin=1em,
 numbers=left,
@@ -797,7 +798,7 @@ Ziel des \textit{ROITools} ist es, beliebige rechteckige Flächen innerhalb des 
 
 \begin{itemize}
 \item \textbf{MouseMove} \\
-Bei jeder Mausbewegung wird geprüft, ob eine Maustaste gedrück wird. Ist dies der Fall, wird die Startposition und die Aktuelle solange in Datenelementen der Klasse gespeichert, bis die Taste gelöst wird.
+Bei jeder Mausbewegung wird geprüft, ob eine Maustaste gedrück wird. Ist dies der Fall, wird die Startposition und die Aktuelle Position solange in Datenelementen der Klasse gespeichert, bis die Taste gelöst wird.
 \item \textbf{MouseDown} \\
 Wird die Maustaste betätigt, werden die Koordinaten auf $0$ zurückgesetzt, damit eine neue Berechnung beginnen kann. Ohne Zurücksetzung wird die zuletzt markierte ROI nochmal auf die Zeichenfläche gemalt und bleibt bis zur ersten Mausbewegung sichtbar.
 \item \textbf{MouseUp} \\

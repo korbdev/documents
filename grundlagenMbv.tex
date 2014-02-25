@@ -4,15 +4,14 @@
 %\section{Bildgewinnung und bildgebende Verfahren}\label{grundlagen:bildgebung}
 
 \section{DICOM}\label{grundlagen:dicom}
-Der Name DICOM steht für \textit{Digital Imaging and COmmunication in Medicine}. Der Umgang mit diesem Standard ist essentieller Bestandteil der zu entwickelnden Software. Pianykh\cite[1]{pianykh:dicom} beschreibt, dass DICOM nicht nur aus Pixel und deren zugehörigen Werten besteht. Wie der Name sagt, ist auch die Kommunikation fest im Standard verankert. Damit ist die Übertragung der Daten von medizinischen Geräten(Modalitäten) zum zentralen Speicher und deren Verteilung gemeint. Des weiteren spielt die dauerhafte Speicherung der digitalen Aufnahmen eine große Rolle. Daher wird im gleichen Zug mit DICOM immer ein PACS genannt. Das Akronym PACS bedeutet \textit{Picture Archiving and Communication System} und besteht sowohl aus Hardware (Server, Speicherung) als auch Software(Verteilung und Kommunikation).\\
+Der Name DICOM steht für \textit{Digital Imaging and Communication in Medicine}. Der Umgang mit diesem Standard ist essentieller Bestandteil der zu entwickelnden Software. Pianykh\cite[1]{pianykh:dicom} beschreibt, dass DICOM nicht nur aus Pixel und deren zugehörigen Werten besteht. Wie der Name sagt, ist auch die Kommunikation fest im Standard verankert. Damit ist die Übertragung der Daten von medizinischen Geräten(Modalitäten) zum zentralen Speicher und deren Verteilung gemeint. Des weiteren spielt die dauerhafte Speicherung der digitalen Aufnahmen eine große Rolle. Daher wird im gleichen Zug mit DICOM immer ein PACS genannt. Das Akronym PACS bedeutet \textit{Picture Archiving and Communication System} und besteht sowohl aus Hardware (Server, Speicherung) als auch Software(Verteilung und Kommunikation).\\
 Abbildung \ref{communication} illustriert das Zusammenspiel des DICOM-Standards und dem zentralen Datenspeicher. Zuerst wird mittels der Modalitäten(z.B. mit dem Computertomographen oder einem Ultraschallgerät) die digitale Aufnahme erzeugt. Danach wird das Bild vom Gerät an das PACS gesendet. Hier werden die Aufnahmen und Patientendetails in die Datenbank und den Speicher abgelegt. Wird eine Aufnahme benötigt, können Clients Anfragen mit dem Patientennamen stellen und erhalten darauf die zugehörige Serie mit den digitalen Aufnahmen.
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
   \fbox{\includegraphics[angle=0,width=10cm]{./img/communication_neu.pdf}}
-  \caption{Kommunikationsprozess von Aufnahme zur Verarbeitung}
-  \floatfoot{Vorlage für diese Darstellung ist die Grafik in \cite[Fig. 1]{pianykh:dicom}}
+  \caption{Kommunikationsprozess von Aufnahme zur Verarbeitung \cite[S. 19]{pianykh:dicom}}
   \label{communication}
   \vspace{0.5cm}
 \end{figure}
@@ -20,15 +19,15 @@ Abbildung \ref{communication} illustriert das Zusammenspiel des DICOM-Standards 
 %\pagebreak
 DICOM\footnote{Unter ftp://medical.nema.org/medical/dicom/ lässt sich der aktuelle Standard abrufen. Die Kapitel befinden sich im Ordner zum jeweiligen Jahr der Veröffentlichung. Aktuell sind die Dokumente von 2011.} ist daher nicht nur ein einzelner Standard, sondern verknüpft die standardisierte 
 \begin{itemize}
-\item Kommunikation,
-\item Erzeugung der Bilddaten,
-\item und Speicherung.
+\item Kommunikation
+\item Erzeugung der Bilddaten
+\item und Speicherung
 \end{itemize}
 %Im Rahmen dieser Abschlussarbeit liegt der Fokus auf den Bilddaten, daher wird auf die Kommunikation- und Speicheraspekte nicht im Detail eingegangen.
-Im Rahmen dieser Abschlussarbeit wird zur Softwareentwicklung nur der Standard der Bilddaten verwendet. Daher wird in den Grundlagen nur auf die bildspezifischen Eigenschaften von DICOM eingegangen und Kommunikation sowie Speicherung zur Erläuterung vernachlässigt.
+Im Rahmen dieser Abschlussarbeit wird zur Softwareentwicklung nur der Standard der Bilddaten verwendet. Daher wird in den Grundlagen nur auf die bildspezifischen Eigenschaften von DICOM eingegangen und die Erläuterung von Kommunikation und Speicherung vernachlässigt.
 
-\subsection{Die Dicom Information Object Definitionen} \label{grundlagen:iod}
-Bevor die Pixeldaten genauer betrachtet werden können, muss der prinzipielle Aufbau der Dicomobjekte beschrieben werden. Teil 3 des Standards\cite[A.1.2]{dicom:iod} zeigt den relationalen Aufbau der Dicomobjekte. Vereinfacht können die elementaren Informationsobjekte in drei Teile aufgeteilt werden.
+\subsection{Die DICOM Information Object Definitionen} \label{grundlagen:iod}
+Bevor die Pixeldaten genauer betrachtet werden können, muss der prinzipielle Aufbau der DICOM-Objekte beschrieben werden. Teil 3 des Standards\cite[A.1.2]{dicom:iod} zeigt den relationalen Aufbau der DICOM-Objekte. Vereinfacht können die elementaren Informationsobjekte in drei Teile aufgeteilt werden.
 
 \begin{itemize}
 	\item \textbf{Patient}\\
@@ -41,19 +40,18 @@ Bevor die Pixeldaten genauer betrachtet werden können, muss der prinzipielle Au
 	Auf der unteren Hierarchiestufe stehen Objekte wie Bilddaten oder die Lage des Patienten im Raum während der Aufnahme. Ein Bild wird genau einer Serie zugeordnet.
 \end{itemize}
 
-Aus diesen vier elementaren Objekten ergibt sich folgende Informationsstruktur für Dicomobjekte, die in Abbildung \ref{ermodel} als Entity-Relationship-Modell\footnote{Ein ER-Modell beschreibt die Beziehungen der Elemente zueinander. Dieser Diagrammtyp wird unter Anderem häufig beim Entwickeln der Struktur einer relationalen Datenbank verwendet} verdeutlicht wird.
+Aus diesen vier elementaren Objekten ergibt sich folgende Informationsstruktur für DICOM-objekte, die in Abbildung \ref{ermodel} als Entity-Relationship-Modell\footnote{Ein ER-Modell beschreibt die Beziehungen der Elemente zueinander. Dieser Diagrammtyp wird unter anderem häufig beim Entwickeln der Struktur einer relationalen Datenbank verwendet.} verdeutlicht wird.
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
   \includegraphics[angle=0,width=8cm]{./img/ermodel.pdf}
-  \floatfoot{Vorlage für diese Darstellung ist die Grafik in \cite[A.1.2]{dicom:iod}}
-  \caption{Vereinfachte Darstellung der Informationsobjekthierarchie von Dicomelementen}
+  \caption{Vereinfachte Darstellung der Informationsobjekthierarchie von Dicomelementen \cite[A.1.2]{dicom:iod}}
   \label{ermodel}
   \vspace{0.5cm}
 \end{figure}
 
-Der DICOM-Viewer OsiriX bietet auf der Herstellerseite\footnote{http://www.osirix-viewer.com/datasets/} die Möglichkeit Testdaten zu beziehen. Betrachtet man die Repräsentation der Daten auf der Festplatte hält sich die Ordnerstruktur an obiges ER-Modell.\\
+Der DICOM-Viewer OsiriX bietet auf der Herstellerseite\footnote{http://www.osirix-viewer.com/datasets/} die Möglichkeit Testdaten zu beziehen. Betrachtet man die Repräsentation der Daten auf der Festplatte, hält sich die Ordnerstruktur an obiges ER-Modell.\\
 Abbildung \ref{filesystemrep} zeigt eine schematische Darstellung der Dateien. Die Beispieldaten von OsiriX bestehen aus einem Patienten, dem eine Studie sowie zwei Serien à 100 Aufnahmen zugeordnet werden.
 
 \tikzstyle{every node}=[draw=black,thick,anchor=west]
@@ -61,13 +59,13 @@ Abbildung \ref{filesystemrep} zeigt eine schematische Darstellung der Dateien. D
 \tikzstyle{optional}=[dashed,fill=gray!50]
 \begin{figure}[htbp]
 \centering
-\caption{Repräsentation der Information Objekte im Dateisystem}
+\caption{Repräsentation der DICOM Informations Objects im Dateisystem}
 \label{filesystemrep}
 \begin{tikzpicture}[%
   grow via three points={one child at (0.5,-0.7) and
   two children at (0.5,-0.7) and (0.5,-1.4)},
   edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
-  \node {Dicom Ordner}
+  \node {DICOM Ordner}
     child [missing] {}
     child { node {Ordner - Patient}
     	child [missing] {}
@@ -93,7 +91,7 @@ Abbildung \ref{filesystemrep} zeigt eine schematische Darstellung der Dateien. D
 \end{tikzpicture}
 \end{figure}
 
-Bei näherer Betrachtung fällt auf, dass die Dateinamen beider Serien des Patienten identisch sind. Eine korrekte Zuordnung von DICOM-Dateien zur Serie ist daher nicht immer garantiert. Unabhängig von einer Repräsentation im Dateisystem oder Pfadangaben in der Datenbank eines PACS ist das Vertrauen auf Dateipfade unsicher, da über eine einfache Dateimanipulation die Zuordnung nicht mehr hergestellt werden kann.\\
+Bei näherer Betrachtung fällt auf, dass die Dateinamen beider Serien des Patienten identisch sind. Eine korrekte Zuordnung von DICOM-Dateien zur Serie ist daher nicht immer garantiert. Unabhängig von einer Repräsentation im Dateisystem oder Pfadangaben in der Datenbank eines PACS ist das Vertrauen auf Dateipfade unsicher, da durch eine einfache Dateimanipulation die Zuordnung nicht mehr hergestellt werden kann.\\
 Um eine zuverlässige Verknüpfung zu gewährleisten besitzt jeder Patient\footnote{Die Identifikationsnummern von Patienten sind meist nur innerhalb einer Institution oder Krankenhauses einzigartig, da diese manuell vergeben werden können\cite[5.6.2]{pianykh:dicom}.}, jede Studie und jede Serie eine eindeutige Identifikationsnummer. Diese Art der Informationen wird in den einzelnen Dateien mit Hilfe von Einträgen aus dem DICOM Data Dictionary\cite{dicom:dd} hinterlegt. Die DICOM-Dateien beschreibt Pianykh \cite[S. 47]{pianykh:dicom}
 als eine Kopie im Speicher vom tatsächlichen DICOM-Objekt.
 
@@ -107,7 +105,7 @@ Tabelle \ref{table:patientname} zeigt das DICOM-Element für den Namen des Patie
     \begin{tabularx}{\textwidth}{|X|X|X|X|X|}
     \toprule
     \hline
-    \textbf{Tag}         & \textbf{Tagname}     & \textbf{VR\footnote{ValueRepresentation - beschreibt den Werttyp, zum Beispiel numerischer Wert oder Zeichenkette}} & \textbf{Wert}     	& \textbf{VM \footnote{Value Multiplicity - wieviel Werte sind im DICOM-Element enthalten}} \\ \hline
+    \textbf{Tag}         & \textbf{Tagname}     & \textbf{VR\footnote{ValueRepresentation - beschreibt den Werttyp, zum Beispiel numerischer Wert oder Zeichenkette.}} & \textbf{Wert}     	& \textbf{VM \footnote{Value Multiplicity - wieviel Werte sind im DICOM-Element enthalten.}} \\ \hline
     (0010,0010) 		 & PatientName 			& PN 		  & John\^{}Doe 		& 1  \\  \hline
     \bottomrule
     \end{tabularx}
@@ -120,7 +118,7 @@ Betrachtet man den folgenden Satz(vgl. \cite[S.46]{pianykh:dicom}), kann dieser 
 \textit{\glqq John Doe, männlich, geboren am 01. Januar 1970\grqq}
 \end{center}
 
-Wie aus dem Beispiel von Tabelle \ref{table:patientname} zu erkennen, lässt sich ein DICOM-Element nochmals in atomare Teile aufgespalten. Folglich besteht ein Datenelement aus einem beschreibenden \textit{Tag}, einer \textit{VR(Value Representation)}, einem Wert und der \textit{VR (Value Multiplicity)}. Das Element selbst nimmt eine von drei Darstellungsmöglichkeiten ein. Zusätzlich liegt im Speicherabbild des Datenelements die Länge des Wertes\footnote{John\^{}Doe besitzt aufgrund der Zeichenmenge eine Länge von acht}. Abhängig von der Transfersyntax\footnote{Unter der Transfersyntax versteht man eine Menge an Kodierungsvorschriften von DICOM-Objekten\cite[S.63 Section 10]{dicom:structure}. Zu diesen Vorschriften gehört zum Beispiel die Reihenfolge der Bytes im DICOM-Element oder die Komprimierung der Bilddaten} des DICOM-Objekts ist der VR-Teil optional. Die weiteren beiden Darstellungen unterscheiden sich in der Kodierung der benötigten Länge des Werts \cite[7.1]{dicom:structure}.  Anhang \ref{appendix:speicher} auf Seite \pageref{appendix:speicher} zeigt wie Datenelemente im Speicher abgelegt werden und wie viel Speicherplatz pro Element reserviert werden muss.
+Wie aus dem Beispiel von Tabelle \ref{table:patientname} zu erkennen, lässt sich ein DICOM-Element nochmals in atomare Teile aufspalten. Folglich besteht ein Datenelement aus einem beschreibenden \textit{Tag}, einer \textit{VR(Value Representation)}, einem Wert und der \textit{VR (Value Multiplicity)}. Das Element selbst nimmt eine von drei Darstellungsmöglichkeiten ein. Zusätzlich liegt im Speicherabbild des Datenelements die Länge des Wertes\footnote{John\^{}Doe besitzt aufgrund der Zeichenmenge eine Länge von acht.}. Abhängig von der Transfersyntax\footnote{Unter der Transfersyntax versteht man eine Menge an Kodierungsvorschriften von DICOM-Objekten\cite[S.63 Section 10]{dicom:structure}. Zu diesen Vorschriften gehört zum Beispiel die Reihenfolge der Bytes im DICOM-Element oder die Komprimierung der Bilddaten.} des DICOM-Objekts ist der VR-Teil optional. Die weiteren beiden Darstellungen unterscheiden sich in der Kodierung der benötigten Länge des Werts \cite[7.1]{dicom:structure}.  Anhang \ref{appendix:speicher} auf Seite \pageref{appendix:speicher} zeigt wie Datenelemente im Speicher abgelegt werden und wie viel Speicherplatz pro Element reserviert werden muss.
 
 \begin{table}
     \begin{tabularx}{\textwidth}{|p{4cm}|p{4cm}|X|X|X|}
@@ -139,7 +137,7 @@ Wie aus dem Beispiel von Tabelle \ref{table:patientname} zu erkennen, lässt sic
 
 \subsection{Tags in Datenelementen}
 
-Ein DICOM-Element wie PatientName kann über ein Tag identifiziert werden. Ein Tag ist in einem DICOM-Objekt einzigartig und darf nur ein mal benutzt werden. Die numerische Darstellung hat die Form (\textit{gggg}, \textit{eeee}) wobei die hexadezimalen Ziffern \textit{g} die Gruppe des DICOM-Elements beschreiben. Das Zeichen \textit{e} beschreibt das Element  aus der Gruppe \textit{g}. Wie in Tabelle  \ref{table:translation} zu sehen, steht 0010 für die Gruppe \textit{Patient} und 0030 für das Element \textit{PatientBirthDate} und ist der Patientengruppe zugehörig. Zusätzlich zu diesen Eigenschaften, kann bestimmt werden, ob der Ursprung eines DICOM-Elements im Standard- oder einem privaten Data Dictionary liegt. Eine gerade Gruppen-Ziffer zeigt, dass das Element Teil des Standards ist, während ungerade für proprietäre Elemente stehen\footnote{Ausgenommen aus dieser Regel sind folgende Gruppen: (0000, eeee), (0002, eeee), (0004, eeee), (0006, eeee), (0001, eeee), (0003, eeee), (0005, eeee), (0007, eeee), (FFFF, eeee)}\cite[7.1]{dicom:structure}. Die Reihenfolge der Tags ist in numerischer Folge in aufsteigender Form sortiert. Fällt während des Einleseprozesses in einer Datei auf, dass die Reihenfolge nicht korrekt ist, kann die Integrität des DICOM-Objekts nicht gewährleistet werden und deutet zum Beispiel auf eine modifizierte Datei hin.\\
+Ein DICOM-Element wie \textit{PatientName} kann über ein Tag identifiziert werden. Ein Tag ist in einem DICOM-Objekt einzigartig und darf nur ein mal benutzt werden. Die numerische Darstellung hat die Form (\textit{gggg}, \textit{eeee}) wobei die hexadezimalen Ziffern \textit{g} die Gruppe des DICOM-Elements beschreiben. Das Zeichen \textit{e} beschreibt das Element  aus der Gruppe \textit{g}. Wie in Tabelle  \ref{table:translation} zu sehen, steht 0010 für die Gruppe \textit{Patient} und 0030 für das Element \textit{PatientBirthDate} und ist der Patientengruppe zugehörig. Zusätzlich zu diesen Eigenschaften, kann bestimmt werden, ob der Ursprung eines DICOM-Elements im Standard- oder einem privaten Data Dictionary liegt. Eine gerade Gruppen-Ziffer zeigt, dass das Element Teil des Standards ist, während ungerade für proprietäre Elemente stehen\footnote{Ausgenommen aus dieser Regel sind folgende Gruppen: (0000, eeee), (0002, eeee), (0004, eeee), (0006, eeee), (0001, eeee), (0003, eeee), (0005, eeee), (0007, eeee), (FFFF, eeee).}\cite[7.1]{dicom:structure}. Die Reihenfolge der Tags ist in numerischer Folge in aufsteigender Form sortiert. Fällt während des Einleseprozesses in einer Datei auf, dass die Reihenfolge nicht korrekt ist, kann die Integrität des DICOM-Objekts nicht gewährleistet werden und deutet zum Beispiel auf eine modifizierte Datei hin.\\
 
 \FloatBarrier
 \subsection{VR - Value Representation}
@@ -160,8 +158,8 @@ Das bedeutet, dass die konkreten Werte der Pixel im gleichen DICOM-Objekt liegen
 \FloatBarrier
 \subsection{Kodierung der Pixel im Speicherabbild eine DICOM-Objekts} \label{pixelkodierung}
 
-Um die grundlegende Struktur der Pixel im DICOM-Objekt zu beschreiben sind drei Datenelemente notwendig: BitsAllocated, BitsStored und HighBit\ref{table:digitalRep}. BitsAllocated beschreibt, wie viel Speicher für einen singulären Pixelwert reserviert wird. Mit Hilfe von Columns und Rows kann die Bilddimension bestimmt werden. Columns beschreibt die Breite, Rows die Höhe. Die Value Representation des Datenelements PixelData (\textit{7fe0}, \textit{0010}) kann nach DICOM Data Dictionary entweder den Wert \textit{OB} oder \textit{OW} annehmen. OB bedeutet \textit{Other Byte String} während OW für \textit{Other Word String} steht. Nach Section 8.1 des Standards\cite{dicom:structure} besteht der Unterschied zwischen den beiden VRs darin, dass OB abhängig von der Byteordnung ist. Ob die Ordnung Little Endian oder Big Endian entspricht ist abhängig von der Transfersyntax des DICOM-Objekts.
-Grafik \ref{byteorder} zeigt die Kodierungsreihenfolge. Little Endian kodiert vom Least Significant Bit (LSB) zum Most Significant Bit (MSB). Big Endian verarbeitet die Byte in umgekehrter Reihenfolge. Ein Element des PixelData-Arrays (sowohl mit einer VR von OB als auch OW) fasst 16 Bit, was gleichzeitig die maximale Größe an allokiertem Speicher von BitsAllocated darstellt, denn nach dem Standard entspricht jede Zelle von PixelData genau einem Pixelwert \cite[8.1.1]{dicom:structure} und sowohl \textit{OB} als auch \textit{OW} belegen maximal 16-Bit im Speicher. Durch diese Limitierung wird deutlich, das die Grautwertbilder eine maximale Tiefe von 16-Bit erreichen können.
+Um die grundlegende Struktur der Pixel im DICOM-Objekt zu beschreiben sind drei Datenelemente notwendig: BitsAllocated, BitsStored und HighBit. BitsAllocated beschreibt, wie viel Speicher für einen singulären Pixelwert reserviert wird. Mit Hilfe von Columns und Rows kann die Bilddimension bestimmt werden. Columns beschreibt die Breite, Rows die Höhe. Tabelle \ref{table:digitalRep} zeigt einen Überblick dieser Elemente eines DICOM-Objekts. Die Value Representation des Datenelements PixelData (\textit{7fe0}, \textit{0010}) kann nach DICOM Data Dictionary entweder den Wert \textit{OB} oder \textit{OW} annehmen. OB bedeutet \textit{Other Byte String} während OW für \textit{Other Word String} steht. Nach Section 8.1 des Standards\cite{dicom:structure} besteht der Unterschied zwischen den beiden VRs darin, dass OB abhängig von der Byteordnung ist. Ob die Ordnung Little Endian oder Big Endian entspricht ist abhängig von der Transfersyntax des DICOM-Objekts.
+Grafik \ref{byteorder} zeigt die Kodierungsreihenfolge. Little Endian kodiert vom Least Significant Bit (LSB) zum Most Significant Bit (MSB). Big Endian verarbeitet die Byte in umgekehrter Reihenfolge. Ein Element des PixelData-Arrays (sowohl mit einer VR von OB als auch OW) fasst 16 Bit, was gleichzeitig die maximale Größe an allokiertem Speicher von BitsAllocated darstellt. Nach dem Standard entspricht jede Zelle von PixelData genau einem Pixelwert \cite[8.1.1]{dicom:structure} und sowohl \textit{OB} als auch \textit{OW} belegen maximal 16-Bit im Speicher. Durch diese Limitierung wird deutlich, das die Grautwertbilder eine maximale Tiefe von 16-Bit erreichen können.
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
@@ -175,7 +173,7 @@ Grafik \ref{byteorder} zeigt die Kodierungsreihenfolge. Little Endian kodiert vo
 
 BitsStored gibt darüber Auskunft, wie viel Bit pro Wert in Anspruch genommen werden. Schließlich gibt HighBit das in der Reihenfolge ranghöchste Bit von StoredBits an \cite[8.1.1]{dicom:structure}.\\
 Abbildung \ref{bits:pixel} verdeutlicht die Repräsentation eines Pixels im Datenelement PixelData. Die Darstellung entspricht einem eindimensionalen Array. Das erste Element ist das erste Pixel in der linken oberen Ecke, das letzte Element stellt den Pixel rechts unten dar. \ref{bits:16} und \ref{bits:8} zeigen die exakte Belegung an Bit bei BitsStored 16 und BitsStored 8. Der graue Hintergrund zeigt die allokierten Bit, während der rote Bereich den tatsächlich benutzten Speicher markiert. Der Pixelwert in Abbildung \ref{bits:8} nimmt den gesamten Speicherplatz pro Pixel ein. Das schwarze Quadrat steht für das HighBit.\\
-Das Intervall der Werte ist abhängig von der Anzahl an gespeicherten Bits. Hat das Element StoredBits den Wert 12 kann ein  Pixel einen Wert aus dem Bereich von $[0, 2^{12}-1]$ annehmen. Entspricht StoredBits 8 ist das Intervall $[0, 2^8-1]$. Hier spricht man von einer Grauwerttiefe von 12 beziehungsweise 8 \cite[2.2]{handels:mbv}.
+Das Intervall der Werte ist abhängig von der Anzahl an gespeicherten Bits. Hat das Element StoredBits den Wert 12 kann ein  Pixel einen Wert aus dem Bereich von $[0, 2^{12}-1]$ annehmen. Entspricht StoredBits dem Wert 8, ist das Intervall $[0, 2^8-1]$. Hier spricht man von einer Grauwerttiefe von 12 beziehungsweise 8 \cite[2.2]{handels:mbv}.
 \begin{figure*}[htb]
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
 \centering
@@ -189,7 +187,7 @@ Das Intervall der Werte ist abhängig von der Anzahl an gespeicherten Bits. Hat 
 \end{figure*}
 
 Verschiedene Datenelemente aus dem DICOM-Standard liefern nähere Informationen zum Bildformat. So gibt das Element SamplesPerPixel (0028,0002) Auskunft darüber, wieviel Teile aus PixelData ein einzelnes Pixel repräsentieren. Hat Samples den Wert 1, so ist jedes Element aus PixelData genau ein Pixel. Daraus folgt, dass ein Grauwertbild vorliegt. 3 bedeutet, dass im DICOM-Objekt ein Farbbild mit den drei Kanälen rot, grün und blau liegt.\\
-Die Werte der Pixel sind stark abhängig vom medizinischen Gerät, welches die Bilder aufzeichnet. Ein direkter Vergleich von Bildern, die von unterschiedlichen Geräten einer Modalität aufgezeichnet wurden ist daher nicht möglich. Um Gewebestrukturen von beispielsweise CT-Aufnahmen trotz dieser Abhängigkeiten patienten- und geräteübergreifend zu vergleichen, gibt es unter Anderem die Hounsfield Skala \cite[2.1.3]{handels:mbv}. Mit Hilfe der Datenelemente RescaleSlope und RescaleIntercept lassen sich die ursprünglichen Werte in brauch- und lesbare Pixelwerte konvertieren. RescaleType gibt die Skala an, mit der das Ergebnis interpretiert werden kann. Ein Umrechnung erfolgt mit der Formel aus \cite[C.11-1b Seite 1168]{dicom:iod}\\
+Die Werte der Pixel sind stark abhängig vom medizinischen Gerät, welches die Bilder aufzeichnet. Ein direkter Vergleich von Bildern, die von unterschiedlichen Geräten einer Modalität aufgezeichnet wurden ist daher nicht möglich. Um Gewebestrukturen von beispielsweise CT-Aufnahmen trotz dieser Abhängigkeiten patienten- und geräteübergreifend zu vergleichen, gibt es unter anderem die Hounsfield Skala \cite[2.1.3]{handels:mbv}. Mit Hilfe der Datenelemente RescaleSlope und RescaleIntercept lassen sich die ursprünglichen Werte in brauch- und lesbare Pixelwerte konvertieren. RescaleType gibt die Skala an, mit der das Ergebnis interpretiert werden kann. Ein Umrechnung erfolgt mit der Formel aus \cite[C.11-1b Seite 1168]{dicom:iod}\\
 
 \begin{equation}
 Output=m*SV+b
@@ -218,7 +216,7 @@ Fettgewebe zum Beispiel nimmt nach der Hounsfield-Skala Werte zwischen 0 und -10
 \FloatBarrier
 \subsection{Grauwertbilder} \label{grey_images}
 
-Für Bildverarbeitungsprozesse und Algorithmen bieten Grauwertbilder einige Vorteile im Vergleich zu Farbbildern. Der größte Unterschied liegt im Verhältnis zwischen Informationsgehalt zum benötigtem Speicherbedarf. Farben bieten bei Kantenübergängen oder Helligkeitsinformationen keinen Mehrwert. Das führt unter Anderem dazu, dass Industrie oder auch die medizinische Bildverarbeitung vorwiegend auf dieses Format zurückgreifen. Viele medizinische Geräte liefern bei der Bildaufnahme reine Intensitätswerte und beinhalten dadurch keine Farbinformationen.\\
+Für Bildverarbeitungsprozesse und Algorithmen bieten Grauwertbilder einige Vorteile im Vergleich zu Farbbildern. Der größte Unterschied liegt im Verhältnis zwischen Informationsgehalt zum benötigtem Speicherbedarf. Farben bieten bei Kantenübergängen oder Helligkeitsinformationen keinen Mehrwert. Das führt unter anderem dazu, dass Industrie oder auch die medizinische Bildverarbeitung vorwiegend auf dieses Format zurückgreifen. Viele medizinische Geräte liefern bei der Bildaufnahme reine Intensitätswerte und beinhalten dadurch keine Farbinformationen.\\
 Eine Grauwerttiefe von 8 Bit wird überlicherweise in der industriellen Bildverarbeitung eingesetzt. Das entspricht dem Intervall von $[0,255]$ und den Werten, die mit handelsüblichen Monitoren darstellbar sind. Medizinische Bilddaten können, wie in Abschnitt \ref{pixelkodierung} beschrieben, eine Tiefe von bis zu 16 Bit annehmen und Grauwerte aus dem Bereich $[0,65535]$ repräsentieren, da eine 8-Bit-Repräsentation eine zu geringe Genauigkeit liefert. Spezielle kostspielige Befundungsmonitore sind dazu in der Lage diese Spanne an Grauwerten darzustellen.
 
 \begin{figure*}[htb]
@@ -229,7 +227,6 @@ Eine Grauwerttiefe von 8 Bit wird überlicherweise in der industriellen Bildvera
 \subfigure[MR]{\includegraphics[width=5cm]{./img/mr.png} \label{mr}}
 \subfigure[Ultraschall]{\includegraphics[width=5cm]{./img/sono.png} \label{sono}}
 }
-\floatfoot{Die Beispieldaten stammen von http://www.osirix-viewer.com/datasets/ - abgerufen am 19.01.2014}
 \caption{Verschieden Graustufenbilder}
 \label{grey}
 \end{figure*}
@@ -267,15 +264,14 @@ Im DICOM-Standard ist ein Algorithmus gegeben, um die Pixeldaten zu konvertieren
 \subfigure[Window Center 50; Window Width 350]{\includegraphics[width=5cm]{./img/window_a.png} \label{window_a}}
 \subfigure[Window Center -124; Window Width 3134]{\includegraphics[width=5cm]{./img/window_b.png} \label{window_b}}
 }
-\floatfoot{Vorlage für die Grafik der Fensterungstechnik ist\cite[Abbildung 8.1]{handels:mbv}; Die Beispieldaten stammen von http://www.osirix-viewer.com/datasets/ - abgerufen am 19.01.2014}
-\caption{Fensterungstechnik zur Darstellung medizinischer Bilddaten am handelsüblichen Monitor}
+\caption{Fensterungstechnik zur Darstellung medizinischer Bilddaten am handelsüblichen Monitor \cite[S. 249]{handels:mbv}}
 \label{window_sub}
 \end{figure*}
 
 \FloatBarrier
 \subsection{Farbbilder} \label{color_images}
 Obwohl Grauwertbilder das am meisten verwendete Format in der medizinischen Bildverarbeitung darstellen, haben auch Farbbilder die verschiedensten Einsatzgebiete. So wird in der Dermatologie auf Farbdarstellungen zurückgegriffen um Hauterkrankungen zu dokumentieren\cite[2.2.3.2]{handels:mbv}. Des weiteren kann mit Farbultraschallbildern die Fließrichtung und Geschwindigkeit des Blutes visualisiert werden und dienen zur Untersuchung von Venen und Arterien\footnote{http://www.diagnostikum-berlin.de/farbkodierte-duplexsonographie-fkds - abgerufen am 19.01.2014}.\\
-Wie bereits beschrieben, ist das Datenelement SamplesPerPixel mit einem Wert von drei der Indikator, dass ein Farbbild vorliegt. Das bedeutet pro Pixel werden 3 Elemente von PixelData belegt mit je einem Element für den roten, grünen und blauen Farbkanal. Daraus resultiert der dreifach Speicherbedarf, $BitsAllocated * SamplesPerPixel$ \cite[C.7.6.3.1.1]{dicom:iod}. Der DICOM-Standard bietet zwei Möglichkeiten, wie diese Information im Speicher hinterlegt werden. Entweder werden die Pixelwerte fortlaufend gespeichert mit R1, G1, B1; R2 ,G2, B2; ...RN, GN, BN; oder nach dem Kanal R1, R2, ...RN; G1, G2, ...GN; B1, B2, ...BN \cite[C.7.6.3.1.3]{dicom:iod}. Das Element dazu aus dem Data Dictionary heißt PlanarConfiguration(0028,0006). Abbildung \ref{planar} macht die beiden Schemata deutlich.
+Wie bereits beschrieben, ist das Datenelement SamplesPerPixel mit einem Wert von drei der Indikator, dass ein Farbbild vorliegt. Das bedeutet pro Pixel werden 3 Elemente von PixelData belegt mit je einem Element für den roten, grünen und blauen Farbkanal. Daraus resultiert der dreifach Speicherbedarf, $BitsAllocated * SamplesPerPixel$ \cite[C.7.6.3.1.1]{dicom:iod}. Der DICOM-Standard bietet zwei Möglichkeiten, wie diese Information im Speicher hinterlegt werden. Entweder werden die Pixelwerte fortlaufend gespeichert mit R1, G1, B1; R2 ,G2, B2; ...RN, GN, BN; oder nach dem Kanal R1, R2, ...RN; G1, G2, ...GN; B1, B2, ...BN \cite[C.7.6.3.1.3]{dicom:iod}. Das dafür verwendete Element  aus dem Data Dictionary heißt PlanarConfiguration(0028,0006). Abbildung \ref{planar} macht die beiden Schemata deutlich.
 
 \begin{figure*}[htb]
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
@@ -291,7 +287,7 @@ Wie bereits beschrieben, ist das Datenelement SamplesPerPixel mit einem Wert von
 
 \FloatBarrier
 \section{3D Bilddaten}
-Sowohl die Grauwertdarstellungen, als auch Farbbilder wurden bisher nur als eine zweidimensionale Abbildung behandelt. Computertomographen, Magnetresonanztomographen und auch 3D-Ultraschall sind in der Lage Schichten des menschlichen Körpers aufzunehmen. Die Menge der Schichtaufnahmen stellen eine Serie dar (vgl.\nameref{grundlagen:iod} \pageref{grundlagen:iod}). Durch die Verbindung der einzelnen DICOM-Objekte wird der Pixelraum verlassen und der Voxelraum betreten. Ein Voxel ist die dreidimensionale Repräsentation eines Pixels, mit der Tiefe als zusätzliche Dimension zu Breite und Höhe.
+Sowohl die Grauwertdarstellungen, als auch Farbbilder wurden bisher nur als eine zweidimensionale Abbildung behandelt. Computertomographen, Magnetresonanztomographen und auch 3D-Ultraschall sind in der Lage Schichten des menschlichen Körpers aufzunehmen. Die Menge der Schichtaufnahmen stellen eine Serie dar (vgl.\nameref{grundlagen:iod} Seite \pageref{grundlagen:iod}). Durch die Verbindung der einzelnen DICOM-Objekte wird der Pixelraum verlassen und der Voxelraum betreten. Ein Voxel ist die dreidimensionale Repräsentation eines Pixels, mit der Tiefe als zusätzliche Dimension zu Breite und Höhe.
 
 \begin{figure*}[htb]
 %\subfigure[Keypoints]{\includegraphics[width=0.49\textwidth]{./img/basmati_keypoints.png}}\hfill
@@ -312,8 +308,9 @@ Sowohl die Grauwertdarstellungen, als auch Farbbilder wurden bisher nur als eine
 Auch Bildaufnahmen zu verschiedenen Zeitpunkten sind dreidimensionale Bildfolgen, wobei die Zeit die dritte Dimension darstellt\cite[2.2.5]{handels:mbv}. Häufige Einsatzgebiete für Bewegtbildfolgen ist die Endoskopie oder Sonographie. Die Abbildung \ref{time3d} macht den Unterschied zwischen zeitlicher und räumlicher Dimension deutlich. Räumliche Darstellungen sind grundsätzlich in mehrere DICOM-Objekte und Dateien aufgeteilt. Zeitlich abhängige Daten sind in einem einzigen Objekt zusammengefasst. NumberOfFrames (0028,0008) gibt die Anzahl an unterschiedlichen Aufnahmen und Zeitpunkten an, die in PixelData enthalten sind.
 
 \chapter{Grundlagen zu Entwurfsmustern der Softwareentwicklung} \label{swa}
+\addthumb{Grundlagen zu Entwurfsmustern der Softwareentwicklung}{\huge{\textbf{\thechapter.}}}{white}{haw_rot} 
 
-Während der Entwicklung von Software stehen Programmierer oft vor ähnlichen Problemstellungen. Entwurfsmuster bieten hierfür verlässliche Lösungsvorschläge\cite{goll:swa}. Muster werden unabhängig vom aktuellen Abschnitt des Entwicklungsprozesses eingesetzt. So gibt es Schablonen, die das Softwaresystem beschreiben, oder Muster, die auf Objektebene eingesetzt werden. Hierbei wird zwischen Architekturmustern und Entwurfsmustern unterschieden. Nach Goll und Dausmann \cite[3.1, 3.2]{goll:swa} ist das Ziel der Entwurfsmuster, Lösungen wiederverwendbar zu gestalten und die Flexibilität der Software zu erhöhen. Muster verbessern unter anderem die beiden Eigenschaften der Verständlichkeit und Erweiterbarkeit. Im Rahmen der Arbeit werden vor allem objektorientierte Muster folgender Klassen verwendet:
+Während der Entwicklung von Software stehen Programmierer oft vor ähnlichen Problemstellungen. Entwurfsmuster bieten hierfür verlässliche Lösungsvorschläge\cite{goll:swa}. Muster werden unabhängig vom aktuellen Abschnitt des Entwicklungsprozesses eingesetzt. So gibt es Schablonen die das Softwaresystem beschreiben, oder Muster, die auf Objektebene eingesetzt werden. Hierbei wird zwischen Architekturmustern und Entwurfsmustern unterschieden. Nach Goll und Dausmann \cite[3.1, 3.2]{goll:swa} ist das Ziel der Entwurfsmuster, Lösungen wiederverwendbar zu gestalten und die Flexibilität der Software zu erhöhen. Muster verbessern unter anderem die beiden Eigenschaften der Verständlichkeit und Erweiterbarkeit. Im Rahmen der Arbeit werden vor allem objektorientierte Muster folgender Klassen verwendet:
 
 \begin{itemize}
 \item Strukturmuster
@@ -335,7 +332,7 @@ Der Adapter passt Schnittstellen an, um die Zusammenarbeit inkompatibler Objekte
   \vspace{0.5cm}
   \centering
   \fbox{\includegraphics[angle=0,width=12cm]{./img/adapter.pdf}}
-   \caption{UML Klassendiagramm zum Adapter}
+   \caption{UML Klassendiagramm zum Adapter \cite[S. 78]{starke:swa}}
   \label{adapterpattern}
   \vspace{0.5cm}
 \end{figure}
@@ -346,13 +343,13 @@ Die Interaktion zwischen Objekten kann mit Verhaltensmustern festgelegt werden. 
 
 \FloatBarrier
 \subsection{Observer}
-Wenn der Zustand mehrerer Objekte von einem anderen Objektzustand abhängt, kann man das Observer-Muster verwenden. So kann der Zustand abhängig vom beobachteten Objekt angepasst werden \cite[4.7]{starke:swa}. Ein Abonnement einer Zeitung(ConcreteSubject) oder eines Newsletters(ConcreteSubject) ist ein reales Beispiel dieses Muster. Alle Abonnenten\footnote{Frau Müller und Herr Schmidt würden ConcreteObserver repräsentieren}(Observer) erhalten(update()) vom Herausgeber(Subject) automatisch(notifyObservers()) die neue Ausgabe eines Magazins oder Newsletter sobald dieses erscheint. Ein Abonnent muss sich bewusst für eine Anmeldung entscheiden(register()), um neue Ausgaben zu erhalten. Das Konzept verdeutlicht Abbildung \ref{observer}.
+Wenn der Zustand mehrerer Objekte von einem anderen Objektzustand abhängt, kann man das Observer-Muster verwenden. So kann der Zustand abhängig vom beobachteten Objekt angepasst werden \cite[4.7]{starke:swa}. Ein Abonnement einer Zeitung(ConcreteSubject) oder eines Newsletters(ConcreteSubject) ist ein reales Beispiel dieses Muster. Alle Abonnenten\footnote{Frau Müller und Herr Schmidt würden ConcreteObserver repräsentieren.} (Observer) erhalten(update) vom Herausgeber (Subject) automatisch (notifyObservers) die neue Ausgabe eines Magazins oder Newsletter sobald dieses erscheint. Ein Abonnent muss sich bewusst für eine Anmeldung entscheiden(register()), um neue Ausgaben zu erhalten. Das Konzept verdeutlicht Abbildung \ref{observer}.
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
   \fbox{\includegraphics[angle=0,width=12cm]{./img/observer.pdf}}
-   \caption{UML Klassendiagramm zum Observer}
+   \caption{UML Klassendiagramm zum Observer\cite[S. 71]{starke:swa}}
   \label{observer}
   \vspace{0.5cm}
 \end{figure}
@@ -360,7 +357,7 @@ Wenn der Zustand mehrerer Objekte von einem anderen Objektzustand abhängt, kann
 \FloatBarrier
 \subsection{Schablonenmethode}
 
-Die Schablonenmethode wird eingesetzt, wenn Teile eines Algorithmus flexibel austauschbar sein sollen. Ein Rezept für Weihnachtsgebäck könnte zum Beispiel folgende Vorgehensweise wie in Listing \ref{beispielgebaeck} haben. Abbildung \ref{templatemethod} zeigt das UML Diagramm dieses Entwurfsmusters. Eine abstrakte Klasse definiert eine Vorgehensweise \textit{templateMethod()}. Im Beispiel ist das die Klasse \textit{Gebaeck}. Abgeleitete Klassen definieren die genaue Vorgehensweise des Algorithmus durch die implementierten abstrakten Methoden \textit{Operation1() - Operation3()}( im Beispiel sind das die Methoden \textit{vermengeZutaten() - backen()}). Die Backzeiten von Spekulatius und Keksen sind unterschiedlich. Durch die spezifische Umsetzung von \textit{backen()} wird die Backzeit individuell angepasst. Das bedeutet die Vorgehensweise ist identisch, die Umsetzung kann spezifisch variieren.
+Die Schablonenmethode wird eingesetzt, wenn Teile eines Algorithmus flexibel austauschbar sein sollen. Ein Rezept für Weihnachtsgebäck könnte zum Beispiel folgende Vorgehensweise wie in Listing \ref{beispielgebaeck} haben. Abbildung \ref{templatemethod} zeigt das UML Diagramm dieses Entwurfsmusters. Eine abstrakte Klasse definiert eine Vorgehensweise \textit{templateMethod()}. Im Beispiel ist das die Klasse \textit{Gebaeck}. Abgeleitete Klassen definieren die genaue Vorgehensweise des Algorithmus durch die implementierten abstrakten Methoden \textit{Operation1() - Operation3()}( im Beispiel sind das die Methoden \textit{vermengeZutaten() - backen()}). Die Backzeiten von Spekulatius und Keksen sind unterschiedlich. Durch die spezifische Umsetzung von \textit{backen()} wird die Backzeit individuell angepasst. Das bedeutet, dass die Vorgehensweise identisch ist und die Umsetzung spezifisch variieren kann.
 \lstset{
 language=Java,
 caption={Beispiel zur Schablonenmethode},
@@ -391,29 +388,29 @@ public abstract class Gebaeck{
   \vspace{0.5cm}
   \centering
   \fbox{\includegraphics[angle=0,width=12cm]{./img/template.pdf}}
-   \caption{UML Klassendiagramm der Schablonenmethode}
+   \caption{UML Klassendiagramm der Schablonenmethode\cite[S. 69]{starke:swa}}
   \label{templatemethod}
   \vspace{0.5cm}
 \end{figure}
 
 \FloatBarrier
 \section{Erzeugungsmuster} \label{creation}
-Erzeugungsmuster übernehmen die Erstellung der Objekte zur Laufzeit. Wie beschrieben haben DICOM-Bilddaten eine Grauwerttiefe zwischen 8- und 16-Bit. Daher kann erst zur Laufzeit entschieden werden, welches Bildobjekt angelegt werden kann. Ein Fabrikmuster übernimmt diese Aufgabe.
+Erzeugungsmuster übernehmen die Erstellung der Objekte zur Laufzeit. Wie beschrieben, haben DICOM-Bilddaten eine Grauwerttiefe zwischen 8- und 16-Bit. Daher kann erst zur Laufzeit entschieden werden, welches Bildobjekt angelegt werden kann. Ein Fabrikmuster übernimmt diese Aufgabe.
 
 %\subsection{Die einfache Fabrik}
 
 \FloatBarrier
 \subsection{Fabrik Methode} \label{fabrikmethod}
 
-Dieses Entwurfsmuster bietet eine Schnittstelle(Fabrik) zur Erzeugung von Objekten(Produkte). Stehen die konkreten Objekttypen erst zur Laufzeit des Programms fest, kann dieses Erzeugungsmuster eingesetzt werden, um Konstruktion und Repräsentation zu trennen\cite[3.3]{starke:swa}.\\
-Abbildung \ref{factorymethod} zeigt den Aufbau in einem UML-Diagramm. Als Beispiel kann man einen Handwerker(Client) mit seinem Lehrling(\textit{Factory}) betrachten, der Schrauben(\textit{Product}$\rightarrow$ \textit{Schraube\_8mm}, \textit{Schraube\_10mm}) zureichen muss. Der Handwerker muss nicht selbst von der Leiter steigen und im Werkzeugkasten nach der passende Schraube suchen. Er bittet den Lehrling zum Beispiel eine Schraube 8mm zu bringen.
+Dieses Entwurfsmuster bietet eine Schnittstelle (Fabrik) zur Erzeugung von Objekten (Produkte). Stehen die konkreten Objekttypen erst zur Laufzeit des Programms fest, kann dieses Erzeugungsmuster eingesetzt werden, um Konstruktion und Repräsentation zu trennen\cite[3.3]{starke:swa}.\\
+Abbildung \ref{factorymethod} zeigt den Aufbau in einem UML-Diagramm. Als Beispiel kann man einen Handwerker (Client) mit seinem Lehrling (\textit{Factory}) betrachten, der Schrauben (\textit{Product}$\rightarrow$ \textit{Schraube\_8mm}, \textit{Schraube\_10mm}) zureichen muss. Der Handwerker muss nicht selbst von der Leiter steigen und im Werkzeugkasten nach der passende Schraube suchen. Er bittet den Lehrling zum Beispiel eine Schraube 8mm zu bringen.
 Das Wissen über konkrete Schrauben stellt eine konkrete Fabrik dar. So ist der Lehrling auch in der Lage andere Werkzeugkategorien zu verwalten. Jedes Werkzeug spezialisiert von AbstractProduct und das Wissen über die Kategorie von AbstractFactory.
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
   \fbox{\includegraphics[angle=0,width=12cm]{./img/factorymethod.pdf}}
-   \caption{UML Klassendiagramm zur Fabrik Methode}
+   \caption{UML Klassendiagramm zur Fabrik Methode \cite[S. 35]{starke:swa}}
   \label{factorymethod}
   \vspace{0.5cm}
 \end{figure}
@@ -421,8 +418,8 @@ Das Wissen über konkrete Schrauben stellt eine konkrete Fabrik dar. So ist der 
 \FloatBarrier
 \subsection{Singleton}
 
-Ein Singleton-Entwurfsmuster wird eingesetzt, wenn es nur eine Instanz einer Klasse geben darf\cite[3.4]{starke:swa}. Das ist unter Anderem bei Konfigurationsklassen von Software sinnvoll, da eine Manipulation von unterschiedlichen Quellen ausgeschlossen werden kann.\\
-Das Codelisting \ref{singleton} zeigt eine primitive Umsetzung in Java, die Intention eines Singletons wird allerdings deutlich. Durch die Sichtbarkeit \textit{private} des Konstruktors wird eine externe Instanziierung unterbunden. Die einzige Instanz der Klasse ist das private statische Datenelement \textit{Singleton s}. Zugriff darauf erlaubt nur die statische Methode \textit{getInstance()}.
+Ein Singleton-Entwurfsmuster wird eingesetzt, wenn es nur eine Instanz einer Klasse geben darf\cite[3.4]{starke:swa}. Das ist unter anderem bei Konfigurationsklassen von Software sinnvoll, da eine Manipulation von unterschiedlichen Quellen ausgeschlossen werden kann.\\
+Das Codelisting \ref{singleton} zeigt eine primitive Umsetzung in Java, die Intention eines Singletons wird allerdings deutlich. Durch die Sichtbarkeit \textit{private} des Konstruktors wird eine externe Instantiierung unterbunden. Die einzige Instanz der Klasse ist das private statische Datenelement \textit{Singleton s}. Zugriff darauf erlaubt nur die statische Methode \textit{getInstance()}.
 
 \lstset{
 language=Java,
@@ -455,13 +452,13 @@ public class Singleton{
 \section{Das Architekturmuster Plug-in}
 
 Wird eine Software entwickelt, sollte das Open-Closed-Prinzip angewendet werden. Dieses besagt, dass Software sowohl offen, als auch geschlossen sein soll\cite[1.8]{goll:swa}. Bei Objektorientierten Programmiersprachen ist die Vererbung ein Beispiel, die den Widerspruch erläutert. Abgeleitete Klassen \textit{erweitern} die Fähigkeiten der Superklasse, die wiederum \textit{nicht verändert} werden. Die Superklasse ist offen für Erweiterung und geschlossen für Veränderung.\\
-Das Beispiel bezieht sich auf eine Klasse. Durch eine Erweiterung auf die Ebene der Softwarearchitektur entsteht das Plug-in-Muster. Das bedeutet, ein Plug-in stellt einem fertigen System zusätzliche Erweiterungen bereit, die zur Laufzeit eingebunden werden können und vorher dem System unbekannt sind. Die Kommunikation wird durch eine Schnittstelle möglich, die das System zur Verfügung stellt. Wird diese Schnittstelle implementiert kann die Klasse eingebunden werden. Abbildung \ref{pluginpattern} zeigt die Interaktion von Schnittstelle, System und konkreten Plug-ins.
+Das Beispiel der Vererbung bezieht sich auf eine Klasse. Durch eine Erweiterung auf die Ebene der Softwarearchitektur entsteht das Plug-in-Muster. Das bedeutet, ein Plug-in stellt einem fertigen System zusätzliche Erweiterungen bereit, die zur Laufzeit eingebunden werden können und dem System vorher unbekannt sind. Die Kommunikation wird durch eine Schnittstelle möglich, die das System zur Verfügung stellt. Wird diese Schnittstelle implementiert kann die Klasse eingebunden werden. Abbildung \ref{pluginpattern} zeigt die Interaktion von Schnittstelle, System und konkreten Plug-ins.
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
-  \fbox{\includegraphics[angle=0,width=12cm]{./img/pluginpattern.pdf}}
-   \caption{UML Klassendiagramm des Architekturmusters Plug-in}
+  \fbox{\includegraphics[angle=0,width=15cm]{./img/pluginpattern.pdf}}
+   \caption{UML Klassendiagramm des Architekturmusters Plug-in \cite[S. 316]{goll:swa}}
   \label{pluginpattern}
   \vspace{0.5cm}
 \end{figure}

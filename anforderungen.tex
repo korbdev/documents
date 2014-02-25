@@ -15,7 +15,7 @@ Während der Besprechungen mit dem Laborleiter konnten folgende nichtfunktionale
 
 \begin{itemize}
 \item  \textbf{Modularer Aufbau des Systems}(1)\\
-	  Die Software soll in den Grundfunktionen erweiterbar sein, die nach einem neuen Build-Prozess zur Verfügung stehen. So soll es möglich sein, neue Bedienelemente der Benutzeroberfläche und neue Funktionen der Anwendung hinzuzufügen.
+	  Die Software soll in den Grundfunktionen erweiterbar sein. So soll es möglich sein, neue Bedienelemente der Benutzeroberfläche und neue Funktionen der Anwendung hinzuzufügen.
 	  
 \item \textbf{Erweiterbarkeit durch den Anwender}(2)\\
 	Anwender sollen die Möglichkeit haben, das Programm mit selbst programmierten Algorithmen und Plug-ins zu erweitern. Die eigene Implementierung von Bildverarbeitungsprozessen ist essentiell im Bereich der Lehre.
@@ -27,7 +27,7 @@ Während der Besprechungen mit dem Laborleiter konnten folgende nichtfunktionale
 	Algorithmen in der Bildverarbeitung sind oft komplex und umfangreich. Nicht jeder benötigte Verarbeitungsprozess eignet sich zum selbst implementieren (sowohl im Lehr- als auch Forschungsbereich). Durch den Einsatz von Bibliotheken wird ein grundlegender Satz an Algorithmen vorgegeben, auf den der Benutzer zurückgreifen und in den Plug-ins verwenden kann.
 	
 \item \textbf{Verarbeitung medizinischer Daten mit Hilfe des DICOM-Standards}(5)\\
-	Medizinische Bilddaten besitzen neben den rohen Pixeldaten noch eine Vielzahl zusätzlicher Information, wie Patientendaten oder Seriennummern der Aufnahmen und benötigen eine spezielle Verarbeitung. Anders als übliche Grauwertbilder besitzen DICOM-Daten unter Anderem nicht 255 sondern bis zu $2^{16}$ verschiedene Grauwerte.
+	Medizinische Bilddaten besitzen neben den rohen Pixeldaten noch eine Vielzahl zusätzlicher Information, wie Patientendaten oder Seriennummern der Aufnahmen und benötigen eine spezielle Verarbeitung. Anders als übliche Grauwertbilder besitzen DICOM-Pixeldaten nicht zwingend 255 sondern bis zu $2^{16}$ verschiedene Grauwerte.
 \end{itemize}
 
 \section{Funktionale Anforderungen}
@@ -39,7 +39,7 @@ Dieser Anforderungstyp legt fest, \textit{was} das Programm leisten soll und bes
 		Aus der Anwendererweiterbarkeit ergibt sich eine funktionale Anforderung. Nicht immer können alle Eigenschaften und Werte der Algorithmen während der Implementierung vom Anwender bestimmt werden. Durch die Abhängigkeit von den zu bearbeitenden Bilddaten und Algorithmen muss die Möglichkeit geboten werden, Parameter während der Laufzeit der Anwendung zu bestimmen.
 
 \item \textbf{Manuelle Auswahl signifikanter Punkte zur Verarbeitung in Plug-ins}(7)\\
-		Zusätzlich zu den dynamischen Parametern müssen einzelne Bildpunkte interaktiv vom Benutzer ausgewählt und später von Algorithmen benutzt werden können. Manche Bildverarbeitungsprozesse benötigen beispielsweise sogenannte Saatpunkte die von Anwender manuell ausgewählt werden müssen.
+		Zusätzlich zu den dynamischen Parametern müssen einzelne Bildpunkte interaktiv vom Benutzer ausgewählt und später von Algorithmen benutzt werden können. Manche Bildverarbeitungsprozesse benötigen beispielsweise sogenannte Saatpunkte die vom Anwender manuell ausgewählt werden müssen.
 
 \item \textbf{Anwendung der Algorithmen im dreidimensionalen Raum}(8)\\
 	  Eine Vielzahl an Bildaufnahmen liegen als dreidimensionaler Datensatz vor. Eine Bildreihe muss folglich zusätzlich zur xy-Ebene auch in z-Richtung zu bearbeiten sein.
@@ -51,7 +51,7 @@ Dieser Anforderungstyp legt fest, \textit{was} das Programm leisten soll und bes
 	  Ein dreidimensionaler Datensatz macht es möglich, nicht nur die Bilder der xy-Ebene (Axial) sondern auch die xz-(Coronal) sowie yz-Ebene(Sagittal) darzustellen. Zwischen den Ansichten soll der Benutzer wechseln können.
 
 \item \textbf{Dynamische Anzeige eines Punktes in allen Bildebenen}(11)\\
-	  Sind drei gleiche Datensätze in drei verschiedenen Fenstern geöffnet sollen diese dynamisch reagieren, wenn der Benutzer einen Punkt eines Datensatzes auswählt. Angenommen ein Datensatz ist in axialer, coronaler und sagittaler Ansicht geöffnet. Wählt der Nutzer einen Bildpunkt aus der axialen Ansicht, sollen die beiden übrigen geöffneten Fenter aktualisiert werden und den gleichen Punkt in ihrer jeweiligen Ansicht referenzieren.
+	  Sind drei gleiche Datensätze in drei verschiedenen Fenstern geöffnet, sollen diese dynamisch reagieren wenn der Benutzer einen Punkt eines Datensatzes auswählt. Angenommen ein Datensatz ist in axialer, coronaler und sagittaler Ansicht geöffnet. Wählt der Nutzer einen Bildpunkt aus der axialen Ansicht, sollen die beiden übrigen geöffneten Fenter aktualisiert werden und den gleichen Punkt in ihrer jeweiligen Ansicht referenzieren.
 	  
 \item \textbf{Anzeige der dreidimensionalen Datensätze in $(x, y, z)$} (12)\\
 	 Damit die Darstellung der verschiedenen Ebenen möglich wird, muss der gesamte dreidimensionale Datensatz zur Anzeige zur Verfügung stehen. Der Anwender soll durch die einzelnen Schichten der Bildreihen scrollen können.
@@ -79,29 +79,27 @@ Zwar gibt es auf dem Markt auch Open-Source Lösungen mit Schwerpunkt auf Bildve
 
 \section{Slicer 3D}
 
-Slicer 3D\footnote{http://www.slicer.org} (Abbildung \ref{slicer3d}) ist ein umfassendes Werkzeug für die medizinische Bildverarbeitung im zwei- und dreidimensionalen Raum. Die quelloffene Software bietet Möglichkeiten eigene Erweiterungen zu implementieren. Slicer verwendet als Bibliotheken unter anderem das Insight Toolkit und das Visualization Toolkit\footnote{Insight Toolkit(ITK) und Visualization Toolkit (VTK) sind umfassende in C++ entwickelte Programmbibliotheken zur medizinischen Bildverarbeitung und Visualisierung.}. Die Erweiterungen werden in Python implementiert und dienen zur Anwendung der Bildverarbeitungsalgorithmen. Es fehlt die Möglichkeit der modularen Erweiterung bezüglich neuer Funktionen. Das Labor setzt in naher Zukunft ein PACS ein und die zu entwickelnde Software soll Möglichkeiten bieten, dieses System später zu integrieren, um DICOM-Daten über das Netzwerk zu beziehen.
+Slicer 3D\footnote{http://www.slicer.org} (Abbildung \ref{slicer3d}) ist ein umfassendes Werkzeug für die medizinische Bildverarbeitung im zwei- und dreidimensionalen Raum. Die quelloffene Software bietet Möglichkeiten eigene Erweiterungen zu implementieren. Slicer verwendet als Bibliotheken unter anderem das  Insight Segmentation and Registration Toolkit und das Visualization Toolkit\footnote{ Insight Segmentation and Registration Toolkit(ITK) und Visualization Toolkit (VTK) sind umfassende in C++ entwickelte Programmbibliotheken zur medizinischen Bildverarbeitung und Visualisierung.}. Die Erweiterungen werden in Python implementiert und dienen zur Anwendung der Bildverarbeitungsalgorithmen. Es fehlt die Möglichkeit der modularen Erweiterung bezüglich neuer Funktionen. Das Labor setzt in naher Zukunft ein PACS ein und die zu entwickelnde Software soll Möglichkeiten bieten, dieses System später zu integrieren, um DICOM-Daten über das Netzwerk zu beziehen.
 %Das Modul \glqq medizinische Bildverarbeitung\grqq\ baut auf der Programmiersprache Java auf und ist eine weitere Voraussetzung für einen Einsatz im Lehrgebiet. Module in Slicer werden in Python %implementiert. Die Studierenden müssten damit eine zusätzliche Sprache lernen.\\
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
   \fbox{\includegraphics[angle=0,width=9cm]{./img/Screenshot-3DSlicer.png}}
-  \floatfoot{Quelle: http://www.linuxlinks.com/portal/content/reviews/Health/Screenshot-3DSlicer.png - abgerufen am 11.01.2014}
-  \caption{Screenshot Slicer 3D}
+  \caption{Screenshot Slicer 3D \cite{slicer:screen}}
   \label{slicer3d}
   \vspace{0.5cm}
 \end{figure}
 
 \section{ImageJ}
 
-ImageJ ist \glqq State Of The Art\grqq\ im Bereich der Bildverarbeitung in Java\footnote{http://rsbweb.nih.gov/ij/}). Im Grundzustand liefert ImageJ die Standardfunktionen der Bildverarbeitung wie Abbildung \ref{imagej} zeigt. Unter Anderem kann das Bildmaterial analysiert oder mit Filtern bearbeitet werden. ImageJ verarbeitet sowohl Grauwertbilder als auch Farbbilder in den gängigen Formaten wie PNG, JPEG und vielen Anderen. Mit Hilfe der \glqq ImageStacks\grqq\ ist auch eine Bearbeitung im dreidimensionalen Bildraum möglich. Erweiterungen können schnell und zielgerichtet entwickelt werden. Im Modul \glqq Bildverarbeitung\grqq\ der Fakultät Informatik wird ImageJ als Standard zum Bearbeiten der Übungsaufgaben verwendet. Für einen Einsatz im Studiengang Biomedizinische Technik fehlt allerdings die grundlegende Unterstützung von medizinischen Bilddaten im DICOM-Format. Die Funktionalität lässt sich über Plug-ins nachträglich hinzufügen, allerdings fehlt eine Bibliothek die bereits implementierte Algorithmen zur Verfügung stellt, sowie eine Verknüpfung von ImageJ-Klassen wie FloatProcessor oder ByteProcessor in Bildformate der Bibliotheken.
+ImageJ ist \glqq State Of The Art\grqq\ im Bereich der Bildverarbeitung in Java\footnote{http://rsbweb.nih.gov/ij/}). Im Grundzustand liefert ImageJ die Standardfunktionen der Bildverarbeitung wie Abbildung \ref{imagej} zeigt. Unter anderem kann das Bildmaterial analysiert oder mit Filtern bearbeitet werden. ImageJ verarbeitet sowohl Grauwertbilder als auch Farbbilder in den gängigen Formaten wie PNG, JPEG und vielen anderen. Mit Hilfe der \glqq ImageStacks\grqq\ ist auch eine Bearbeitung im dreidimensionalen Bildraum möglich. Erweiterungen können schnell und zielgerichtet entwickelt werden. Im Modul \glqq Bildverarbeitung\grqq\ der Fakultät Informatik wird ImageJ als Standard zum Bearbeiten der Übungsaufgaben verwendet. Für einen Einsatz im Studiengang Biomedizinische Technik fehlt allerdings die grundlegende Unterstützung von medizinischen Bilddaten im DICOM-Format. Die Funktionalität lässt sich über Plug-ins nachträglich ergänzen, allerdings fehlt eine Bibliothek die bereits implementierte Algorithmen zur Verfügung stellt, sowie eine Verknüpfung von ImageJ-Klassen wie FloatProcessor oder ByteProcessor in Bildformate der Bibliotheken. So müssten ImageJ-Bilder in fremde Bildtypen konvertierbar sein.
 
 \begin{figure}[htbp]
   \vspace{0.5cm}
   \centering
   \fbox{\includegraphics[angle=0,width=9cm]{./img/imagej-window.png}}
   \caption{Die Benutzeroberfläche von ImageJ}
-  \floatfoot{ Quelle:  http://rsbweb.nih.gov/ij/features.html - abgerufen am 11.01.2014}
   \label{imagej}
   \vspace{0.5cm}
 \end{figure}
@@ -164,5 +162,5 @@ Für eine Software die an der Hochschule Landshut für Lehre sowie Forschung im 
     \label{table:anforderungen}
 \end{table}
 
-Tabelle \ref{table:anforderungen} zeigt eine Gegenüberstellung der evaluierten Software zu den Anforderungen. Slicer3D und ImageJ erfüllen einen hohen Grad davon, allerdings fehlen wichtige sogenannte harte\footnote{Es wird zwischen harten und weichen Anforderungen unterschieden. Harte Anforderungen müssen erfüllt werden, während Weiche erfüllt werden können \cite[9]{balzert:swa}} Anforderungen. Slicer3D lässt einen einfachen Ansatz zur modularen Erweiterung der Benutzeroberfläche und Anwendungsfunktionen vermissen. ImageJ hingegen bietet diese Variabilität. Allerdings ist die Verarbeitung von DICOM-Daten nur über ein Plug-in möglich und es fehlt eine Grundlage in Algorithmen zur medizinischen Bildverarbeitung. Zusätzlich zu den vorgestellten Anwendungen bietet auch MATLAB\footnote{http://www.mathworks.de/products/matlab/} umfangreiche Bildverarbeitungskomponenten, unter anderem auch zur Verarbeitung von DICOM-Objekten an. Die hohen Lizenzkosten sprechen allerdings deutlich gegen einen Einsatz in der Lehre, da Anwendungen nur auf begrenzt vielen Maschinen installiert werden können und dadurch die Zahl der Arbeitsplätze für Studierende erheblich unnötig eingeschränkt ist. Aufgaben können nur im Labor bearbeitet werden, was voraussetzt, dass das Labor zu jeder Zeit geöffnet werden muss.
-Da in den vorgestellten Anwendungen keine Lösung verfügbar ist, die alle Voraussetzungen erfüllen, soll eine Software entwickelt werden, die für das Labor für medizinische Bildverarbeitung, Algorithmen und Krankenhaus IT die benötigten funktionalen und nichtfunktionalen Anforderungen umsetzt.
+Tabelle \ref{table:anforderungen} zeigt eine Gegenüberstellung der evaluierten Software zu den Anforderungen. Slicer3D und ImageJ erfüllen einen hohen Grad davon, allerdings fehlen wichtige sogenannte harte\footnote{Es wird zwischen harten und weichen Anforderungen unterschieden. Harte Anforderungen müssen erfüllt werden, während Weiche erfüllt werden können \cite[9]{balzert:swa}} Anforderungen. Slicer3D lässt einen einfachen Ansatz zur modularen Erweiterung der Benutzeroberfläche und Anwendungsfunktionen vermissen. ImageJ hingegen bietet diese Variabilität. Allerdings ist die Verarbeitung von DICOM-Daten nur über ein Plug-in möglich und es fehlt eine Grundlage an Algorithmen zur medizinischen Bildverarbeitung. Zusätzlich zu den vorgestellten Anwendungen bietet auch MATLAB\footnote{http://www.mathworks.de/products/matlab/} umfangreiche Bildverarbeitungskomponenten, unter anderem auch die Verarbeitung von DICOM-Objekten an. Die hohen Lizenzkosten sprechen allerdings deutlich gegen einen Einsatz in der Lehre, da Anwendungen nur auf begrenzt vielen Maschinen installiert werden können und dadurch die Zahl der Arbeitsplätze für Studierende erheblich unnötig eingeschränkt ist. Aufgaben können nur im Labor bearbeitet werden, was voraussetzt, dass das Labor zu jeder Zeit geöffnet sein muss.
+Da in den vorgestellten Anwendungen keine Lösung verfügbar ist, die alle Voraussetzungen erfüllt, soll eine Software entwickelt werden, die für das Labor für medizinische Bildverarbeitung, Algorithmen und Krankenhaus IT die benötigten funktionalen und nichtfunktionalen Anforderungen umsetzt.
